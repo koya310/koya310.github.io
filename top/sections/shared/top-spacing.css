@@ -1024,3 +1024,47 @@ h1.section-title,
     padding-left: 0 !important;
   }
 }
+
+/* KMY-02: keep the responsive top page rhythm even after section-local CSS wins. */
+@media (min-width: 641px) and (max-width: 1100px) {
+  :root {
+    --ktop-space-top: 96px;
+    --ktop-space-bottom: 80px;
+    --ktop-block-gap: 72px;
+  }
+
+  .philosophy .copy-field,
+  #philosophy .philosophy .copy-field {
+    padding-top: var(--ktop-space-top) !important;
+    padding-bottom: var(--ktop-space-bottom) !important;
+  }
+
+  #works .works-mobile,
+  #achievements .achievements {
+    padding-top: var(--ktop-space-top) !important;
+    padding-bottom: var(--ktop-space-bottom) !important;
+  }
+
+  #initiatives .content {
+    gap: 80px !important;
+    padding-top: var(--ktop-space-top) !important;
+    padding-bottom: 96px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #philosophy {
+    padding: 0 !important;
+  }
+
+  #works .works-mobile {
+    padding-top: 96px !important;
+    padding-bottom: 80px !important;
+  }
+
+  #initiatives .content,
+  #achievements .achievements {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+}
