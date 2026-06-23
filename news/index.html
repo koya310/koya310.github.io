@@ -247,6 +247,35 @@
         }
       }
 
+      @media (max-width: 720px) {
+        .news-page-card {
+          grid-template-columns: minmax(0, 1fr) 24px;
+          gap: 14px 16px;
+          padding: 24px 0;
+        }
+
+        .news-page-thumb {
+          grid-column: 1 / -1;
+          width: min(100%, 420px);
+          height: auto;
+          aspect-ratio: 3 / 2;
+        }
+
+        .news-page-thumb--contain {
+          padding: 12px;
+        }
+
+        .news-page-copy {
+          grid-column: 1;
+        }
+
+        .news-page-arrow {
+          grid-column: 2;
+          grid-row: 2;
+          align-self: center;
+        }
+      }
+
       @media (max-width: 420px) {
         .news-main {
           width: 100%;
