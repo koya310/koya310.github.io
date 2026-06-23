@@ -1059,6 +1059,10 @@ h1.section-title,
 }
 
 @media (max-width: 640px) {
+  #initiatives.home-section {
+    min-height: auto !important;
+  }
+
   #philosophy {
     padding: 0 !important;
   }
@@ -1072,6 +1076,14 @@ h1.section-title,
   #achievements .achievements {
     padding-top: 80px !important;
     padding-bottom: 80px !important;
+  }
+
+  #initiatives .content {
+    padding-bottom: 48px !important;
+  }
+
+  #initiatives .section-cta {
+    margin-bottom: 0 !important;
   }
 }
 
