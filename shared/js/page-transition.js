@@ -51,8 +51,10 @@
         ["03", "創業の想い", "/essay/story/"],
         ["04", "事業内容", "/services/"],
         ["05", "工芸の可能性", "/kogei/"],
-        ["06", "お知らせ", "/news/"],
-        ["07", "お問い合わせ", "/contact/"],
+        ["06", "作家・作品", "/artists/"],
+        ["07", "参加ページ", "/ueno/"],
+        ["08", "お知らせ", "/news/"],
+        ["09", "お問い合わせ", "/contact/"],
       ],
       footerPrimaryItems: [
         ["トップ", "/top/"],
@@ -60,6 +62,8 @@
         ["創業の想い", "/essay/story/"],
         ["事業内容", "/services/"],
         ["工芸の可能性", "/kogei/"],
+        ["作家・作品", "/artists/"],
+        ["参加ページ", "/ueno/"],
         ["お知らせ", "/news/"],
       ],
       footerLegalItems: [
@@ -93,8 +97,10 @@
         ["03", "Founder's Essay", "/essay/"],
         ["04", "Services", "/services/"],
         ["05", "Possibility of Craft", "/kogei/"],
-        ["06", "News", "/news/"],
-        ["07", "Contact", "/contact/"],
+        ["06", "Artists", "/artists/"],
+        ["07", "Visit Page", "/ueno/"],
+        ["08", "News", "/news/"],
+        ["09", "Contact", "/contact/"],
       ],
       footerPrimaryItems: [
         ["Top", "/top/"],
@@ -102,6 +108,8 @@
         ["Founder's Essay", "/essay/"],
         ["Services", "/services/"],
         ["Possibility of Craft", "/kogei/"],
+        ["Artists", "/artists/"],
+        ["Visit Page", "/ueno/"],
         ["News", "/news/"],
       ],
       footerLegalItems: [

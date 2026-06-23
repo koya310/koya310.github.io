@@ -1,8 +1,8 @@
 / /top/ 302
+/ueno /ueno/ 301
+/uenocel /uenocel/ 301
 /essay/story /essay/story/ 301
-/artists /top/ 302
-/artists/ /top/ 302
-/artists/* /top/ 302
+/artists /artists/ 301
 /works /top/ 302
 /works/ /top/ 302
 /works/* /top/ 302
