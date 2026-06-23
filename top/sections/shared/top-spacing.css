@@ -1074,6 +1074,7 @@ h1.section-title,
   #philosophy .mobile-copy,
   #philosophy .philosophy .mobile-copy,
   #works .works-mobile__copy,
+  .works-mobile__artists .artist-list,
   #initiatives .desc,
   #initiatives .list,
   #initiatives .closing-copy-mobile,
@@ -1092,6 +1093,7 @@ h1.section-title,
   #initiatives .list,
   #initiatives .closing-copy-mobile,
   #achievements .achievement-copy,
+  .works-mobile__artists .artist-list,
   #co-create .co-invite-copy__text {
     line-height: 1.8 !important;
   }
