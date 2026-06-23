@@ -344,6 +344,10 @@ body.utility-body {
   border-bottom: 0;
 }
 
+.contact-page .utility-main {
+  width: min(640px, calc(100% - 160px));
+}
+
 .contact-page .utility-side-note,
 .contact-page .contact-form,
 .contact-page .contact-card {
@@ -360,7 +364,7 @@ body.utility-body {
 
 .contact-page .contact-embed-grid {
   display: grid;
-  width: min(100%, 960px);
+  width: 100%;
   gap: 24px;
 }
 
@@ -383,7 +387,7 @@ body.utility-body {
 .contact-page .contact-form-frame {
   display: block;
   width: 100%;
-  min-height: 1440px;
+  min-height: 1600px;
   border: 0;
   background: transparent;
 }
@@ -654,6 +658,10 @@ body.utility-body {
     padding-top: 24px;
   }
 
+  .contact-page .utility-main {
+    width: calc(100% - 40px);
+  }
+
   .contact-page .contact-embed-grid {
     width: 100%;
   }
@@ -695,7 +703,7 @@ body.utility-body {
   }
 
   .contact-page .contact-form-frame {
-    min-height: 1520px;
+    min-height: 1600px;
   }
 
   .contact-form,
