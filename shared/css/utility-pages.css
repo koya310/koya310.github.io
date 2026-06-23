@@ -690,7 +690,6 @@ body.utility-body {
 
   .contact-page .mail-link {
     display: inline-block;
-    width: fit-content;
     max-width: 100%;
     word-break: break-word;
   }
