@@ -62,13 +62,15 @@
 .contact-page .utility-hero,
 .contact-page .utility-content,
 .contact-page .contact-grid,
-.contact-page .contact-support {
+.contact-page .contact-support,
+.contact-page .contact-mail-support {
   width: 100% !important;
   max-width: 100% !important;
 }
 
 .contact-page .form-field label,
 .contact-page .contact-support,
+.contact-page .contact-mail-support,
 .contact-page .contact-card p {
   color: rgba(29, 28, 24, 0.9) !important;
 }
@@ -1100,9 +1102,8 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
     letter-spacing: 0.035em;
   }
 
-  .contact-page .submit-button,
-  .contact-page .text-link {
-    width: 100% !important;
+  .contact-page .submit-button {
+    width: min(264px, 100%) !important;
     min-width: 0 !important;
     padding-right: 24px !important;
     padding-left: 24px !important;

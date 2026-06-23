@@ -242,6 +242,7 @@ body.utility-body {
   flex-wrap: wrap;
   gap: 20px;
   align-items: center;
+  justify-content: center;
   margin-top: 12px;
 }
 
@@ -391,6 +392,10 @@ body.utility-body {
   color: var(--utility-muted);
   font-size: 14px;
   line-height: 1.9;
+}
+
+.contact-page .contact-mail-support {
+  margin-top: -8px;
 }
 
 .contact-page .contact-inline-link {
@@ -669,13 +674,13 @@ body.utility-body {
   }
 
   .contact-page .form-actions {
-    display: grid;
+    display: flex;
+    justify-content: center;
     gap: 12px;
   }
 
-  .contact-page .submit-button,
-  .contact-page .text-link {
-    width: 100%;
+  .contact-page .submit-button {
+    width: min(264px, 100%);
     min-width: 0;
     padding-right: 24px;
     padding-left: 24px;
