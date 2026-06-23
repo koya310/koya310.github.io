@@ -5498,10 +5498,10 @@
       #co-create {
         --co-paper: #ebe6db;
         --co-ink: #333333;
-        --co-gold: #aa8958;
         --co-gold-soft: rgba(149, 124, 76, 0.5);
         --co-paper-image: url("sections/06_文化を共につくる/Frame%2013567.webp");
-        --co-rule-image: url("sections/04_主な取り組み/assets/figma-replay/rule-short.svg");
+        --co-copy-rule-image: url("sections/06_文化を共につくる/assets/flow/invitation-copy-rule.svg");
+        --co-title-rule-image: url("sections/06_文化を共につくる/assets/flow/invitation-title-rule.svg");
         color: var(--co-ink);
         background: var(--co-paper);
       }
@@ -5519,10 +5519,10 @@
         inset: 0;
         z-index: 0;
         background:
-          linear-gradient(90deg, rgba(235, 230, 219, 0.34), rgba(235, 230, 219, 0.08)),
+          linear-gradient(90deg, rgba(235, 230, 219, 0.2), rgba(235, 230, 219, 0.02)),
           var(--co-paper-image) center / cover no-repeat;
         content: "";
-        opacity: 0.9;
+        opacity: 0.86;
         pointer-events: none;
       }
 
@@ -5532,29 +5532,16 @@
         width: min(100%, 1440px);
         min-height: inherit;
         margin: 0 auto;
-        padding: clamp(96px, 11.1vw, 160px) clamp(64px, 8.3vw, 120px);
-      }
-
-      #co-create .co-invite-layout::after {
-        position: absolute;
-        top: clamp(736px, 53vw, 760px);
-        left: clamp(616px, 46vw, 664px);
-        z-index: 2;
-        width: clamp(560px, 50vw, 640px);
-        height: 152px;
-        border: 1px solid rgba(170, 137, 88, 0.24);
-        background: transparent;
-        content: "";
-        pointer-events: none;
+        padding: 160px 120px;
       }
 
       #co-create .co-invite-copy {
         position: relative;
         z-index: 4;
         display: flex;
-        width: min(42vw, 520px);
+        width: min(45vw, 560px);
         flex-direction: column;
-        gap: clamp(48px, 5vw, 72px);
+        gap: 72px;
         color: var(--co-ink);
       }
 
@@ -5580,22 +5567,22 @@
         top: 16px;
         left: 0;
         width: 40px;
-        height: 3px;
-        background: var(--co-rule-image) center / 100% 100% no-repeat;
+        height: 32px;
+        background: var(--co-copy-rule-image) center / 100% 100% no-repeat;
         content: "";
       }
 
       #co-create .co-invite-copy__text {
         min-width: 0;
-        font-size: 15px;
-        font-weight: 600;
+        font-size: 16px;
+        font-weight: 700;
         letter-spacing: 0;
-        line-height: 1.72;
+        line-height: 1.5;
         word-break: break-word;
       }
 
       #co-create .co-invite-copy__item:first-child .co-invite-copy__text {
-        line-height: 1.92;
+        line-height: 2;
       }
 
       #co-create .co-invite-copy__text p {
@@ -5604,8 +5591,8 @@
 
       #co-create .co-invite-heading {
         position: absolute;
-        top: clamp(96px, 9.4vw, 136px);
-        right: calc(clamp(64px, 8.3vw, 120px) + 56px);
+        top: 160px;
+        right: 120px;
         z-index: 5;
         display: flex;
         align-items: flex-start;
@@ -5629,7 +5616,7 @@
         left: 3px;
         width: 175px;
         height: 3px;
-        background: var(--co-rule-image) center / 100% 100% no-repeat;
+        background: var(--co-title-rule-image) center / 100% 100% no-repeat;
         content: "";
         transform: rotate(90deg);
         transform-origin: left top;
@@ -5641,7 +5628,7 @@
         gap: 24px;
         margin: 0;
         color: var(--co-ink);
-        font-size: clamp(34px, 2.8vw, 40px);
+        font-size: 40px;
         font-weight: 700;
         letter-spacing: 0;
         line-height: 1.12;
@@ -5657,7 +5644,7 @@
       #co-create .co-invite-heading__en {
         margin: 0;
         color: var(--co-gold-soft);
-        font-size: clamp(20px, 1.7vw, 24px);
+        font-size: 24px;
         font-weight: 700;
         letter-spacing: 0;
         line-height: 1.5;
@@ -5667,33 +5654,76 @@
 
       #co-create .co-invite-artifact {
         position: absolute;
-        top: clamp(552px, 42vw, 600px);
-        left: clamp(760px, 57vw, 824px);
+        top: 467px;
+        left: 551px;
         z-index: 3;
-        width: clamp(320px, 28vw, 400px);
-        height: auto;
-        --reveal-opacity: 0.78;
-        filter: saturate(0.72) contrast(0.9);
-        mix-blend-mode: multiply;
+        width: 539px;
+        height: 291px;
+        overflow: hidden;
         pointer-events: none;
         --reveal-delay: 170ms;
         --reveal-y: 16px;
       }
 
+      #co-create .co-invite-artifact img {
+        position: absolute;
+        top: -44.08%;
+        left: -17.91%;
+        width: 135.83%;
+        height: 198.07%;
+        max-width: none;
+        object-fit: fill;
+      }
+
+      #co-create .co-invite-artifact-shadow {
+        position: absolute;
+        top: 668px;
+        left: 639px;
+        z-index: 2;
+        width: 373px;
+        height: 100px;
+        overflow: hidden;
+        opacity: 0.3;
+        filter: blur(22px);
+        pointer-events: none;
+        transform: scaleY(-1);
+        --reveal-delay: 140ms;
+        --reveal-y: 12px;
+      }
+
+      #co-create .co-invite-artifact-shadow img {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        object-fit: cover;
+        object-position: bottom center;
+      }
+
       @media (min-width: 960px) and (max-width: 1180px) {
+        #co-create .co-invite-layout {
+          padding-right: 80px;
+          padding-left: 80px;
+        }
+
         #co-create .co-invite-copy {
           width: min(42vw, 440px);
         }
 
-        #co-create .co-invite-layout::after {
-          top: 744px;
-          left: max(520px, 49vw);
-          width: min(560px, 46vw);
+        #co-create .co-invite-heading {
+          right: 80px;
         }
 
         #co-create .co-invite-artifact {
-          left: max(560px, 54vw);
-          width: min(360px, 34vw);
+          left: max(456px, 50vw);
+          width: min(500px, 44vw);
+          height: calc(min(500px, 44vw) * 291 / 539);
+        }
+
+        #co-create .co-invite-artifact-shadow {
+          top: 672px;
+          left: max(536px, 56vw);
+          width: min(344px, 30vw);
+          height: calc(min(344px, 30vw) * 100 / 373);
         }
       }
 
@@ -5729,15 +5759,16 @@
           top: 668px;
           right: 80px;
           left: auto;
-          width: min(360px, calc(100vw - 224px));
+          width: min(408px, calc(100vw - 224px));
+          height: calc(min(408px, calc(100vw - 224px)) * 291 / 539);
         }
 
-        #co-create .co-invite-layout::after {
+        #co-create .co-invite-artifact-shadow {
           top: 820px;
           right: 64px;
           left: auto;
-          width: min(480px, calc(100vw - 176px));
-          height: 152px;
+          width: min(312px, calc(100vw - 240px));
+          height: calc(min(312px, calc(100vw - 240px)) * 100 / 373);
         }
       }
 
@@ -5752,10 +5783,6 @@
           flex-direction: column;
           gap: 48px;
           padding: 80px 24px 96px;
-        }
-
-        #co-create .co-invite-layout::after {
-          display: none;
         }
 
         #co-create .co-invite-heading {
@@ -5796,10 +5823,13 @@
           left: auto;
           order: 2;
           align-self: center;
-          width: min(68vw, 280px);
+          width: min(88vw, 420px);
+          height: calc(min(88vw, 420px) * 291 / 539);
           margin-top: -8px;
-          --reveal-opacity: 0.76;
-          filter: saturate(0.76) contrast(0.92);
+        }
+
+        #co-create .co-invite-artifact-shadow {
+          display: none;
         }
 
         #co-create .co-invite-copy {
@@ -5828,6 +5858,13 @@
 
         #co-create .co-invite-copy__item:first-child .co-invite-copy__text {
           line-height: 1.8;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #co-create .co-invite-artifact-shadow {
+          filter: blur(22px) !important;
+          transform: scaleY(-1) !important;
         }
       }
 
@@ -6297,7 +6334,12 @@
               <p class="co-invite-heading__en" aria-hidden="true">Invitation</p>
             </header>
 
-            <img class="co-invite-artifact reveal-target" src="sections/06_文化を共につくる/assets/flow/pottery.webp" alt="" data-reveal />
+            <div class="co-invite-artifact-shadow reveal-target" aria-hidden="true" data-reveal>
+              <img src="sections/06_文化を共につくる/assets/flow/invitation-bowl-shadow.webp" alt="" />
+            </div>
+            <div class="co-invite-artifact reveal-target" aria-hidden="true" data-reveal>
+              <img src="sections/06_文化を共につくる/assets/flow/invitation-bowl.webp" alt="" />
+            </div>
           </div>
         </div>
       </section>
