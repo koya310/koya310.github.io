@@ -701,6 +701,11 @@ body.utility-body {
     min-width: 0;
   }
 
+  .contact-page .contact-support span:not(.contact-form-fallback) {
+    display: grid;
+    gap: 4px;
+  }
+
   .contact-page .mail-link {
     display: inline-block;
     max-width: 100%;
