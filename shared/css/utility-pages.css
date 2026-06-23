@@ -681,7 +681,7 @@ body.utility-body {
     display: none;
   }
 
-  .contact-page .contact-support > .contact-inline-link {
+  .contact-page .contact-form-fallback {
     display: none;
   }
 
