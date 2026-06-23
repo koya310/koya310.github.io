@@ -405,8 +405,13 @@ body.utility-body {
 
 .contact-page .contact-inline-link {
   color: var(--utility-green);
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.contact-page .contact-form-fallback {
+  white-space: nowrap;
 }
 
 .contact-page .contact-inline-link:hover,
@@ -433,8 +438,9 @@ body.utility-body {
 
 .mail-link {
   color: var(--utility-green);
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
   overflow-wrap: anywhere;
 }
 
@@ -667,11 +673,11 @@ body.utility-body {
   }
 
   .contact-page .contact-mobile-direct {
-    display: block;
+    display: none;
     margin: 0;
     padding: 24px 0;
     border-top: 1px solid var(--utility-line);
-    border-bottom: 1px solid var(--utility-line);
+    border-bottom: 0;
     color: var(--utility-muted);
     font-size: 14px;
     line-height: 1.9;
@@ -682,7 +688,7 @@ body.utility-body {
   }
 
   .contact-page .contact-form-fallback {
-    display: none;
+    display: block;
   }
 
   .contact-page .contact-support {
@@ -691,8 +697,7 @@ body.utility-body {
   }
 
   .contact-page .contact-support span {
-    display: grid;
-    gap: 4px;
+    display: block;
     min-width: 0;
   }
 
