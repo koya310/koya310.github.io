@@ -1,0 +1,230 @@
+.kmy-list-controls {
+  display: grid;
+  gap: 16px;
+  margin: 0 0 56px;
+  padding: 8px 0 28px;
+  border-bottom: 1px solid rgba(107, 79, 58, 0.16);
+  color: inherit;
+}
+
+.kmy-list-controls__row,
+.kmy-filter-group,
+.kmy-filter-selects,
+.kmy-pagination,
+.kmy-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.kmy-filter-group {
+  flex: 1 1 360px;
+}
+
+.kmy-filter-button,
+.kmy-reset,
+.kmy-pagination__button {
+  min-height: 40px;
+  padding: 7px 14px;
+  border: 1px solid rgba(107, 79, 58, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  color: currentColor;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0;
+  cursor: pointer;
+  transition:
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease,
+    opacity 220ms ease;
+}
+
+.kmy-filter-button:hover,
+.kmy-filter-button:focus-visible,
+.kmy-reset:hover,
+.kmy-reset:focus-visible,
+.kmy-pagination__button:hover,
+.kmy-pagination__button:focus-visible {
+  border-color: rgba(107, 79, 58, 0.52);
+  background: rgba(107, 79, 58, 0.08);
+}
+
+.kmy-filter-button.is-active,
+.kmy-pagination__button.is-active {
+  border-color: rgba(107, 79, 58, 0.62);
+  background: rgba(107, 79, 58, 0.14);
+}
+
+.kmy-reset {
+  display: none;
+}
+
+.kmy-filter-selects {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  flex: 1 1 100%;
+  align-items: end;
+  gap: 24px;
+}
+
+.kmy-select-label {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  color: rgba(59, 47, 40, 0.58);
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+}
+
+.kmy-select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 36px 10px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(107, 79, 58, 0.28);
+  border-radius: 0;
+  appearance: none;
+  background:
+    linear-gradient(45deg, transparent 50%, rgba(59, 47, 40, 0.58) 50%) calc(100% - 18px) 50% / 6px 6px no-repeat,
+    linear-gradient(135deg, rgba(59, 47, 40, 0.58) 50%, transparent 50%) calc(100% - 14px) 50% / 6px 6px no-repeat,
+    linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+  color: currentColor;
+  font: inherit;
+  font-size: 15px;
+  letter-spacing: 0;
+}
+
+.kmy-select:hover,
+.kmy-select:focus-visible {
+  border-bottom-color: rgba(107, 79, 58, 0.58);
+  background-color: transparent;
+  outline: none;
+}
+
+.kmy-status {
+  min-height: 24px;
+  margin: 0;
+  color: rgba(59, 47, 40, 0.68);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.kmy-pagination {
+  justify-content: center;
+  margin: 40px 0 0;
+}
+
+.kmy-pagination__button[disabled] {
+  cursor: default;
+  opacity: 0.42;
+}
+
+.kmy-empty {
+  margin: 32px 0 0;
+  padding: 24px;
+  border: 1px solid rgba(107, 79, 58, 0.22);
+  color: rgba(59, 47, 40, 0.72);
+  font-size: 15px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.kmy-tag-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kmy-tag {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 10px;
+  border: 1px solid rgba(107, 79, 58, 0.2);
+  border-radius: 999px;
+  color: rgba(59, 47, 40, 0.72);
+  font-size: 12px;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+.project-tags,
+.artist-tag-list {
+  margin-top: 8px;
+}
+
+@media (max-width: 860px) {
+  .kmy-list-controls {
+    gap: 12px;
+    margin-bottom: 40px;
+    padding: 4px 0 24px;
+  }
+
+  .kmy-list-controls__row {
+    align-items: stretch;
+  }
+
+  .kmy-filter-group,
+  .kmy-filter-selects {
+    flex: 1 1 100%;
+  }
+
+  .kmy-filter-group,
+  .kmy-tag-list {
+    flex-wrap: nowrap;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .kmy-filter-group::-webkit-scrollbar,
+  .kmy-tag-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .kmy-filter-button {
+    flex: 0 0 auto;
+  }
+
+  .kmy-filter-button,
+  .kmy-reset,
+  .kmy-pagination__button {
+    min-height: 36px;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .kmy-reset {
+    display: none;
+  }
+
+  .kmy-filter-selects {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .kmy-select-label {
+    min-width: 0;
+  }
+
+  .kmy-select {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kmy-filter-button,
+  .kmy-reset,
+  .kmy-pagination__button {
+    transition-duration: 0.01ms !important;
+  }
+}

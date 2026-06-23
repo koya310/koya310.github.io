@@ -13,7 +13,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>埼玉県立近代美術館にて『人間国宝の工芸を「感じる」展』を開催します | 亀屋日本伝統株式会社</title>
     <meta name="description" content="亀屋日本伝統株式会社のお知らせ詳細。埼玉県立近代美術館にて『人間国宝の工芸を「感じる」展』を開催します" />
-    <link rel="icon" href="data:," />
+
+    <link rel="canonical" href="https://koya310.github.io/news/detail/002/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:site_name" content="亀屋日本伝統株式会社" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="埼玉県立近代美術館にて『人間国宝の工芸を「感じる」展』を開催します | 亀屋日本伝統株式会社" />
+    <meta property="og:description" content="亀屋日本伝統株式会社のお知らせ詳細。埼玉県立近代美術館にて『人間国宝の工芸を「感じる」展』を開催します" />
+    <meta property="og:url" content="https://koya310.github.io/news/detail/002/" />
+    <meta property="og:image" content="https://koya310.github.io/about/assets/figma/logo-mark.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
     <link rel="stylesheet" href="/shared/css/reveal.css" />
     <link rel="stylesheet" href="/shared/css/utility-pages.css" />
@@ -25,9 +35,13 @@
       .news-detail-back::before { content: ""; width: 10px; height: 10px; border-left: 1px solid currentColor; border-bottom: 1px solid currentColor; transform: rotate(45deg); }
       .news-detail-meta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-bottom: 22px; color: rgba(29, 28, 24, 0.58); font-size: 15px; line-height: 1.6; }
       .news-detail-tag { color: var(--utility-gold); letter-spacing: 0.12em; }
-      .news-detail-title { margin: 0; color: var(--utility-green); font-size: clamp(30px, 4.6vw, 52px); font-weight: 500; line-height: 1.55; letter-spacing: 0.05em; }
+      .news-detail-title { margin: 0; color: var(--utility-green); font-size: clamp(30px, 4.6vw, 52px); font-weight: 500; line-height: 1.55; letter-spacing: 0.05em; overflow-wrap: break-word; word-break: normal; line-break: strict; }
       .news-detail-lead { margin: 32px 0 0; color: var(--utility-muted); font-size: 17px; line-height: 2.05; }
       .news-detail-hero { display: block; width: 100%; margin: 56px 0 0; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--utility-line); }
+      .news-detail-hero--empty { position: relative; min-height: clamp(190px, 52vw, 540px); overflow: hidden; background: linear-gradient(135deg, rgba(248, 244, 234, 0.9), rgba(255, 255, 255, 0.58)), url("/about/assets/figma/paper.webp") center / 520px auto repeat; }
+      .news-detail-hero--empty::before { position: absolute; display: block; content: ""; pointer-events: none; }
+      .news-detail-hero--empty::before { inset: clamp(16px, 4vw, 40px); border: 1px solid rgba(183, 164, 109, 0.22); }
+      .news-detail-hero--empty .news-empty-logo { position: absolute; top: 50%; left: 50%; width: clamp(120px, 20vw, 176px); height: clamp(120px, 20vw, 176px); object-fit: contain; opacity: 0.26; transform: translate(-50%, -50%); }
       .news-detail-body-copy { display: grid; gap: 32px; margin-top: 64px; padding-top: 56px; border-top: 1px solid var(--utility-line); }
       .news-detail-body-copy p { margin: 0; color: rgba(29, 28, 24, 0.76); font-size: 16px; line-height: 2.1; }
       .news-detail-body-copy a { color: var(--utility-green); overflow-wrap: anywhere; }
@@ -36,7 +50,7 @@
       .news-detail-next { display: flex; justify-content: space-between; gap: 24px; margin-top: 72px; padding-top: 32px; border-top: 1px solid var(--utility-line); }
       .news-detail-next a { color: var(--utility-green); font-size: 14px; letter-spacing: 0.12em; text-decoration: none; }
       @media (max-width: 960px) { .news-detail-main { width: min(760px, calc(100% - 80px)); padding-top: 136px; } }
-      @media (max-width: 480px) { .news-detail-main { width: calc(100% - 48px); padding: 120px 0 72px; } .news-detail-back { margin-bottom: 40px; } .news-detail-body-copy { margin-top: 48px; } }
+      @media (max-width: 480px) { .news-detail-main { width: calc(100% - 48px); padding: 120px 0 72px; } .news-detail-back { margin-bottom: 40px; } .news-detail-title { font-size: clamp(28px, 8vw, 32px); line-height: 1.58; letter-spacing: 0.04em; } .news-detail-body-copy { margin-top: 48px; } }
     </style>
   </head>
   <body class="utility-body news-detail-body">
@@ -51,6 +65,7 @@
           <div class="news-detail-meta"><time datetime="2026-04-01">2026.04.01</time><span class="news-detail-tag">お知らせ</span></div>
           <h1 class="news-detail-title" id="news-detail-title">埼玉県立近代美術館にて『人間国宝の工芸を「感じる」展』を開催します</h1>
           <p class="news-detail-lead">亀屋日本伝統株式会社は、2026年8月11日から8月23日まで、埼玉県立近代美術館 地下 一般展示室2にて『人間国宝の工芸を「感じる」展 ― 次世代へつなぐ日本の技 ―』を開催します。</p>
+          <div class="news-detail-hero news-detail-hero--empty" aria-hidden="true"><img class="news-empty-logo" src="/about/assets/figma/logo-mark.png" alt="" loading="lazy" /></div>
           <div class="news-detail-body-copy">
             <p>亀屋日本伝統株式会社は、2026年8月11日から8月23日まで、埼玉県立近代美術館 地下 一般展示室2にて『人間国宝の工芸を「感じる」展 ― 次世代へつなぐ日本の技 ―』を開催します。</p>
 <p>本展は、重要無形文化財保持者、いわゆる人間国宝の方々を中心とする現代の工芸作家の作品を通じて、日本の工芸を「理解する対象」ではなく、「感じ、楽しむ対象」として体験していただくことを目的とした展覧会です。</p>

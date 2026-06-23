@@ -9,17 +9,25 @@
       gtag('js', new Date());
       gtag('config', 'G-7VKVLXC7MK');
     </script>
-<meta charset="UTF-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>お知らせ | 亀屋日本伝統株式会社</title>
-    <meta
-      name="description"
-      content="亀屋日本伝統株式会社のお知らせ一覧。展示、講演、工芸に関する取り組み、公開情報を掲載します。"
-    />
-    <link rel="icon" href="data:," />
+    <meta name="description" content="亀屋日本伝統株式会社のお知らせ一覧。展示、催事、文化体験、海外連携、工芸に関する取り組みを掲載しています。" />
+
+    <link rel="canonical" href="https://koya310.github.io/news/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:site_name" content="亀屋日本伝統株式会社" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="お知らせ | 亀屋日本伝統株式会社" />
+    <meta property="og:description" content="亀屋日本伝統株式会社のお知らせ一覧。展示、催事、文化体験、海外連携、工芸に関する取り組みを掲載しています。" />
+    <meta property="og:url" content="https://koya310.github.io/news/" />
+    <meta property="og:image" content="https://koya310.github.io/about/assets/figma/logo-mark.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
     <link rel="stylesheet" href="/shared/css/reveal.css" />
     <link rel="stylesheet" href="/shared/css/utility-pages.css" />
+    <link rel="stylesheet" href="/shared/css/kmy13-list-controls.css?v=20260623-kmy13" />
     <style>
       body.news-body {
         background:
@@ -28,6 +36,7 @@
       }
 
       .news-main {
+        box-sizing: border-box;
         width: min(1208px, 100%);
         margin: 0 auto;
         padding: 136px clamp(24px, 9.9vw, 120px) 96px;
@@ -104,10 +113,35 @@
       }
 
       .news-page-thumb--empty {
+        position: relative;
+        overflow: hidden;
         border: 1px solid rgba(183, 164, 109, 0.28);
         background:
-          linear-gradient(rgba(248, 244, 234, 0.82), rgba(248, 244, 234, 0.92)),
+          linear-gradient(135deg, rgba(248, 244, 234, 0.88), rgba(255, 255, 255, 0.62)),
           url("/about/assets/figma/paper.webp") center / 320px auto repeat;
+      }
+
+      .news-page-thumb--empty::before {
+        position: absolute;
+        display: block;
+        content: "";
+        pointer-events: none;
+      }
+
+      .news-page-thumb--empty::before {
+        inset: clamp(8px, 10%, 24px);
+        border: 1px solid rgba(183, 164, 109, 0.22);
+      }
+
+      .news-page-thumb--empty .news-empty-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: clamp(96px, 30%, 144px);
+        height: clamp(96px, 30%, 144px);
+        object-fit: contain;
+        opacity: 0.26;
+        transform: translate(-50%, -50%);
       }
 
       .news-page-thumb--contain {
@@ -146,7 +180,9 @@
         font-weight: 700;
         line-height: 1.6;
         letter-spacing: 0.06em;
-        overflow-wrap: anywhere;
+        overflow-wrap: break-word;
+        word-break: normal;
+        line-break: strict;
       }
 
       .news-page-card p {
@@ -328,9 +364,17 @@
           </p>
         </section>
 
-        <section class="news-page-list" aria-label="お知らせ一覧">
+        <section class="kmy-list-controls" data-kmy-controls="news" aria-label="お知らせの絞り込み" hidden>
+          <div class="kmy-list-controls__row">
+            <div class="kmy-filter-group" data-kmy-filter-group="tag" aria-label="タグ"></div>
+            <button class="kmy-reset" type="button" data-kmy-reset>解除</button>
+          </div>
+          <p class="kmy-status" data-kmy-status aria-live="polite"></p>
+        </section>
+
+        <section class="news-page-list" data-kmy-list="news" data-kmy-page-size="16" aria-label="お知らせ一覧">
           <a class="news-page-card" href="/news/detail/001/">
-            <span class="news-page-thumb news-page-thumb--empty" aria-hidden="true"></span>
+            <span class="news-page-thumb news-page-thumb--empty" aria-hidden="true"><img class="news-empty-logo" src="/about/assets/figma/logo-mark.png" alt="" loading="lazy" /></span>
             <div class="news-page-copy">
               <div class="news-page-meta">
                 <time datetime="2026-05-01">2026.05.01</time>
@@ -343,7 +387,7 @@
           </a>
 
           <a class="news-page-card" href="/news/detail/002/">
-            <span class="news-page-thumb news-page-thumb--empty" aria-hidden="true"></span>
+            <span class="news-page-thumb news-page-thumb--empty" aria-hidden="true"><img class="news-empty-logo" src="/about/assets/figma/logo-mark.png" alt="" loading="lazy" /></span>
             <div class="news-page-copy">
               <div class="news-page-meta">
                 <time datetime="2026-04-01">2026.04.01</time>
@@ -356,7 +400,7 @@
           </a>
 
           <a class="news-page-card" href="/news/detail/003/">
-            <img class="news-page-thumb news-page-thumb--contain" src="/news/assets/oman-national-museum.webp" alt="" />
+            <img class="news-page-thumb news-page-thumb--contain" src="/news/assets/oman-national-museum.webp" alt="オマーン国立博物館との協働に関するお知らせ画像" />
             <div class="news-page-copy">
               <div class="news-page-meta">
                 <time datetime="2026-01-26">2026.01.26</time>
@@ -369,7 +413,7 @@
           </a>
 
           <a class="news-page-card" href="/news/detail/007/">
-            <span class="news-page-thumb news-page-thumb--empty" aria-hidden="true"></span>
+            <span class="news-page-thumb news-page-thumb--empty" aria-hidden="true"><img class="news-empty-logo" src="/about/assets/figma/logo-mark.png" alt="" loading="lazy" /></span>
             <div class="news-page-copy">
               <div class="news-page-meta">
                 <time datetime="2026-01-05">2026.01.05</time>
@@ -382,7 +426,7 @@
           </a>
 
           <a class="news-page-card" href="/news/detail/004/">
-            <img class="news-page-thumb news-page-thumb--contain" src="/news/assets/the-japan-essence-expo-2026.webp" alt="" />
+            <img class="news-page-thumb news-page-thumb--contain" src="/news/assets/the-japan-essence-expo-2026.webp" alt="THE JAPAN ESSENCE GLOBAL EXPO 2026に関するお知らせ画像" />
             <div class="news-page-copy">
               <div class="news-page-meta">
                 <time datetime="2025-11-22">2025.11.22</time>
@@ -395,7 +439,7 @@
           </a>
 
           <a class="news-page-card" href="/news/detail/005/">
-            <img class="news-page-thumb" src="/news/assets/munakata-environment-conference.webp" alt="" />
+            <img class="news-page-thumb" src="/news/assets/munakata-environment-conference.webp" alt="宗像国際環境会議に関するお知らせ画像" />
             <div class="news-page-copy">
               <div class="news-page-meta">
                 <time datetime="2025-10-28">2025.10.28</time>
@@ -408,7 +452,7 @@
           </a>
 
           <a class="news-page-card" href="/news/detail/006/">
-            <img class="news-page-thumb news-page-thumb--contain" src="/news/assets/oman-national-museum.webp" alt="" />
+            <img class="news-page-thumb news-page-thumb--contain" src="/news/assets/oman-national-museum.webp" alt="オマーン国立博物館への納品実績に関するお知らせ画像" />
             <div class="news-page-copy">
               <div class="news-page-meta">
                 <time datetime="2025-10-22">2025.10.22</time>
@@ -420,6 +464,8 @@
             <span class="news-page-arrow" aria-hidden="true"></span>
           </a>
         </section>
+        <p class="kmy-empty" data-kmy-empty="news" hidden>該当するお知らせはありません。</p>
+        <nav class="kmy-pagination" data-kmy-pagination="news" aria-label="お知らせページ送り" hidden></nav>
 
         <footer class="site-footer">
           <span>© 2026 亀屋日本伝統株式会社</span>
@@ -432,6 +478,7 @@
       </main>
     </div>
     <script src="/shared/js/reveal.js" defer></script>
+    <script src="/shared/js/kmy13-list-controls.js?v=20260623-kmy13" defer></script>
     <script src="/shared/js/page-transition.js?v=20260619-menu-numbering-20" defer></script>
   </body>
 </html>

@@ -53,6 +53,21 @@
   --artist-card-border: var(--kds-hairline);
 }
 
+.contact-page .utility-main {
+  width: min(640px, calc(100% - (var(--kds-page-x) * 2))) !important;
+  max-width: 640px !important;
+}
+
+.contact-page .utility-hero,
+.contact-page .utility-content,
+.contact-page .contact-embed-grid,
+.contact-page .contact-frame,
+.contact-page .contact-form-frame,
+.contact-page .contact-support {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
 html {
   background: var(--kds-paper);
 }
@@ -1038,8 +1053,40 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
 
   .news-main {
     width: 100% !important;
+    box-sizing: border-box !important;
     padding-right: var(--kds-page-x) !important;
     padding-left: var(--kds-page-x) !important;
+  }
+
+  .news-page-card,
+  .news-page-copy,
+  .news-detail-main {
+    min-width: 0 !important;
+  }
+
+  .news-page-card h2,
+  .news-detail-title,
+  .news-detail-lead,
+  .news-detail-body-copy p {
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    line-break: strict;
+  }
+
+  .news-page-card h2 {
+    font-size: 14px !important;
+  }
+
+  .news-detail-title {
+    font-size: clamp(24px, 6.6vw, 28px) !important;
+    line-height: 1.68 !important;
+    letter-spacing: 0.035em !important;
+  }
+
+  .news-page-thumb,
+  .news-detail-hero {
+    box-sizing: border-box !important;
   }
 
   .page-heading,
