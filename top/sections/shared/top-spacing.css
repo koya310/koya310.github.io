@@ -1068,3 +1068,31 @@ h1.section-title,
     padding-bottom: 80px !important;
   }
 }
+
+/* SP typography: KAMEYA-DESIGN defines body copy as 14px on mobile. */
+@media (max-width: 640px) {
+  #philosophy .mobile-copy,
+  #philosophy .philosophy .mobile-copy,
+  #works .works-mobile__copy,
+  #initiatives .desc,
+  #initiatives .list,
+  #initiatives .closing-copy-mobile,
+  #achievements .achievement-copy,
+  #co-create .co-invite-copy__text {
+    font-size: 14px !important;
+  }
+
+  #philosophy .mobile-copy,
+  #philosophy .philosophy .mobile-copy,
+  #works .works-mobile__copy {
+    line-height: 1.95 !important;
+  }
+
+  #initiatives .desc,
+  #initiatives .list,
+  #initiatives .closing-copy-mobile,
+  #achievements .achievement-copy,
+  #co-create .co-invite-copy__text {
+    line-height: 1.8 !important;
+  }
+}
