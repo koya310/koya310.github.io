@@ -1,6 +1,7 @@
 (() => {
   const ALL_VALUE = "__all";
-  const DEFAULT_PAGE_SIZE = 16;
+  const MAX_ITEMS_PER_PAGE = 16;
+  const PAGE_SIZE_PREVIEW_PARAM = "kmy13PageSize";
 
   const normalize = (value) => (value || "").replace(/\s+/g, " ").trim();
 
@@ -46,14 +47,14 @@
 
   const getPageSize = (list) => {
     const params = new URLSearchParams(window.location.search);
-    const previewPageSize = Number.parseInt(params.get("kmy13PageSize") || "", 10);
-    if (Number.isFinite(previewPageSize) && previewPageSize >= 1 && previewPageSize <= DEFAULT_PAGE_SIZE) {
+    const previewPageSize = Number.parseInt(params.get(PAGE_SIZE_PREVIEW_PARAM) || "", 10);
+    if (Number.isFinite(previewPageSize) && previewPageSize >= 1 && previewPageSize <= MAX_ITEMS_PER_PAGE) {
       return previewPageSize;
     }
 
     const dataPageSize = Number.parseInt(list.dataset.kmyPageSize || "", 10);
     if (Number.isFinite(dataPageSize) && dataPageSize >= 1) return dataPageSize;
-    return DEFAULT_PAGE_SIZE;
+    return MAX_ITEMS_PER_PAGE;
   };
 
   const renderPagination = ({ nav, page, totalPages, onPageChange }) => {
