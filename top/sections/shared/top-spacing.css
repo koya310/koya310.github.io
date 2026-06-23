@@ -691,7 +691,7 @@ h1.section-title,
   }
 
   .initiatives {
-    gap: 56px !important;
+    gap: 48px !important;
   }
 
   .achievements {
@@ -842,8 +842,9 @@ h1.section-title,
     letter-spacing: 0 !important;
   }
 
-  #initiatives .initiatives {
-    gap: 80px !important;
+  #initiatives .initiatives,
+  .frame-shell .initiatives {
+    gap: 48px !important;
   }
 
   #achievements .achievements {
@@ -1007,8 +1008,9 @@ h1.section-title,
     letter-spacing: 0 !important;
   }
 
-  #initiatives .initiatives {
-    gap: 80px !important;
+  #initiatives .initiatives,
+  .frame-shell .initiatives {
+    gap: 48px !important;
   }
 
   #initiatives .initiative-body {
