@@ -602,7 +602,7 @@ h2.section-title,
   border-color: transparent !important;
   background: transparent !important;
   color: var(--kds-brown, #6b4f3a) !important;
-  transform: translateY(-1px) !important;
+  transform: translateX(-2px) !important;
   text-decoration: none !important;
 }
 
@@ -612,7 +612,7 @@ h2.section-title,
   border-color: transparent !important;
   background: transparent !important;
   color: var(--kds-brown, #6b4f3a) !important;
-  transform: translateY(-1px) !important;
+  transform: translateX(-2px) !important;
   text-decoration: none !important;
   outline: none !important;
 }
@@ -643,7 +643,7 @@ h2.section-title,
 .news-detail-next a[href$="/news/"]:hover::before,
 .news-detail-next a[href$="/news/"]:focus-visible::before {
   opacity: 1 !important;
-  transform: translateX(-3px) !important;
+  transform: none !important;
 }
 
 .back-link img {
