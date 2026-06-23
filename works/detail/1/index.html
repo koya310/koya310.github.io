@@ -1,16 +1,24 @@
 <!doctype html>
 <html lang="ja">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VKVLXC7MK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7VKVLXC7MK');
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>亀屋日本伝統株式会社 | 実績詳細</title>
+    <title>第12回宗像国際環境会議に登壇しました | 亀屋日本伝統株式会社</title>
     <meta
       name="description"
-      content="亀屋日本伝統株式会社のProjects詳細ページ探索。講演会と作品鑑賞会の実績を紙背景の静かなレイアウトで掲載する。"
+      content="第12回宗像国際環境会議で、工芸と環境、地域の営みをつなぐ視点について登壇した実績を紹介します。"
     />
-    <link rel="preload" as="image" href="assets/figma/paper.webp" />
-    <link rel="preload" as="image" href="assets/figma/logo-mark.png" />
-    <link rel="preload" as="image" href="assets/detail/exhibition-hall.webp" />
+    <link rel="preload" as="image" href="/works/assets/figma/paper.webp" />
+    <link rel="preload" as="image" href="/works/assets/figma/logo-mark.png" />
+    <link rel="preload" as="image" href="/works/assets/projects/munakata-environment-conference.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -32,7 +40,7 @@
         --hairline: rgba(59, 47, 40, 0.16);
         --article-max: 800px;
         --article-desktop-gutters: 160px;
-        --article-image-ratio: 4 / 3;
+        --article-image-ratio: 16 / 9;
       }
 
       * {
@@ -67,7 +75,7 @@
         position: fixed;
         inset: 0;
         z-index: -1;
-        background-image: url("assets/figma/paper.webp");
+        background-image: url("/works/assets/figma/paper.webp");
         background-position: center top;
         background-size: 1416px 1000px;
         content: "";
@@ -209,17 +217,17 @@
 
       .back-link {
         display: inline-flex;
-        gap: 8px;
+        gap: 6px;
         align-items: center;
-        min-height: 24px;
+        min-height: 20px;
         color: var(--ink);
-        font-size: 16px;
+        font-size: 14px;
         line-height: 1.5;
       }
 
       .back-link img {
-        width: 24px;
-        height: 24px;
+        width: 16px;
+        height: 16px;
       }
 
       .article-category {
@@ -270,6 +278,13 @@
 
       .article-copy p + p {
         margin-top: 32px;
+      }
+
+      .article-copy a {
+        color: var(--accent);
+        overflow-wrap: anywhere;
+        text-decoration: underline;
+        text-underline-offset: 4px;
       }
 
       .article-bottom {
@@ -596,7 +611,7 @@
       <header class="site-header" aria-label="サイトヘッダー">
         <a class="brand-lockup" href="/" aria-label="亀屋日本伝統株式会社 トップへ">
           <span class="brand-mark" aria-hidden="true">
-            <img src="assets/figma/logo-mark.png" alt="" />
+            <img src="/works/assets/figma/logo-mark.png" alt="" />
           </span>
           <span class="brand-text">
             <span class="brand-name">亀屋日本伝統株式会社</span>
@@ -604,40 +619,42 @@
           </span>
         </a>
         <button class="menu-button" type="button" aria-label="メニューを開く">
-          <img src="assets/figma/menu.svg" alt="" />
+          <img src="/works/assets/figma/menu.svg" alt="" />
         </button>
       </header>
 
       <main class="article-shell">
         <section class="article-head" aria-labelledby="article-title">
           <a class="back-link" href="/works/">
-            <img src="assets/figma/backspace.svg" alt="" aria-hidden="true" />
+            <img src="/works/assets/figma/backspace.svg" alt="" aria-hidden="true" />
             <span>実績一覧へ</span>
           </a>
-          <p class="article-category">イベント</p>
-          <h1 class="article-title" id="article-title">「人間国宝・〇〇〇〇 漆芸の世界」講演会＆作品鑑賞会</h1>
+          <p class="article-category">2025.10.28 / 講演・文化会議</p>
+          <h1 class="article-title" id="article-title">第12回宗像国際環境会議に登壇しました ― 工芸と環境をつなぐ視点から</h1>
         </section>
 
         <section class="article-body" aria-label="実績詳細本文">
           <figure class="article-image">
-            <img src="assets/detail/exhibition-hall.webp" alt="展示室で漆芸作品を鑑賞する会場風景" />
+            <img src="/works/assets/projects/munakata-environment-conference.webp" alt="宗像国際環境会議の会場風景" />
           </figure>
 
           <div class="article-copy">
-            <p>このたび亀屋日本伝統株式会社では、人間国宝・○○○○氏をお迎えし、漆芸の世界に触れる講演会と作品鑑賞会を開催いたします。</p>
-            <p>漆芸は、日本の風土と人の手仕事が長い時間をかけて育んできた、もっとも繊細な工芸のひとつです。何層にも塗り重ねられた漆は、光の角度や年月の経過によって表情を変え、使い手とともに静かに育っていきます。その奥行きと美しさは、写真や言葉に触れるだけでは伝わりきらないものがあります。</p>
-            <p>今回は、○○○○氏ご自身のお言葉を通じて、漆芸が歩んできた歴史、現代における作り手の姿勢、そして次の世代へと受け継がれていくべきものについて、じっくりと語っていただきます。あわせて、氏の代表作および新作を間近で鑑賞いただける時間も設けました。専門家による解説を聞きながら、作品の細部にまで目を凝らしていただく、貴重な機会となります。</p>
-            <p>「知る」ことから、「触れ、心が動く」ことへ。工芸との出会いが、参加される方それぞれの暮らしに静かに重なっていくことを、私たちは願っています。</p>
+            <p>福岡県宗像市・宗像大社で開催された「宗像国際環境会議」に、代表の亀屋夢月が登壇しました。</p>
+            <p>宗像国際環境会議は、海洋環境の保全や持続可能な社会の実現をテーマに、企業、行政、研究者、文化関係者などが集う国際会議です。</p>
+            <p>講演では、亀屋自身が工芸とは無縁の環境から、作家や職人との出会いを通じて文化事業の道へ進んだ経緯を紹介しました。そのうえで、日本の工芸を「守るべき文化財」としてだけではなく、現代社会や経済、地域の営みと再び結びつけていく必要性についてお話ししました。</p>
+            <p>また、人間国宝である松原伸生氏が継承する「長板中形」を例に、伝統技術が自然環境や地域環境と深く結びついていることを紹介しました。技術そのものが残っていても、その技術を支える素材、道具、環境、担い手との関係が失われれば、文化は受け継がれにくくなります。</p>
+            <p>講演内容はこちらからご覧ください。<br /><a href="https://www.youtube.com/watch?v=sLMm5y5W3z4&amp;list=PLPcTo8jkl9DWKEjzyWqAO2urRxxNGjMh2&amp;index=7">宗像国際環境会議の講演動画</a></p>
+            <p>亀屋日本伝統は、作家・職人の方々との直接的な対話をもとに、企業、文化機関、行政、地域と工芸をつなぐ活動を行っています。講演、展示、商品開発、空間演出など、工芸が現代社会の中で新たな役割を持てる接点づくりに取り組んでいます。</p>
           </div>
 
           <figure class="article-image">
-            <img src="assets/detail/exhibition-hall.webp" alt="展示室で漆芸作品を鑑賞する会場風景" />
+            <img src="/works/assets/projects/munakata-environment-conference.webp" alt="宗像国際環境会議の登壇実績イメージ" />
           </figure>
         </section>
 
         <nav class="article-bottom" aria-label="実績詳細の下部ナビゲーション">
           <a class="back-link" href="/works/">
-            <img src="assets/figma/backspace.svg" alt="" aria-hidden="true" />
+            <img src="/works/assets/figma/backspace.svg" alt="" aria-hidden="true" />
             <span>実績一覧へ</span>
           </a>
         </nav>
@@ -652,10 +669,10 @@
           </div>
           <div class="socials" aria-label="SNSリンク">
             <a href="https://www.facebook.com/p/%E4%BA%80%E5%B1%8B%E5%A4%A2%E6%9C%88-100026775131911/" aria-label="Facebook">
-              <img src="assets/figma/facebook.svg" alt="" />
+              <img src="/works/assets/figma/facebook.svg" alt="" />
             </a>
             <a href="https://www.instagram.com/kameya.official.japan/" aria-label="Instagram">
-              <img src="assets/figma/instagram.svg" alt="" />
+              <img src="/works/assets/figma/instagram.svg" alt="" />
             </a>
           </div>
           <p class="copyright">© 亀屋日本伝統株式会社</p>

@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Disallow: /_previews/
+Disallow: /shared/scripts/
+Disallow: /top/sections/
+Disallow: /essay/story-background-patterns/
+Disallow: /en/
+Disallow: /news/detail/007/
+
+Sitemap: https://koya310.github.io/sitemap.xml

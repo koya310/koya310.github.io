@@ -1,16 +1,24 @@
 <!doctype html>
 <html lang="ja">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VKVLXC7MK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7VKVLXC7MK');
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>亀屋日本伝統株式会社 | 作家・作品</title>
     <meta
       name="description"
-      content="亀屋日本伝統株式会社の作家・作品ページ探索。Figma Mutuki Corporate のArtists一覧をもとに、作家と代表作品を紙背景の静かな一覧で掲載する。"
+      content="亀屋日本伝統株式会社の作家・作品ページ。公開対象として整理した作家と代表作品を、紙背景の静かな一覧で掲載する。"
     />
     <link rel="preload" as="image" href="assets/figma/paper.webp" />
     <link rel="preload" as="image" href="assets/figma/logo-mark.png" />
-    <link rel="preload" as="image" href="assets/artists/portrait-ito-sekisui.webp" />
+    <link rel="preload" as="image" href="assets/cms/artist_portraits/ito-sekisui-v/portrait.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,28 +35,28 @@
         --hairline: rgba(168, 145, 117, 0.72);
         --content-max: 1200px;
         --page-pad-x: 120px;
-        --portrait-size: 250px;
+        --portrait-size: 296px;
         --section-gap: 56px;
         --section-rule-space: 40px;
         --heading-stack-gap: 16px;
         --intro-column-gap: 40px;
         --intro-stack-gap: 40px;
         --artists-list-gap: 16px;
-        --artist-card-pad: 18px;
+        --artist-card-pad: 24px;
         --artist-card-inset: 20px;
         --artist-row-pad-before: 20px;
         --artist-row-pad-after: 20px;
-        --artist-media-gap: 40px;
+        --artist-media-gap: 32px;
         --artist-work-offset: 24px;
         --artist-text-gap: 8px;
-        --artist-role-gap: 16px;
-        --artist-work-gap: 16px;
+        --artist-role-gap: 12px;
+        --artist-work-gap: 12px;
         --artist-arrow-space: 32px;
         --artist-arrow-size: 24px;
         --artist-arrow-line: 36px;
         --artist-card-border: #a89175;
         --artist-card-bg: rgba(251, 248, 241, 0.14);
-        --artist-card-hover-bg: rgba(251, 248, 241, 0.42);
+        --artist-card-hover-bg: rgba(251, 248, 241, 0.68);
         --artist-hover-bg: transparent;
         --artist-hover-line: rgba(107, 79, 58, 0.58);
         --artist-click-line: rgba(107, 79, 58, 0.42);
@@ -295,7 +303,7 @@
 
       .artist-card:hover,
       .artist-card:focus-within {
-        border-color: rgba(107, 79, 58, 0.76);
+        border-color: rgba(107, 79, 58, 0.86);
         background: var(--artist-card-hover-bg);
         transform: translateY(-2px);
       }
@@ -351,13 +359,19 @@
         grid-row: 1 / 4;
         width: var(--portrait-size);
         height: var(--portrait-size);
+        aspect-ratio: 1 / 1;
+        align-self: start;
         overflow: hidden;
         background: rgba(59, 47, 40, 0.08);
       }
 
       .artist-portrait img,
       .work-thumb img {
+        filter: saturate(0.94) contrast(0.98);
         transform: none;
+        transition:
+          filter var(--motion-duration) var(--motion-ease),
+          transform var(--motion-duration) var(--motion-ease);
       }
 
       .artist-body {
@@ -413,12 +427,14 @@
         grid-template-columns: repeat(6, minmax(0, 1fr));
         gap: var(--artist-work-gap);
         align-self: end;
+        align-items: end;
         min-width: 0;
       }
 
       .work-thumb {
         aspect-ratio: 1 / 1;
         overflow: hidden;
+        border: 1px solid rgba(107, 79, 58, 0.08);
         background: rgba(59, 47, 40, 0.08);
         opacity: 0.9;
         transition:
@@ -427,7 +443,6 @@
       }
 
       .work-thumb img {
-        filter: saturate(0.94) contrast(0.98);
         transition: filter var(--motion-duration) var(--motion-ease);
       }
 
@@ -440,9 +455,12 @@
         height: 18px;
         color: #6b4f3a;
         font-size: 0;
-        opacity: 1;
+        opacity: 0.72;
         pointer-events: none;
         transform: translateY(-50%);
+        transition:
+          opacity var(--motion-duration) var(--motion-ease),
+          transform var(--motion-duration) var(--motion-ease);
       }
 
       .artist-arrow::before,
@@ -476,8 +494,15 @@
       .artist-card-link:hover .artist-arrow::before,
       .artist-card-link:focus-visible .artist-arrow::before,
       .artist-card-link:active .artist-arrow::before {
-        width: 32px;
+        width: 38px;
         transform: translateY(-50%);
+      }
+
+      .artist-card-link:hover .artist-arrow,
+      .artist-card-link:focus-visible .artist-arrow,
+      .artist-card-link:active .artist-arrow {
+        opacity: 1;
+        transform: translate(4px, -50%);
       }
 
       .artist-card-link:hover .artist-arrow::after,
@@ -492,7 +517,9 @@
       }
 
       .artist-card-link:hover .work-thumb img,
-      .artist-card-link:focus-visible .work-thumb img {
+      .artist-card-link:focus-visible .work-thumb img,
+      .artist-card-link:hover .artist-portrait img,
+      .artist-card-link:focus-visible .artist-portrait img {
         filter: saturate(1.04) contrast(1.03);
       }
 
@@ -517,38 +544,43 @@
       @media (max-width: 1279px) and (min-width: 960px) {
         :root {
           --page-pad-x: 80px;
-          --portrait-size: 128px;
+          --portrait-size: 176px;
           --artists-list-gap: 12px;
-          --artist-card-pad: 16px;
+          --artist-card-pad: 20px;
           --artist-card-inset: 24px;
           --artist-media-gap: 32px;
           --artist-work-offset: 32px;
-          --artist-work-gap: 14px;
+          --artist-work-gap: 16px;
         }
 
         .artist-card-link {
-          grid-template-rows: auto var(--artist-work-offset) auto;
+          grid-template-rows: auto minmax(var(--artist-work-offset), 1fr) auto;
         }
 
         .artist-portrait {
-          grid-row: 1;
+          grid-row: 1 / 4;
+          height: var(--portrait-size);
+          min-height: 0;
+          align-self: end;
         }
 
         .works-strip {
-          grid-column: 1 / -1;
+          grid-column: 2;
           grid-row: 3;
-          grid-template-columns: repeat(5, minmax(0, 1fr));
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+          width: 100%;
+          max-width: 704px;
         }
 
         .work-thumb--desktop {
-          display: none;
+          display: block;
         }
       }
 
       @media (max-width: 959px) {
         :root {
           --page-pad-x: 80px;
-          --portrait-size: 96px;
+          --portrait-size: 128px;
           --section-gap: 32px;
           --intro-column-gap: 40px;
           --intro-stack-gap: 24px;
@@ -579,6 +611,9 @@
 
         .artist-portrait {
           grid-row: 1;
+          height: var(--portrait-size);
+          min-height: 0;
+          align-self: start;
         }
 
         .artist-info {
@@ -608,7 +643,7 @@
       @media (max-width: 639px) {
         :root {
           --page-pad-x: 24px;
-          --portrait-size: 56px;
+          --portrait-size: clamp(104px, 30vw, 124px);
           --section-gap: 32px;
           --section-rule-space: 40px;
           --intro-stack-gap: 24px;
@@ -762,6 +797,7 @@
     <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
     <link rel="stylesheet" href="/shared/css/reveal.css" />
     <link rel="stylesheet" href="/shared/css/kameya-design-system.css?v=20260619-menu-numbering-fix" />
+    <link rel="stylesheet" href="/shared/css/kmy13-list-controls.css?v=20260624-list-filter" />
   </head>
   <body>
     <div class="artists-page">
@@ -799,7 +835,28 @@
           </p>
         </section>
 
-        <section class="page-content artists-list" aria-label="作家一覧">
+        <section class="page-content kmy-list-controls" data-kmy-controls="artists" aria-label="作家の絞り込み" hidden>
+          <div class="kmy-list-controls__row">
+            <div class="kmy-filter-selects">
+              <label class="kmy-select-label">
+                分野
+                <select class="kmy-select" data-kmy-filter-select="field"></select>
+              </label>
+              <label class="kmy-select-label">
+                技術
+                <select class="kmy-select" data-kmy-filter-select="secondary"></select>
+              </label>
+              <label class="kmy-select-label">
+                肩書
+                <select class="kmy-select" data-kmy-filter-select="title"></select>
+              </label>
+            </div>
+            <button class="kmy-reset" type="button" data-kmy-reset>解除</button>
+          </div>
+          <p class="kmy-status" data-kmy-status aria-live="polite"></p>
+        </section>
+
+        <section class="page-content artists-list" data-kmy-list="artists" aria-label="作家一覧">
           <article class="artist-card">
             <a class="artist-card-link" href="/artists/detail/arai-hisao/" aria-label="新井久夫の詳細を見る">
               <figure class="artist-portrait">
@@ -824,29 +881,6 @@
             </a>
           </article>
           <article class="artist-card">
-            <a class="artist-card-link" href="/artists/detail/igarashi-makoto/" aria-label="五十嵐誠の詳細を見る">
-              <figure class="artist-portrait">
-                <img src="assets/cms/artist_portraits/igarashi-makoto/portrait.webp" alt="五十嵐誠" />
-              </figure>
-              <div class="artist-body">
-                <div class="artist-info">
-                  <p class="artist-meta"><span>木竹工 / 指物/木象嵌</span><span>掲載作家</span><span>東京都</span></p>
-                  <h2 class="artist-name">五十嵐誠</h2>
-                  <p class="artist-role">木象嵌を手がける作家</p>
-                </div>
-                <ul class="works-strip" aria-label="五十嵐誠の代表作品">
-                  <li class="work-thumb"><img src="assets/cms/artist_works/makoto-igarashi/work-01.webp" alt="神代杉彫装箱" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/makoto-igarashi/work-02.webp" alt="神代杉格子抽斗" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/makoto-igarashi/work-03.webp" alt="五稜筥「桔」" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/makoto-igarashi/work-04.webp" alt="献保梨唐木造飾筥" /></li>
-                  <li class="work-thumb work-thumb--tablet"><img src="assets/cms/artist_works/makoto-igarashi/work-05.webp" alt="神代杉飾箱" /></li>
-                  <li class="work-thumb work-thumb--desktop"><img src="assets/cms/artist_works/makoto-igarashi/work-06.webp" alt="神代欅造提盤「薄明」" /></li>
-                </ul>
-              </div>
-              <span class="artist-arrow" aria-hidden="true">›</span>
-            </a>
-          </article>
-          <article class="artist-card">
             <a class="artist-card-link" href="/artists/detail/ito-sekisui-v/" aria-label="五代 伊藤赤水の詳細を見る">
               <figure class="artist-portrait">
                 <img src="assets/cms/artist_portraits/ito-sekisui-v/portrait.webp" alt="五代 伊藤赤水" />
@@ -864,52 +898,6 @@
                   <li class="work-thumb"><img src="assets/cms/artist_works/sekisui-ito-v/work-04.webp" alt="無名異練上花紋角壺" /></li>
                   <li class="work-thumb work-thumb--tablet"><img src="assets/cms/artist_works/sekisui-ito-v/work-05.webp" alt="佐渡ヶ島" /></li>
                   <li class="work-thumb work-thumb--desktop"><img src="assets/cms/artist_works/sekisui-ito-v/work-06.webp" alt="佐渡ヶ島香爐" /></li>
-                </ul>
-              </div>
-              <span class="artist-arrow" aria-hidden="true">›</span>
-            </a>
-          </article>
-          <article class="artist-card">
-            <a class="artist-card-link" href="/artists/detail/imaizumi-imaemon-xiv/" aria-label="十四代 今泉今右衛門の詳細を見る">
-              <figure class="artist-portrait">
-                <img src="assets/cms/artist_portraits/imaizumi-imaemon-xiv/portrait.webp" alt="十四代 今泉今右衛門" />
-              </figure>
-              <div class="artist-body">
-                <div class="artist-info">
-                  <p class="artist-meta"><span>陶芸 / 色絵磁器</span><span>人間国宝 2014年認定</span><span>佐賀県有田町</span></p>
-                  <h2 class="artist-name">十四代 今泉今右衛門</h2>
-                  <p class="artist-role">重要無形文化財<br class="role-mobile-break" />「色絵磁器」保持者</p>
-                </div>
-                <ul class="works-strip" aria-label="十四代 今泉今右衛門の代表作品">
-                  <li class="work-thumb"><img src="assets/cms/artist_works/imaizumi-imaemon-xiv/work-01.webp" alt="色絵雪花吹墨墨はじき水流文鉢" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/imaizumi-imaemon-xiv/work-02.webp" alt="色絵雪花吹墨墨はじき珠樹四季花文花瓶" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/imaizumi-imaemon-xiv/work-03.webp" alt="色絵雪花薄墨墨はじき雪文鉢" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/imaizumi-imaemon-xiv/work-04.webp" alt="色絵雪花薄墨墨はじき境躑躅文鉢" /></li>
-                  <li class="work-thumb work-thumb--tablet"><img src="assets/cms/artist_works/imaizumi-imaemon-xiv/work-05.webp" alt="色絵雪花薄墨墨はじき四季花文鉢" /></li>
-                  <li class="work-thumb work-thumb--desktop"><img src="assets/cms/artist_works/imaizumi-imaemon-xiv/work-06.webp" alt="色絵薄墨墨はじき境躑躅文鉢" /></li>
-                </ul>
-              </div>
-              <span class="artist-arrow" aria-hidden="true">›</span>
-            </a>
-          </article>
-          <article class="artist-card">
-            <a class="artist-card-link" href="/artists/detail/eda-kei/" aria-label="江田蕙の詳細を見る">
-              <figure class="artist-portrait">
-                <img src="assets/cms/artist_portraits/eda-kei/portrait-list.webp" alt="江田蕙" />
-              </figure>
-              <div class="artist-body">
-                <div class="artist-info">
-                  <p class="artist-meta"><span>金工 / 惣型/茶の湯釜</span><span>掲載作家</span><span>栃木県</span></p>
-                  <h2 class="artist-name">江田蕙</h2>
-                  <p class="artist-role">茶の湯釜を手がける作家</p>
-                </div>
-                <ul class="works-strip" aria-label="江田蕙の代表作品">
-                  <li class="work-thumb"><img src="assets/cms/artist_works/kei-eda/work-01.webp" alt="鉄瓶「Apple＆テントウムシ」" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/kei-eda/work-02.webp" alt="面取釜「凍雪」" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/kei-eda/work-03.webp" alt="面取釜「石蔭」" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/kei-eda/work-04.webp" alt="面取釜「森聲」" /></li>
-                  <li class="work-thumb work-thumb--tablet"><img src="assets/cms/artist_works/kei-eda/work-05.webp" alt="面取釜「彩」" /></li>
-                  <li class="work-thumb work-thumb--desktop"><img src="assets/cms/artist_works/kei-eda/work-06.webp" alt="片身替面取釜「森聶」" /></li>
                 </ul>
               </div>
               <span class="artist-arrow" aria-hidden="true">›</span>
@@ -985,49 +973,6 @@
             </a>
           </article>
           <article class="artist-card">
-            <a class="artist-card-link" href="/artists/detail/kanekuni-ogawa-ii/" aria-label="二代 尾川兼國の詳細を見る">
-              <figure class="artist-portrait">
-                <img src="assets/cms/artist_portraits/kanekuni-ogawa-ii/portrait.webp" alt="二代 尾川兼國" />
-              </figure>
-              <div class="artist-body">
-                <div class="artist-info">
-                  <p class="artist-meta"><span>刀 / 日本刀/濤乱刃</span><span>掲載作家</span><span>岐阜県</span></p>
-                  <h2 class="artist-name">二代 尾川兼國</h2>
-                  <p class="artist-role">濤乱刃を手がける作家</p>
-                </div>
-                <ul class="works-strip" aria-label="二代 尾川兼國の代表作品">
-                  <li class="work-thumb"><img src="assets/cms/artist_works/kanekuni-ogawa-ii/work-01.webp" alt="刀 銘 美濃国住兼國作" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/kanekuni-ogawa-ii/work-02.webp" alt="逆刃刀・真打" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/kanekuni-ogawa-ii/work-03.gif" alt="太刀 銘 美濃國住兼國作之 平成二十三年二月吉日" /></li>
-                </ul>
-              </div>
-              <span class="artist-arrow" aria-hidden="true">›</span>
-            </a>
-          </article>
-          <article class="artist-card">
-            <a class="artist-card-link" href="/artists/detail/kawakita-hirohiko/" aria-label="川北浩彦の詳細を見る">
-              <figure class="artist-portrait">
-                <img src="assets/cms/artist_portraits/kawakita-hirohiko/portrait.webp" alt="川北浩彦" />
-              </figure>
-              <div class="artist-body">
-                <div class="artist-info">
-                  <p class="artist-meta"><span>木竹工 / 挽物/拭漆</span><span>掲載作家</span><span>石川県</span></p>
-                  <h2 class="artist-name">川北浩彦</h2>
-                  <p class="artist-role">拭漆を手がける作家</p>
-                </div>
-                <ul class="works-strip" aria-label="川北浩彦の代表作品">
-                  <li class="work-thumb"><img src="assets/cms/artist_works/hirohiko-kawakita/work-01.webp" alt="欅杢多辺挽輪花文盛器" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/hirohiko-kawakita/work-02.webp" alt="欅針杢造鉢" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/hirohiko-kawakita/work-03.webp" alt="黒柿造鉢" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/hirohiko-kawakita/work-04.webp" alt="欅造木目沈金合子" /></li>
-                  <li class="work-thumb work-thumb--tablet"><img src="assets/cms/artist_works/hirohiko-kawakita/work-05.webp" alt="欅杢盛器" /></li>
-                  <li class="work-thumb work-thumb--desktop"><img src="assets/cms/artist_works/hirohiko-kawakita/work-06.webp" alt="欅造多辺加飾盛器" /></li>
-                </ul>
-              </div>
-              <span class="artist-arrow" aria-hidden="true">›</span>
-            </a>
-          </article>
-          <article class="artist-card">
             <a class="artist-card-link" href="/artists/detail/kawakita-ryozo/" aria-label="川北良造の詳細を見る">
               <figure class="artist-portrait">
                 <img src="assets/cms/artist_portraits/kawakita-ryozo/portrait.webp" alt="川北良造" />
@@ -1074,29 +1019,6 @@
             </a>
           </article>
           <article class="artist-card">
-            <a class="artist-card-link" href="/artists/detail/tsuchiya-yoshinori/" aria-label="土屋順紀の詳細を見る">
-              <figure class="artist-portrait">
-                <img src="assets/cms/artist_portraits/tsuchiya-yoshinori/portrait.webp" alt="土屋順紀" />
-              </figure>
-              <div class="artist-body">
-                <div class="artist-info">
-                  <p class="artist-meta"><span>染織 / 紋紗</span><span>人間国宝 2010年認定</span><span>岐阜県/関市</span></p>
-                  <h2 class="artist-name">土屋順紀</h2>
-                  <p class="artist-role">重要無形文化財<br class="role-mobile-break" />「紋紗」保持者</p>
-                </div>
-                <ul class="works-strip" aria-label="土屋順紀の代表作品">
-                  <li class="work-thumb"><img src="assets/cms/artist_works/yoshinori-tsuchiya/work-01.webp" alt="紋紗振袖「道成寺」" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/yoshinori-tsuchiya/work-02.webp" alt="紋紗振袖「紅蝴蝶」" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/yoshinori-tsuchiya/work-03.webp" alt="紋紗着物「夢到」" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/yoshinori-tsuchiya/work-04.webp" alt="紋紗振袖「牡丹亭」" /></li>
-                  <li class="work-thumb work-thumb--tablet"><img src="assets/cms/artist_works/yoshinori-tsuchiya/work-05.webp" alt="紋紗着物「瀧」" /></li>
-                  <li class="work-thumb work-thumb--desktop"><img src="assets/cms/artist_works/yoshinori-tsuchiya/work-06.webp" alt="紋紗帯地「水月」" /></li>
-                </ul>
-              </div>
-              <span class="artist-arrow" aria-hidden="true">›</span>
-            </a>
-          </article>
-          <article class="artist-card">
             <a class="artist-card-link" href="/artists/detail/tomioka-yoshimasa/" aria-label="冨岡慶正の詳細を見る">
               <figure class="artist-portrait">
                 <img src="assets/cms/artist_portraits/tomioka-yoshimasa/portrait.webp" alt="冨岡慶正" />
@@ -1110,52 +1032,6 @@
                 <ul class="works-strip" aria-label="冨岡慶正の代表作品">
                   <li class="work-thumb"><img src="assets/cms/artist_works/yoshimasa-tomioka/work-01.webp" alt="脇差 銘（表）日州國正慶正合作之（裏）平成三十一年二月" /></li>
                   <li class="work-thumb"><img src="assets/cms/artist_works/yoshimasa-tomioka/work-02.webp" alt="御魂守刀" /></li>
-                </ul>
-              </div>
-              <span class="artist-arrow" aria-hidden="true">›</span>
-            </a>
-          </article>
-          <article class="artist-card">
-            <a class="artist-card-link" href="/artists/detail/tokuda-yasokichi-iv/" aria-label="四代 德田八十吉の詳細を見る">
-              <figure class="artist-portrait">
-                <img src="assets/cms/artist_portraits/tokuda-yasokichi-iv/portrait.webp" alt="四代 德田八十吉" />
-              </figure>
-              <div class="artist-body">
-                <div class="artist-info">
-                  <p class="artist-meta"><span>陶芸 / 彩釉</span><span>掲載作家</span><span>石川県</span></p>
-                  <h2 class="artist-name">四代 德田八十吉</h2>
-                  <p class="artist-role">彩釉を手がける作家</p>
-                </div>
-                <ul class="works-strip" aria-label="四代 德田八十吉の代表作品">
-                  <li class="work-thumb"><img src="assets/cms/artist_works/tokuda-yasokichi-iv/work-01.webp" alt="彩釉壷「瑞穂」" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/tokuda-yasokichi-iv/work-02.webp" alt="彩釉瓶「瑞穂」" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/tokuda-yasokichi-iv/work-03.webp" alt="彩釉壺 「楼蘭」" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/tokuda-yasokichi-iv/work-04.webp" alt="彩釉花器「真泉」" /></li>
-                  <li class="work-thumb work-thumb--tablet"><img src="assets/cms/artist_works/tokuda-yasokichi-iv/work-05.webp" alt="彩釉鉢「藍華菱」" /></li>
-                  <li class="work-thumb work-thumb--desktop"><img src="assets/cms/artist_works/tokuda-yasokichi-iv/work-06.webp" alt="三釉壷・東雲" /></li>
-                </ul>
-              </div>
-              <span class="artist-arrow" aria-hidden="true">›</span>
-            </a>
-          </article>
-          <article class="artist-card">
-            <a class="artist-card-link" href="/artists/detail/nakagawa-mamoru/" aria-label="中川衛の詳細を見る">
-              <figure class="artist-portrait">
-                <img src="assets/cms/artist_portraits/nakagawa-mamoru/portrait.webp" alt="中川衛" />
-              </figure>
-              <div class="artist-body">
-                <div class="artist-info">
-                  <p class="artist-meta"><span>金工 / 彫金</span><span>人間国宝 2004年認定</span><span>石川県</span></p>
-                  <h2 class="artist-name">中川衛</h2>
-                  <p class="artist-role">重要無形文化財<br class="role-mobile-break" />「彫金」保持者</p>
-                </div>
-                <ul class="works-strip" aria-label="中川衛の代表作品">
-                  <li class="work-thumb"><img src="assets/cms/artist_works/mamoru-nakagawa/work-01.webp" alt="金銀象嵌赤銅皿" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/mamoru-nakagawa/work-02.webp" alt="象嵌朧銀花器「島嶼の夜明け」" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/mamoru-nakagawa/work-03.webp" alt="象嵌花器「早朝」" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/mamoru-nakagawa/work-04.webp" alt="象嵌朧銀花器「春・天空」" /></li>
-                  <li class="work-thumb work-thumb--tablet"><img src="assets/cms/artist_works/mamoru-nakagawa/work-05.webp" alt="象嵌花器「花」" /></li>
-                  <li class="work-thumb work-thumb--desktop"><img src="assets/cms/artist_works/mamoru-nakagawa/work-06.webp" alt="象嵌朧銀花器「空と海」" /></li>
                 </ul>
               </div>
               <span class="artist-arrow" aria-hidden="true">›</span>
@@ -1179,29 +1055,6 @@
                   <li class="work-thumb"><img src="assets/cms/artist_works/kazuo-nakada/work-04.webp" alt="淡青釉裏銀彩六角鉢" /></li>
                   <li class="work-thumb work-thumb--tablet"><img src="assets/cms/artist_works/kazuo-nakada/work-05.webp" alt="淡青釉裏銀彩壷" /></li>
                   <li class="work-thumb work-thumb--desktop"><img src="assets/cms/artist_works/kazuo-nakada/work-06.webp" alt="淡青釉裏銀彩壺" /></li>
-                </ul>
-              </div>
-              <span class="artist-arrow" aria-hidden="true">›</span>
-            </a>
-          </article>
-          <article class="artist-card">
-            <a class="artist-card-link" href="/artists/detail/nishi-katsuhiro/" aria-label="西勝廣の詳細を見る">
-              <figure class="artist-portrait">
-                <img src="assets/cms/artist_portraits/nishi-katsuhiro/portrait.webp" alt="西勝廣" />
-              </figure>
-              <div class="artist-body">
-                <div class="artist-info">
-                  <p class="artist-meta"><span>漆芸 / 沈金</span><span>人間国宝 2024年認定</span><span>石川県/輪島</span></p>
-                  <h2 class="artist-name">西勝廣</h2>
-                  <p class="artist-role">重要無形文化財<br class="role-mobile-break" />「沈金」保持者</p>
-                </div>
-                <ul class="works-strip" aria-label="西勝廣の代表作品">
-                  <li class="work-thumb"><img src="assets/cms/artist_works/katsuhiro-nishi/work-01.webp" alt="隅切沈金箱「梅雨凌ぐ」" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/katsuhiro-nishi/work-02.webp" alt="沈金箱「杜鵑草」" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/katsuhiro-nishi/work-03.webp" alt="沈金箱「花園」" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/katsuhiro-nishi/work-04.webp" alt="沈金箱「仙人草」" /></li>
-                  <li class="work-thumb work-thumb--tablet"><img src="assets/cms/artist_works/katsuhiro-nishi/work-05.webp" alt="沈金箱「郷里」" /></li>
-                  <li class="work-thumb work-thumb--desktop"><img src="assets/cms/artist_works/katsuhiro-nishi/work-06.webp" alt="いぼたの花沈金箱" /></li>
                 </ul>
               </div>
               <span class="artist-arrow" aria-hidden="true">›</span>
@@ -1254,29 +1107,6 @@
             </a>
           </article>
           <article class="artist-card">
-            <a class="artist-card-link" href="/artists/detail/mae-fumio/" aria-label="前史雄の詳細を見る">
-              <figure class="artist-portrait">
-                <img src="assets/cms/artist_portraits/mae-fumio/portrait.webp" alt="前史雄" />
-              </figure>
-              <div class="artist-body">
-                <div class="artist-info">
-                  <p class="artist-meta"><span>漆芸 / 沈金</span><span>人間国宝 1999年認定</span><span>石川県/輪島</span></p>
-                  <h2 class="artist-name">前史雄</h2>
-                  <p class="artist-role">重要無形文化財<br class="role-mobile-break" />「沈金」保持者</p>
-                </div>
-                <ul class="works-strip" aria-label="前史雄の代表作品">
-                  <li class="work-thumb"><img src="assets/cms/artist_works/fumio-mae/work-01.webp" alt="鈴虫香合" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/fumio-mae/work-02.webp" alt="沈金箱「春風」" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/fumio-mae/work-03.webp" alt="湖映沈金棗" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/fumio-mae/work-04.webp" alt="沈金棗「千鳥」" /></li>
-                  <li class="work-thumb work-thumb--tablet"><img src="assets/cms/artist_works/fumio-mae/work-05.webp" alt="沈金箱「緑風」" /></li>
-                  <li class="work-thumb work-thumb--desktop"><img src="assets/cms/artist_works/fumio-mae/work-06.webp" alt="沈金棗「篁」" /></li>
-                </ul>
-              </div>
-              <span class="artist-arrow" aria-hidden="true">›</span>
-            </a>
-          </article>
-          <article class="artist-card">
             <a class="artist-card-link" href="/artists/detail/matsubara-nobuo/" aria-label="松原伸生の詳細を見る">
               <figure class="artist-portrait">
                 <img src="assets/cms/artist_portraits/matsubara-nobuo/portrait.webp" alt="松原伸生" />
@@ -1323,29 +1153,6 @@
             </a>
           </article>
           <article class="artist-card">
-            <a class="artist-card-link" href="/artists/detail/murayama-akira/" aria-label="村山明の詳細を見る">
-              <figure class="artist-portrait">
-                <img src="assets/cms/artist_portraits/murayama-akira/portrait.webp" alt="村山明" />
-              </figure>
-              <div class="artist-body">
-                <div class="artist-info">
-                  <p class="artist-meta"><span>木竹工 / 木工芸</span><span>人間国宝 2003年認定</span><span>京都府/兵庫県</span></p>
-                  <h2 class="artist-name">村山明</h2>
-                  <p class="artist-role">重要無形文化財<br class="role-mobile-break" />「木工芸」保持者</p>
-                </div>
-                <ul class="works-strip" aria-label="村山明の代表作品">
-                  <li class="work-thumb"><img src="assets/cms/artist_works/akira-murayama/work-01.webp" alt="欅拭漆舟形盛皿" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/akira-murayama/work-02.webp" alt="欅拭漆高盛器" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/akira-murayama/work-03.webp" alt="欅拭漆卓" /></li>
-                  <li class="work-thumb"><img src="assets/cms/artist_works/akira-murayama/work-04.webp" alt="欅拭漆盛器" /></li>
-                  <li class="work-thumb work-thumb--tablet"><img src="assets/cms/artist_works/akira-murayama/work-05.webp" alt="欅拭漆隅切台" /></li>
-                  <li class="work-thumb work-thumb--desktop"><img src="assets/cms/artist_works/akira-murayama/work-06.webp" alt="欅拭漆盛皿" /></li>
-                </ul>
-              </div>
-              <span class="artist-arrow" aria-hidden="true">›</span>
-            </a>
-          </article>
-          <article class="artist-card">
             <a class="artist-card-link" href="/artists/detail/yamagishi-kazuo/" aria-label="山岸一男の詳細を見る">
               <figure class="artist-portrait">
                 <img src="assets/cms/artist_portraits/yamagishi-kazuo/portrait.webp" alt="山岸一男" />
@@ -1369,9 +1176,11 @@
             </a>
           </article>
         </section>
+        <p class="page-content kmy-empty" data-kmy-empty="artists" hidden>該当する作家はありません。</p>
       </main>
     </div>
     <script src="/shared/js/reveal.js" defer></script>
+    <script src="/shared/js/kmy13-list-controls.js?v=20260624-list-filter-preview" defer></script>
     <script src="/shared/js/page-transition.js?v=20260619-menu-numbering-20" defer></script>
   </body>
 </html>

@@ -1,6 +1,10 @@
-/artists/*
-  X-Robots-Tag: noindex
-/works/*
-  X-Robots-Tag: noindex
 /en/*
+  X-Robots-Tag: noindex
+/news/detail/007/*
+  X-Robots-Tag: noindex
+/top/sections/*
+  X-Robots-Tag: noindex
+/_previews/*
+  X-Robots-Tag: noindex
+/essay/story-background-patterns/*
   X-Robots-Tag: noindex

@@ -1,29 +1,6 @@
 (() => {
-  const isEnglish = window.location.pathname === "/en" || window.location.pathname.startsWith("/en/");
-  const normalizePath = (path) => {
-    if (!path || path === "/index.html") return "/top/";
-    if (path === "/en" || path === "/en/" || path === "/en/index.html") return "/en/top/";
-    if (path.endsWith(".html")) return path;
-    return path.endsWith("/") ? path : `${path}/`;
-  };
-  const removeEnglishPrefix = (path) => {
-    const normalized = normalizePath(path);
-    const withoutPrefix = normalized.replace(/^\/en(?=\/|$)/, "");
-    return withoutPrefix || "/top/";
-  };
-  const addEnglishPrefix = (path) => {
-    const normalized = normalizePath(path);
-    if (normalized.startsWith("/en/")) return normalized;
-    return normalized === "/" ? "/en/top/" : `/en${normalized}`;
-  };
-  const localizeHref = (href) => {
-    if (!isEnglish) return href;
-    if (!href.startsWith("/")) return href;
-    return addEnglishPrefix(href);
-  };
   const phase1PublicMode = true;
-  const currentPath = normalizePath(window.location.pathname);
-  const languageHref = isEnglish ? removeEnglishPrefix(currentPath) : addEnglishPrefix(currentPath);
+  const localizeHref = (href) => href;
 
   const dictionary = {
     ja: {
@@ -51,8 +28,9 @@
         ["03", "創業の想い", "/essay/story/"],
         ["04", "事業内容", "/services/"],
         ["05", "工芸の可能性", "/kogei/"],
-        ["06", "お知らせ", "/news/"],
-        ["07", "お問い合わせ", "/contact/"],
+        ["06", "作家・作品", "/artists/"],
+        ["07", "お知らせ", "/news/"],
+        ["08", "お問い合わせ", "/contact/"],
       ],
       footerPrimaryItems: [
         ["トップ", "/top/"],
@@ -60,6 +38,7 @@
         ["創業の想い", "/essay/story/"],
         ["事業内容", "/services/"],
         ["工芸の可能性", "/kogei/"],
+        ["作家・作品", "/artists/"],
         ["お知らせ", "/news/"],
       ],
       footerLegalItems: [
@@ -70,7 +49,7 @@
     },
     en: {
       headerLabel: "Site header",
-      homeHref: "/en/top/",
+      homeHref: "/top/",
       homeLabel: "Kameya Japan Tradition home",
       company: "Kameya Japan Tradition",
       roman: "KAMEYA&nbsp;&nbsp;JAPAN&nbsp;&nbsp;TRADITION",
@@ -93,8 +72,9 @@
         ["03", "Founder's Essay", "/essay/"],
         ["04", "Services", "/services/"],
         ["05", "Possibility of Craft", "/kogei/"],
-        ["06", "News", "/news/"],
-        ["07", "Contact", "/contact/"],
+        ["06", "Artists", "/artists/"],
+        ["07", "News", "/news/"],
+        ["08", "Contact", "/contact/"],
       ],
       footerPrimaryItems: [
         ["Top", "/top/"],
@@ -102,6 +82,7 @@
         ["Founder's Essay", "/essay/"],
         ["Services", "/services/"],
         ["Possibility of Craft", "/kogei/"],
+        ["Artists", "/artists/"],
         ["News", "/news/"],
       ],
       footerLegalItems: [
@@ -111,10 +92,10 @@
       ],
     },
   };
-  const copy = dictionary[isEnglish ? "en" : "ja"];
+  const copy = dictionary.ja;
 
   const body = document.body;
-  body.dataset.kameyaLang = isEnglish ? "en" : "ja";
+  body.dataset.kameyaLang = "ja";
 
   const injectHeader = () => {
     if (document.querySelector(".kameya-common-header")) return;
@@ -135,13 +116,7 @@
         </span>
       </a>
       <div class="kameya-common-header__actions">
-        ${
-          phase1PublicMode
-            ? ""
-            : `<a class="kameya-language-switch" href="${languageHref}" hreflang="${isEnglish ? "ja" : "en"}" aria-label="${copy.languageAria}">
-                ${copy.languageLabel}
-              </a>`
-        }
+        ${phase1PublicMode ? "" : ""}
         <button class="menu-button kameya-common-header__menu" type="button" aria-label="${copy.menuOpen}">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>

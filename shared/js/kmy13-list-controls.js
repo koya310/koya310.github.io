@@ -14,6 +14,8 @@
     });
   };
 
+  const parseDataTags = (element) => unique((element.dataset.kmyTags || "").split(",").map(normalize));
+
   const setVisible = (element, isVisible) => {
     if (!element) return;
     element.hidden = !isVisible;
@@ -40,6 +42,18 @@
   const updateStatus = (status, total, first, last) => {
     if (!status) return;
     status.textContent = total === 0 ? "0件" : `${total}件中 ${first}-${last}件を表示`;
+  };
+
+  const getPageSize = (list) => {
+    const params = new URLSearchParams(window.location.search);
+    const previewPageSize = Number.parseInt(params.get("kmy13PageSize") || "", 10);
+    if (Number.isFinite(previewPageSize) && previewPageSize >= 1 && previewPageSize <= DEFAULT_PAGE_SIZE) {
+      return previewPageSize;
+    }
+
+    const dataPageSize = Number.parseInt(list.dataset.kmyPageSize || "", 10);
+    if (Number.isFinite(dataPageSize) && dataPageSize >= 1) return dataPageSize;
+    return DEFAULT_PAGE_SIZE;
   };
 
   const renderPagination = ({ nav, page, totalPages, onPageChange }) => {
@@ -103,9 +117,12 @@
             tagListClass: "",
           };
 
-    const pageSize = Number.parseInt(list.dataset.kmyPageSize || "", 10) || DEFAULT_PAGE_SIZE;
+    const pageSize = getPageSize(list);
     const items = Array.from(list.querySelectorAll(config.itemSelector)).map((element) => {
-      const tags = unique(Array.from(element.querySelectorAll(config.tagSelector)).map((tag) => tag.textContent));
+      const tags = unique([
+        ...parseDataTags(element),
+        ...Array.from(element.querySelectorAll(config.tagSelector)).map((tag) => tag.textContent),
+      ]);
       if (config.tagListTargetSelector) {
         addTagList(element.querySelector(config.tagListTargetSelector), tags, config.tagListClass);
       }

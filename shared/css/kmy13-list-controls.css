@@ -1,3 +1,10 @@
+.kmy-list-controls[hidden],
+.kmy-empty[hidden],
+.kmy-pagination[hidden],
+[data-kmy-list] > [hidden] {
+  display: none !important;
+}
+
 .kmy-list-controls {
   display: grid;
   gap: 16px;

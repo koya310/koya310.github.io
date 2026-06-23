@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
     <link rel="stylesheet" href="/shared/css/reveal.css" />
     <link rel="stylesheet" href="/shared/css/utility-pages.css" />
-    <link rel="stylesheet" href="/shared/css/kmy13-list-controls.css?v=20260623-kmy13" />
+    <link rel="stylesheet" href="/shared/css/kmy13-list-controls.css?v=20260624-list-filter" />
     <style>
       body.news-body {
         background:
@@ -133,10 +133,11 @@
       }
 
       .news-page-thumb--contain {
-        padding: 16px;
+        padding: 0;
         border: 1px solid rgba(183, 164, 109, 0.24);
         background: rgba(255, 255, 255, 0.62);
         object-fit: contain;
+        object-position: center;
       }
 
       .news-page-copy {
@@ -244,10 +245,6 @@
           height: 80px;
         }
 
-        .news-page-thumb--contain {
-          padding: 6px;
-        }
-
         .news-page-meta {
           gap: 10px;
           font-size: 14px;
@@ -283,10 +280,6 @@
           width: min(100%, 420px);
           height: auto;
           aspect-ratio: 3 / 2;
-        }
-
-        .news-page-thumb--contain {
-          padding: 12px;
         }
 
         .news-page-copy {
@@ -400,19 +393,6 @@
             <span class="news-page-arrow" aria-hidden="true"></span>
           </a>
 
-          <a class="news-page-card" href="/news/detail/007/">
-            <span class="news-page-thumb news-page-thumb--empty" aria-hidden="true"><img class="news-empty-logo" src="/about/assets/figma/logo-mark.png" alt="" loading="lazy" /></span>
-            <div class="news-page-copy">
-              <div class="news-page-meta">
-                <time datetime="2026-01-05">2026.01.05</time>
-                <span class="news-page-tag">お知らせ</span>
-              </div>
-              <h2>帝国ホテルで行われた、新年宴会 New Year Reception 2026で人間国宝作品の展示をしました。</h2>
-              <p>亀屋日本伝統株式会社が2026年1月5日に帝国ホテル 本館3階「富士の間」で行われた、新年宴会 New Year Reception 2026で工芸品展示を担当いたしました。</p>
-            </div>
-            <span class="news-page-arrow" aria-hidden="true"></span>
-          </a>
-
           <a class="news-page-card" href="/news/detail/004/">
             <img class="news-page-thumb news-page-thumb--contain" src="/news/assets/the-japan-essence-expo-2026.webp" alt="THE JAPAN ESSENCE GLOBAL EXPO 2026に関するお知らせ画像" />
             <div class="news-page-copy">
@@ -466,7 +446,7 @@
       </main>
     </div>
     <script src="/shared/js/reveal.js" defer></script>
-    <script src="/shared/js/kmy13-list-controls.js?v=20260623-kmy13" defer></script>
+    <script src="/shared/js/kmy13-list-controls.js?v=20260624-list-filter-preview" defer></script>
     <script src="/shared/js/page-transition.js?v=20260619-menu-numbering-20" defer></script>
   </body>
 </html>
