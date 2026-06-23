@@ -1,0 +1,54 @@
+:root {
+  --kameya-reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --kameya-reveal-distance: 18px;
+  --kameya-reveal-duration: 880ms;
+}
+
+body.kameya-reveal-ready [data-kameya-reveal] {
+  opacity: 0;
+  transform: translate3d(0, var(--kameya-reveal-distance), 0);
+  transition:
+    opacity 760ms var(--kameya-reveal-ease),
+    transform var(--kameya-reveal-duration) var(--kameya-reveal-ease);
+  transition-delay: var(--kameya-reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+body.kameya-reveal-ready [data-kameya-reveal].is-kameya-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+body.kameya-reveal-ready [data-kameya-title-flow] .kameya-flow-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translate3d(0, 0.42em, 0);
+  transition:
+    opacity 720ms var(--kameya-reveal-ease),
+    transform 900ms var(--kameya-reveal-ease);
+  transition-delay: calc(var(--kameya-reveal-delay, 0ms) + (var(--kameya-flow-index, 0) * 46ms));
+  will-change: opacity, transform;
+}
+
+body.kameya-reveal-ready .projects-page [data-kameya-reveal] {
+  transition-duration: 620ms, 760ms;
+}
+
+body.kameya-reveal-ready .projects-page [data-kameya-title-flow] .kameya-flow-char {
+  transition-duration: 520ms, 680ms;
+  transition-delay: calc(var(--kameya-reveal-delay, 0ms) + (var(--kameya-flow-index, 0) * 30ms));
+}
+
+body.kameya-reveal-ready [data-kameya-title-flow].is-kameya-visible .kameya-flow-char {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.kameya-reveal-ready [data-kameya-reveal],
+  body.kameya-reveal-ready [data-kameya-title-flow] .kameya-flow-char {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,15 +1,548 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=/kameya-preview-20260615/essay/story/">
-  <title>Kameya Preview Story</title>
-  <script>
-    location.replace('/kameya-preview-20260615/essay/story/');
-  </script>
-</head>
-<body>
-  <p><a href="/kameya-preview-20260615/essay/story/">Kameya Preview Story</a></p>
-</body>
+  <head>
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VKVLXC7MK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7VKVLXC7MK');
+    </script>
+<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>創業の想い | 亀屋日本伝統株式会社</title>
+    <meta
+      name="description"
+      content="亀屋日本伝統株式会社が、なぜ日本の工芸を現代の産業と暮らしへつなぐ事業を始めたのかを綴るエッセイページ。"
+    />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
+    <link rel="stylesheet" href="/shared/css/reveal.css" />
+    <link rel="stylesheet" href="/shared/css/utility-pages.css" />
+    <style>
+      .essay-main {
+        width: min(1120px, calc(100% - 160px));
+        margin: 0 auto;
+        padding: 160px 0 104px;
+      }
+
+      .essay-hero {
+        display: grid;
+        grid-template-columns: minmax(0, 0.78fr) minmax(280px, 0.46fr);
+        gap: clamp(56px, 8vw, 112px);
+        align-items: end;
+        padding-bottom: 72px;
+        border-bottom: 1px solid var(--utility-line);
+      }
+
+      .essay-kicker {
+        display: inline-grid;
+        grid-template-columns: 40px auto;
+        gap: 14px;
+        align-items: center;
+        margin: 0 0 24px;
+        color: var(--utility-gold);
+        font-family: "Times New Roman", serif;
+        font-size: 14px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+      }
+
+      .essay-kicker::before {
+        content: "";
+        width: 40px;
+        height: 1px;
+        background: currentColor;
+      }
+
+      .essay-title {
+        margin: 0;
+        color: var(--utility-green);
+        font-size: clamp(42px, 7vw, 82px);
+        font-weight: 500;
+        line-height: 1.22;
+        letter-spacing: 0.08em;
+      }
+
+      .essay-lead {
+        max-width: min(760px, 100%);
+        margin: 28px 0 0;
+        color: var(--utility-ink);
+        font-size: clamp(24px, 2.6vw, 30px);
+        line-height: 1.9;
+        letter-spacing: 0.06em;
+        overflow-wrap: normal;
+      }
+
+      .essay-note {
+        display: grid;
+        gap: 18px;
+        padding: 30px 0 0;
+        border-top: 1px solid var(--utility-line);
+        color: rgba(29, 28, 24, 0.64);
+        font-size: 14px;
+        line-height: 2;
+      }
+
+      .essay-note strong {
+        color: var(--utility-green);
+        font-weight: 500;
+        letter-spacing: 0.14em;
+      }
+
+      .essay-body {
+        display: grid;
+        gap: 80px;
+        padding-top: 80px;
+      }
+
+      .essay-section {
+        display: grid;
+        grid-template-columns: 180px minmax(0, 1fr);
+        gap: clamp(44px, 6vw, 88px);
+        align-items: start;
+      }
+
+      .essay-section__meta {
+        display: grid;
+        gap: 16px;
+        color: var(--utility-gold);
+        font-family: "Times New Roman", serif;
+        font-size: 14px;
+        letter-spacing: 0.16em;
+      }
+
+      .essay-section__meta::after {
+        content: "";
+        width: 1px;
+        height: 96px;
+        background: rgba(183, 164, 109, 0.62);
+      }
+
+      .essay-section h2 {
+        margin: 0 0 28px;
+        color: var(--utility-green);
+        font-size: clamp(26px, 3.4vw, 42px);
+        font-weight: 500;
+        line-height: 1.55;
+        letter-spacing: 0.08em;
+        overflow-wrap: anywhere;
+      }
+
+      .essay-section p {
+        margin: 0;
+        color: rgba(29, 28, 24, 0.78);
+        font-size: 16px;
+        line-height: 2.05;
+        overflow-wrap: anywhere;
+      }
+
+      .essay-section p + p {
+        margin-top: 24px;
+      }
+
+      .essay-closing {
+        margin-top: 4px;
+        padding: 32px 0 0;
+        border-top: 1px solid var(--utility-line);
+      }
+
+      .essay-closing p {
+        margin: 0;
+        color: var(--utility-green);
+        font-size: clamp(20px, 3vw, 32px);
+        line-height: 2;
+        letter-spacing: 0.1em;
+      }
+
+      @media (max-width: 960px) {
+        .essay-main {
+          width: min(760px, calc(100% - 80px));
+          padding-top: 144px;
+        }
+
+        .essay-hero,
+        .essay-section {
+          grid-template-columns: 1fr;
+        }
+
+        .essay-section__meta {
+          grid-template-columns: auto 1fr;
+          align-items: center;
+        }
+
+        .essay-section__meta::after {
+          width: 96px;
+          height: 1px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .essay-main {
+          width: min(342px, calc(100% - 48px));
+          margin-left: 24px;
+          margin-right: auto;
+          padding: 120px 0 72px;
+        }
+
+        .essay-hero {
+          gap: 40px;
+          padding-bottom: 48px;
+        }
+
+        .essay-body {
+          gap: 64px;
+          padding-top: 64px;
+        }
+
+        .essay-title {
+          font-size: clamp(32px, 9.8vw, 42px);
+          letter-spacing: 0.045em;
+        }
+
+        .essay-lead,
+        .essay-section p {
+          line-height: 2;
+        }
+
+        .essay-lead {
+          font-size: 18px;
+          letter-spacing: 0.04em;
+        }
+
+      }
+    </style>
+    <link rel="stylesheet" href="/shared/css/kameya-design-system.css?v=20260619-menu-numbering-fix" />
+    <style>
+      body.utility-body {
+        background:
+          linear-gradient(rgba(248, 244, 234, 0.88), rgba(248, 244, 234, 0.91)),
+          url("/top/sections/02_我々の想い/assets/paper-fiber.webp") center / 1180px auto repeat,
+          url("/about/assets/figma/paper.webp") center / 760px auto repeat;
+      }
+
+      .utility-body .essay-main {
+        --story-content-width: min(760px, 100%);
+        --story-line-gap: 96px;
+        --story-optical-shift: calc(var(--story-line-gap) / 2);
+        position: relative;
+        isolation: isolate;
+      }
+
+      .utility-body .essay-main::before {
+        content: "";
+        position: absolute;
+        top: 168px;
+        bottom: 176px;
+        left: max(24px, calc((100% - var(--story-content-width)) / 2 - var(--story-optical-shift)));
+        z-index: 0;
+        width: 1px;
+        background: linear-gradient(
+          rgba(107, 79, 58, 0),
+          rgba(107, 79, 58, 0.42) 16%,
+          rgba(107, 79, 58, 0.42) 84%,
+          rgba(107, 79, 58, 0)
+        );
+        pointer-events: none;
+      }
+
+      .utility-body .essay-main > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .utility-body .essay-hero {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+      }
+
+      .utility-body .essay-hero > div,
+      .utility-body .essay-body {
+        width: var(--story-content-width) !important;
+        max-width: var(--story-content-width) !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        transform: translateX(var(--story-optical-shift));
+      }
+
+      .utility-body .essay-lead,
+      .utility-body .essay-section p {
+        max-width: var(--story-content-width) !important;
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+        line-break: strict;
+      }
+
+      .utility-body .story-nowrap {
+        white-space: nowrap;
+      }
+
+      .utility-body .essay-section {
+        display: block !important;
+        grid-template-columns: none !important;
+        position: relative;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-top: 56px;
+        border-top: 1px solid rgba(149, 124, 76, 0.24);
+      }
+
+      .utility-body .essay-section > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+      }
+
+      @media (max-width: 640px) {
+        body.utility-body {
+          min-width: 0;
+          overflow-x: clip;
+        }
+
+        .utility-body .utility-shell {
+          width: 100%;
+          min-width: 0;
+          max-width: 100%;
+          overflow-x: clip;
+        }
+
+        .utility-body .essay-main {
+          --story-optical-shift: 0px;
+          width: calc(100% - 48px) !important;
+          max-width: none !important;
+          margin-right: 24px !important;
+          margin-left: 24px !important;
+          overflow: visible;
+        }
+
+        .utility-body .essay-main::before {
+          display: none;
+        }
+
+        .utility-body .essay-hero,
+        .utility-body .essay-body,
+        .utility-body .essay-section,
+        .utility-body .essay-section > div,
+        .utility-body .essay-lead,
+        .utility-body .essay-section h2,
+        .utility-body .essay-section p,
+        .utility-body .essay-closing,
+        .utility-body .essay-closing p {
+          width: 100% !important;
+          max-width: 100% !important;
+          min-width: 0 !important;
+          margin-right: 0 !important;
+          margin-left: 0 !important;
+        }
+
+        .utility-body .essay-lead,
+        .utility-body .essay-section p {
+          max-width: 100% !important;
+          overflow-wrap: anywhere !important;
+          word-break: break-all !important;
+          line-break: anywhere;
+        }
+
+        .utility-body .story-nowrap {
+          white-space: normal;
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 960px) {
+        .utility-body .essay-main {
+          --story-optical-shift: 0px;
+        }
+
+        .utility-body .essay-main::before {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="utility-body">
+    <div class="utility-shell">
+      <header class="site-header" aria-label="サイトヘッダー">
+        <a class="brand-lockup" href="/top/" aria-label="亀屋日本伝統株式会社 トップへ">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="/about/assets/figma/logo-mark.png" alt="" />
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">亀屋日本伝統株式会社</span>
+            <span class="brand-roman">KAMEYA&nbsp;&nbsp;JAPAN&nbsp;&nbsp;TRADITION</span>
+          </span>
+        </a>
+        <button class="menu-button" type="button" aria-label="メニューを開く">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </header>
+
+      <main class="essay-main">
+        <section class="essay-hero" aria-labelledby="essay-title">
+          <div>
+            <p class="essay-kicker">Story</p>
+            <h1 class="essay-title" id="essay-title">創業の想い</h1>
+            <p class="essay-lead">
+              私は、工芸の世界に惚れて、この会社をつくりました。工芸と出会い、<span class="story-nowrap">作家の方々と出会い</span>、亀屋日本伝統を立ち上げるまでの歩みを記します。
+            </p>
+          </div>
+        </section>
+
+        <div class="essay-body">
+          <section class="essay-section">
+  <div>
+    <h2>起業のきっかけと想い</h2>
+    <p>私は、工芸の世界に惚れて、この会社をつくりました。</p>
+<p>けれど、最初から工芸に詳しかったわけではありません。<br />家族や親戚に職人や作家がいたわけでもなく、工芸品に囲まれて育ったわけでもありません。<br />二十年以上、工芸とはほとんど無縁の場所で生きてきました。</p>
+<p>そんな私が、なぜ会社を辞め、工芸の世界へ飛び込み、会社をつくるまでになったのか。</p>
+<p>きっかけは、工芸品そのものよりも先に、<br />そこにいる「人」に惚れたことでした。</p>
+<p>ものをつくる人の生き方、技術への向き合い方、静かな熱量。<br />その姿に触れたとき、私はこの世界で生きていきたいと思いました。</p>
+<p>ここでは、私が工芸と出会い、作家の方々と出会い、<br />亀屋日本伝統を立ち上げるに至るまでのことを、少しお話しします。</p>
+  </div>
+</section>
+
+          <section class="essay-section">
+  <div>
+    <h2>「格好良い人」と仕事がしたかった</h2>
+    <p>私は新卒で、総合商社に入社しました。<br />燃料輸入の営業が仕事でした。</p>
+<p>なぜ商社へ入ったのかというと、単純に、「格好良い人」と仕事がしたかったからです。</p>
+<p>大学生だった私は、なんとなく商社には格好良い人が多そうだと思っていました。</p>
+<p>そんなある日、原田マハさんの小説『たゆたえども沈まず』を読みました。</p>
+<p>そこには、人生のすべてを絵に捧げるゴッホの姿が描かれていました。</p>
+<p>精神を病み、自らを傷つけ、それでも自分の描くものを信じ続ける。<br />私は、その生き方に衝撃を受けました。</p>
+<p>「なんて格好良いんだろう」</p>
+<p>そう、素直に思いました。</p>
+  </div>
+</section>
+
+          <section class="essay-section">
+  <div>
+    <h2>岩槻で出会った“日本のゴッホ”</h2>
+    <p>ある日、地元・埼玉へ帰った際、たまたま岩槻へ立ち寄りました。</p>
+<p>人形店の店先には、人形が並んでいました。</p>
+<p>そのとき、ふと思ったのです。</p>
+<p>「日本のゴッホは、こういう職人の中にいるのかもしれない」</p>
+<p>そのときの私は、職人と作家の違いすら知りませんでした。</p>
+<p>すぐに電話をし、翌週、その人形店へ会いに行きました。</p>
+<p>そこで私は、再び衝撃を受けました。</p>
+<p>目の前に、本当に格好良いと思える人がいたのです。</p>
+<p>多くは語らず、人形を我が子のように扱いながら、<br />静かに、時に熱く、ものづくりについて語る姿に、私は圧倒されました。</p>
+<p>目の奥に炎が見えました。</p>
+<p>「この人だ」</p>
+<p>そう思いました。</p>
+<p>私は、工芸そのものより先に、“人”に惚れました。</p>
+<p>そして、その人たちと生きていきたいと思いました。</p>
+  </div>
+</section>
+
+          <section class="essay-section">
+  <div>
+    <h2>会社を辞めて、工芸の世界へ飛び込んだ</h2>
+    <p>私は、会社を辞めました。</p>
+<p>新卒で入社して、一年も経っていませんでした。</p>
+<p>しかし、工芸の世界へ行くと決めていました。</p>
+<p>問題は、何も持っていなかったことです。</p>
+<p>話したことのある職人は一人だけ。<br />工芸業界に知り合いもいません。</p>
+<p>ビジネスプランもありませんでした。</p>
+<p>ただ、「この世界が好きだ」という気持ちだけで飛び込みました。</p>
+<p>まずは工芸のことを知ろうと思い、100人ほどの作家へ手紙を書きました。</p>
+<p>なぜ手紙だったのかと聞かれると、深い理由はありません。<br />なんとなく、工芸の世界は手紙のイメージがあったからです。</p>
+<p>しかし、誰も相手にしてくれませんでした。</p>
+<p>電話をしても、<br />「怪しい」<br />「なぜ商社を辞めて工芸の世界へ来るのか分からない」<br />と言われました。</p>
+<p>それでも、会いに行きました。</p>
+<p>何度断られても、直接話しに行きました。</p>
+<p>ある作家の先生との出来事ですが、いつものように何度電話しても断られていました。</p>
+<p>それでも私は、その方の作品がどうしても好きで、会いたくなってしまったのです。</p>
+<p>調べられる限り調べ、その方の自宅へ向かいました。</p>
+<p>電話をすると、</p>
+<p>「亀屋くん、断ったよね」</p>
+<p>と言われました。</p>
+<p>私は、</p>
+<p>「どうしてもお会いしたくて、家の前まで来てしまいました」</p>
+<p>と答えました。</p>
+<p>突然来た私を見て、その先生は呆れながら、<br />「10分お茶を飲んだら帰りなさい」<br />と言いました。</p>
+<p>しかし、気づけば2時間も話を聞いてくださいました。</p>
+<p>帰る頃には、<br />「亀屋くん、よろしくね」<br />と握手をして、駅まで車で送ってくださったのを覚えています。</p>
+<p>その時初めて、直接会って想いを伝えることの大切さが身にしみました。<br />話せば分かるんだ、伝わるんだ、と希望が見えてきました。</p>
+  </div>
+</section>
+
+          <section class="essay-section">
+  <div>
+    <h2>人間国宝という存在を知った</h2>
+    <p>いろいろな方にお会いする中で、「人間国宝」という存在を知りました。</p>
+<p>正直に言うと、最初は名前しか知りませんでした。</p>
+<p>それでも、会いたくなったのです。</p>
+<p>もっと話を聞きたい。<br />もっと作品を見たい。</p>
+<p>そう思いました。</p>
+<p>まだ会社も設立しておらず、これを仕事にするかどうかも分からない状態で、ただ会いたい、話をしたいという理由だけで、20代前半の2年間ほど、全国の作家のもとへ通い続けました。<br />紹介もなく、一人ひとりに、自分の言葉で想いを伝え続けました。</p>
+<p>私は、工芸を“勉強”して好きになったわけではありません。</p>
+<p>人に惚れて、工芸を好きになりました。</p>
+<p>だからこそ今でも、工芸を「教える」というより、<br />その人の熱や生き方、格好良さを伝えることが大切なのだと思っています。</p>
+<p>現在では、ありがたいことに、人間国宝の方々をはじめ、多くの工芸作家の方々とご縁をいただいております。</p>
+<p>多くの方と、直接つながりを持たせていただいていることは、本当に幸運なことだと思っています。</p>
+<p>人間国宝の方々をはじめ、多くの作家の方々と直接お話をさせていただく中で、ただ自分が楽しいから関わるだけではなく、この立場だからこそできることがあるのではないか、と少しずつ感じるようになっていきました。</p>
+  </div>
+</section>
+
+          <section class="essay-section">
+  <div>
+    <h2>なぜ会社をつくったのか</h2>
+    <p>多くの作家の方々とお会いする中で、私は工芸の世界が抱える現実も知りました。</p>
+<p>後継者不足。<br />材料の問題。<br />生活の問題。</p>
+<p>本当に素晴らしい技術を持つ方々が、それだけでは生きていけない現実がありました。</p>
+<p>一方で私は、<br />「工芸は、面白くないのではなく、まだ出会うきっかけが少ないだけなのではないか」<br />とも感じていました。</p>
+<p>実際、私は工芸をまったく知らないところから、この世界に惚れ込みました。</p>
+<p>だからこそ、本当に良いものには、人を惹きつける力があると思っています。</p>
+<p>しかし、「良い」と思われるだけでは、文化は残りません。</p>
+<p>作り手にお金が入らなければ、生活もできません。<br />後継者育成にも、お金が必要です。</p>
+<p>綺麗事だけでは、文化は続かない。</p>
+<p>だから私は、会社をつくりました。</p>
+<p>本当に良いものを作る人が、文化的にも経済的にも、きちんと価値を持てる社会をつくりたいと思っています。</p>
+  </div>
+</section>
+
+          <section class="essay-section">
+  <div>
+    <h2>オマーンへ行った話</h2>
+    <p>会社を立ち上げて半年後、私は中東のオマーンへ行きました。</p>
+<p>お客さまのあては、まったくありませんでした。</p>
+<p>ただ、日本文化を必要としてくれる人が世界にいるのではないかと思ったのです。<br />当初は日本を代表する作家の工芸作品を、中東の王族に届ければ良いのだという安直な考えでした。</p>
+<p>私は、自身の会社での初めての海外出張であり、「契約を取るまで帰らない」と決めて行きました。<br />ホテルも取らず、帰りの便も取りませんでした。</p>
+<p>2ヶ月以上オマーンに滞在しました。感謝することも、悔しいことも、たくさん経験をした2ヶ月でした。</p>
+<p>結果として、熱量を絶やさずにアプローチを続け、会社設立から一年も経っていなかったにも関わらず、オマーン国立博物館と正式に仕事を始めることができました。</p>
+<p>現在では、亀屋日本伝統株式会社はオマーン国立博物館のOfficial Collaborative Partnerとして、継続的な文化事業を行っています。</p>
+<p>日本文化は、日本国内だけのものではないと思っています。<br />本当に良いものは、国を超えて、人の人生を豊かにできると信じています。</p>
+  </div>
+</section>
+
+          <section class="essay-section">
+  <div>
+    <h2>最後に</h2>
+    <p>私は、工芸を通じて、「自分が本当に好きだと思うもの」を、自分の言葉で語れる人が増えてほしいと思っています。</p>
+<p>誰かに決められた価値ではなく、自分自身の感覚で、「良い」と思えるものを持つことは、人生を豊かにする力になると思うからです。</p>
+<p>工芸には、その感覚が、まだ数多く残っていると思っています。</p>
+<p>そして私は、人間国宝をはじめとする作家の方々の本音の声や技術・考え方を、現代に生きる人へ届けていく責任があると思っています。</p>
+<p>亀屋日本伝統株式会社<br />代表取締役 亀屋夢月</p>
+  </div>
+</section>
+        </div>
+
+        <footer class="site-footer">
+          <span>© 2026 亀屋日本伝統株式会社</span>
+          <nav class="footer-links" aria-label="フッターリンク">
+            <a href="/contact/">お問い合わせ</a>
+            <a href="/privacy/">プライバシーポリシー</a>
+            <a href="/deal/">特定商取引法に基づく表記</a>
+          </nav>
+        </footer>
+      </main>
+    </div>
+    <script src="/shared/js/reveal.js" defer></script>
+    <script src="/shared/js/page-transition.js?v=20260619-menu-numbering-20" defer></script>
+  </body>
 </html>

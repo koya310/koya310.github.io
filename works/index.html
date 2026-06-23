@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>亀屋日本伝統株式会社 | 実績・事例</title>
+    <meta
+      name="description"
+      content="亀屋日本伝統株式会社のProjectsページ探索。実績・事例を紙背景の静かなグリッドで一覧化する。"
+    />
+    <link rel="preload" as="image" href="assets/figma/paper.webp" />
+    <link rel="preload" as="image" href="assets/figma/logo-mark.png" />
+    <link rel="preload" as="image" href="assets/projects/project-generated-01.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f8f4ec;
+        --ink: #333333;
+        --footer: #1b1d22;
+        --paper-soft: color-mix(in srgb, var(--paper) 92%, var(--ink));
+        --ink-deep: color-mix(in srgb, var(--ink) 78%, var(--footer));
+        --ink-muted: color-mix(in srgb, var(--ink) 54%, var(--paper));
+        --brown: color-mix(in srgb, var(--ink) 64%, var(--footer));
+        --gold: color-mix(in srgb, var(--ink) 50%, var(--paper));
+        --rule: color-mix(in srgb, var(--ink) 32%, transparent);
+        --rule-soft: color-mix(in srgb, var(--ink) 12%, transparent);
+        --footer-mobile: color-mix(in srgb, var(--footer) 88%, var(--paper));
+        --content-max: 1140px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      body {
+        min-width: 320px;
+        overflow-x: hidden;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Zen Old Mincho", "Hiragino Mincho ProN", serif;
+        font-size: 16px;
+        letter-spacing: 0;
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        background: var(--paper-soft);
+        content: "";
+      }
+
+      body::after {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-image: url("assets/figma/paper.webp");
+        background-position: center top;
+        background-size: 1416px 1000px;
+        content: "";
+        opacity: 0.43;
+        pointer-events: none;
+      }
+
+      h1,
+      h2,
+      p,
+      figure {
+        margin: 0;
+      }
+
+      h1,
+      h2,
+      p,
+      a {
+        overflow-wrap: anywhere;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        user-select: none;
+        -webkit-user-drag: none;
+      }
+
+      button {
+        font: inherit;
+      }
+
+      .projects-page {
+        min-height: 100vh;
+        overflow: hidden;
+        background: transparent;
+      }
+
+      .site-header {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        padding: 16px 24px;
+      }
+
+      .brand-lockup {
+        display: flex;
+        flex: 1 1 auto;
+        align-items: center;
+        min-width: 0;
+        gap: 8px;
+      }
+
+      .brand-mark {
+        position: relative;
+        width: 40px;
+        height: 38px;
+        overflow: hidden;
+        flex: 0 0 auto;
+        background-image: none;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 214.44%;
+      }
+
+      .brand-mark img {
+        display: none;
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        line-height: 1.15;
+        white-space: nowrap;
+      }
+
+      .brand-name {
+        color: var(--brown);
+        font-size: 15px;
+        font-weight: 400;
+      }
+
+      .brand-roman {
+        color: var(--ink-muted);
+        font-size: 14px;
+      }
+
+      .menu-button {
+        display: flex;
+        width: 48px;
+        height: 48px;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid color-mix(in srgb, var(--ink) 75%, transparent);
+        border-radius: 999px;
+        background: transparent;
+        color: var(--ink);
+        cursor: pointer;
+      }
+
+      .menu-button img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .projects-main {
+        width: min(var(--content-max), calc(100% - 48px));
+        margin: 0 auto;
+        padding: 72px 0 96px;
+      }
+
+      .page-heading {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+        margin-bottom: 64px;
+      }
+
+      .page-label {
+        color: var(--gold);
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+      .page-title {
+        color: var(--ink-deep);
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      .title-rule {
+        width: 176px;
+        height: 1px;
+        background: var(--rule);
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 72px 96px;
+      }
+
+      .project-card {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .project-meta {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 12px;
+        align-items: end;
+        color: var(--ink-muted);
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .project-meta::after {
+        display: block;
+        height: 1px;
+        background: var(--rule);
+        content: "";
+      }
+
+      .project-title {
+        color: var(--ink-deep);
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.5;
+        letter-spacing: 0;
+      }
+
+      .project-link {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .project-visual {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 3 / 2;
+        background: var(--rule-soft);
+      }
+
+      .project-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.94) contrast(1.04) saturate(0.92);
+        transition: transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .project-card:nth-child(1) .project-visual img {
+        object-position: center center;
+      }
+
+      .project-card:nth-child(2) .project-visual img {
+        object-position: center 68%;
+      }
+
+      .project-card:nth-child(3) .project-visual img,
+      .project-card:nth-child(4) .project-visual img {
+        object-position: center 34%;
+      }
+
+      .project-link:hover .project-visual img {
+        transform: scale(1.035);
+      }
+
+      .project-link:focus-visible {
+        outline: 1px solid var(--brown);
+        outline-offset: 8px;
+      }
+
+      .site-footer {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        min-height: 622px;
+        gap: 80px;
+        align-items: flex-start;
+        padding: 120px;
+        background: var(--footer);
+        color: var(--paper);
+      }
+
+      .footer-profile {
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 56px;
+        align-items: center;
+      }
+
+      .footer-company {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: 0.06em;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      .footer-address {
+        display: flex;
+        width: 312px;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      .footer-mail {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        width: 100%;
+      }
+
+      .footer-mail span:first-child {
+        white-space: nowrap;
+      }
+
+      .footer-mail span:last-child {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+
+      .socials {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .socials img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .copyright {
+        color: var(--ink-muted);
+        font-size: 16px;
+        line-height: 1;
+        text-align: center;
+      }
+
+      .footer-divider {
+        width: 1px;
+        align-self: stretch;
+        background: color-mix(in srgb, var(--paper) 20%, transparent);
+      }
+
+      .footer-right {
+        display: flex;
+        flex: 1 1 auto;
+        min-width: 0;
+        flex-direction: column;
+        gap: 120px;
+        align-items: center;
+      }
+
+      .footer-nav {
+        display: flex;
+        gap: 56px;
+        align-items: flex-start;
+        justify-content: center;
+        color: var(--paper);
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .footer-nav a {
+        display: block;
+        width: 20px;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+      }
+
+      .footer-legal {
+        display: flex;
+        width: 100%;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        line-height: 1.5;
+        white-space: nowrap;
+      }
+
+      .legal-divider {
+        width: 1px;
+        height: 24px;
+        background: color-mix(in srgb, var(--paper) 28%, transparent);
+      }
+
+      @media (max-width: 959px) {
+        .projects-main {
+          width: min(720px, calc(100% - 48px));
+          padding: 64px 0 88px;
+        }
+
+        .page-heading {
+          margin-bottom: 56px;
+        }
+
+        .projects-grid {
+          gap: 56px 40px;
+        }
+
+        .site-footer {
+          min-height: 1068px;
+          flex-direction: column;
+          gap: 80px;
+          align-items: center;
+          padding: 120px 80px;
+          background: var(--footer-mobile);
+        }
+
+        .footer-profile {
+          order: 2;
+          width: 100%;
+          max-width: 640px;
+        }
+
+        .footer-divider {
+          order: 3;
+          width: 100%;
+          max-width: 640px;
+          height: 1px;
+          align-self: center;
+        }
+
+        .footer-right {
+          display: contents;
+        }
+
+        .footer-nav {
+          order: 1;
+          width: 100%;
+          max-width: 640px;
+          justify-content: space-between;
+          gap: 24px;
+          padding: 0 40px;
+        }
+
+        .footer-legal {
+          order: 4;
+          width: 100%;
+          max-width: 640px;
+          flex-wrap: wrap;
+        }
+      }
+
+      @media (max-width: 639px) {
+        body {
+          font-size: 14px;
+        }
+
+        .site-header {
+          padding: 16px;
+        }
+
+        .brand-name {
+          font-size: 14px;
+        }
+
+        .brand-roman {
+          font-size: 14px;
+        }
+
+        .projects-main {
+          width: calc(100% - 48px);
+          padding: 56px 0 72px;
+        }
+
+        .page-heading {
+          gap: 16px;
+          margin-bottom: 48px;
+        }
+
+        .title-rule {
+          width: 160px;
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
+          gap: 48px;
+        }
+
+        .project-card,
+        .project-link {
+          gap: 12px;
+        }
+
+        .project-meta {
+          font-size: 14px;
+        }
+
+        .site-footer {
+          min-height: auto;
+          gap: 40px;
+          align-items: flex-start;
+          padding: 64px 24px;
+        }
+
+        .footer-nav {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 16px;
+          max-width: 400px;
+          padding: 0;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+
+        .footer-nav a {
+          width: 100%;
+          writing-mode: horizontal-tb;
+          text-orientation: mixed;
+        }
+
+        .footer-profile {
+          max-width: 400px;
+          gap: 32px;
+        }
+
+        .footer-company {
+          font-size: 27px;
+          letter-spacing: 0.06em;
+        }
+
+        .footer-address {
+          width: 100%;
+          align-items: flex-start;
+          text-align: left;
+        }
+
+        .footer-mail {
+          display: none;
+        }
+
+        .footer-divider {
+          max-width: 400px;
+        }
+
+        .footer-legal {
+          flex-direction: column;
+          gap: 12px;
+          align-items: center;
+          max-width: 400px;
+          white-space: normal;
+        }
+
+        .legal-divider {
+          display: none;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .brand-text {
+          align-items: flex-start;
+        }
+
+        .brand-roman {
+          transform-origin: left top;
+        }
+
+        .menu-button {
+          width: 44px;
+          height: 44px;
+        }
+        .footer-company {
+          font-size: 24px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
+    <link rel="stylesheet" href="/shared/css/reveal.css" />
+    <link rel="stylesheet" href="/shared/css/kameya-design-system.css?v=20260619-menu-numbering-fix" />
+  </head>
+  <body>
+    <div class="projects-page">
+      <header class="site-header" aria-label="サイトヘッダー">
+        <a class="brand-lockup" href="/" aria-label="亀屋日本伝統株式会社 トップへ">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="assets/figma/logo-mark.png" alt="" />
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">亀屋日本伝統株式会社</span>
+            <span class="brand-roman">KAMEYA&nbsp;&nbsp;JAPAN&nbsp;&nbsp;TRADITION</span>
+          </span>
+        </a>
+        <button class="menu-button" type="button" aria-label="メニューを開く">
+          <img src="assets/figma/menu.svg" alt="" />
+        </button>
+      </header>
+
+      <main class="projects-main">
+        <section class="page-heading" aria-labelledby="projects-title">
+          <p class="page-label">Projects</p>
+          <h1 class="page-title" id="projects-title">実績・事例</h1>
+          <div class="title-rule" aria-hidden="true"></div>
+          <p class="page-lead">工芸と人が出会う場をつくり、文化が選ばれ続ける接点を広げています。</p>
+        </section>
+
+        <section class="projects-grid" aria-label="実績・事例一覧">
+          <article class="project-card">
+            <a class="project-link" href="/works/detail/1/">
+              <div class="project-meta"><span>イベント</span></div>
+              <h2 class="project-title">「人間国宝・漆芸の世界」講演会＆作品鑑賞会</h2>
+              <figure class="project-visual">
+                <img src="assets/projects/project-generated-01.webp" alt="漆芸作品を前にした講演会と作品鑑賞会の様子" />
+              </figure>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <a class="project-link" href="/works/detail/1/">
+              <div class="project-meta"><span>空間導入</span></div>
+              <h2 class="project-title">企業迎賓空間への工芸作品導入・文化価値設計</h2>
+              <figure class="project-visual">
+                <img src="assets/projects/project-generated-02.webp" alt="迎賓空間に設置された工芸作品" />
+              </figure>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <a class="project-link" href="/works/detail/1/">
+              <div class="project-meta"><span>作品鑑賞</span></div>
+              <h2 class="project-title">作家の技と背景を伝える少人数制の作品鑑賞会</h2>
+              <figure class="project-visual">
+                <img src="assets/projects/project-generated-03.webp" alt="少人数で工芸作品の技法を鑑賞する様子" />
+              </figure>
+            </a>
+          </article>
+
+          <article class="project-card">
+            <a class="project-link" href="/works/detail/1/">
+              <div class="project-meta"><span>海外連携</span></div>
+              <h2 class="project-title">海外文化施設に向けた日本工芸の紹介・展示協力</h2>
+              <figure class="project-visual">
+                <img src="assets/projects/project-generated-04.webp" alt="海外展示に向けて工芸作品を丁寧に扱う様子" />
+              </figure>
+            </a>
+          </article>
+        </section>
+      </main>
+
+      <footer class="site-footer" aria-label="サイトフッター">
+        <div class="footer-profile">
+          <p class="footer-company">亀屋日本伝統株式会社</p>
+          <div class="footer-address">
+            <p>〒330-0043<br />埼玉県さいたま市浦和区大東1丁目16番5号</p>
+            <p class="footer-mail"><span>E-mail:</span><span>contact@kameya-japan-tradition.com</span></p>
+          </div>
+          <div class="socials" aria-label="SNSリンク">
+            <a href="https://www.facebook.com/p/%E4%BA%80%E5%B1%8B%E5%A4%A2%E6%9C%88-100026775131911/" aria-label="Facebook">
+              <img src="assets/figma/facebook.svg" alt="" />
+            </a>
+            <a href="https://www.instagram.com/kameya.official.japan/" aria-label="Instagram">
+              <img src="assets/figma/instagram.svg" alt="" />
+            </a>
+          </div>
+          <p class="copyright">© 亀屋日本伝統株式会社</p>
+        </div>
+        <div class="footer-divider" aria-hidden="true"></div>
+        <div class="footer-right">
+          <nav class="footer-nav" aria-label="フッターナビゲーション">
+            <a href="/news">お知らせ</a>
+            <a href="/about">亀屋について</a>
+            <a href="/services">事業内容</a>
+            <a href="/works">実績・事例</a>
+            <a href="/artists">作家・作品例</a>
+            <a href="/kogei">工芸の可能性について</a>
+          </nav>
+          <div class="footer-legal">
+            <a href="/contact">お問い合わせ</a>
+            <span class="legal-divider" aria-hidden="true"></span>
+            <a href="/privacy">プライバシーポリシー</a>
+            <span class="legal-divider" aria-hidden="true"></span>
+            <a href="/deal">特定商取引法に基づく表記</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="/shared/js/reveal.js" defer></script>
+    <script src="/shared/js/page-transition.js?v=20260619-menu-numbering-20" defer></script>
+  </body>
+</html>

@@ -1,0 +1,901 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>亀屋日本伝統株式会社 | 実績</title>
+    <meta
+      name="description"
+      content="亀屋トップページの実績セクション。Figma Achievementsを基準に実績2件を整列して表示する。"
+    />
+    <link rel="preload" as="image" href="assets/achievements-bg.webp" />
+    <link rel="preload" as="image" href="assets/achievement-oman-white.webp" />
+    <link rel="preload" as="image" href="assets/achievement-munakata.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&amp;family=Cormorant+Garamond:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f3f4f2;
+        --ink: #1a1a1a;
+        --body: #3d3d3d;
+        --hairline: rgba(26, 26, 26, 0.28);
+        --gold: #b99a5e;
+        --rule: #cebd9d;
+        --rule-soft: var(--ink);
+        --white: #ffffff;
+        --content-width: 970px;
+        --side-gutter: 120px;
+        --timeline-rail: 36px;
+        --timeline-dot-size: 12px;
+        --timeline-line-left: calc(var(--timeline-dot-size) / 2);
+        --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        overflow-x: clip;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Zen Old Mincho", "Hiragino Mincho ProN", serif;
+      }
+
+      body {
+        overflow-x: clip;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      h1,
+      h2,
+      p {
+        margin: 0;
+      }
+
+      .achievements {
+        position: relative;
+        min-height: auto;
+        overflow: hidden;
+        padding: 120px max(var(--side-gutter), calc((100vw - 1210px) / 2 + var(--side-gutter))) 96px;
+        background-color: var(--paper);
+        background-image: url("../04_主な取り組み/assets/figma-replay/paper.webp");
+        background-position: center top;
+        background-repeat: repeat;
+        background-size: 1208px auto;
+        isolation: isolate;
+      }
+
+      .paper-bg,
+      .wash {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .paper-bg {
+        inset: -48px 0;
+        z-index: -3;
+      }
+
+      .paper-bg img {
+        width: 100%;
+        height: 100%;
+        min-height: calc(100% + 96px);
+        object-fit: cover;
+        object-position: center top;
+        opacity: 0.78;
+      }
+
+      .wash {
+        z-index: -2;
+        background: rgba(255, 255, 255, 0.38);
+      }
+
+      .achievements__inner {
+        position: relative;
+        z-index: 1;
+        width: min(var(--content-width), 100%);
+        margin: 0 auto;
+      }
+
+      .heading {
+        position: relative;
+        width: 240px;
+      }
+
+      .section-kicker {
+        position: absolute;
+        display: inline-block;
+        top: 0;
+        left: -54px;
+        width: 30px;
+        margin: 0;
+        color: rgb(var(--kameya-gold) / 0.76);
+        font-family: "Cormorant Garamond", "Zen Old Mincho", serif;
+        font-size: clamp(20px, 1.8vw, 24px);
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: 0.06em;
+        opacity: 0.9;
+        text-orientation: mixed;
+        white-space: nowrap;
+        writing-mode: vertical-rl;
+      }
+
+      .section-title {
+        min-width: 0;
+        color: var(--ink);
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      .heading-rule {
+        display: block;
+        width: 200px;
+        height: 3px;
+        margin-top: 20px;
+        background: url("../04_主な取り組み/assets/figma-replay/rule-short.svg") center / 100% 100% no-repeat;
+      }
+
+      .timeline {
+        position: relative;
+        margin-top: 88px;
+        padding-left: var(--timeline-rail);
+        min-height: auto;
+      }
+
+      .timeline::before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: var(--timeline-line-left);
+        width: 1px;
+        background: var(--rule-soft);
+        content: "";
+      }
+
+      .entry {
+        position: relative;
+        display: grid;
+        grid-template-columns: 320px minmax(0, 558px);
+        gap: 56px;
+        align-items: start;
+        min-height: 229px;
+      }
+
+      .entry + .entry {
+        margin-top: 56px;
+      }
+
+      .entry::before {
+        position: absolute;
+        top: 23px;
+        left: calc(var(--timeline-rail) * -1);
+        width: var(--timeline-dot-size);
+        height: var(--timeline-dot-size);
+        border-radius: 50%;
+        background: var(--ink);
+        content: "";
+      }
+
+      .entry + .entry::before {
+        top: 46px;
+      }
+
+      .achievement-image {
+        position: relative;
+        width: 320px;
+        height: 180px;
+        overflow: hidden;
+        background: var(--white);
+      }
+
+      .achievement-image::after {
+        position: absolute;
+        inset: -28px;
+        z-index: -1;
+        border: 1px solid rgba(185, 154, 94, 0.42);
+        border-radius: 50%;
+        content: "";
+        opacity: 0.6;
+      }
+
+      .achievement-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .achievement-image--contain img {
+        object-fit: contain;
+        padding: 22px;
+      }
+
+      .achievement-text {
+        min-width: 0;
+      }
+
+      .meta {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: auto;
+        margin-bottom: 0;
+        color: var(--gold);
+        font-family: "Cormorant Garamond", "Zen Old Mincho", serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: 0.05em;
+        text-transform: none;
+      }
+
+      .meta::after {
+        order: 2;
+        width: 40px;
+        height: 3px;
+        background-image: url("../04_主な取り組み/assets/figma-replay/rule-short.svg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        content: "";
+        transform: rotate(180deg);
+      }
+
+      .meta-number {
+        order: 1;
+        min-width: 26px;
+        font-size: 18px;
+        font-variant-numeric: lining-nums tabular-nums;
+      }
+
+      .meta-label {
+        order: 3;
+        font-size: 16px;
+        letter-spacing: 0.03em;
+      }
+
+      .achievement-title {
+        min-width: 0;
+        margin-top: 0;
+        color: var(--ink);
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 1.6;
+        letter-spacing: 0;
+        overflow-wrap: anywhere;
+        word-break: break-all;
+      }
+
+      .mobile-title-break {
+        display: none;
+      }
+
+      .achievement-copy {
+        position: relative;
+        max-width: 558px;
+        margin-top: 24px;
+        padding-top: 12px;
+        color: var(--body);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.8;
+        letter-spacing: 0;
+      }
+
+      .achievement-copy::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 62px;
+        height: 3px;
+        background-image: url("../04_主な取り組み/assets/figma-replay/rule-short.svg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        content: "";
+        transform: rotate(180deg);
+      }
+
+      .achievement-video-link {
+        box-sizing: border-box;
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: min(320px, 100%);
+        min-height: 56px;
+        margin-top: 24px;
+        padding: 8px 48px;
+        border: 1px solid rgba(29, 28, 24, 0.38);
+        border-radius: 2px;
+        background: rgba(248, 244, 234, 0);
+        color: var(--ink);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: 0.12em;
+        text-decoration: none;
+        overflow: hidden;
+        transition:
+          background-color 420ms cubic-bezier(0.16, 1, 0.3, 1),
+          border-color 420ms cubic-bezier(0.16, 1, 0.3, 1),
+          color 420ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .achievement-video-link::after {
+        position: absolute;
+        right: auto;
+        bottom: 10px;
+        left: 50%;
+        display: block;
+        width: 104px;
+        height: 1px;
+        background: rgba(29, 28, 24, 0.58);
+        content: "";
+        opacity: 0.66;
+        pointer-events: none;
+        transform: translateX(-50%);
+        transition:
+          width 520ms cubic-bezier(0.16, 1, 0.3, 1),
+          opacity 420ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .achievement-video-link:hover {
+        border-color: rgba(29, 28, 24, 0.72);
+        background: rgba(255, 255, 255, 0.22);
+      }
+
+      .achievement-video-link:focus-visible {
+        outline: 2px solid var(--gold);
+        outline-offset: 4px;
+      }
+
+      .achievement-video-link:hover::after,
+      .achievement-video-link:focus-visible::after {
+        width: 152px;
+        opacity: 0.86;
+      }
+
+      .achievement-video-link__arrow {
+        position: relative;
+        display: inline-block;
+        flex: 0 0 auto;
+        width: 40px;
+        height: 12px;
+        border: 0;
+        border-radius: 0;
+        color: inherit;
+        font-size: 0;
+        line-height: 1;
+        background: none;
+        transform: none;
+      }
+
+      .achievement-video-link__arrow::before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        display: block;
+        width: 26px;
+        height: 1px;
+        background: currentColor;
+        content: "";
+        opacity: 0.78;
+        transform: translateY(-50%);
+        transition:
+          width 520ms cubic-bezier(0.16, 1, 0.3, 1),
+          opacity 420ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .achievement-video-link__arrow::after {
+        position: absolute;
+        top: 50%;
+        left: 21px;
+        display: block;
+        width: 7px;
+        height: 7px;
+        border-top: 1px solid currentColor;
+        border-right: 1px solid currentColor;
+        content: "";
+        opacity: 0.78;
+        transform: translateY(-50%) rotate(45deg);
+        transition:
+          left 520ms cubic-bezier(0.16, 1, 0.3, 1),
+          opacity 420ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .achievement-video-link:hover .achievement-video-link__arrow::before,
+      .achievement-video-link:focus-visible .achievement-video-link__arrow::before {
+        width: 38px;
+        opacity: 0.96;
+      }
+
+      .achievement-video-link:hover .achievement-video-link__arrow::after,
+      .achievement-video-link:focus-visible .achievement-video-link__arrow::after {
+        left: 33px;
+        opacity: 0.96;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translate3d(0, 8px, 0);
+        transition:
+          opacity 780ms var(--ease),
+          transform 1120ms var(--ease-out);
+        will-change: opacity, transform;
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .flow-char {
+        display: inline-block;
+      }
+
+      .reveal .flow-char {
+        opacity: 0;
+        transform: translate3d(0, 0.34em, 0);
+        transition:
+          opacity 760ms var(--ease),
+          transform 1120ms var(--ease-out);
+        transition-delay: calc(var(--flow-index) * 58ms);
+      }
+
+      .reveal .flow-char--space {
+        width: 0.3em;
+      }
+
+      .reveal.is-visible .flow-char {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .entry:nth-child(1) {
+        transition-delay: 100ms;
+      }
+
+      .entry:nth-child(2) {
+        transition-delay: 180ms;
+      }
+
+      @media (max-width: 1024px) {
+        :root {
+          --side-gutter: 80px;
+        }
+
+        .achievements {
+          min-height: auto;
+          padding-top: 96px;
+          padding-bottom: 72px;
+        }
+
+        .achievements__inner {
+          width: 100%;
+        }
+
+        .heading {
+          width: 240px;
+          max-width: 640px;
+        }
+
+        .section-kicker {
+          position: absolute;
+          display: inline-block;
+          top: 0;
+          left: -54px;
+          width: 30px;
+          margin-bottom: 0;
+          font-size: clamp(20px, 1.8vw, 24px);
+          line-height: 1.5;
+          letter-spacing: 0.06em;
+          text-orientation: mixed;
+          writing-mode: vertical-rl;
+        }
+
+        .section-title {
+          font-size: 40px;
+          line-height: 1;
+        }
+
+        .timeline {
+          margin-top: 88px;
+        }
+
+        .entry {
+          grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+          gap: 48px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        :root {
+          --timeline-rail: 32px;
+        }
+
+        .timeline {
+          padding-left: var(--timeline-rail);
+          min-height: auto;
+        }
+
+        .timeline::before {
+          bottom: 12px;
+          left: var(--timeline-line-left);
+        }
+
+        .entry {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 24px;
+          min-height: 0;
+        }
+
+        .entry + .entry {
+          margin-top: 48px;
+        }
+
+        .entry::before {
+          top: 8px;
+          left: calc(var(--timeline-rail) * -1);
+        }
+
+        .entry + .entry::before {
+          top: 8px;
+        }
+
+        .achievement-image {
+          width: 100%;
+          max-width: none;
+          height: auto;
+          aspect-ratio: 320 / 180;
+        }
+
+        .achievement-title {
+          margin-top: 2px;
+          font-size: 24px;
+          line-height: 1.55;
+        }
+
+        .mobile-title-break {
+          display: block;
+        }
+
+        .achievement-copy {
+          max-width: none;
+          margin-top: 20px;
+          font-size: 16px;
+          line-height: 1.9;
+        }
+      }
+
+      @media (min-width: 721px) and (max-width: 959px) {
+        .heading {
+          width: auto;
+          padding-left: 0;
+        }
+
+        .section-kicker {
+          position: static;
+          display: block;
+          width: auto;
+          margin-bottom: 16px;
+          font-size: clamp(20px, 1.8vw, 24px);
+          line-height: 1.6;
+          letter-spacing: 0.06em;
+          text-orientation: mixed;
+          writing-mode: horizontal-tb;
+        }
+
+        .section-title {
+          font-size: 32px;
+          line-height: 1.35;
+        }
+
+        .heading-rule {
+          margin-top: 16px;
+          margin-left: 0;
+        }
+      }
+
+      @media (max-width: 720px) {
+        :root {
+          --side-gutter: 24px;
+        }
+
+        .achievements {
+          min-height: auto;
+          padding-top: 72px;
+          padding-bottom: 64px;
+        }
+
+        .heading {
+          width: auto;
+          padding-left: 0;
+        }
+
+        .section-kicker {
+          position: static;
+          display: block;
+          width: auto;
+          margin-bottom: 16px;
+          font-size: 16px;
+          line-height: 1.6;
+          letter-spacing: 0.06em;
+          text-orientation: mixed;
+          writing-mode: horizontal-tb;
+        }
+
+        .section-title {
+          font-size: clamp(30px, 7.8vw, 32px);
+          line-height: 1.35;
+        }
+
+        .heading-rule {
+          margin-top: 16px;
+          margin-left: 0;
+        }
+
+        .timeline {
+          margin-top: 56px;
+          padding-left: var(--timeline-rail);
+          min-height: auto;
+        }
+
+        .timeline::before {
+          top: 0;
+          bottom: 12px;
+          left: var(--timeline-line-left);
+        }
+
+        .entry {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 24px;
+          min-height: 0;
+        }
+
+        .entry + .entry {
+          margin-top: 56px;
+        }
+
+        .entry::before {
+          top: 8px;
+          left: calc(var(--timeline-rail) * -1);
+          width: var(--timeline-dot-size);
+          height: var(--timeline-dot-size);
+        }
+
+        .entry + .entry::before {
+          top: 8px;
+        }
+
+        .achievement-image {
+          width: 100%;
+          max-width: none;
+          height: auto;
+          aspect-ratio: 320 / 180;
+        }
+
+        .achievement-title {
+          margin-top: 2px;
+          font-size: 24px;
+          line-height: 1.55;
+        }
+
+        .achievement-copy {
+          margin-top: 28px;
+          font-size: 16px;
+          line-height: 1.9;
+        }
+
+        .meta {
+          font-size: 16px;
+        }
+
+        .meta-label {
+          font-size: 16px;
+        }
+      }
+
+      @media (min-width: 480px) and (max-width: 640px) {
+        :root {
+          --side-gutter: clamp(40px, 8vw, 56px);
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 720px) {
+        :root {
+          --side-gutter: 80px;
+        }
+
+        .achievements {
+          padding-top: 96px;
+          padding-bottom: 72px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+          filter: none !important;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="../shared/top-spacing.css?v=20260619-label-alpha" />
+  </head>
+  <body>
+    <section class="achievements" aria-label="実績">
+      <div class="paper-bg" aria-hidden="true"><img src="assets/achievements-bg.webp" alt="" /></div>
+      <div class="wash" aria-hidden="true"></div>
+
+      <div class="achievements__inner">
+        <header class="heading reveal">
+          <p class="section-kicker section-heading__eyebrow" lang="en">Achievements</p>
+          <h1 class="section-title section-heading__title">実績</h1>
+          <span class="heading-rule section-heading__rule" aria-hidden="true"></span>
+        </header>
+
+        <div class="timeline">
+          <article class="entry reveal">
+            <div class="achievement-image achievement-image--contain">
+              <img src="assets/achievement-oman-white.webp" alt="オマーン国立博物館の実績" />
+            </div>
+            <div class="achievement-text">
+              <p class="meta"><span class="meta-number">01</span><span class="meta-label">Museum Project</span></p>
+              <h2 class="achievement-title">オマーン国立博物館との取り組み</h2>
+              <p class="achievement-copy">オマーン国立博物館のオフィシャルパートナーとして、日本の伝統的な織物の技術を用いた、伝統衣装の企画・制作を行っています。</p>
+            </div>
+          </article>
+
+          <article class="entry reveal">
+            <div class="achievement-image">
+              <img src="assets/achievement-munakata.webp" alt="宗像大社における講演" />
+            </div>
+            <div class="achievement-text">
+              <p class="meta"><span class="meta-number">02</span><span class="meta-label">Cultural Lecture</span></p>
+              <h2 class="achievement-title">宗像大社における講演</h2>
+              <p class="achievement-copy">宗像国際環境会議にて人間国宝を含む作家・職人たちの「技と心」を現代産業や海外市場に繋ぎ直す「再接続」の重要性を説き、伝統を現代の文脈でアップデートし続ける「研鑽」の精神を講演いたしました。</p>
+              <a class="achievement-video-link" href="https://www.youtube.com/watch?v=sLMm5y5W3z4&list=PLPcTo8jkl9DWKEjzyWqAO2urRxxNGjMh2&index=7" target="_blank" rel="noopener" aria-label="宗像大社における講演動画をYouTubeで見る">
+                <span>講演動画を見る</span>
+                <span class="achievement-video-link__arrow" aria-hidden="true"></span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      (() => {
+        const reveals = [...document.querySelectorAll(".reveal")];
+        const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const splitFlowTitles = () => {
+          document.querySelectorAll(".section-title").forEach((element) => {
+            if (element.dataset.flowReady === "1") return;
+            const text = element.textContent.trim();
+            element.dataset.flowReady = "1";
+            element.setAttribute("aria-label", text);
+            element.textContent = "";
+            Array.from(text).forEach((char, index) => {
+              const span = document.createElement("span");
+              span.className = char === " " ? "flow-char flow-char--space" : "flow-char";
+              span.setAttribute("aria-hidden", "true");
+              span.style.setProperty("--flow-index", index);
+              span.textContent = char === " " ? "\u00a0" : char;
+              element.append(span);
+            });
+          });
+        };
+
+        const show = (element) => {
+          if (!element || element.classList.contains("is-visible")) return;
+          element.classList.add("is-visible");
+        };
+        const revealIndexes = (indexes) => indexes.forEach((index) => show(reveals[index]));
+        const showAll = () => reveals.forEach(show);
+        let parentViewportTick = false;
+
+        const revealFromParentViewport = () => {
+          try {
+            const frame = window.frameElement;
+            const parentWindow = window.parent;
+            if (!frame || !parentWindow) return false;
+            const parentHeight = parentWindow.innerHeight || parentWindow.document.documentElement.clientHeight || 0;
+            const frameRect = frame.getBoundingClientRect();
+            const visible = reveals
+              .map((target, index) => {
+                const rect = target.getBoundingClientRect();
+                const top = frameRect.top + rect.top;
+                const bottom = frameRect.top + rect.bottom;
+                return top < parentHeight * 0.9 && bottom > parentHeight * -0.12 ? index : null;
+              })
+              .filter((index) => index !== null);
+            if (visible.length) revealIndexes(visible);
+            return true;
+          } catch {
+            return false;
+          }
+        };
+
+        const scheduleParentViewportReveal = () => {
+          if (parentViewportTick) return;
+          parentViewportTick = true;
+          window.requestAnimationFrame(() => {
+            parentViewportTick = false;
+            revealFromParentViewport();
+          });
+        };
+
+        const startParentViewportTracking = () => {
+          revealFromParentViewport();
+          try {
+            window.parent.addEventListener("scroll", scheduleParentViewportReveal, { passive: true });
+            window.parent.addEventListener("resize", scheduleParentViewportReveal);
+            [240, 900, 1800].forEach((delay) => window.setTimeout(scheduleParentViewportReveal, delay));
+          } catch {
+            // Cross-origin file previews fall back to kameya:section-visible.
+          }
+        };
+
+        splitFlowTitles();
+
+        if (window.self !== window.top) {
+          window.addEventListener("message", (event) => {
+            if (event.data?.type === "kameya:nested-visible" && Array.isArray(event.data.visible)) revealIndexes(event.data.visible);
+            if (event.data?.type === "kameya:section-visible" && !revealFromParentViewport()) showAll();
+          });
+          if (location.protocol !== "file:") startParentViewportTracking();
+          try {
+            window.parent.postMessage({ type: "kameya:child-ready" }, "*");
+          } catch {
+            // Parent notification is best-effort; viewport tracking above is the primary path.
+          }
+          return;
+        }
+
+        if (prefersReduced || !("IntersectionObserver" in window)) {
+          showAll();
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                show(entry.target);
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.18, rootMargin: "0px 0px -10% 0px" }
+        );
+
+        reveals.forEach((element) => observer.observe(element));
+      })();
+    </script>
+  </body>
+</html>

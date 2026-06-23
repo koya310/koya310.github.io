@@ -1,0 +1,61 @@
+/*
+ * top-spacing-integrated.css
+ * 単一ドキュメント統合版（iframe廃止版）専用の補償レイヤー。
+ *
+ * 背景: 統合時に各セクションの :root 変数を section 単位（#co-create 等）にスコープ化して
+ * 変数衝突（frame-width / gold / ink / body / paper）を分離した。
+ * その副作用で、co-create 固有・非衝突の copy 系・title 系変数まで #co-create に移動し、
+ * top-spacing.css が :root へ !important で行う統一上書きが
+ * 「プロキシミティ（#co-create が :root より近い祖先）」で負けるようになった。
+ * 結果、タブレット〜中間幅(1279px以下)で本文テキストの列幅が単体ソースとずれる。
+ *
+ * 対処: top-spacing.css が :root に対して行う co-create 向け copy 系・title 系の上書きを、
+ * ここで #co-create プロキシミティに同値で再適用する（!important・top-spacing.css の後に読む）。
+ * 1280px 以上では top-spacing 側に上書きが無いため、ここでも何もせず #co-create 基底値
+ *（frame-width 依存のデスクトップ配置）がそのまま効く＝単体ソースと一致。
+ *
+ * SSoT 注意: 値は top-spacing.css の 1101-1279 / 721-1100 / 720以下 の各 :root 上書きと
+ * 同期させること（変更時は両方更新）。
+ * 注意: このコメント内に CSS コメント終端の二文字（アスタリスト＋スラッシュ）を書かないこと。
+ */
+
+@media (min-width: 1101px) and (max-width: 1279px) {
+  #co-create {
+    --copy-one-x: var(--ktop-space-x) !important;
+    --copy-one-w: calc(100vw - (var(--ktop-space-x) * 2)) !important;
+    --title-x: calc(100vw - var(--ktop-space-x) - 152px) !important;
+    --copy-two-x: max(520px, calc(100vw - 560px)) !important;
+    --copy-three-x: var(--ktop-space-x) !important;
+    --copy-three-w: calc(100vw - (var(--ktop-space-x) * 2)) !important;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 1100px) {
+  #co-create {
+    --copy-one-x: var(--ktop-space-x) !important;
+    --copy-one-w: calc(100vw - (var(--ktop-space-x) * 2)) !important;
+    --title-y: var(--ktop-space-top) !important;
+    --title-x: calc(100vw - var(--ktop-space-x) - 152px) !important;
+    --copy-two-x: var(--ktop-space-x) !important;
+    --copy-two-w: calc(100vw - (var(--ktop-space-x) * 2)) !important;
+    --copy-three-x: var(--ktop-space-x) !important;
+    --copy-three-w: calc(100vw - (var(--ktop-space-x) * 2)) !important;
+  }
+
+  #co-create .title-lines p {
+    width: 40px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  #co-create {
+    --copy-one-x: var(--ktop-space-x) !important;
+    --copy-one-w: calc(100vw - (var(--ktop-space-x) * 2)) !important;
+    --title-y: var(--ktop-space-top) !important;
+    --title-x: calc(100vw - var(--ktop-space-x) - 128px) !important;
+    --copy-two-x: var(--ktop-space-x) !important;
+    --copy-two-w: calc(100vw - (var(--ktop-space-x) * 2)) !important;
+    --copy-three-x: var(--ktop-space-x) !important;
+    --copy-three-w: calc(100vw - (var(--ktop-space-x) * 2)) !important;
+  }
+}

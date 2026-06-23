@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>亀屋日本伝統株式会社 | 実績詳細</title>
+    <meta
+      name="description"
+      content="亀屋日本伝統株式会社のProjects詳細ページ探索。講演会と作品鑑賞会の実績を紙背景の静かなレイアウトで掲載する。"
+    />
+    <link rel="preload" as="image" href="assets/figma/paper.webp" />
+    <link rel="preload" as="image" href="assets/figma/logo-mark.png" />
+    <link rel="preload" as="image" href="assets/detail/exhibition-hall.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=Zen+Old+Mincho:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f8f4ec;
+        --paper-soft: #fbf8f1;
+        --ink: #3b2f28;
+        --accent: #a89175;
+        --muted: #767676;
+        --footer: #1b1d22;
+        --footer-mobile: #242220;
+        --white: #ffffff;
+        --footer-muted: #666666;
+        --footer-rule: rgba(255, 255, 255, 0.2);
+        --hairline: rgba(59, 47, 40, 0.16);
+        --article-max: 800px;
+        --article-desktop-gutters: 160px;
+        --article-image-ratio: 4 / 3;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      body {
+        min-width: 320px;
+        overflow-x: hidden;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Zen Old Mincho", "Hiragino Mincho ProN", serif;
+        font-size: 16px;
+        letter-spacing: 0;
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        background: var(--paper-soft);
+        content: "";
+      }
+
+      body::after {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-image: url("assets/figma/paper.webp");
+        background-position: center top;
+        background-size: 1416px 1000px;
+        content: "";
+        opacity: 0.43;
+        pointer-events: none;
+      }
+
+      h1,
+      p,
+      figure {
+        margin: 0;
+      }
+
+      h1,
+      p,
+      a {
+        overflow-wrap: anywhere;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        user-select: none;
+        -webkit-user-drag: none;
+      }
+
+      button {
+        font: inherit;
+      }
+
+      .detail-page {
+        min-height: 100vh;
+        overflow: hidden;
+        background: transparent;
+      }
+
+      .site-header {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        padding: 16px 24px;
+      }
+
+      .brand-lockup {
+        display: flex;
+        flex: 1 1 auto;
+        align-items: center;
+        min-width: 0;
+        gap: 8px;
+      }
+
+      .brand-mark {
+        position: relative;
+        width: 40px;
+        height: 38px;
+        overflow: hidden;
+        flex: 0 0 auto;
+        background-image: none;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 214.44%;
+      }
+
+      .brand-mark img {
+        display: none;
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        line-height: 1.15;
+        white-space: nowrap;
+      }
+
+      .brand-name {
+        color: var(--accent);
+        font-family: "Yuji Syuku", "Zen Old Mincho", serif;
+        font-size: 15px;
+        font-weight: 400;
+      }
+
+      .brand-roman {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .menu-button {
+        display: flex;
+        width: 50px;
+        height: 41px;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(51, 51, 51, 0.72);
+        border-radius: 100px;
+        background: transparent;
+        color: var(--ink);
+        cursor: pointer;
+      }
+
+      .menu-button img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .article-shell {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+        padding: 40px 0 80px;
+      }
+
+      .article-head,
+      .article-body,
+      .article-bottom {
+        width: min(var(--article-max), calc(100% - var(--article-desktop-gutters)));
+        min-width: 0;
+        max-width: var(--article-max);
+      }
+
+      .article-head {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: flex-start;
+      }
+
+      .back-link {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        min-height: 24px;
+        color: var(--ink);
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      .back-link img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .article-category {
+        width: 100%;
+        color: var(--accent);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+
+      .article-title {
+        width: 100%;
+        color: var(--ink);
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.5;
+        letter-spacing: 0;
+      }
+
+      .article-body {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        align-items: flex-start;
+      }
+
+      .article-image {
+        width: 100%;
+        aspect-ratio: var(--article-image-ratio);
+        overflow: hidden;
+        background: var(--hairline);
+      }
+
+      .article-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+
+      .article-copy {
+        width: 100%;
+        color: var(--ink);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 2;
+      }
+
+      .article-copy p + p {
+        margin-top: 32px;
+      }
+
+      .article-bottom {
+        display: flex;
+        align-items: center;
+        padding-top: 24px;
+      }
+
+      .site-footer {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        min-height: 622px;
+        gap: 80px;
+        align-items: flex-start;
+        padding: 120px;
+        background: var(--footer);
+        color: var(--white);
+      }
+
+      .footer-profile {
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .footer-company {
+        font-family: "Yuji Syuku", "Zen Old Mincho", serif;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 1.5;
+        letter-spacing: 0.06em;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      .footer-address {
+        display: flex;
+        width: 312px;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        color: var(--white);
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      .footer-mail {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        width: 100%;
+      }
+
+      .footer-mail span:first-child {
+        white-space: nowrap;
+      }
+
+      .footer-mail span:last-child {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+
+      .socials {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .socials img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .copyright {
+        color: var(--footer-muted);
+        font-size: 16px;
+        line-height: 1;
+        text-align: center;
+      }
+
+      .footer-divider {
+        width: 1px;
+        align-self: stretch;
+        background: var(--footer-rule);
+      }
+
+      .footer-right {
+        display: flex;
+        flex: 1 1 auto;
+        min-width: 0;
+        flex-direction: column;
+        gap: 118px;
+        align-items: center;
+      }
+
+      .footer-nav {
+        display: flex;
+        gap: 60px;
+        align-items: flex-start;
+        justify-content: center;
+        color: var(--white);
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .footer-nav a {
+        display: block;
+        width: 20px;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+      }
+
+      .footer-legal {
+        display: flex;
+        width: 100%;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+        font-size: 16px;
+        line-height: 1.5;
+        white-space: nowrap;
+      }
+
+      .legal-divider {
+        width: 1px;
+        height: 24px;
+        background: rgba(255, 255, 255, 0.28);
+      }
+
+      @media (max-width: 959px) {
+        .article-shell {
+          padding: 40px 80px 80px;
+        }
+
+        .article-head,
+        .article-body,
+        .article-bottom {
+          width: 100%;
+          max-width: var(--article-max);
+        }
+
+        .site-footer {
+          min-height: 1068px;
+          flex-direction: column;
+          gap: 80px;
+          align-items: center;
+          padding: 120px 80px;
+          background: var(--footer-mobile);
+        }
+
+        .footer-profile {
+          order: 2;
+          width: 100%;
+          max-width: 640px;
+        }
+
+        .footer-divider {
+          order: 3;
+          width: 100%;
+          max-width: 640px;
+          height: 1px;
+          align-self: center;
+        }
+
+        .footer-right {
+          display: contents;
+        }
+
+        .footer-nav {
+          order: 1;
+          width: 100%;
+          max-width: 640px;
+          justify-content: space-between;
+          gap: 24px;
+          padding: 0 40px;
+        }
+
+        .footer-legal {
+          order: 4;
+          width: 100%;
+          max-width: 640px;
+          flex-wrap: wrap;
+        }
+      }
+
+      @media (max-width: 639px) {
+        body {
+          font-size: 14px;
+        }
+
+        .site-header {
+          padding: 16px 24px;
+        }
+
+        .brand-name {
+          font-size: 15px;
+        }
+
+        .brand-roman {
+          font-size: 14px;
+        }
+
+        .article-shell {
+          padding: 24px 24px 64px;
+        }
+
+        .article-copy p + p {
+          margin-top: 32px;
+        }
+
+        .site-footer {
+          min-height: auto;
+          gap: 40px;
+          align-items: flex-start;
+          padding: 64px 24px;
+        }
+
+        .footer-nav {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 16px;
+          max-width: 400px;
+          padding: 0;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+
+        .footer-nav a {
+          width: 100%;
+          writing-mode: horizontal-tb;
+          text-orientation: mixed;
+        }
+
+        .footer-profile {
+          max-width: 400px;
+          gap: 32px;
+        }
+
+        .footer-company {
+          font-size: 27px;
+          letter-spacing: 0.06em;
+        }
+
+        .footer-address {
+          width: 100%;
+          align-items: center;
+          text-align: center;
+        }
+
+        .footer-mail {
+          display: none;
+        }
+
+        .footer-divider {
+          max-width: 400px;
+        }
+
+        .footer-legal {
+          flex-direction: column;
+          gap: 12px;
+          align-items: center;
+          max-width: 400px;
+          white-space: normal;
+        }
+
+        .legal-divider {
+          display: none;
+        }
+      }
+
+      @media (max-width: 374px) {
+        .site-header {
+          padding: 16px;
+        }
+
+        .brand-text {
+          align-items: flex-start;
+        }
+
+        .brand-name {
+          font-size: 14px;
+        }
+
+        .brand-roman {
+          font-size: 14px;
+        }
+
+        .menu-button {
+          width: 44px;
+          height: 44px;
+        }
+
+        .article-title {
+          font-size: 22px;
+        }
+
+        .footer-company {
+          font-size: 24px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
+    <link rel="stylesheet" href="/shared/css/reveal.css" />
+    <link rel="stylesheet" href="/shared/css/kameya-design-system.css?v=20260619-menu-numbering-fix" />
+  </head>
+  <body>
+    <div class="detail-page">
+      <header class="site-header" aria-label="サイトヘッダー">
+        <a class="brand-lockup" href="/" aria-label="亀屋日本伝統株式会社 トップへ">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="assets/figma/logo-mark.png" alt="" />
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">亀屋日本伝統株式会社</span>
+            <span class="brand-roman">KAMEYA&nbsp;&nbsp;JAPAN&nbsp;&nbsp;TRADITION</span>
+          </span>
+        </a>
+        <button class="menu-button" type="button" aria-label="メニューを開く">
+          <img src="assets/figma/menu.svg" alt="" />
+        </button>
+      </header>
+
+      <main class="article-shell">
+        <section class="article-head" aria-labelledby="article-title">
+          <a class="back-link" href="/works/">
+            <img src="assets/figma/backspace.svg" alt="" aria-hidden="true" />
+            <span>実績一覧へ</span>
+          </a>
+          <p class="article-category">イベント</p>
+          <h1 class="article-title" id="article-title">「人間国宝・〇〇〇〇 漆芸の世界」講演会＆作品鑑賞会</h1>
+        </section>
+
+        <section class="article-body" aria-label="実績詳細本文">
+          <figure class="article-image">
+            <img src="assets/detail/exhibition-hall.webp" alt="展示室で漆芸作品を鑑賞する会場風景" />
+          </figure>
+
+          <div class="article-copy">
+            <p>このたび亀屋日本伝統株式会社では、人間国宝・○○○○氏をお迎えし、漆芸の世界に触れる講演会と作品鑑賞会を開催いたします。</p>
+            <p>漆芸は、日本の風土と人の手仕事が長い時間をかけて育んできた、もっとも繊細な工芸のひとつです。何層にも塗り重ねられた漆は、光の角度や年月の経過によって表情を変え、使い手とともに静かに育っていきます。その奥行きと美しさは、写真や言葉に触れるだけでは伝わりきらないものがあります。</p>
+            <p>今回は、○○○○氏ご自身のお言葉を通じて、漆芸が歩んできた歴史、現代における作り手の姿勢、そして次の世代へと受け継がれていくべきものについて、じっくりと語っていただきます。あわせて、氏の代表作および新作を間近で鑑賞いただける時間も設けました。専門家による解説を聞きながら、作品の細部にまで目を凝らしていただく、貴重な機会となります。</p>
+            <p>「知る」ことから、「触れ、心が動く」ことへ。工芸との出会いが、参加される方それぞれの暮らしに静かに重なっていくことを、私たちは願っています。</p>
+          </div>
+
+          <figure class="article-image">
+            <img src="assets/detail/exhibition-hall.webp" alt="展示室で漆芸作品を鑑賞する会場風景" />
+          </figure>
+        </section>
+
+        <nav class="article-bottom" aria-label="実績詳細の下部ナビゲーション">
+          <a class="back-link" href="/works/">
+            <img src="assets/figma/backspace.svg" alt="" aria-hidden="true" />
+            <span>実績一覧へ</span>
+          </a>
+        </nav>
+      </main>
+
+      <footer class="site-footer" aria-label="サイトフッター">
+        <div class="footer-profile">
+          <p class="footer-company">亀屋日本伝統株式会社</p>
+          <div class="footer-address">
+            <p>〒330-0043<br />埼玉県さいたま市浦和区大東1丁目16番5号</p>
+            <p class="footer-mail"><span>E-mail:</span><span>contact@kameya-japan-tradition.com</span></p>
+          </div>
+          <div class="socials" aria-label="SNSリンク">
+            <a href="https://www.facebook.com/p/%E4%BA%80%E5%B1%8B%E5%A4%A2%E6%9C%88-100026775131911/" aria-label="Facebook">
+              <img src="assets/figma/facebook.svg" alt="" />
+            </a>
+            <a href="https://www.instagram.com/kameya.official.japan/" aria-label="Instagram">
+              <img src="assets/figma/instagram.svg" alt="" />
+            </a>
+          </div>
+          <p class="copyright">© 亀屋日本伝統株式会社</p>
+        </div>
+        <div class="footer-divider" aria-hidden="true"></div>
+        <div class="footer-right">
+          <nav class="footer-nav" aria-label="フッターナビゲーション">
+            <a href="/news">お知らせ</a>
+            <a href="/about">亀屋について</a>
+            <a href="/services">事業内容</a>
+            <a href="/works">実績・事例</a>
+            <a href="/artists">作家・作品例</a>
+            <a href="/kogei">工芸の可能性について</a>
+          </nav>
+          <div class="footer-legal">
+            <a href="/contact">お問い合わせ</a>
+            <span class="legal-divider" aria-hidden="true"></span>
+            <a href="/privacy">プライバシーポリシー</a>
+            <span class="legal-divider" aria-hidden="true"></span>
+            <a href="/deal">特定商取引法に基づく表記</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="/shared/js/reveal.js" defer></script>
+    <script src="/shared/js/page-transition.js?v=20260619-menu-numbering-20" defer></script>
+  </body>
+</html>

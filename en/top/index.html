@@ -1,0 +1,5315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base target="_self" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kameya Japan Tradition Co., Ltd. | Top</title>
+    <meta
+      name="description"
+      content="Integrated top page for Kameya Japan Tradition Co., Ltd., combining the finalized section HTML for review."
+    />
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Zen+Old+Mincho:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Hallmark · pre-emit critique: P5 H4 E4 S5 R4 V4 */
+      :root {
+        --paper: #f8f5ec;
+        --cream: #f4eedf;
+        --ink: #1a1a1a;
+        --opening-ink: #26231f;
+        --opening-paper: #f8f5ec;
+        --opening-paper-deep: #eee6d6;
+        --green: #6b4f3a;
+        --gold: #b79b64;
+        --focus: rgba(183, 155, 100, 0.88);
+        --line: rgba(26, 26, 26, 0.1);
+        --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        overflow-x: clip;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "Zen Old Mincho", "Hiragino Mincho ProN", serif;
+      }
+
+      body.is-opening {
+        overflow: hidden;
+      }
+
+      .opening {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: hidden;
+        padding: clamp(40px, 8vw, 96px) clamp(32px, 11vw, 176px);
+        background:
+          linear-gradient(90deg, rgba(248, 245, 236, 0.98) 0%, rgba(248, 245, 236, 0.94) 58%, rgba(248, 245, 236, 0.88) 100%),
+          radial-gradient(circle at 82% 16%, rgba(183, 155, 100, 0.08), transparent 34%),
+          linear-gradient(145deg, rgba(238, 230, 214, 0.44), rgba(255, 255, 255, 0.18) 42%, rgba(238, 230, 214, 0.22));
+        background-color: var(--opening-paper);
+        transition:
+          opacity 860ms var(--ease),
+          transform 1040ms var(--ease-out),
+          visibility 860ms var(--ease);
+      }
+
+      .opening::before,
+      .opening::after {
+        position: absolute;
+        inset: -12%;
+        content: "";
+        pointer-events: none;
+      }
+
+      .opening::before {
+        background:
+          repeating-linear-gradient(2deg, rgba(107, 79, 58, 0.024) 0 1px, transparent 1px 14px),
+          repeating-linear-gradient(92deg, rgba(183, 155, 100, 0.02) 0 1px, transparent 1px 18px),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(238, 230, 214, 0.08)),
+          url("/top/sections/04_%E4%B8%BB%E3%81%AA%E5%8F%96%E3%82%8A%E7%B5%84%E3%81%BF/assets/figma-current/paper-bg-pc.webp") center center / cover no-repeat;
+        mix-blend-mode: multiply;
+        opacity: 0.72;
+        transform: translate3d(-10px, -8px, 0);
+        animation: opening-paper-breathe 7200ms ease-in-out infinite alternate;
+      }
+
+      .opening::after {
+        inset: auto clamp(36px, 8vw, 128px) clamp(48px, 10vh, 104px) auto;
+        display: block;
+        width: min(420px, 32vw);
+        height: 1px;
+        background: linear-gradient(90deg, rgba(183, 155, 100, 0), rgba(183, 155, 100, 0.46), rgba(183, 155, 100, 0));
+        opacity: 0;
+        transform: scaleX(0.72);
+        transform-origin: right center;
+        animation: opening-ambient-line 1900ms var(--ease-out) 1840ms forwards;
+      }
+
+      .opening__inner {
+        position: relative;
+        z-index: 2;
+        width: min(840px, 100%);
+        color: var(--opening-ink);
+        text-align: left;
+      }
+
+      .opening__inner::before {
+        position: absolute;
+        top: clamp(-40px, -3.5vw, -24px);
+        left: 0;
+        width: min(128px, 18vw);
+        height: 1px;
+        background: linear-gradient(90deg, rgba(183, 155, 100, 0.72), rgba(183, 155, 100, 0.18), rgba(183, 155, 100, 0));
+        content: "";
+        opacity: 0;
+        transform: scaleX(0.42);
+        transform-origin: left center;
+        animation: opening-kicker-rule 1680ms var(--ease-out) 760ms forwards;
+      }
+
+      .opening__kicker {
+        margin: 0 0 clamp(28px, 5vw, 56px);
+        color: rgba(107, 79, 58, 0.58);
+        font-family: "Zen Old Mincho", "Hiragino Mincho ProN", serif;
+        font-size: clamp(14px, 1.25vw, 16px);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        opacity: 0;
+        transform: translate3d(0, 10px, 0);
+        animation: opening-subtle-in 1500ms var(--ease) 420ms forwards;
+      }
+
+      .opening__text {
+        display: grid;
+        gap: clamp(16px, 2.6vw, 30px);
+        min-width: 0;
+        margin: 0;
+        color: var(--opening-ink);
+        font-size: clamp(42px, 6.2vw, 88px);
+        font-weight: 600;
+        line-height: 1.28;
+        letter-spacing: 0.085em;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.48);
+      }
+
+      .opening__line {
+        display: block;
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .char {
+        display: inline-block;
+        opacity: 0;
+        filter: blur(5px);
+        transform: translate3d(0, 10px, 0);
+      }
+
+      .opening .char {
+        animation: opening-letter 1280ms var(--ease-out) forwards;
+        animation-delay: calc(520ms + var(--line) * 620ms + var(--i) * 68ms);
+      }
+
+      .opening__rule {
+        display: block;
+        position: relative;
+        width: min(360px, 58vw);
+        height: 18px;
+        margin-top: clamp(30px, 5vw, 58px);
+        overflow: hidden;
+      }
+
+      .opening__rule::before,
+      .opening__rule::after {
+        position: absolute;
+        left: 0;
+        content: "";
+        transform: scaleX(0);
+        transform-origin: left center;
+      }
+
+      .opening__rule::before {
+        top: 8px;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(183, 155, 100, 0.82), rgba(183, 155, 100, 0.16), rgba(183, 155, 100, 0));
+        animation: opening-rule 1740ms var(--ease-out) 2380ms forwards;
+      }
+
+      .opening__rule::after {
+        top: 11px;
+        width: 72%;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(107, 79, 58, 0.28), rgba(107, 79, 58, 0));
+        animation: opening-rule 1960ms var(--ease-out) 2520ms forwards;
+      }
+
+      .opening.is-leaving {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate3d(0, -10px, 0);
+      }
+
+      .opening.is-leaving .char {
+        animation: opening-letter-out 940ms var(--ease) forwards;
+        animation-delay: calc(var(--i) * 32ms);
+      }
+
+      .global-header {
+        position: fixed;
+        top: 28px;
+        right: clamp(24px, 2vw, 40px);
+        left: clamp(24px, 2vw, 40px);
+        z-index: 940;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--green);
+        pointer-events: none;
+        opacity: 0;
+        transform: translate3d(0, -12px, 0);
+        transition:
+          opacity 900ms var(--ease),
+          transform 1100ms var(--ease-out);
+      }
+
+      body.is-ready .global-header {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .global-brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 13px;
+        color: inherit;
+        text-decoration: none;
+        pointer-events: auto;
+        position: relative;
+        z-index: 3;
+      }
+
+      .global-brand__mark {
+        display: block;
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        object-position: center;
+        filter: saturate(0.95) contrast(1.08) brightness(0.94);
+        transform: scale(2.22);
+        transform-origin: center;
+      }
+
+      .global-brand__copy {
+        display: grid;
+        gap: 6px;
+      }
+
+      .global-brand__ja {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: 0.06em;
+        white-space: nowrap;
+      }
+
+      .global-brand__en {
+        color: rgba(107, 79, 58, 0.56);
+        font-family: "Zen Old Mincho", "Hiragino Mincho ProN", serif;
+        font-size: 14px;
+        line-height: 1;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        transform: none;
+        transform-origin: left center;
+        white-space: nowrap;
+      }
+
+      .global-nav {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        width: 128px;
+        height: 317px;
+        padding: 8px 0;
+        border: 0;
+        border-radius: 16px;
+        background: rgba(232, 228, 222, 0.72);
+        box-shadow:
+          0 12px 36px rgba(26, 26, 26, 0.12),
+          inset 0 1px 0 rgba(255, 255, 255, 0.42);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translate3d(0, 8px, 0) scale(0.98);
+        transform-origin: top right;
+        transition:
+          opacity 420ms var(--ease),
+          visibility 420ms var(--ease),
+          transform 620ms var(--ease-out);
+      }
+
+      body.is-nav-open .global-nav {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+
+      .global-nav a {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        min-height: 43px;
+        width: 100%;
+        padding: 12px 16px;
+        color: #333333;
+        font-family: "Zen Old Mincho", "Hiragino Mincho ProN", serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.2;
+        letter-spacing: 0;
+        text-decoration: none;
+        white-space: nowrap;
+        opacity: 0;
+        text-shadow:
+          0 0 6px rgba(255, 255, 255, 1),
+          0 0 6px rgba(255, 255, 255, 1),
+          0 0 6px rgba(255, 255, 255, 1),
+          0 0 8px rgba(0, 0, 0, 0.25);
+        transform: translate3d(0, 4px, 0);
+        transition:
+          color 260ms var(--ease),
+          opacity 520ms var(--ease),
+          transform 760ms var(--ease-out);
+        transition-delay: 0ms;
+      }
+
+      .global-nav a:hover,
+      .global-nav a:focus-visible {
+        color: var(--green);
+      }
+
+      body.is-nav-open .global-nav a {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition-delay: calc(120ms + var(--nav-index, 0) * 64ms);
+      }
+
+      .global-brand:focus-visible,
+      .global-nav a:focus-visible,
+      .global-menu:focus-visible,
+      .scroll-cue:focus-visible {
+        outline: 2px solid var(--focus);
+        outline-offset: 4px;
+      }
+
+      .global-menu {
+        display: grid;
+        place-items: center;
+        position: relative;
+        z-index: 4;
+        width: 64px;
+        height: 46px;
+        padding: 0;
+        border: 1px solid rgba(29, 28, 24, 0.72);
+        border-radius: 999px;
+        background: transparent;
+        cursor: pointer;
+        pointer-events: auto;
+      }
+
+      .global-menu span {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 1px;
+        background: rgba(107, 79, 58, 0.78);
+        transition:
+          transform 520ms var(--ease-out),
+          opacity 360ms var(--ease),
+          width 420ms var(--ease);
+        will-change: transform, opacity;
+      }
+
+      .global-menu span:nth-child(1) {
+        transform: translate3d(-50%, -6px, 0);
+      }
+
+      .global-menu span:nth-child(2) {
+        transform: translate3d(-50%, 0, 0);
+      }
+
+      .global-menu span:nth-child(3) {
+        transform: translate3d(-50%, 6px, 0);
+      }
+
+      .global-menu:hover span,
+      .global-menu:focus-visible span {
+        width: 20px;
+      }
+
+      body.is-nav-open .global-menu span:nth-child(1) {
+        width: 20px;
+        transform: translate3d(-50%, 0, 0) rotate(45deg);
+      }
+
+      body.is-nav-open .global-menu span:nth-child(2) {
+        opacity: 0;
+        transform: translate3d(-50%, 0, 0) scaleX(0.35);
+      }
+
+      body.is-nav-open .global-menu span:nth-child(3) {
+        width: 20px;
+        transform: translate3d(-50%, 0, 0) rotate(-45deg);
+      }
+
+      .page {
+        min-height: 100vh;
+        opacity: 0;
+        transform: translate3d(0, 18px, 0);
+        transition:
+          opacity 960ms var(--ease) 80ms,
+          transform 1120ms var(--ease-out) 80ms;
+      }
+
+      body.is-ready .page {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .home-section {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        background: var(--paper);
+      }
+
+      body.has-js .home-section {
+        opacity: 1;
+        transform: none;
+      }
+
+      body.has-js .home-section:first-child {
+        opacity: 1;
+        transform: none;
+      }
+
+      body.has-js .home-section.is-visible {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .home-section + .home-section {
+        border-top: 0;
+      }
+
+      .home-section--fv {
+        height: 100vh;
+        height: 100svh;
+        min-height: 640px;
+      }
+
+      .home-section--fv iframe {
+        height: 100%;
+        min-height: 100%;
+      }
+
+      .scroll-cue {
+        position: absolute;
+        bottom: clamp(28px, 5vh, 56px);
+        left: clamp(24px, 5vw, 72px);
+        z-index: 20;
+        display: inline-grid;
+        grid-template-columns: auto 14px;
+        gap: 12px;
+        align-items: center;
+        color: rgba(107, 79, 58, 0.72);
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-size: 14px;
+        letter-spacing: 0.14em;
+        text-decoration: none;
+        text-transform: uppercase;
+        opacity: 0;
+        transform: translate3d(0, 10px, 0);
+        transition:
+          opacity 900ms var(--ease) 820ms,
+          transform 1100ms var(--ease-out) 820ms;
+      }
+
+      body.is-ready .scroll-cue {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .scroll-cue__line {
+        position: relative;
+        display: block;
+        width: 1px;
+        height: 48px;
+        overflow: hidden;
+        background: rgba(107, 79, 58, 0.18);
+      }
+
+      .scroll-cue__line::before {
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 1px;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(107, 79, 58, 0), rgba(107, 79, 58, 0.76));
+        content: "";
+        animation: scroll-cue-line 2600ms var(--ease) infinite;
+      }
+
+      .scroll-cue__line::after {
+        position: absolute;
+        right: -3px;
+        bottom: 1px;
+        width: 7px;
+        height: 7px;
+        border-right: 1px solid rgba(107, 79, 58, 0.72);
+        border-bottom: 1px solid rgba(107, 79, 58, 0.72);
+        content: "";
+        transform: rotate(45deg);
+      }
+
+      iframe {
+        display: block;
+        width: 100%;
+        min-height: var(--desktop-height);
+        height: var(--desktop-height);
+        border: 0;
+        background: var(--paper);
+        overflow: hidden;
+        overscroll-behavior: none;
+      }
+
+      #philosophy {
+        background: #ffffff;
+      }
+
+      #works {
+        background: #173f65;
+      }
+
+      #initiatives {
+        background: #f7f1e5;
+      }
+
+      #achievements {
+        background: #f3f4f2;
+      }
+
+      #achievements iframe {
+        background: #f3f4f2;
+      }
+
+      #co-create {
+        background: #f7f1e5;
+      }
+
+      #co-create iframe {
+        background: #f7f1e5;
+      }
+
+      .home-section.is-loading::before {
+        display: none;
+        content: "";
+      }
+
+      .home-section.is-loaded::before {
+        display: none;
+      }
+
+      @media (max-width: 980px) and (min-width: 721px) {
+        #philosophy iframe {
+          min-height: 808px;
+          height: 808px;
+        }
+      }
+
+      @media (min-width: 800px) and (max-width: 980px) {
+        #works iframe {
+          min-height: 928px;
+          height: 928px;
+        }
+      }
+
+      @media (min-width: 721px) and (max-width: 799px) {
+        #works iframe {
+          min-height: 1392px;
+          height: 1392px;
+        }
+
+        #initiatives iframe {
+          min-height: 2560px;
+          height: 2560px;
+        }
+
+        #achievements iframe {
+          min-height: 1240px;
+          height: 1240px;
+        }
+      }
+
+      @media (min-width: 800px) and (max-width: 900px) {
+        #initiatives iframe {
+          min-height: 2544px;
+          height: 2544px;
+        }
+
+        #achievements iframe {
+          min-height: 1240px;
+          height: 1240px;
+        }
+      }
+
+      @media (min-width: 901px) and (max-width: 960px) {
+        #initiatives iframe {
+          min-height: 2576px;
+          height: 2576px;
+        }
+
+        #achievements iframe {
+          min-height: 976px;
+          height: 976px;
+        }
+      }
+
+      @media (min-width: 961px) and (max-width: 1022px) {
+        #achievements iframe {
+          min-height: 920px;
+          height: 920px;
+        }
+      }
+
+      @media (min-width: 960px) and (max-width: 1024px) {
+        #initiatives iframe {
+          min-height: 2576px;
+          height: 2576px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        #co-create iframe {
+          min-height: 2928px;
+          height: 2928px;
+        }
+      }
+
+      @media (min-width: 421px) and (max-width: 720px) {
+        #co-create iframe {
+          min-height: calc(2564px + 173vw);
+          height: calc(2564px + 173vw);
+        }
+      }
+
+      @media (min-width: 421px) and (max-width: 560px) {
+        #co-create iframe {
+          min-height: calc(2492px + 173vw);
+          height: calc(2492px + 173vw);
+        }
+      }
+
+      @media (min-width: 681px) and (max-width: 720px) {
+        #co-create iframe {
+          min-height: calc(2532px + 173vw);
+          height: calc(2532px + 173vw);
+        }
+      }
+
+      @media (min-width: 721px) and (max-width: 959px) {
+        #co-create iframe {
+          min-height: 3032px;
+          height: 3032px;
+        }
+      }
+
+      @media (min-width: 960px) and (max-width: 1279px) {
+        #co-create iframe {
+          min-height: 2160px;
+          height: 2160px;
+        }
+      }
+
+      @keyframes paper-drift {
+        from {
+          transform: translate3d(-14px, -10px, 0);
+        }
+        to {
+          transform: translate3d(22px, 18px, 0);
+        }
+      }
+
+      @keyframes opening-paper-breathe {
+        from {
+          opacity: 0.34;
+          transform: translate3d(-10px, -8px, 0) scale(1);
+        }
+        to {
+          opacity: 0.46;
+          transform: translate3d(8px, 6px, 0) scale(1.015);
+        }
+      }
+
+      @keyframes opening-ambient-line {
+        to {
+          opacity: 1;
+          transform: scaleX(1);
+        }
+      }
+
+      @keyframes opening-kicker-rule {
+        to {
+          opacity: 1;
+          transform: scaleX(1);
+        }
+      }
+
+      @keyframes opening-subtle-in {
+        to {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
+
+      @keyframes opening-letter {
+        0% {
+          opacity: 0;
+          filter: blur(5px);
+          transform: translate3d(0, 18px, 0);
+        }
+        72% {
+          opacity: 1;
+          filter: blur(0);
+          transform: translate3d(0, -1px, 0);
+        }
+        100% {
+          opacity: 1;
+          filter: blur(0);
+          transform: translate3d(0, 0, 0);
+        }
+      }
+
+      @keyframes opening-letter-out {
+        to {
+          opacity: 0;
+          filter: blur(4px);
+          transform: translate3d(0, -10px, 0);
+        }
+      }
+
+      @keyframes opening-rule {
+        to {
+          transform: scaleX(1);
+        }
+      }
+
+      @keyframes scroll-cue-line {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(200%);
+        }
+      }
+
+      @media (max-width: 720px) {
+        .global-header {
+          top: 22px;
+          right: 24px;
+          left: 24px;
+        }
+
+        .global-brand {
+          gap: 10px;
+        }
+
+        .global-brand__mark {
+          width: 36px;
+          height: 36px;
+        }
+
+        .global-brand__ja {
+          font-size: 14px;
+        }
+
+        .global-brand__en {
+          display: none;
+        }
+
+        .global-nav {
+          top: calc(100% + 8px);
+          width: 128px;
+          height: 317px;
+          padding: 8px 0;
+        }
+
+        .global-nav a {
+          min-height: 43px;
+          padding: 12px 16px;
+          font-size: 16px;
+        }
+
+        .global-menu {
+          display: grid;
+          width: 44px;
+          height: 34px;
+        }
+
+        .global-menu span {
+          width: 16px;
+        }
+
+        .global-menu span:nth-child(1) {
+          transform: translate3d(-50%, -5px, 0);
+        }
+
+        .global-menu span:nth-child(3) {
+          transform: translate3d(-50%, 5px, 0);
+        }
+
+        .home-section--fv {
+          min-height: 100svh;
+        }
+
+        .scroll-cue {
+          bottom: 28px;
+          left: 24px;
+          font-size: 14px;
+        }
+
+        .opening {
+          align-items: center;
+          padding: 48px 32px;
+          background:
+            linear-gradient(90deg, rgba(248, 245, 236, 0.98), rgba(248, 245, 236, 0.92)),
+            radial-gradient(circle at 78% 18%, rgba(183, 155, 100, 0.08), transparent 36%),
+            linear-gradient(150deg, rgba(238, 230, 214, 0.34), rgba(248, 245, 236, 0));
+          background-color: var(--opening-paper);
+        }
+
+        .opening::after {
+          right: 32px;
+          bottom: 56px;
+          width: 46vw;
+        }
+
+        .opening::before {
+          background:
+            repeating-linear-gradient(2deg, rgba(107, 79, 58, 0.026) 0 1px, transparent 1px 14px),
+            repeating-linear-gradient(92deg, rgba(183, 155, 100, 0.022) 0 1px, transparent 1px 18px),
+            linear-gradient(180deg, rgba(255, 255, 255, 0.32), rgba(238, 230, 214, 0.08)),
+            url("/top/sections/04_%E4%B8%BB%E3%81%AA%E5%8F%96%E3%82%8A%E7%B5%84%E3%81%BF/assets/figma-current/paper-bg-sp.webp") center center / cover no-repeat;
+        }
+
+        .opening__inner {
+          padding-left: 16px;
+        }
+
+        .opening__inner::before {
+          left: 16px;
+          top: -32px;
+          width: 96px;
+          height: 1px;
+        }
+
+        .opening__text {
+          font-size: clamp(30px, 8.4vw, 38px);
+          line-height: 1.34;
+          letter-spacing: 0.08em;
+        }
+
+        iframe {
+          min-height: var(--mobile-height);
+          height: var(--mobile-height);
+        }
+
+        #philosophy iframe {
+          min-height: var(--philosophy-mobile-height, var(--mobile-height));
+          height: var(--philosophy-mobile-height, var(--mobile-height));
+        }
+      }
+
+      @media (min-width: 701px) and (max-width: 720px) {
+        #philosophy iframe {
+          min-height: 808px;
+          height: 808px;
+        }
+
+        #works iframe {
+          min-height: 1336px;
+          height: 1336px;
+        }
+
+        #initiatives iframe {
+          min-height: 2648px;
+          height: 2648px;
+        }
+
+        #achievements iframe {
+          min-height: 1352px;
+          height: 1352px;
+        }
+      }
+
+      @media (min-width: 661px) and (max-width: 700px) {
+        #philosophy iframe {
+          min-height: 808px;
+          height: 808px;
+        }
+
+        #works iframe {
+          min-height: 1336px;
+          height: 1336px;
+        }
+
+        #initiatives iframe {
+          min-height: 2632px;
+          height: 2632px;
+        }
+
+        #achievements iframe {
+          min-height: 1352px;
+          height: 1352px;
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 660px) {
+        #philosophy iframe {
+          min-height: 856px;
+          height: 856px;
+        }
+
+        #works iframe {
+          min-height: 1336px;
+          height: 1336px;
+        }
+
+        #initiatives iframe {
+          min-height: 2616px;
+          height: 2616px;
+        }
+
+        #achievements iframe {
+          min-height: 1352px;
+          height: 1352px;
+        }
+      }
+
+      @media (min-width: 630px) and (max-width: 640px) {
+        #philosophy iframe {
+          min-height: 696px;
+          height: 696px;
+        }
+
+        #works iframe {
+          min-height: 1280px;
+          height: 1280px;
+        }
+
+        #initiatives iframe {
+          min-height: 2416px;
+          height: 2416px;
+        }
+      }
+
+      @media (min-width: 521px) and (max-width: 624px) {
+        #philosophy iframe {
+          min-height: 720px;
+          height: 720px;
+        }
+
+        #works iframe {
+          min-height: 1280px;
+          height: 1280px;
+        }
+
+        #initiatives iframe {
+          min-height: 2480px;
+          height: 2480px;
+        }
+      }
+
+      @media (min-width: 625px) and (max-width: 628px) {
+        #philosophy iframe {
+          min-height: 696px;
+          height: 696px;
+        }
+
+        #works iframe {
+          min-height: 1280px;
+          height: 1280px;
+        }
+
+        #initiatives iframe {
+          min-height: 2480px;
+          height: 2480px;
+        }
+      }
+
+      @media (min-width: 629px) and (max-width: 629px) {
+        #philosophy iframe {
+          min-height: 696px;
+          height: 696px;
+        }
+
+        #works iframe {
+          min-height: 1280px;
+          height: 1280px;
+        }
+
+        #initiatives iframe {
+          min-height: 2416px;
+          height: 2416px;
+        }
+      }
+
+      @media (min-width: 621px) and (max-width: 624px) {
+        #initiatives iframe {
+          min-height: 2480px;
+          height: 2480px;
+        }
+      }
+
+      @media (min-width: 480px) and (max-width: 520px) {
+        #philosophy iframe {
+          min-height: 720px;
+          height: 720px;
+        }
+
+        #works iframe {
+          min-height: 1216px;
+          height: 1216px;
+        }
+
+        #initiatives iframe {
+          min-height: 2472px;
+          height: 2472px;
+        }
+      }
+
+      @media (min-width: 421px) and (max-width: 479px) {
+        #philosophy iframe {
+          min-height: 768px;
+          height: 768px;
+        }
+
+        #works iframe {
+          min-height: 1216px;
+          height: 1216px;
+        }
+
+        #initiatives iframe {
+          min-height: 2488px;
+          height: 2488px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        #philosophy iframe {
+          min-height: 768px;
+          height: 768px;
+        }
+
+        #initiatives iframe {
+          min-height: 2488px;
+          height: 2488px;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .home-section--fv {
+          height: max(100svh, clamp(1000px, 266vw, 1080px));
+          min-height: max(100svh, clamp(1000px, 266vw, 1080px));
+        }
+
+        .home-section--fv iframe {
+          height: 100%;
+          min-height: 100%;
+        }
+
+        .home-section--fv .scroll-cue {
+          bottom: max(20px, env(safe-area-inset-bottom));
+          left: 50%;
+          grid-template-columns: auto 14px;
+          grid-template-rows: 1fr;
+          align-items: center;
+          justify-items: start;
+          gap: 12px;
+          font-size: 14px;
+          line-height: 1;
+          letter-spacing: 0.14em;
+          writing-mode: horizontal-tb;
+          transform: translate3d(-50%, 10px, 0);
+        }
+
+        .home-section--fv .scroll-cue__line {
+          width: 1px;
+          height: 48px;
+        }
+
+        .home-section--fv .scroll-cue__line::before {
+          top: -100%;
+          left: 0;
+          width: 1px;
+          height: 100%;
+          background: linear-gradient(180deg, rgba(107, 79, 58, 0), rgba(107, 79, 58, 0.76));
+          animation-name: scroll-cue-line;
+        }
+
+        .home-section--fv .scroll-cue__line::after {
+          right: -3px;
+          left: auto;
+          bottom: 1px;
+          transform: rotate(45deg);
+        }
+
+        body.is-ready .home-section--fv .scroll-cue {
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
+
+      @media (max-width: 959px) {
+        .home-section--fv .scroll-cue {
+          display: none !important;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.001ms !important;
+        }
+
+        body.is-opening {
+          overflow: auto;
+        }
+
+        .opening {
+          display: none;
+        }
+
+        .page {
+          opacity: 1;
+          transform: none;
+        }
+
+        .global-header,
+        .scroll-cue {
+          opacity: 1;
+          transform: none;
+        }
+
+        .home-section {
+          opacity: 1 !important;
+          transform: none !important;
+          filter: none !important;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
+    <link rel="stylesheet" href="/shared/css/kameya-design-system.css?v=20260619-menu-numbering-fix" />
+  
+    <style id="kameya-en-horizontal-overrides">
+      html[lang="en"] body {
+        overflow-x: clip;
+      }
+
+      html[lang="en"]:has(body .achievements),
+      html[lang="en"] body:has(.achievements) {
+        background: #f3f4f2 !important;
+      }
+
+      html[lang="en"]:has(body > .achievements),
+      html[lang="en"] body:has(> .achievements) {
+        height: 100%;
+        min-height: 100%;
+      }
+
+      html[lang="en"] body:has(> .achievements) > .achievements {
+        min-height: 100%;
+      }
+
+      html[lang="en"] #achievements,
+      html[lang="en"] #achievements iframe {
+        background: #f3f4f2 !important;
+      }
+
+      html[lang="en"] #co-create,
+      html[lang="en"] #co-create iframe {
+        background: #f7f1e5 !important;
+      }
+
+      html[lang="en"] .achievements {
+        padding-bottom: 280px !important;
+        background: #f3f4f2 !important;
+      }
+
+      html[lang="en"] .achievements::after {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+        height: 160px;
+        pointer-events: none;
+        background-color: #f7f1e5;
+        background-image: url("/top/sections/06_%E6%96%87%E5%8C%96%E3%82%92%E5%85%B1%E3%81%AB%E3%81%A4%E3%81%8F%E3%82%8B/assets/flow/paper-bg-desktop-frame.webp");
+        background-position: center -96px;
+        background-size: cover;
+        content: "";
+      }
+
+      html[lang="en"] .achievements__inner {
+        z-index: 2;
+      }
+
+      html[lang="en"] .co-stage::before {
+        top: -96px !important;
+        bottom: 0 !important;
+        height: auto !important;
+        background-position: center top !important;
+        background-size: cover !important;
+      }
+
+      @media (max-width: 959px) {
+        html[lang="en"] .achievements::after {
+          background-image: url("/top/sections/06_%E6%96%87%E5%8C%96%E3%82%92%E5%85%B1%E3%81%AB%E3%81%A4%E3%81%8F%E3%82%8B/assets/flow/paper-bg-tablet-frame.webp");
+          background-position: center -120px;
+        }
+
+        html[lang="en"] .co-stage::before {
+          top: -120px !important;
+        }
+      }
+
+      @media (max-width: 720px) {
+        html[lang="en"] .achievements::after {
+          background-image: url("/top/sections/06_%E6%96%87%E5%8C%96%E3%82%92%E5%85%B1%E3%81%AB%E3%81%A4%E3%81%8F%E3%82%8B/assets/flow/paper-bg-mobile-frame.webp");
+          background-position: center -144px;
+        }
+
+        html[lang="en"] .co-stage::before {
+          top: -144px !important;
+        }
+      }
+
+      html[lang="en"] {
+        --intro-delay: 180ms;
+        --object-delay: 520ms;
+        --info-delay: 760ms;
+      }
+
+      html[lang="en"] *,
+      html[lang="en"] *::before,
+      html[lang="en"] *::after {
+        min-width: 0;
+        box-sizing: border-box;
+      }
+
+      html[lang="en"] :where(h1, h2, h3, h4, p, a, span, li, dt, dd, button, label, figcaption, small, strong, em) {
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: none;
+      }
+
+      html[lang="en"] .opening__inner {
+        width: min(920px, 100%);
+      }
+
+      html[lang="en"] .opening__text {
+        max-width: 100%;
+        font-size: clamp(32px, 6vw, 78px);
+        line-height: 1.2;
+        letter-spacing: 0.04em;
+      }
+
+      html[lang="en"] .opening__line {
+        overflow: visible;
+        white-space: nowrap;
+      }
+
+      html[lang="en"] .opening .char {
+        animation-duration: 820ms !important;
+        animation-delay: calc(180ms + var(--line) * 320ms + var(--i) * 36ms) !important;
+      }
+
+      html[lang="en"] .opening__kicker {
+        animation-duration: 820ms !important;
+        animation-delay: 160ms !important;
+      }
+
+      html[lang="en"] .opening__rule {
+        animation-duration: 680ms !important;
+        animation-delay: 1120ms !important;
+      }
+
+      html[lang="en"] .slide.is-active .headline-char,
+      html[lang="en"] .slide.is-active .headline-word {
+        animation-name: letter-presence !important;
+        animation-duration: 920ms !important;
+        animation-timing-function: var(--ease-presence) !important;
+        animation-fill-mode: both !important;
+        animation-delay: calc(180ms + var(--char-index, var(--word-index, 0)) * 108ms) !important;
+      }
+
+      html[lang="en"] .slide.is-active .work-info {
+        animation-duration: 900ms !important;
+        animation-delay: var(--info-delay) !important;
+      }
+
+      html[lang="en"] .slide.is-active .work-title-char,
+      html[lang="en"] .slide.is-active .work-title-word {
+        animation-name: title-flow-presence !important;
+        animation-duration: 860ms !important;
+        animation-timing-function: var(--ease-presence) !important;
+        animation-fill-mode: both !important;
+        animation-delay: calc(var(--info-delay) + 120ms + var(--title-index, var(--title-word-index, 0)) * 84ms) !important;
+      }
+
+      html[lang="en"] .slide.is-active .work-object,
+      html[lang="en"] .slide.is-active .object-shadow {
+        animation-duration: 920ms !important;
+        animation-delay: var(--object-delay) !important;
+      }
+
+      html[lang="en"] .headline-char,
+      html[lang="en"] .headline-word,
+      html[lang="en"] .work-title-char,
+      html[lang="en"] .work-title-word {
+        will-change: opacity, transform;
+      }
+
+      html[lang="en"] .headline-word,
+      html[lang="en"] .work-title-word,
+      html[lang="en"] .flow-word {
+        display: inline-block;
+      }
+
+      html[lang="en"] .headline-word,
+      html[lang="en"] .work-title-word {
+        opacity: 0;
+        transform: translate3d(0, 0.36em, 0);
+      }
+
+      html[lang="en"] .frame-shell.nested-motion-ready .flow-char,
+      html[lang="en"] .frame-shell.nested-motion-ready .flow-word {
+        display: inline-block;
+        opacity: 0;
+        transform: translate3d(0, 0.32em, 0);
+        transition:
+          opacity 680ms cubic-bezier(0.22, 1, 0.36, 1),
+          transform 940ms cubic-bezier(0.16, 1, 0.3, 1);
+        transition-delay: calc(var(--flow-index, var(--flow-word-index, 0)) * 74ms);
+      }
+
+      html[lang="en"] .frame-shell.nested-motion-ready .is-seen .flow-char,
+      html[lang="en"] .frame-shell.nested-motion-ready .is-seen .flow-word {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+
+      html[lang="en"] [data-reveal] {
+        transition-duration: 900ms !important;
+        transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
+      }
+
+      html[lang="en"] .headline,
+      html[lang="en"] .slide--daruma .headline {
+        display: flex !important;
+        min-width: 0 !important;
+        width: min(440px, 34vw) !important;
+        max-width: min(440px, 34vw) !important;
+        min-height: 132px !important;
+        flex-direction: column !important;
+        gap: 11px !important;
+        align-items: flex-start !important;
+        justify-self: start !important;
+        font-size: clamp(27px, 2.18vw, 31px) !important;
+        line-height: 1.24 !important;
+      }
+
+      html[lang="en"] .headline-col,
+      html[lang="en"] .slide--daruma .headline-col,
+      html[lang="en"] .vertical-line,
+      html[lang="en"] .title-main,
+      html[lang="en"] .title-en,
+      html[lang="en"] .motto-text p,
+      html[lang="en"] .vertical-group p,
+      html[lang="en"] .title-lines p,
+      html[lang="en"] .footer-nav a {
+        width: auto !important;
+        max-width: 100% !important;
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        white-space: normal !important;
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+      }
+
+      html[lang="en"] .opening__line,
+      html[lang="en"] .headline-col,
+      html[lang="en"] .work-title,
+      html[lang="en"] .title-lines p,
+      html[lang="en"] .motto-text p,
+      html[lang="en"] .works-mobile__motto {
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+        hyphens: none !important;
+      }
+
+      html[lang="en"] .headline-col {
+        width: 100% !important;
+        min-height: 1.24em !important;
+      }
+
+      html[lang="en"] .lead p,
+      html[lang="en"] .desc,
+      html[lang="en"] .desc p,
+      html[lang="en"] .theme,
+      html[lang="en"] .initiative-copy,
+      html[lang="en"] .initiative-copy p,
+      html[lang="en"] .list li {
+        line-break: auto !important;
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+        hyphens: none !important;
+      }
+
+      html[lang="en"] .work-info,
+      html[lang="en"] .slide--plate .work-info,
+      html[lang="en"] .slide--daruma .work-info,
+      html[lang="en"] .slide--kashiki .work-info {
+        width: min(360px, 31vw) !important;
+        min-width: 0 !important;
+      }
+
+      html[lang="en"] .work-title {
+        max-width: 100% !important;
+        font-size: clamp(22px, 2.2vw, 28px) !important;
+        line-height: 1.18 !important;
+        white-space: normal !important;
+      }
+
+      html[lang="en"] .about-page .content-stack,
+      html[lang="en"] .about-page .about-section,
+      html[lang="en"] .about-page .section-heading,
+      html[lang="en"] .about-page .section-title-group,
+      html[lang="en"] .about-page .section-layout,
+      html[lang="en"] .about-page .body-copy,
+      html[lang="en"] .about-page .body-copy p {
+        min-width: 0 !important;
+        max-width: 100% !important;
+      }
+
+      html[lang="en"] .about-page .body-copy,
+      html[lang="en"] .about-page .body-copy p,
+      html[lang="en"] .about-page .section-title,
+      html[lang="en"] .about-page .statement-title {
+        white-space: normal !important;
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+        hyphens: none !important;
+      }
+
+      html[lang="en"] .work-en {
+        letter-spacing: 0.08em !important;
+      }
+
+      html[lang="en"] .philosophy {
+        min-height: 850px;
+      }
+
+      html[lang="en"] .philosophy .copy-field {
+        display: grid;
+        grid-template-columns: minmax(150px, 230px) minmax(0, 688px);
+        align-items: start;
+        justify-content: center;
+        width: min(100%, 1200px);
+        padding: 140px 120px 0;
+        gap: 50px;
+      }
+
+      html[lang="en"] .philosophy .copy-columns {
+        display: none !important;
+      }
+
+      html[lang="en"] .philosophy .mobile-copy {
+        display: flex !important;
+        grid-column: 2;
+        grid-row: 1;
+        flex-direction: column;
+        min-width: 0;
+        max-width: 688px;
+        gap: 20px;
+        color: rgb(var(--kameya-ink));
+        font-family: "EB Garamond", "Cormorant Garamond", "Times New Roman", serif;
+        font-size: 18px;
+        line-height: 1.3;
+        letter-spacing: 0;
+        overflow-wrap: break-word;
+        word-break: normal;
+      }
+
+      html[lang="en"] .philosophy .mobile-copy p {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+      }
+
+      html[lang="en"] .philosophy .title-block {
+        min-width: 0;
+        grid-column: 1;
+        grid-row: 1;
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 8px;
+        align-items: flex-start;
+        width: auto;
+      }
+
+      html[lang="en"] .philosophy .title-main-wrap {
+        min-width: 0;
+        flex-direction: column-reverse;
+        gap: 24px;
+        align-items: flex-start;
+      }
+
+      html[lang="en"] .philosophy .title-rule {
+        width: 112px;
+        height: 6px;
+        background: var(--kameya-rule-short) center / 100% 100% no-repeat;
+      }
+
+      html[lang="en"] .philosophy .title-rule::before {
+        content: none;
+      }
+
+      html[lang="en"] .philosophy .title-main {
+        display: grid;
+        gap: 0;
+        width: auto;
+        color: rgb(var(--kameya-ink));
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1.12;
+        letter-spacing: 0;
+        white-space: normal !important;
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+      }
+
+      html[lang="en"] .philosophy .title-en {
+        width: 30px !important;
+        height: 135px;
+        color: #cebd9d;
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.5;
+        letter-spacing: 0;
+        opacity: 0.9;
+        white-space: nowrap !important;
+        writing-mode: vertical-rl !important;
+        text-orientation: mixed !important;
+      }
+
+      html[lang="en"] .watermark {
+        top: 504px;
+        opacity: 0.14;
+      }
+
+      html[lang="en"] .katana {
+        top: 712px;
+      }
+
+      html[lang="en"] .katana-shadow {
+        top: 804px;
+      }
+
+      html[lang="en"] .works-eyebrow {
+        top: calc(var(--works-content-top) - 42px);
+        left: var(--works-content-left);
+        width: auto;
+        max-width: min(420px, calc(100vw - var(--works-content-left) - 40px));
+        font-size: clamp(18px, 1.35vw, 22px);
+        line-height: 1.15;
+        letter-spacing: 0.04em;
+        writing-mode: horizontal-tb !important;
+        white-space: nowrap !important;
+        overflow-wrap: break-word;
+      }
+
+      html[lang="en"] .works-copy br,
+      html[lang="en"] .works-mobile__copy br {
+        display: none;
+      }
+
+      html[lang="en"] .kogei-page .copy-block br {
+        display: none;
+      }
+
+      html[lang="en"] .works-copy,
+      html[lang="en"] .works-mobile__copy {
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+        hyphens: none;
+      }
+
+      html[lang="en"] .works-copy p,
+      html[lang="en"] .works-mobile__copy p {
+        max-width: 36em;
+      }
+
+      html[lang="en"] .artist-list {
+        white-space: normal !important;
+      }
+
+      html[lang="en"] .achievements .heading {
+        width: min(520px, 100%);
+      }
+
+      html[lang="en"] .achievements .section-title {
+        max-width: 100%;
+        font-size: clamp(38px, 3.6vw, 48px);
+        line-height: 1.08;
+        white-space: normal;
+        overflow-wrap: normal;
+      }
+
+      html[lang="en"] .achievements .achievement-title {
+        max-width: 558px;
+        font-size: clamp(24px, 2.2vw, 30px);
+        line-height: 1.3;
+        overflow-wrap: normal;
+      }
+
+      @media (min-width: 981px) {
+        html[lang="en"] .kogei-page .heading-block {
+          top: 40px !important;
+        }
+      }
+
+      html[lang="en"] .initiative-title,
+      html[lang="en"] .theme,
+      html[lang="en"] .desc,
+      html[lang="en"] .list li {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        white-space: normal !important;
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+        hyphens: none !important;
+      }
+
+      html[lang="en"] .initiative-title {
+        line-height: 1.24 !important;
+      }
+
+      html[lang="en"] .theme {
+        line-height: 1.36 !important;
+      }
+
+      html[lang="en"] .desc,
+      html[lang="en"] .list li {
+        line-height: 1.58 !important;
+      }
+
+      html[lang="en"] .works-content {
+        top: var(--works-content-top);
+        width: min(42vw, 520px);
+      }
+
+      html[lang="en"] .works-title h1 {
+        font-size: clamp(36px, 3.35vw, 50px);
+        line-height: 0.98;
+      }
+
+      html[lang="en"] .works-fit {
+        --works-section-gap: clamp(48px, 5vw, 72px);
+      }
+
+      html[lang="en"] .work-visual {
+        top: clamp(500px, 42vw, 560px);
+        width: clamp(340px, 38vw, 487px);
+      }
+
+      html[lang="en"] .work-frame {
+        top: clamp(690px, 58vw, 760px);
+      }
+
+      html[lang="en"] .works-motto {
+        max-width: min(360px, 34vw);
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      html[lang="en"] .motto-text {
+        min-width: 0;
+        flex-direction: column;
+        gap: 8px;
+        line-height: 1.36;
+      }
+
+      html[lang="en"] .motto-rule {
+        order: -1;
+        width: 96px;
+        height: 3px;
+      }
+
+      html[lang="en"] .motto-rule img {
+        width: 96px;
+        transform: none;
+      }
+
+      html[lang="en"] .closing-text {
+        align-items: flex-start;
+        flex: 1 1 0;
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+      }
+
+      html[lang="en"] .vertical-copy {
+        display: block;
+        width: 100%;
+        min-width: 0;
+      }
+
+      html[lang="en"] .vertical-group {
+        display: contents;
+        font-size: 15px;
+        line-height: 1.78;
+      }
+
+      html[lang="en"] .closing-copy {
+        width: 100%;
+        max-width: 100%;
+        color: var(--ink);
+        font-size: 17px;
+        line-height: 1.78;
+        letter-spacing: 0;
+      }
+
+      html[lang="en"] .closing-copy p {
+        margin: 0;
+      }
+
+      html[lang="en"] .closing-copy p + p {
+        margin-top: 16px;
+      }
+
+      html[lang="en"] .vertical-group > div {
+        display: contents;
+      }
+
+      html[lang="en"] .co-page .title-block {
+        display: grid;
+        width: clamp(380px, 38vw, 520px);
+        height: auto;
+        left: 740px;
+        gap: 18px;
+        align-items: start;
+        justify-content: stretch;
+      }
+
+      html[lang="en"] .co-page .title-rule {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(26, 26, 26, 0.62) 12%,
+          rgba(26, 26, 26, 0.62) 88%,
+          transparent
+        );
+      }
+
+      html[lang="en"] .title-lines {
+        min-width: 0;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      html[lang="en"] .title-lines p {
+        font-size: clamp(36px, 4vw, 56px);
+        line-height: 1.16;
+      }
+
+      html[lang="en"] .title-lines .title-secondary {
+        padding-top: 0;
+        order: 2;
+      }
+
+      html[lang="en"] .title-lines p:not(.title-secondary) {
+        order: 1;
+      }
+
+      html[lang="en"] .footer-nav {
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      @media (min-width: 1280px) {
+        html[lang="en"] .co-page .title-block {
+          left: calc(var(--frame-width) - 620px);
+        }
+      }
+
+      @media (max-width: 980px) {
+        html[lang="en"] .philosophy {
+          min-height: 1060px;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          display: flex;
+          flex-direction: column;
+          padding: 112px 80px 120px;
+          gap: 44px;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          flex-direction: row-reverse;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          grid-column: auto;
+          grid-row: auto;
+          max-width: 36em;
+          font-size: 16px;
+          line-height: 1.72;
+        }
+      }
+
+      @media (max-width: 959px) {
+        html[lang="en"] .headline,
+        html[lang="en"] .slide--daruma .headline {
+          width: min(390px, 50vw) !important;
+          max-width: min(390px, 50vw) !important;
+          min-height: 124px !important;
+          font-size: clamp(24px, 3.45vw, 30px) !important;
+        }
+
+        html[lang="en"] .co-page .title-block {
+          width: 320px;
+          left: 420px;
+        }
+
+        html[lang="en"] .title-lines p {
+          font-size: 34px;
+        }
+      }
+
+      @media (min-width: 960px) and (max-width: 1279px) {
+        html[lang="en"] .slide .slide-inner {
+          --pc-side-inset: clamp(20px, 2.8vw, 36px);
+          --pc-side-column: clamp(232px, 28vw, 312px);
+        }
+
+        html[lang="en"] .work-info,
+        html[lang="en"] .slide--plate .work-info,
+        html[lang="en"] .slide--daruma .work-info,
+        html[lang="en"] .slide--kashiki .work-info {
+          right: var(--pc-side-inset) !important;
+          width: var(--pc-side-column) !important;
+          gap: 14px !important;
+        }
+
+        html[lang="en"] .work-title,
+        html[lang="en"] .slide--daruma .work-title,
+        html[lang="en"] .slide--bamboo .work-title,
+        html[lang="en"] .slide--kashiki .work-title {
+          font-size: clamp(20px, 2.08vw, 26px) !important;
+          line-height: 1.16 !important;
+        }
+
+        html[lang="en"] .slide--kashiki .work-title {
+          font-size: clamp(18px, 1.92vw, 24px) !important;
+        }
+
+        html[lang="en"] .work-en {
+          font-size: clamp(13px, 1.35vw, 16px) !important;
+          line-height: 1.42 !important;
+          letter-spacing: 0.06em !important;
+        }
+
+        html[lang="en"] .work-meta {
+          font-size: 13px !important;
+          line-height: 1.52 !important;
+        }
+
+        html[lang="en"] .slide--plate .work-object.plate-composite,
+        html[lang="en"] .slide--plate .figma-object--plate,
+        html[lang="en"] .slide--daruma .work-object.daruma-composite,
+        html[lang="en"] .slide--daruma .figma-object--daruma,
+        html[lang="en"] .slide--bamboo .work-object.bamboo-composite,
+        html[lang="en"] .slide--bamboo .figma-object--bamboo,
+        html[lang="en"] .slide--kashiki .work-object.kashiki-composite,
+        html[lang="en"] .slide--kashiki .figma-object--kashiki {
+          left: 44% !important;
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 1024px) {
+        html[lang="en"] .vertical-copy {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 24px 32px;
+        }
+
+        html[lang="en"] .vertical-group {
+          font-size: 15px;
+          line-height: 1.78;
+        }
+      }
+
+      @media (max-width: 720px) {
+        html[lang="en"] .philosophy {
+          min-height: 1160px;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          padding: 88px 32px 120px;
+          gap: 36px;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          font-size: 34px;
+        }
+
+        html[lang="en"] .philosophy .title-en {
+          width: auto !important;
+          height: auto;
+          font-size: 18px;
+          writing-mode: horizontal-tb !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          grid-column: auto;
+          grid-row: auto;
+          max-width: 100%;
+          font-size: 14px;
+          line-height: 1.85;
+          gap: 18px;
+        }
+
+        html[lang="en"] .works-mobile__motto {
+          width: min(320px, 100%);
+          margin-left: auto;
+          padding-top: 0;
+          padding-left: 0;
+          line-height: 1.36;
+          text-align: right;
+          white-space: normal;
+          overflow-wrap: normal;
+        }
+
+        html[lang="en"] .works-mobile__motto::after {
+          display: none !important;
+          content: none !important;
+        }
+      }
+
+      @media (max-width: 799px) {
+        html[lang="en"] .works-mobile {
+          width: 100vw;
+          max-width: 100vw;
+          overflow: hidden;
+        }
+
+        html[lang="en"] .works-mobile__inner {
+          width: calc(100vw - 48px);
+          margin-right: auto;
+          margin-left: auto;
+        }
+
+        html[lang="en"] .works-mobile__inner,
+        html[lang="en"] .works-mobile__meta,
+        html[lang="en"] .works-mobile header,
+        html[lang="en"] .works-mobile__copy,
+        html[lang="en"] .works-mobile__artists,
+        html[lang="en"] .works-mobile__figure {
+          min-width: 0;
+          max-width: 100%;
+        }
+
+        html[lang="en"] .works-mobile__motto {
+          justify-self: end;
+          width: min(300px, 100%);
+          max-width: 100%;
+          padding-right: 0;
+          text-align: right;
+          font-size: clamp(20px, 5.6vw, 24px);
+          line-height: 1.32;
+        }
+
+        html[lang="en"] .works-mobile .title-rule {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        html[lang="en"] .works-mobile__copy p,
+        html[lang="en"] .works-mobile__artists li {
+          width: 100%;
+          max-width: 100%;
+          white-space: normal !important;
+          overflow-wrap: break-word !important;
+          word-break: normal !important;
+        }
+
+        html[lang="en"] .works-mobile__copy {
+          font-size: 15px;
+          line-height: 1.78;
+        }
+      }
+
+      @media (max-width: 639px) {
+        html[lang="en"] .about-page .about-main {
+          padding-right: 24px !important;
+          padding-left: 24px !important;
+        }
+
+        html[lang="en"] .about-page .content-stack {
+          width: calc(100vw - 48px) !important;
+          max-width: calc(100vw - 48px) !important;
+          margin-right: 0 !important;
+          margin-left: 0 !important;
+        }
+
+        html[lang="en"] .about-page .section-heading,
+        html[lang="en"] .about-page .section-title-group,
+        html[lang="en"] .about-page .section-title,
+        html[lang="en"] .about-page .statement-title,
+        html[lang="en"] .about-page .section-layout,
+        html[lang="en"] .about-page .body-copy,
+        html[lang="en"] .about-page .body-copy p {
+          width: calc(100vw - 48px) !important;
+          max-width: calc(100vw - 48px) !important;
+          inline-size: calc(100vw - 48px) !important;
+          max-inline-size: calc(100vw - 48px) !important;
+        }
+
+        html[lang="en"] .about-page #about-title {
+          font-size: clamp(34px, 10vw, 40px) !important;
+          line-height: 1.08 !important;
+          letter-spacing: 0.06em !important;
+        }
+
+        html[lang="en"] .about-page h2.section-title {
+          font-size: clamp(22px, 6vw, 26px) !important;
+          line-height: 1.18 !important;
+          letter-spacing: 0.05em !important;
+        }
+
+        html[lang="en"] .about-page .body-copy {
+          font-size: 14px !important;
+          line-height: 2 !important;
+        }
+      }
+
+      @media (max-width: 520px) {
+        html[lang="en"] .works-mobile__inner {
+          width: 100%;
+          max-width: 428px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      @media (max-width: 640px) {
+        html[lang="en"] .opening__text {
+          font-size: clamp(24px, 6.4vw, 32px);
+          line-height: 1.22;
+          letter-spacing: 0.03em;
+        }
+
+        html[lang="en"] .slide .slide-inner {
+          display: flex !important;
+          width: 100vw !important;
+          height: 100svh !important;
+          min-height: 760px !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          justify-content: flex-start !important;
+          gap: 0 !important;
+          padding: clamp(76px, 10svh, 96px) 24px 0 !important;
+          transform: none !important;
+        }
+
+        html[lang="en"] .headline,
+        html[lang="en"] .slide--daruma .headline {
+          position: relative !important;
+          top: auto !important;
+          right: auto !important;
+          left: auto !important;
+          order: 1 !important;
+          width: min(420px, calc(100vw - 48px)) !important;
+          max-width: calc(100vw - 48px) !important;
+          min-height: clamp(156px, 23svh, 220px) !important;
+          transform: none !important;
+          align-items: center !important;
+          justify-content: center !important;
+          align-self: center !important;
+          justify-self: auto !important;
+          padding-top: 0 !important;
+          gap: 8px !important;
+          text-align: center !important;
+          font-size: clamp(20px, 5.25vw, 24px) !important;
+          line-height: 1.26 !important;
+        }
+
+        html[lang="en"] .headline-col,
+        html[lang="en"] .slide--daruma .headline-col {
+          width: 100% !important;
+          min-height: 1.26em !important;
+          text-align: center !important;
+        }
+
+        html[lang="en"] .slide .object-stage {
+          position: relative !important;
+          inset: auto !important;
+          order: 2 !important;
+          display: block !important;
+          width: 100% !important;
+          height: clamp(252px, 36svh, 334px) !important;
+          min-height: clamp(252px, 36svh, 334px) !important;
+          margin-top: 0 !important;
+          align-self: stretch !important;
+        }
+
+        html[lang="en"] .figma-object,
+        html[lang="en"] .slide--plate .figma-object--plate,
+        html[lang="en"] .slide--daruma .figma-object--daruma,
+        html[lang="en"] .slide--bamboo .figma-object--bamboo,
+        html[lang="en"] .slide--kashiki .figma-object--kashiki {
+          position: absolute !important;
+          top: 50% !important;
+          left: 50% !important;
+          transform: translate(-50%, -50%) !important;
+        }
+
+        html[lang="en"] .slide--plate .work-object.plate-composite {
+          width: min(91vw, 342px) !important;
+          height: min(58vw, 216px) !important;
+          overflow: visible !important;
+        }
+
+        html[lang="en"] .slide--daruma .work-object.daruma-composite {
+          left: calc(50% + 5px) !important;
+          width: min(60vw, 240px) !important;
+          height: min(74vw, 295px) !important;
+        }
+
+        html[lang="en"] .slide--bamboo .work-object.bamboo-composite {
+          width: min(80vw, 326px) !important;
+          height: min(80vw, 326px) !important;
+        }
+
+        html[lang="en"] .slide--kashiki .work-object.kashiki-composite {
+          width: min(78vw, 318px) !important;
+          height: min(70vw, 286px) !important;
+        }
+
+        html[lang="en"] .work-info,
+        html[lang="en"] .slide--plate .work-info,
+        html[lang="en"] .slide--daruma .work-info,
+        html[lang="en"] .slide--kashiki .work-info {
+          position: relative !important;
+          top: auto !important;
+          right: auto !important;
+          bottom: auto !important;
+          left: auto !important;
+          order: 3 !important;
+          width: min(340px, calc(100vw - 48px)) !important;
+          margin: clamp(8px, 2svh, 16px) auto 0 !important;
+          align-items: center !important;
+          align-self: center !important;
+          justify-self: auto !important;
+          padding-right: 0 !important;
+          gap: 8px !important;
+          text-align: center !important;
+        }
+
+        html[lang="en"] .work-title {
+          font-size: clamp(22px, 6.2vw, 28px) !important;
+          line-height: 1.18 !important;
+          white-space: normal !important;
+        }
+
+        html[lang="en"] .work-en,
+        html[lang="en"] .work-meta {
+          font-size: 14px !important;
+          line-height: 1.34 !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        html[lang="en"] .co-page .title-block {
+          width: calc(100vw - 48px);
+          left: 24px;
+        }
+
+        html[lang="en"] .title-lines p {
+          font-size: 34px;
+        }
+      }
+
+      /* English top-page polish: align the Japanese-page spacing decisions after all legacy media rules. */
+      html[lang="en"] .philosophy {
+        min-height: 948px !important;
+      }
+
+      html[lang="en"] .philosophy .copy-field {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        width: min(1208px, calc(100% - 240px)) !important;
+        margin: 0 auto !important;
+        padding: 120px 0 96px !important;
+        gap: 32px !important;
+      }
+
+      html[lang="en"] .philosophy .title-block {
+        position: relative !important;
+        display: block !important;
+        justify-self: start !important;
+        order: 0 !important;
+        width: min(760px, 100%) !important;
+        padding-left: 54px !important;
+        gap: 0 !important;
+      }
+
+      html[lang="en"] .philosophy .title-main-wrap {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        gap: 18px !important;
+        align-items: flex-start !important;
+      }
+
+      html[lang="en"] .philosophy .title-main {
+        display: inline-flex !important;
+        gap: 0.22em !important;
+        font-size: 48px !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+      }
+
+      html[lang="en"] .philosophy .title-en {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 30px !important;
+        height: auto !important;
+        margin: 0 !important;
+        color: #cebd9d;
+        font-size: 20px !important;
+        line-height: 1.5 !important;
+        text-orientation: mixed !important;
+        white-space: nowrap !important;
+        writing-mode: vertical-rl !important;
+      }
+
+      html[lang="en"] .philosophy .title-rule {
+        width: 264px !important;
+        margin-top: 0 !important;
+      }
+
+      html[lang="en"] .philosophy .mobile-copy {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        order: 1 !important;
+        width: min(760px, calc(100% - 54px)) !important;
+        max-width: min(760px, calc(100% - 54px)) !important;
+        margin-left: 54px !important;
+        gap: 18px !important;
+        font-size: 17px !important;
+        line-height: 1.58 !important;
+      }
+
+      html[lang="en"] .watermark {
+        top: 492px !important;
+      }
+
+      html[lang="en"] .katana {
+        top: 720px !important;
+        width: min(1080px, 90vw) !important;
+      }
+
+      html[lang="en"] .katana-shadow {
+        top: 820px !important;
+        width: min(920px, 76vw) !important;
+      }
+
+      html[lang="en"] #co-create,
+      html[lang="en"] #co-create iframe {
+        min-height: 2400px !important;
+        height: 2400px !important;
+      }
+
+      html[lang="en"] .works-eyebrow,
+      html[lang="en"] .works-content,
+      html[lang="en"] .works-text-block,
+      html[lang="en"] .works-title,
+      html[lang="en"] .works-copy {
+        text-align: left !important;
+      }
+
+      html[lang="en"] .works-eyebrow {
+        top: var(--works-content-top) !important;
+        left: calc(var(--works-content-left) - 54px) !important;
+        width: 30px !important;
+        max-width: none !important;
+        font-size: clamp(18px, 1.2vw, 20px) !important;
+        line-height: 1.5 !important;
+        letter-spacing: 0 !important;
+        text-orientation: mixed !important;
+        white-space: nowrap !important;
+        writing-mode: vertical-rl !important;
+      }
+
+      html[lang="en"] .works-title,
+      html[lang="en"] .works-copy {
+        align-items: flex-start !important;
+      }
+
+      html[lang="en"] .works-title .title-rule {
+        margin-right: auto !important;
+        margin-left: 0 !important;
+      }
+
+      html[lang="en"] .works-motto {
+        align-items: flex-end !important;
+        gap: 0 !important;
+        text-align: right !important;
+      }
+
+      html[lang="en"] .motto-text {
+        align-items: flex-end !important;
+        width: min(360px, 34vw) !important;
+        text-align: right !important;
+      }
+
+      html[lang="en"] .motto-text p {
+        width: 100% !important;
+        text-align: right !important;
+      }
+
+      html[lang="en"] .motto-rule,
+      html[lang="en"] .motto-rule img {
+        display: none !important;
+      }
+
+      html[lang="en"] .co-stage {
+        min-height: 2400px !important;
+      }
+
+      html[lang="en"] .co-page {
+        --frame-height: 2400px;
+        --copy-size: 16px;
+        --copy-lead-size: 16px;
+        --copy-leading: 1.72;
+        --copy-gap: 28px;
+        --title-y: 120px;
+        --wood-y: 488px;
+        --copy-one-y: 660px;
+        --copy-two-y: 1198px;
+        --bowl-y: 1128px;
+        --copy-three-y: 1632px;
+        --red-y: calc(var(--copy-three-y) - 128px);
+        height: var(--frame-height) !important;
+      }
+
+      html[lang="en"] .co-page .title-block {
+        top: var(--title-y) !important;
+        left: calc(var(--frame-width) - 620px) !important;
+        width: clamp(420px, 38vw, 520px) !important;
+        gap: 18px !important;
+      }
+
+      html[lang="en"] .co-page .copy-block,
+      html[lang="en"] .co-page .copy-block--two {
+        gap: var(--copy-gap) !important;
+        line-height: var(--copy-leading) !important;
+      }
+
+      html[lang="en"] .co-page .copy-block br {
+        display: none !important;
+      }
+
+      html[lang="en"] .co-page .copy-block p {
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+        hyphens: none !important;
+      }
+
+      html[lang="en"] .co-page .copy-block::before {
+        inset: -32px -36px -30px -32px !important;
+      }
+
+      @media (min-width: 960px) and (max-width: 1279px) {
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe,
+        html[lang="en"] .co-stage {
+          min-height: 2480px !important;
+          height: 2480px !important;
+        }
+
+        html[lang="en"] .co-page {
+          --frame-height: 2480px;
+          --copy-one-x: 80px;
+          --copy-one-y: 660px;
+          --copy-one-w: min(480px, calc(100vw - 160px));
+          --wood-x: max(600px, calc(100vw - 760px));
+          --wood-y: 488px;
+          --copy-two-x: max(520px, calc(100vw - 560px));
+          --copy-two-y: 1198px;
+          --copy-two-w: 400px;
+          --bowl-x: -170px;
+          --bowl-y: 1128px;
+          --bowl-w: clamp(560px, 56vw, 680px);
+          --copy-three-x: 80px;
+          --copy-three-y: calc(1372px + 21.5vw);
+          --copy-three-w: 420px;
+          --red-x: clamp(520px, calc(100vw - 560px), 640px);
+          --red-y: calc(var(--copy-three-y) - 152px);
+          --red-w: clamp(720px, 74vw, 900px);
+        }
+
+        html[lang="en"] .co-page .title-block {
+          left: max(640px, calc(100vw - 400px)) !important;
+          width: min(320px, calc(100vw - 672px)) !important;
+        }
+
+        html[lang="en"] .title-lines p {
+          font-size: 40px !important;
+          line-height: 1.14 !important;
+        }
+      }
+
+      @media (max-width: 980px) {
+        html[lang="en"] .philosophy {
+          min-height: auto !important;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          width: calc(100% - 160px) !important;
+          padding: 96px 0 88px !important;
+          gap: 36px !important;
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          font-size: 40px !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          width: calc(100% - 54px) !important;
+          max-width: min(40em, calc(100% - 54px)) !important;
+          margin-left: 54px !important;
+          font-size: 16px !important;
+          line-height: 1.72 !important;
+        }
+      }
+
+      @media (min-width: 721px) and (max-width: 959px) {
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe {
+          min-height: 3500px !important;
+          height: 3500px !important;
+        }
+
+        html[lang="en"] .co-stage {
+          min-height: 3500px !important;
+        }
+
+        html[lang="en"] .co-page {
+          --frame-height: 3500px;
+          --title-y: 96px;
+          --pottery-x: 80px;
+          --pottery-y: 360px;
+          --pottery-w: min(560px, calc(100vw - 160px));
+          --copy-one-x: 80px;
+          --copy-one-y: 980px;
+          --copy-one-w: calc(100vw - 160px);
+          --wood-x: 80px;
+          --wood-y: 1350px;
+          --wood-w: min(688px, calc(100vw - 160px));
+          --copy-two-x: 80px;
+          --copy-two-y: 1916px;
+          --copy-two-w: calc(100vw - 160px);
+          --bowl-x: 80px;
+          --bowl-y: 2230px;
+          --bowl-w: min(620px, calc(100vw - 160px));
+          --copy-three-x: 80px;
+          --copy-three-y: 2650px;
+          --copy-three-w: calc(100vw - 160px);
+          --red-x: 80px;
+          --red-y: 3040px;
+          --red-w: min(720px, calc(100vw - 80px));
+          height: var(--frame-height) !important;
+        }
+
+        html[lang="en"] .co-page .title-block {
+          left: 80px !important;
+          width: calc(100vw - 160px) !important;
+        }
+
+        html[lang="en"] .title-lines p {
+          font-size: 40px !important;
+        }
+      }
+
+      @media (max-width: 720px) {
+        html[lang="en"] .philosophy {
+          padding: 0 !important;
+        }
+
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe {
+          min-height: 3000px !important;
+          height: 3000px !important;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          width: calc(100% - 48px) !important;
+          padding: 88px 0 80px !important;
+          gap: 32px !important;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          width: 100% !important;
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          font-size: 36px !important;
+        }
+
+        html[lang="en"] .philosophy .title-en {
+          margin-top: 10px !important;
+          font-size: 16px !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          width: calc(100% - 54px) !important;
+          max-width: calc(100% - 54px) !important;
+          margin-left: 54px !important;
+          font-size: 14px !important;
+          line-height: 1.78 !important;
+          gap: 18px !important;
+        }
+
+        html[lang="en"] .co-stage {
+          min-height: 3000px !important;
+        }
+
+        html[lang="en"] .co-page {
+          --frame-height: 3000px;
+          --copy-leading: 1.72;
+          --copy-gap: 24px;
+          --title-y: 72px;
+          --pottery-x: max(15px, calc((100vw - 360px) / 2));
+          --pottery-y: 360px;
+          --pottery-w: min(360px, calc(100vw - 30px));
+          --copy-one-x: 24px;
+          --copy-one-y: 780px;
+          --copy-one-w: calc(100vw - 48px);
+          --wood-x: max(8px, calc((100vw - 384px) / 2));
+          --wood-y: 1160px;
+          --wood-w: min(384px, calc(100vw - 16px));
+          --copy-two-x: 24px;
+          --copy-two-y: 1496px;
+          --copy-two-w: calc(100vw - 48px);
+          --bowl-x: max(16px, calc((100vw - 374px) / 2));
+          --bowl-y: 1864px;
+          --bowl-w: min(374px, calc(100vw - 32px));
+          --copy-three-x: 24px;
+          --copy-three-y: 2140px;
+          --copy-three-w: calc(100vw - 48px);
+          --red-x: max(0px, calc((100vw - 390px) / 2));
+          --red-y: 2480px;
+          --red-w: min(390px, 100vw);
+          height: var(--frame-height) !important;
+        }
+
+        html[lang="en"] .co-page .title-block {
+          left: 24px !important;
+          width: calc(100vw - 48px) !important;
+        }
+
+        html[lang="en"] .title-lines p {
+          font-size: clamp(34px, 9vw, 40px) !important;
+          line-height: 1.12 !important;
+        }
+      }
+
+      @media (min-width: 981px) {
+        html[lang="en"] .philosophy {
+          --philosophy-label-left: max(66px, calc((100vw - 1208px) / 2 + 66px));
+          --philosophy-copy-left: max(120px, calc((100vw - 1208px) / 2 + 120px));
+          --philosophy-copy-width: min(1022px, calc(100vw - var(--philosophy-copy-left) - var(--philosophy-label-left)));
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          width: 100% !important;
+          max-width: none !important;
+          margin-right: 0 !important;
+          margin-left: 0 !important;
+          padding: 120px 0 96px !important;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          width: var(--philosophy-copy-width) !important;
+          margin-left: var(--philosophy-label-left) !important;
+          padding-left: 54px !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          width: var(--philosophy-copy-width) !important;
+          max-width: var(--philosophy-copy-width) !important;
+          margin-right: var(--philosophy-label-left) !important;
+          margin-left: var(--philosophy-copy-left) !important;
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 980px) {
+        html[lang="en"] .philosophy {
+          padding: 0 !important;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          width: calc(100% - 160px) !important;
+          max-width: none !important;
+          margin-right: auto !important;
+          margin-left: auto !important;
+          padding: 96px 0 72px !important;
+          gap: 36px !important;
+        }
+
+        html[lang="en"] .philosophy .title-block,
+        html[lang="en"] .works-mobile header {
+          position: relative !important;
+          display: block !important;
+          width: 100% !important;
+          padding-left: 54px !important;
+          gap: 0 !important;
+        }
+
+        html[lang="en"] .philosophy .title-en,
+        html[lang="en"] .works-mobile__eyebrow {
+          position: absolute !important;
+          top: 0 !important;
+          left: 0 !important;
+          display: block !important;
+          width: 30px !important;
+          height: auto !important;
+          margin: 0 !important;
+          font-size: 20px !important;
+          line-height: 1.5 !important;
+          text-orientation: mixed !important;
+          white-space: nowrap !important;
+          writing-mode: vertical-rl !important;
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          font-size: 40px !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy,
+        html[lang="en"] .works-mobile__copy,
+        html[lang="en"] .works-mobile__artists {
+          width: calc(100% - 54px) !important;
+          max-width: calc(100% - 54px) !important;
+          margin-right: 0 !important;
+          margin-left: 54px !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          font-size: 16px !important;
+          line-height: 1.72 !important;
+        }
+      }
+
+      @media (max-width: 640px) {
+        html[lang="en"] .philosophy .copy-field {
+          width: calc(100% - 48px) !important;
+          max-width: none !important;
+          margin-right: auto !important;
+          margin-left: auto !important;
+          padding: 88px 0 80px !important;
+          gap: 32px !important;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          position: relative !important;
+          display: flex !important;
+          flex-direction: column !important;
+          width: 100% !important;
+          padding-left: 0 !important;
+          gap: 12px !important;
+        }
+
+        html[lang="en"] .philosophy .title-main-wrap {
+          gap: 12px !important;
+        }
+
+        html[lang="en"] .philosophy .title-en {
+          position: static !important;
+          display: block !important;
+          width: auto !important;
+          height: auto !important;
+          margin: 0 !important;
+          font-size: 16px !important;
+          line-height: 1.6 !important;
+          text-orientation: mixed !important;
+          white-space: normal !important;
+          writing-mode: horizontal-tb !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin-left: 0 !important;
+          font-size: 14px !important;
+          line-height: 1.78 !important;
+          gap: 18px !important;
+        }
+      }
+
+      /* English top-page responsive rhythm: normalize every post-FV section after legacy rules. */
+      html[lang="en"] {
+        --ktop-en-space-x: 120px;
+        --ktop-en-space-top: 120px;
+        --ktop-en-space-bottom: 96px;
+        --ktop-en-block-gap: 64px;
+        --ktop-en-practice-gap: 56px;
+        --ktop-en-co-height: 2264px;
+      }
+
+      html[lang="en"] #co-create,
+      html[lang="en"] #co-create iframe {
+        min-height: var(--ktop-en-co-height) !important;
+        height: var(--ktop-en-co-height) !important;
+      }
+
+      html[lang="en"] .philosophy {
+        min-height: 880px !important;
+      }
+
+      html[lang="en"] .philosophy .copy-field {
+        width: min(1208px, calc(100% - (var(--ktop-en-space-x) * 2))) !important;
+        max-width: none !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        padding: var(--ktop-en-space-top) 0 var(--ktop-en-space-bottom) !important;
+        gap: 32px !important;
+      }
+
+      html[lang="en"] .works-fit {
+        --works-content-top: var(--ktop-en-space-top) !important;
+        --works-section-gap: var(--ktop-en-block-gap) !important;
+      }
+
+      html[lang="en"] .works-mobile {
+        padding: var(--ktop-en-space-top) var(--ktop-en-space-x) var(--ktop-en-space-bottom) !important;
+      }
+
+      html[lang="en"] .works-mobile__inner {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      html[lang="en"] .frame-shell .content {
+        gap: var(--ktop-en-block-gap) !important;
+        padding: var(--ktop-en-space-top) var(--ktop-en-space-x) var(--ktop-en-space-bottom) !important;
+      }
+
+      html[lang="en"] .frame-shell .head {
+        gap: 32px !important;
+      }
+
+      html[lang="en"] .frame-shell .initiatives {
+        gap: var(--ktop-en-practice-gap) !important;
+      }
+
+      html[lang="en"] .co-stage {
+        min-height: var(--ktop-en-co-height) !important;
+        height: var(--ktop-en-co-height) !important;
+      }
+
+      html[lang="en"] .co-page {
+        --frame-height: var(--ktop-en-co-height);
+        --copy-size: 16px;
+        --copy-lead-size: 16px;
+        --copy-leading: 1.72;
+        --copy-gap: 32px;
+        --title-y: 120px;
+        --pottery-y: 72px;
+        --wood-y: 612px;
+        --copy-one-y: 684px;
+        --copy-two-y: 1264px;
+        --bowl-y: 1232px;
+        --copy-three-y: 1696px;
+        --red-y: calc(var(--copy-three-y) - 24px);
+        height: var(--frame-height) !important;
+      }
+
+      html[lang="en"] .co-page .title-block {
+        top: var(--title-y) !important;
+        left: calc(var(--frame-width) - var(--ktop-en-space-x) - 420px) !important;
+        display: flex !important;
+        width: clamp(360px, 34vw, 420px) !important;
+        height: 240px !important;
+        gap: 18px !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+      }
+
+      html[lang="en"] .co-page .title-rule {
+        flex: 0 0 3px !important;
+        width: 3px !important;
+        height: 220px !important;
+        background: linear-gradient(180deg, transparent, rgba(185, 154, 94, 0.88) 12%, rgba(185, 154, 94, 0.88) 88%, transparent) !important;
+      }
+
+      html[lang="en"] .co-page .title-lines {
+        display: flex !important;
+        flex: 1 1 auto !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        align-items: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      html[lang="en"] .co-page .title-lines p {
+        width: auto !important;
+        max-width: 100% !important;
+        font-size: clamp(38px, 3.6vw, 48px) !important;
+        line-height: 1.08 !important;
+        writing-mode: horizontal-tb !important;
+        white-space: normal !important;
+      }
+
+      html[lang="en"] .co-page .title-lines .title-secondary {
+        order: 2 !important;
+        padding-top: 0 !important;
+      }
+
+      html[lang="en"] .co-page .title-lines p:not(.title-secondary) {
+        order: 1 !important;
+      }
+
+      html[lang="en"] .co-page .artifact--pottery {
+        width: min(548px, calc(100vw - (var(--ktop-en-space-x) * 2))) !important;
+      }
+
+      html[lang="en"] .co-page .artifact--wood {
+        width: min(800px, calc(100vw - 240px)) !important;
+      }
+
+      html[lang="en"] .co-page .artifact--bowl {
+        width: clamp(600px, 48vw, 680px) !important;
+      }
+
+      html[lang="en"] .co-page .artifact--red {
+        width: clamp(760px, 58vw, 860px) !important;
+      }
+
+      html[lang="en"] .co-page .copy-block,
+      html[lang="en"] .co-page .copy-block--two {
+        gap: var(--copy-gap) !important;
+        line-height: var(--copy-leading) !important;
+      }
+
+      @media (min-width: 721px) and (max-width: 1100px) {
+        html[lang="en"] {
+          --ktop-en-space-x: 80px;
+          --ktop-en-space-top: 96px;
+          --ktop-en-space-bottom: 72px;
+          --ktop-en-block-gap: 64px;
+          --ktop-en-practice-gap: 56px;
+          --ktop-en-co-height: 3560px;
+        }
+
+        html[lang="en"] .philosophy {
+          min-height: auto !important;
+          padding: 0 !important;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          width: calc(100% - (var(--ktop-en-space-x) * 2)) !important;
+          padding: var(--ktop-en-space-top) 0 var(--ktop-en-space-bottom) !important;
+          gap: 36px !important;
+        }
+
+        html[lang="en"] .works-mobile {
+          padding: var(--ktop-en-space-top) var(--ktop-en-space-x) var(--ktop-en-space-bottom) !important;
+        }
+
+        html[lang="en"] .works-mobile header,
+        html[lang="en"] .works-mobile__copy,
+        html[lang="en"] .works-mobile__artists {
+          margin-left: 54px !important;
+          width: calc(100% - 54px) !important;
+          max-width: calc(100% - 54px) !important;
+        }
+
+        html[lang="en"] .frame-shell .content {
+          padding: var(--ktop-en-space-top) var(--ktop-en-space-x) var(--ktop-en-space-bottom) !important;
+        }
+
+        html[lang="en"] .co-page {
+          --frame-height: var(--ktop-en-co-height);
+          --copy-leading: 1.72;
+          --copy-gap: 28px;
+          --title-y: 96px;
+          --pottery-x: var(--ktop-en-space-x);
+          --pottery-y: 360px;
+          --pottery-w: min(520px, calc(100vw - (var(--ktop-en-space-x) * 2)));
+          --copy-one-x: var(--ktop-en-space-x);
+          --copy-one-y: 920px;
+          --copy-one-w: calc(100vw - (var(--ktop-en-space-x) * 2));
+          --wood-x: var(--ktop-en-space-x);
+          --wood-y: 1400px;
+          --wood-w: min(688px, calc(100vw - (var(--ktop-en-space-x) * 2)));
+          --copy-two-x: var(--ktop-en-space-x);
+          --copy-two-y: 1888px;
+          --copy-two-w: calc(100vw - (var(--ktop-en-space-x) * 2));
+          --bowl-x: var(--ktop-en-space-x);
+          --bowl-y: 2240px;
+          --bowl-w: min(620px, calc(100vw - (var(--ktop-en-space-x) * 2)));
+          --copy-three-x: var(--ktop-en-space-x);
+          --copy-three-y: 2640px;
+          --copy-three-w: calc(100vw - (var(--ktop-en-space-x) * 2));
+          --red-x: var(--ktop-en-space-x);
+          --red-y: 3024px;
+          --red-w: min(720px, calc(100vw - var(--ktop-en-space-x)));
+        }
+
+        html[lang="en"] .co-page .artifact--pottery {
+          width: var(--pottery-w) !important;
+        }
+
+        html[lang="en"] .co-page .artifact--wood {
+          width: var(--wood-w) !important;
+        }
+
+        html[lang="en"] .co-page .artifact--bowl {
+          width: var(--bowl-w) !important;
+        }
+
+        html[lang="en"] .co-page .artifact--red {
+          width: var(--red-w) !important;
+        }
+
+        html[lang="en"] .co-page .title-block {
+          left: var(--ktop-en-space-x) !important;
+          width: calc(100vw - (var(--ktop-en-space-x) * 2)) !important;
+          height: 208px !important;
+        }
+
+        html[lang="en"] .co-page .title-rule {
+          height: 184px !important;
+        }
+
+        html[lang="en"] .co-page .title-lines p {
+          font-size: 40px !important;
+        }
+      }
+
+      @media (min-width: 960px) and (max-width: 1279px) {
+        html[lang="en"] {
+          --ktop-en-co-height: 2368px;
+        }
+
+        html[lang="en"] .co-page {
+          --frame-height: var(--ktop-en-co-height);
+          --pottery-y: 72px;
+          --pottery-x: 80px;
+          --copy-one-x: 80px;
+          --copy-one-y: 700px;
+          --copy-one-w: min(488px, calc(100vw - 160px));
+          --wood-x: max(600px, calc(100vw - 760px));
+          --wood-y: 612px;
+          --copy-two-x: max(520px, calc(100vw - 560px));
+          --copy-two-y: 1296px;
+          --copy-two-w: 400px;
+          --bowl-x: -156px;
+          --bowl-y: 1264px;
+          --bowl-w: clamp(560px, 56vw, 680px);
+          --copy-three-x: 80px;
+          --copy-three-y: 1744px;
+          --copy-three-w: 424px;
+          --red-x: clamp(520px, calc(100vw - 560px), 640px);
+          --red-y: 1712px;
+          --red-w: clamp(720px, 74vw, 860px);
+        }
+
+        html[lang="en"] .co-page .title-block {
+          left: max(620px, calc(100vw - 400px)) !important;
+          width: min(320px, calc(100vw - 700px)) !important;
+        }
+      }
+
+      @media (max-width: 640px) {
+        html[lang="en"] {
+          --ktop-en-space-x: 24px;
+          --ktop-en-space-top: 72px;
+          --ktop-en-space-bottom: 64px;
+          --ktop-en-block-gap: 48px;
+          --ktop-en-practice-gap: 48px;
+          --ktop-en-co-height: 3240px;
+        }
+
+        html[lang="en"] .philosophy {
+          min-height: auto !important;
+          padding: 0 !important;
+        }
+
+        html[lang="en"] .philosophy .copy-field,
+        html[lang="en"] .works-mobile,
+        html[lang="en"] .frame-shell .content {
+          width: auto !important;
+          max-width: none !important;
+          padding: var(--ktop-en-space-top) var(--ktop-en-space-x) var(--ktop-en-space-bottom) !important;
+        }
+
+        html[lang="en"] .frame-shell[aria-label="Core Practices"] .content {
+          padding-bottom: 40px !important;
+        }
+
+        html[lang="en"] .frame-shell[aria-label="Core Practices"] .closing {
+          gap: 24px !important;
+        }
+
+        html[lang="en"] .frame-shell[aria-label="Core Practices"] .closing-text {
+          flex: 0 0 auto !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          min-height: 0 !important;
+        }
+
+        html[lang="en"] .frame-shell[aria-label="Core Practices"] .closing-copy {
+          width: 100% !important;
+          font-size: 15px !important;
+          line-height: 1.72 !important;
+        }
+
+        html[lang="en"] .frame-shell[aria-label="Core Practices"] :where(.lead p, .theme, .desc, .list li, .closing-copy p) {
+          max-width: 100% !important;
+          overflow-wrap: anywhere !important;
+          word-break: normal !important;
+          hyphens: none !important;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          margin: 0 !important;
+          gap: 32px !important;
+        }
+
+        html[lang="en"] .works-mobile__inner {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        html[lang="en"] .co-page {
+          --frame-height: var(--ktop-en-co-height);
+          --copy-size: 15px;
+          --copy-lead-size: 15px;
+          --copy-leading: 1.74;
+          --copy-gap: 24px;
+          --title-y: 72px;
+          --pottery-x: 0px;
+          --pottery-y: 520px;
+          --pottery-w: 100vw;
+          --copy-one-x: var(--ktop-en-space-x);
+          --copy-one-y: 960px;
+          --copy-one-w: calc(100vw - (var(--ktop-en-space-x) * 2));
+          --wood-x: 0px;
+          --wood-y: 1460px;
+          --wood-w: 100vw;
+          --copy-two-x: var(--ktop-en-space-x);
+          --copy-two-y: 1800px;
+          --copy-two-w: calc(100vw - (var(--ktop-en-space-x) * 2));
+          --bowl-x: 0px;
+          --bowl-y: 2168px;
+          --bowl-w: 100vw;
+          --copy-three-x: var(--ktop-en-space-x);
+          --copy-three-y: 2488px;
+          --copy-three-w: calc(100vw - (var(--ktop-en-space-x) * 2));
+          --red-x: 0px;
+          --red-y: 2900px;
+          --red-w: 100vw;
+        }
+
+        html[lang="en"] .co-page .artifact--pottery {
+          width: var(--pottery-w) !important;
+        }
+
+        html[lang="en"] .co-page .artifact--wood {
+          width: var(--wood-w) !important;
+        }
+
+        html[lang="en"] .co-page .artifact--bowl {
+          width: var(--bowl-w) !important;
+        }
+
+        html[lang="en"] .co-page .artifact--red {
+          width: var(--red-w) !important;
+        }
+
+        html[lang="en"] .co-page .title-block {
+          left: var(--ktop-en-space-x) !important;
+          width: calc(100vw - (var(--ktop-en-space-x) * 2)) !important;
+          height: 224px !important;
+          gap: 16px !important;
+        }
+
+        html[lang="en"] .co-page .title-rule {
+          height: 192px !important;
+        }
+
+        html[lang="en"] .co-page .title-lines p {
+          font-size: clamp(34px, 9vw, 38px) !important;
+          line-height: 1.1 !important;
+        }
+      }
+
+      @media (min-width: 480px) and (max-width: 640px) {
+        html[lang="en"] {
+          --ktop-en-space-x: 40px;
+          --ktop-en-co-height: calc(2840px + 114vw);
+        }
+
+        html[lang="en"] .co-page {
+          --copy-one-y: calc(660px + 78vw);
+          --wood-y: calc(1100px + 78vw);
+          --copy-two-y: calc(1300px + 114vw);
+          --bowl-y: calc(1700px + 114vw);
+          --copy-three-y: calc(2100px + 114vw);
+          --red-y: calc(2480px + 114vw);
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 720px) {
+        html[lang="en"] {
+          --ktop-en-space-x: 80px;
+          --ktop-en-space-top: 96px;
+          --ktop-en-space-bottom: 72px;
+          --ktop-en-block-gap: 64px;
+          --ktop-en-practice-gap: 56px;
+          --ktop-en-co-height: 3560px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        html[lang="en"] #initiatives iframe {
+          min-height: 2416px !important;
+          height: 2416px !important;
+        }
+      }
+
+      /* English co-create final pass: keep the craft objects on the Japanese layout grid. */
+      html[lang="en"] {
+        --ktop-en-co-parent-height: 2136px;
+      }
+
+      html[lang="en"] #co-create,
+      html[lang="en"] #co-create iframe {
+        min-height: var(--ktop-en-co-parent-height) !important;
+        height: var(--ktop-en-co-parent-height) !important;
+      }
+
+      html[lang="en"] .co-stage {
+        min-height: var(--frame-height) !important;
+        height: var(--frame-height) !important;
+      }
+
+      html[lang="en"] .co-page {
+        --frame-height: 2136px;
+        --copy-size: 16px;
+        --copy-lead-size: 16px;
+        --copy-leading: 1.76;
+        --copy-gap: 64px;
+        --title-y: 128px;
+        --pottery-x: calc((var(--frame-width) - 1210px) * 0.22 + 120px);
+        --pottery-y: 64px;
+        --pottery-w: 548px;
+        --copy-one-x: calc((var(--frame-width) - 1210px) * 0.2 + 120px);
+        --copy-one-y: 658px;
+        --copy-one-w: 480px;
+        --wood-x: max(660px, calc(var(--frame-width) - 760px));
+        --wood-y: 596px;
+        --wood-w: 800px;
+        --copy-two-x: calc(var(--frame-width) - 650px);
+        --copy-two-y: 1256px;
+        --copy-two-w: 440px;
+        --bowl-x: -72px;
+        --bowl-y: 1224px;
+        --bowl-w: 660px;
+        --copy-three-x: calc((var(--frame-width) - 1210px) * 0.2 + 128px);
+        --copy-three-y: 1664px;
+        --copy-three-w: 480px;
+        --red-x: calc(var(--frame-width) - 640px);
+        --red-y: calc(var(--copy-three-y) - 32px);
+        --red-w: 760px;
+        height: var(--frame-height) !important;
+      }
+
+      html[lang="en"] .co-page .artifact--pottery,
+      html[lang="en"] .co-page .artifact--wood,
+      html[lang="en"] .co-page .artifact--bowl,
+      html[lang="en"] .co-page .artifact--red {
+        height: auto !important;
+      }
+
+      html[lang="en"] .co-page .artifact--pottery {
+        top: var(--pottery-y) !important;
+        left: var(--pottery-x) !important;
+        width: var(--pottery-w) !important;
+      }
+
+      html[lang="en"] .co-page .artifact--wood {
+        top: var(--wood-y) !important;
+        left: var(--wood-x) !important;
+        width: var(--wood-w) !important;
+      }
+
+      html[lang="en"] .co-page .artifact--bowl {
+        top: var(--bowl-y) !important;
+        left: var(--bowl-x) !important;
+        width: var(--bowl-w) !important;
+      }
+
+      html[lang="en"] .co-page .artifact--red {
+        top: var(--red-y) !important;
+        left: var(--red-x) !important;
+        width: var(--red-w) !important;
+      }
+
+      html[lang="en"] .co-page .copy-block--one {
+        top: var(--copy-one-y) !important;
+        left: var(--copy-one-x) !important;
+        width: var(--copy-one-w) !important;
+      }
+
+      html[lang="en"] .co-page .copy-block--two {
+        top: var(--copy-two-y) !important;
+        left: var(--copy-two-x) !important;
+        width: var(--copy-two-w) !important;
+      }
+
+      html[lang="en"] .co-page .copy-block--three {
+        top: var(--copy-three-y) !important;
+        left: var(--copy-three-x) !important;
+        width: var(--copy-three-w) !important;
+      }
+
+      html[lang="en"] .co-page .copy-block p {
+        display: block !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        inline-size: 100% !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: normal !important;
+      }
+
+      html[lang="en"] .co-page .copy-block br {
+        display: initial !important;
+      }
+
+      html[lang="en"] .co-page .copy-block {
+        min-width: 0 !important;
+        max-width: calc(100vw - 48px) !important;
+      }
+
+      html[lang="en"] .co-page .title-block {
+        top: var(--title-y) !important;
+        left: calc(var(--frame-width) - var(--copy-one-x) - min(420px, calc(100vw - var(--copy-one-x) - 40px))) !important;
+        width: min(420px, calc(100vw - var(--copy-one-x) - 40px)) !important;
+        height: 240px !important;
+      }
+
+      @media (min-width: 960px) and (max-width: 1279px) {
+        html[lang="en"] {
+          --ktop-en-co-parent-height: 2160px;
+        }
+
+        html[lang="en"] .co-page {
+          --frame-width: 100vw;
+          --frame-height: 2160px;
+          --copy-gap: 58px;
+          --pottery-x: 80px;
+          --copy-one-x: 80px;
+          --copy-one-w: min(480px, calc(100vw - 160px));
+          --wood-x: max(600px, calc(100vw - 760px));
+          --wood-y: 584px;
+          --copy-two-x: max(520px, calc(100vw - 560px));
+          --copy-two-y: 1264px;
+          --copy-two-w: 400px;
+          --bowl-x: -170px;
+          --bowl-y: 1224px;
+          --bowl-w: clamp(560px, 56vw, 680px);
+          --copy-three-x: 80px;
+          --copy-three-y: 1664px;
+          --copy-three-w: 420px;
+          --red-x: clamp(520px, calc(100vw - 560px), 640px);
+          --red-y: calc(var(--copy-three-y) - 80px);
+          --red-w: clamp(720px, 74vw, 900px);
+        }
+
+        html[lang="en"] .co-page .title-block {
+          left: max(620px, calc(100vw - 400px)) !important;
+          width: min(320px, calc(100vw - 700px)) !important;
+        }
+      }
+
+      @media (max-width: 959px) {
+        html[lang="en"] {
+          --ktop-en-co-parent-height: 3032px;
+        }
+
+        html[lang="en"] .co-page {
+          --frame-width: 100vw;
+          --frame-height: 3032px;
+          --copy-leading: 1.72;
+          --copy-gap: 28px;
+          --title-y: 96px;
+          --pottery-x: 80px;
+          --pottery-y: 360px;
+          --pottery-w: min(560px, calc(100vw - 160px));
+          --copy-one-x: 80px;
+          --copy-one-y: 920px;
+          --copy-one-w: calc(100vw - 160px);
+          --wood-x: 80px;
+          --wood-y: 1350px;
+          --wood-w: min(688px, calc(100vw - 160px));
+          --copy-two-x: 80px;
+          --copy-two-y: 1888px;
+          --copy-two-w: calc(100vw - 160px);
+          --bowl-x: 80px;
+          --bowl-y: 2240px;
+          --bowl-w: min(620px, calc(100vw - 160px));
+          --copy-three-x: 80px;
+          --copy-three-y: 2640px;
+          --copy-three-w: calc(100vw - 160px);
+          --red-x: 80px;
+          --red-y: 3024px;
+          --red-w: min(720px, calc(100vw - 80px));
+        }
+
+        html[lang="en"] .co-page .title-block {
+          left: 80px !important;
+          width: calc(100vw - 160px) !important;
+          height: 208px !important;
+        }
+      }
+
+      @media (max-width: 640px) {
+        html[lang="en"] .co-page {
+          --frame-height: 3000px;
+          --copy-size: 14px;
+          --copy-lead-size: 14px;
+          --copy-leading: 1.72;
+          --copy-gap: 24px;
+          --title-y: 72px;
+          --pottery-x: 0px;
+          --pottery-y: 360px;
+          --pottery-w: 100vw;
+          --copy-one-x: 24px;
+          --copy-one-y: 900px;
+          --copy-one-w: calc(100vw - 48px);
+          --wood-x: 0px;
+          --wood-y: 1160px;
+          --wood-w: 100vw;
+          --copy-two-x: 24px;
+          --copy-two-y: 1496px;
+          --copy-two-w: calc(100vw - 48px);
+          --bowl-x: 0px;
+          --bowl-y: 1864px;
+          --bowl-w: 100vw;
+          --copy-three-x: 24px;
+          --copy-three-y: 2140px;
+          --copy-three-w: calc(100vw - 48px);
+          --red-x: 0px;
+          --red-y: 2480px;
+          --red-w: 100vw;
+        }
+
+        html[lang="en"] .co-page .title-block {
+          left: 24px !important;
+          width: calc(100vw - 48px) !important;
+          height: 208px !important;
+        }
+      }
+
+      /* English co-create heading: let the typography lead, with one quiet gold accent. */
+      html[lang="en"] .co-page .title-block {
+        display: block !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+      }
+
+      html[lang="en"] .co-page .title-rule {
+        display: none !important;
+      }
+
+      html[lang="en"] .co-page .title-lines {
+        display: flex !important;
+        min-width: 0 !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+      }
+
+      html[lang="en"] .co-page .title-lines p:not(.title-secondary) {
+        order: 1 !important;
+        width: auto !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        font-size: clamp(40px, 3.4vw, 50px) !important;
+        line-height: 0.98 !important;
+        letter-spacing: 0 !important;
+        white-space: normal !important;
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+      }
+
+      html[lang="en"] .co-page .title-lines .title-secondary {
+        display: inline-flex !important;
+        order: 2 !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding-top: 0 !important;
+        align-items: center !important;
+        gap: 16px !important;
+        color: rgba(142, 112, 58, 0.72) !important;
+        font-size: clamp(13px, 1.1vw, 16px) !important;
+        letter-spacing: 0.22em !important;
+        line-height: 1.1 !important;
+        text-transform: uppercase !important;
+        white-space: nowrap !important;
+        writing-mode: horizontal-tb !important;
+      }
+
+      html[lang="en"] .co-page .title-lines .title-secondary::after {
+        display: block !important;
+        flex: 0 0 clamp(64px, 8vw, 104px) !important;
+        width: clamp(64px, 8vw, 104px) !important;
+        height: 1px !important;
+        background: linear-gradient(90deg, rgba(142, 112, 58, 0.58), transparent) !important;
+        content: "" !important;
+      }
+
+      @media (max-width: 640px) {
+        html[lang="en"] .co-page .title-lines p:not(.title-secondary) {
+          font-size: clamp(34px, 9vw, 40px) !important;
+          line-height: 1.02 !important;
+        }
+
+        html[lang="en"] .co-page .title-lines .title-secondary {
+          gap: 12px !important;
+          font-size: 13px !important;
+          letter-spacing: 0.18em !important;
+        }
+
+        html[lang="en"] .co-page .title-lines .title-secondary::after {
+          flex-basis: 72px !important;
+          width: 72px !important;
+        }
+      }
+
+      /* English Our Vision final pass: keep the Japanese section rhythm, with horizontal English heading labels. */
+      html[lang="en"] .philosophy {
+        min-height: 880px !important;
+        padding: 0 !important;
+      }
+
+      html[lang="en"] .philosophy .copy-field {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        width: min(1208px, calc(100% - 240px)) !important;
+        max-width: none !important;
+        margin: 0 auto !important;
+        padding: 120px 0 96px !important;
+        gap: 32px !important;
+      }
+
+      html[lang="en"] .philosophy .title-block {
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        width: min(760px, 100%) !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding-left: 0 !important;
+        gap: 12px !important;
+        order: 0 !important;
+      }
+
+      html[lang="en"] .philosophy .title-main-wrap {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+        gap: 18px !important;
+      }
+
+      html[lang="en"] .philosophy .title-main {
+        display: block !important;
+        width: auto !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        font-size: 48px !important;
+        line-height: 1.08 !important;
+        letter-spacing: 0 !important;
+        white-space: normal !important;
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+      }
+
+      html[lang="en"] .philosophy .title-en {
+        position: static !important;
+        display: block !important;
+        width: auto !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        color: #cebd9d;
+        font-size: 20px !important;
+        line-height: 1.5 !important;
+        letter-spacing: 0 !important;
+        white-space: normal !important;
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        order: 1 !important;
+      }
+
+      html[lang="en"] .philosophy .title-rule {
+        width: min(264px, 100%) !important;
+        height: 6px !important;
+        margin-top: 0 !important;
+        background: var(--kameya-rule-short) center / 100% 100% no-repeat !important;
+      }
+
+      html[lang="en"] .philosophy .title-rule::before {
+        content: none !important;
+      }
+
+      html[lang="en"] .philosophy .mobile-copy {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-column: auto !important;
+        grid-row: auto !important;
+        width: min(760px, 100%) !important;
+        max-width: min(760px, 100%) !important;
+        margin: 0 !important;
+        gap: 18px !important;
+        font-size: 17px !important;
+        line-height: 1.58 !important;
+        order: 1 !important;
+      }
+
+      @media (min-width: 721px) and (max-width: 1100px) {
+        html[lang="en"] .philosophy {
+          min-height: var(--responsive-section-min-height, 840px) !important;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          width: calc(100% - 160px) !important;
+          padding: 96px 0 72px !important;
+          gap: 36px !important;
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          font-size: 40px !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          width: min(40em, 100%) !important;
+          max-width: min(40em, 100%) !important;
+          font-size: 16px !important;
+          line-height: 1.72 !important;
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 720px) {
+        html[lang="en"] .philosophy .copy-field {
+          width: calc(100% - 160px) !important;
+        }
+      }
+
+      @media (max-width: 640px) {
+        html[lang="en"] .philosophy {
+          min-height: var(--responsive-section-min-height, auto) !important;
+          padding: 0 !important;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          width: 100% !important;
+          padding: 72px 24px 64px !important;
+          gap: 32px !important;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          width: 100% !important;
+          gap: 12px !important;
+        }
+
+        html[lang="en"] .philosophy .title-main-wrap {
+          gap: 12px !important;
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          font-size: clamp(30px, 7.8vw, 32px) !important;
+          line-height: 1.35 !important;
+        }
+
+        html[lang="en"] .philosophy .title-en {
+          font-size: 16px !important;
+          line-height: 1.6 !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          width: 100% !important;
+          max-width: 100% !important;
+          font-size: 14px !important;
+          line-height: 1.78 !important;
+          gap: 18px !important;
+        }
+      }
+
+      /* English top final lock: preserve the Japanese top-page layout grid and section rhythm. */
+      html[lang="en"] .philosophy .copy-columns {
+        display: none !important;
+      }
+
+      html[lang="en"] .philosophy .mobile-copy {
+        overflow-wrap: anywhere !important;
+      }
+
+      @media (min-width: 981px) {
+        html[lang="en"] .philosophy {
+          min-height: 880px !important;
+          padding: 0 !important;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          display: flex !important;
+          flex-direction: row !important;
+          align-items: flex-start !important;
+          justify-content: flex-end !important;
+          width: min(100%, 1208px) !important;
+          max-width: 1208px !important;
+          margin: 0 auto !important;
+          padding: var(--ktop-space-top, 120px) var(--ktop-space-x, 120px) var(--ktop-space-bottom, 96px) !important;
+          gap: 48px !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          display: flex !important;
+          flex: 0 1 auto !important;
+          flex-direction: column !important;
+          order: 0 !important;
+          width: min(760px, calc(100% - 150px)) !important;
+          max-width: min(760px, calc(100% - 150px)) !important;
+          margin: 0 !important;
+          gap: 18px !important;
+          font-size: 16px !important;
+          line-height: 1.72 !important;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          position: relative !important;
+          display: flex !important;
+          flex: 0 0 152px !important;
+          flex-direction: row !important;
+          order: 1 !important;
+          align-items: flex-start !important;
+          justify-content: flex-start !important;
+          width: 152px !important;
+          height: 360px !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          gap: 8px !important;
+        }
+
+        html[lang="en"] .philosophy .title-main-wrap {
+          display: flex !important;
+          flex-direction: row !important;
+          align-items: flex-start !important;
+          width: auto !important;
+          gap: 24px !important;
+        }
+
+        html[lang="en"] .philosophy .title-rule {
+          position: relative !important;
+          width: 6px !important;
+          height: 176px !important;
+          margin-top: 0 !important;
+          overflow: visible !important;
+          background: transparent !important;
+        }
+
+        html[lang="en"] .philosophy .title-rule::before {
+          position: absolute !important;
+          top: 0 !important;
+          left: 0 !important;
+          width: 176px !important;
+          height: 6px !important;
+          background: var(--kameya-rule-short) center / 100% 100% no-repeat !important;
+          content: "" !important;
+          transform: rotate(90deg) translateY(-6px) !important;
+          transform-origin: left top !important;
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          width: 40px !important;
+          margin: 0 !important;
+          font-size: 40px !important;
+          line-height: 1.18 !important;
+          white-space: nowrap !important;
+          writing-mode: vertical-rl !important;
+          text-orientation: mixed !important;
+        }
+
+        html[lang="en"] .philosophy .title-en {
+          position: static !important;
+          order: 0 !important;
+          width: 32px !important;
+          height: auto !important;
+          margin: 0 !important;
+          font-size: 20px !important;
+          line-height: 1.5 !important;
+          white-space: nowrap !important;
+          writing-mode: vertical-rl !important;
+          text-orientation: mixed !important;
+        }
+      }
+
+      @media (min-width: 721px) and (max-width: 980px) {
+        html[lang="en"] .philosophy {
+          min-height: var(--responsive-section-min-height, 936px) !important;
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 720px) {
+        html[lang="en"] .philosophy {
+          min-height: 808px !important;
+        }
+      }
+
+      @media (min-width: 480px) and (max-width: 520px) {
+        html[lang="en"] .philosophy {
+          min-height: 872px !important;
+        }
+      }
+
+      @media (min-width: 421px) and (max-width: 479px) {
+        html[lang="en"] .philosophy {
+          min-height: 904px !important;
+        }
+      }
+
+      @media (max-width: 420px) {
+        html[lang="en"] .philosophy {
+          min-height: 968px !important;
+        }
+      }
+
+      html[lang="en"] .frame-shell .content {
+        gap: 96px !important;
+        padding: var(--ktop-space-top, 120px) var(--ktop-space-x, 120px) 72px !important;
+      }
+
+      html[lang="en"] .frame-shell .initiatives {
+        gap: var(--ktop-block-gap, 64px) !important;
+      }
+
+      @media (min-width: 641px) and (max-width: 1100px) {
+        html[lang="en"] .frame-shell .content {
+          gap: 72px !important;
+          padding: var(--ktop-space-top, 96px) var(--ktop-space-x, 72px) var(--ktop-space-bottom, 72px) !important;
+        }
+
+        html[lang="en"] .frame-shell .head {
+          gap: 32px !important;
+        }
+      }
+
+      @media (max-width: 640px) {
+        html[lang="en"] .frame-shell .content {
+          gap: var(--ktop-block-gap, 48px) !important;
+          padding: var(--ktop-space-top, 72px) var(--ktop-space-x, 24px) var(--ktop-space-bottom, 64px) !important;
+        }
+
+        html[lang="en"] .frame-shell .head {
+          gap: 28px !important;
+        }
+
+        html[lang="en"] .frame-shell .initiatives {
+          gap: 56px !important;
+        }
+      }
+
+      @media (max-width: 420px) {
+        html[lang="en"] #initiatives iframe,
+        html[lang="en"] .frame-shell {
+          min-height: 2488px !important;
+          height: 2488px !important;
+        }
+      }
+
+      @media (min-width: 421px) and (max-width: 520px) {
+        html[lang="en"] #initiatives iframe,
+        html[lang="en"] .frame-shell {
+          min-height: 2488px !important;
+          height: 2488px !important;
+        }
+      }
+
+      @media (min-width: 521px) and (max-width: 640px) {
+        html[lang="en"] #initiatives iframe,
+        html[lang="en"] .frame-shell {
+          min-height: 2480px !important;
+          height: 2480px !important;
+        }
+      }
+
+      @media (min-width: 721px) and (max-width: 799px) {
+        html[lang="en"] #initiatives iframe,
+        html[lang="en"] .frame-shell {
+          min-height: 2560px !important;
+          height: 2560px !important;
+        }
+      }
+
+      @media (min-width: 800px) and (max-width: 900px) {
+        html[lang="en"] #initiatives iframe,
+        html[lang="en"] .frame-shell {
+          min-height: 2544px !important;
+          height: 2544px !important;
+        }
+      }
+
+      @media (min-width: 901px) and (max-width: 1024px) {
+        html[lang="en"] #initiatives iframe,
+        html[lang="en"] .frame-shell {
+          min-height: 2576px !important;
+          height: 2576px !important;
+        }
+      }
+
+      @media (min-width: 960px) and (max-width: 1208px) {
+        html[lang="en"] #initiatives,
+        html[lang="en"] #initiatives iframe {
+          min-height: 2208px !important;
+          height: 2208px !important;
+        }
+      }
+
+      @media (min-width: 1209px) {
+        html[lang="en"] .frame-shell {
+          min-height: 2208px !important;
+          height: 2208px !important;
+        }
+      }
+
+      html[lang="en"] .co-page .title-block {
+        display: block !important;
+        top: var(--title-y) !important;
+        left: calc(var(--frame-width) - var(--copy-one-x) - min(460px, calc(100vw - var(--copy-one-x) - 40px))) !important;
+        width: min(460px, calc(100vw - var(--copy-one-x) - 40px)) !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+      }
+
+      html[lang="en"] .co-page .title-rule {
+        display: none !important;
+      }
+
+      html[lang="en"] .co-page .title-lines {
+        display: flex !important;
+        min-width: 0 !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+      }
+
+      html[lang="en"] .co-page .title-lines p {
+        width: auto !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        font-size: clamp(40px, 3.4vw, 50px) !important;
+        line-height: 0.98 !important;
+        letter-spacing: 0 !important;
+        white-space: normal !important;
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+      }
+
+      html[lang="en"] .co-page .title-lines p:not(.title-secondary) {
+        order: 1 !important;
+      }
+
+      html[lang="en"] .co-page .title-lines .title-secondary {
+        display: inline-flex !important;
+        order: 2 !important;
+        padding-top: 0 !important;
+        align-items: center !important;
+        gap: 16px !important;
+        color: rgba(142, 112, 58, 0.72) !important;
+        font-size: clamp(13px, 1.1vw, 16px) !important;
+        letter-spacing: 0.22em !important;
+        line-height: 1.1 !important;
+        text-transform: uppercase !important;
+        white-space: nowrap !important;
+      }
+
+      html[lang="en"] .co-page .title-lines .title-secondary::after {
+        display: block !important;
+        flex: 0 0 clamp(64px, 8vw, 104px) !important;
+        width: clamp(64px, 8vw, 104px) !important;
+        height: 1px !important;
+        background: linear-gradient(90deg, rgba(142, 112, 58, 0.58), transparent) !important;
+        content: "" !important;
+      }
+
+      @media (min-width: 1280px) {
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe {
+          min-height: 2136px !important;
+          height: 2136px !important;
+        }
+
+        html[lang="en"] .co-page,
+        html[lang="en"] .co-stage {
+          --frame-height: 2136px;
+          min-height: 2136px !important;
+          height: 2136px !important;
+        }
+
+        html[lang="en"] .co-page .title-block {
+          top: var(--title-y) !important;
+          left: calc(var(--frame-width) - var(--copy-one-x) - min(460px, calc(100vw - var(--copy-one-x) - 40px))) !important;
+          width: min(460px, calc(100vw - var(--copy-one-x) - 40px)) !important;
+          height: auto !important;
+        }
+      }
+
+      @media (min-width: 960px) and (max-width: 1279px) {
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe {
+          min-height: 2160px !important;
+          height: 2160px !important;
+        }
+
+        html[lang="en"] .co-page,
+        html[lang="en"] .co-stage {
+          --frame-height: 2160px;
+          min-height: 2160px !important;
+          height: 2160px !important;
+        }
+
+        html[lang="en"] .co-page .title-block {
+          top: var(--title-y) !important;
+          left: max(620px, calc(100vw - 440px)) !important;
+          width: min(360px, calc(100vw - 660px)) !important;
+          height: auto !important;
+        }
+      }
+
+      @media (min-width: 721px) and (max-width: 959px) {
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe {
+          min-height: 3032px !important;
+          height: 3032px !important;
+        }
+
+        html[lang="en"] .co-page,
+        html[lang="en"] .co-stage {
+          --frame-height: 3032px;
+          min-height: 3032px !important;
+          height: 3032px !important;
+        }
+
+        html[lang="en"] .co-page .title-block {
+          top: var(--title-y) !important;
+          left: 80px !important;
+          width: calc(100vw - 160px) !important;
+          height: auto !important;
+        }
+      }
+
+      @media (max-width: 720px) {
+        html[lang="en"] .co-page .title-block {
+          top: var(--title-y) !important;
+          left: 24px !important;
+          width: calc(100vw - 48px) !important;
+          height: auto !important;
+        }
+
+        html[lang="en"] .co-page .title-rule {
+          display: none !important;
+        }
+
+        html[lang="en"] .co-page .title-lines {
+          gap: 8px !important;
+        }
+
+        html[lang="en"] .co-page .title-lines p {
+          width: auto !important;
+          font-size: clamp(34px, 9vw, 40px) !important;
+          line-height: 1.02 !important;
+        }
+
+        html[lang="en"] .co-page .title-lines .title-secondary {
+          padding-top: 0 !important;
+          gap: 12px !important;
+          font-size: 13px !important;
+          letter-spacing: 0.18em !important;
+        }
+
+        html[lang="en"] .co-page .title-lines .title-secondary::after {
+          flex-basis: 72px !important;
+          width: 72px !important;
+        }
+      }
+
+      @media (max-width: 420px) {
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe {
+          min-height: 2928px !important;
+          height: 2928px !important;
+        }
+
+        html[lang="en"] .co-page,
+        html[lang="en"] .co-stage {
+          --frame-height: 2928px;
+          min-height: 2928px !important;
+          height: 2928px !important;
+        }
+      }
+
+      @media (min-width: 421px) and (max-width: 560px) {
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe {
+          min-height: calc(2492px + 173vw) !important;
+          height: calc(2492px + 173vw) !important;
+        }
+
+        html[lang="en"] .co-page,
+        html[lang="en"] .co-stage {
+          --frame-height: calc(2492px + 173vw);
+          min-height: calc(2492px + 173vw) !important;
+          height: calc(2492px + 173vw) !important;
+        }
+      }
+
+      @media (min-width: 561px) and (max-width: 680px) {
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe {
+          min-height: calc(2564px + 173vw) !important;
+          height: calc(2564px + 173vw) !important;
+        }
+
+        html[lang="en"] .co-page,
+        html[lang="en"] .co-stage {
+          --frame-height: calc(2564px + 173vw);
+          min-height: calc(2564px + 173vw) !important;
+          height: calc(2564px + 173vw) !important;
+        }
+      }
+
+      @media (min-width: 681px) and (max-width: 720px) {
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe {
+          min-height: calc(2532px + 173vw) !important;
+          height: calc(2532px + 173vw) !important;
+        }
+
+        html[lang="en"] .co-page,
+        html[lang="en"] .co-stage {
+          --frame-height: calc(2532px + 173vw);
+          min-height: calc(2532px + 173vw) !important;
+          height: calc(2532px + 173vw) !important;
+        }
+      }
+
+      /* English top Japanese baseline lock v2: reset variables still changed by earlier EN-only passes. */
+      @media (min-width: 981px) and (max-width: 1100px) {
+        html[lang="en"] .philosophy {
+          min-height: 840px !important;
+        }
+      }
+
+      @media (min-width: 721px) and (max-width: 980px) {
+        html[lang="en"] .philosophy {
+          min-height: 936px !important;
+        }
+      }
+
+      @media (max-width: 420px) {
+        html[lang="en"] .philosophy {
+          min-height: 1025px !important;
+        }
+      }
+
+      @media (min-width: 960px) and (max-width: 1279px) {
+        html[lang="en"] .co-page {
+          --title-y: var(--ktop-space-top, 96px);
+          --title-x: calc(100vw - var(--ktop-space-x, 72px) - 204px);
+          --pottery-x: 80px;
+          --pottery-y: 64px;
+          --pottery-w: 548px;
+          --copy-one-x: var(--ktop-space-x, 72px);
+          --copy-one-y: 658px;
+          --copy-one-w: calc(100vw - (var(--ktop-space-x, 72px) * 2));
+          --wood-x: max(600px, calc(100vw - 760px));
+          --wood-y: 584px;
+          --wood-w: 800px;
+          --copy-two-x: var(--ktop-space-x, 72px);
+          --copy-two-y: 1264px;
+          --copy-two-w: calc(100vw - (var(--ktop-space-x, 72px) * 2));
+          --bowl-x: -170px;
+          --bowl-y: 1224px;
+          --bowl-w: clamp(560px, 56vw, 680px);
+          --copy-three-x: var(--ktop-space-x, 72px);
+          --copy-three-y: 1664px;
+          --copy-three-w: calc(100vw - (var(--ktop-space-x, 72px) * 2));
+          --red-x: clamp(520px, calc(100vw - 560px), 640px);
+          --red-y: calc(var(--copy-three-y) - 80px);
+          --red-w: clamp(720px, 74vw, 900px);
+        }
+
+        html[lang="en"] .co-page .title-block {
+          top: var(--title-y) !important;
+          left: max(620px, calc(100vw - 440px)) !important;
+          width: min(360px, calc(100vw - 660px)) !important;
+          height: auto !important;
+        }
+      }
+
+      @media (min-width: 721px) and (max-width: 959px) {
+        html[lang="en"] .co-page {
+          --title-y: var(--ktop-space-top, 96px);
+          --title-x: calc(100vw - var(--ktop-space-x, 72px) - 204px);
+          --pottery-x: -16px;
+          --pottery-y: 64px;
+          --pottery-w: 500px;
+          --copy-one-x: var(--ktop-space-x, 72px);
+          --copy-one-y: 608px;
+          --copy-one-w: calc(100vw - (var(--ktop-space-x, 72px) * 2));
+          --wood-x: 24px;
+          --wood-y: 1004px;
+          --wood-w: min(632px, calc(100vw - 48px));
+          --copy-two-x: var(--ktop-space-x, 72px);
+          --copy-two-y: 1504px;
+          --copy-two-w: calc(100vw - (var(--ktop-space-x, 72px) * 2));
+          --bowl-x: 50px;
+          --bowl-y: 1824px;
+          --bowl-w: min(592px, calc(100vw - 100px));
+          --copy-three-x: var(--ktop-space-x, 72px);
+          --copy-three-y: 2248px;
+          --copy-three-w: calc(100vw - (var(--ktop-space-x, 72px) * 2));
+          --red-x: 56px;
+          --red-y: 2600px;
+          --red-w: min(600px, calc(100vw - 56px));
+        }
+      }
+
+      @media (max-width: 720px) {
+        html[lang="en"] .co-page {
+          --title-y: var(--ktop-space-top, 72px);
+          --title-x: calc(100vw - var(--ktop-space-x, 24px) - 172px);
+          --pottery-x: 0px;
+          --pottery-y: 528px;
+          --pottery-w: 100vw;
+          --copy-one-x: var(--ktop-space-x, 24px);
+          --copy-one-y: 920px;
+          --copy-one-w: calc(100vw - (var(--ktop-space-x, 24px) * 2));
+          --wood-x: 0px;
+          --wood-y: 1344px;
+          --wood-w: 100vw;
+          --copy-two-x: var(--ktop-space-x, 24px);
+          --copy-two-y: 1656px;
+          --copy-two-w: calc(100vw - (var(--ktop-space-x, 24px) * 2));
+          --bowl-x: 0px;
+          --bowl-y: 1952px;
+          --bowl-w: 100vw;
+          --copy-three-x: var(--ktop-space-x, 24px);
+          --copy-three-y: 2240px;
+          --copy-three-w: calc(100vw - (var(--ktop-space-x, 24px) * 2));
+          --red-x: 0px;
+          --red-y: 2608px;
+          --red-w: 100vw;
+        }
+      }
+
+      @media (min-width: 421px) and (max-width: 720px) {
+        html[lang="en"] .co-page {
+          --frame-height: calc(2564px + 173vw);
+          --pottery-y: 536px;
+          --copy-one-x: 32px;
+          --copy-one-y: calc(685px + 78vw);
+          --copy-one-w: calc(100vw - 64px);
+          --copy-two-x: 32px;
+          --copy-two-y: calc(1365px + 114vw);
+          --copy-two-w: calc(100vw - 64px);
+          --copy-three-x: 32px;
+          --copy-three-y: calc(2118px + 114vw);
+          --copy-three-w: calc(100vw - 64px);
+          --wood-y: calc(1100px + 78vw);
+          --bowl-y: calc(1700px + 114vw);
+          --red-y: calc(2494px + 114vw);
+        }
+      }
+
+      @media (min-width: 421px) and (max-width: 560px) {
+        html[lang="en"] .co-page {
+          --frame-height: calc(2492px + 173vw);
+          --copy-one-y: calc(661px + 78vw);
+          --wood-y: calc(1076px + 78vw);
+          --copy-two-y: calc(1293px + 114vw);
+          --copy-three-y: calc(2046px + 114vw);
+          --red-y: calc(2422px + 114vw);
+        }
+      }
+
+      @media (min-width: 480px) and (max-width: 640px) {
+        html[lang="en"] .co-page {
+          --copy-one-x: 40px;
+          --copy-one-w: calc(100vw - 80px);
+          --title-x: calc(100vw - var(--copy-one-x) - 172px);
+          --copy-two-x: 40px;
+          --copy-two-w: calc(100vw - 80px);
+          --copy-three-x: 40px;
+          --copy-three-w: calc(100vw - 80px);
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 720px) {
+        html[lang="en"] .co-page {
+          --copy-one-x: 80px;
+          --copy-one-w: calc(100vw - 160px);
+          --title-x: calc(100vw - var(--copy-one-x) - 172px);
+          --copy-two-x: 80px;
+          --copy-two-w: calc(100vw - 160px);
+          --copy-three-x: 80px;
+          --copy-three-w: calc(100vw - 160px);
+        }
+      }
+
+      @media (min-width: 681px) and (max-width: 720px) {
+        html[lang="en"] .co-page {
+          --frame-height: calc(2532px + 173vw);
+          --copy-one-y: calc(653px + 78vw);
+          --wood-w: min(640px, calc(100vw - 80px));
+          --bowl-w: min(600px, calc(100vw - 120px));
+          --red-w: min(640px, calc(100vw - 80px));
+        }
+      }
+
+      /* English Our Vision: match the heading axis and responsive side rhythm of Core Practices. */
+      @media (min-width: 981px) {
+        html[lang="en"] .philosophy .copy-field {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          justify-content: flex-start !important;
+          width: 100% !important;
+          max-width: 1208px !important;
+          margin: 0 auto !important;
+          padding: var(--ktop-space-top, 120px) var(--ktop-space-x, 120px) var(--ktop-space-bottom, 96px) !important;
+          gap: 32px !important;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          position: relative !important;
+          display: flex !important;
+          flex: none !important;
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          justify-content: flex-start !important;
+          order: 0 !important;
+          width: 100% !important;
+          max-width: 968px !important;
+          height: auto !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          gap: 0 !important;
+        }
+
+        html[lang="en"] .philosophy .title-en {
+          position: absolute !important;
+          top: 0 !important;
+          left: -54px !important;
+          order: 0 !important;
+          width: 30px !important;
+          height: auto !important;
+          margin: 0 !important;
+          font-size: 20px !important;
+          line-height: 1.5 !important;
+          white-space: nowrap !important;
+          writing-mode: vertical-rl !important;
+          text-orientation: mixed !important;
+        }
+
+        html[lang="en"] .philosophy .title-main-wrap {
+          display: flex !important;
+          flex-direction: column-reverse !important;
+          align-items: flex-start !important;
+          order: 1 !important;
+          width: 100% !important;
+          gap: 32px !important;
+        }
+
+        @media (min-width: 1101px) {
+          html[lang="en"] .philosophy .title-main-wrap {
+            gap: 36px !important;
+          }
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          width: auto !important;
+          margin: 0 !important;
+          font-size: 40px !important;
+          line-height: 1 !important;
+          letter-spacing: 0 !important;
+          white-space: nowrap !important;
+          writing-mode: horizontal-tb !important;
+          text-orientation: mixed !important;
+        }
+
+        html[lang="en"] .philosophy .title-rule {
+          position: relative !important;
+          width: 264px !important;
+          height: 3px !important;
+          margin-top: 0 !important;
+          overflow: hidden !important;
+          background: var(--kameya-rule-short) center / 100% 100% no-repeat !important;
+        }
+
+        html[lang="en"] .philosophy .title-rule::before {
+          content: none !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          order: 1 !important;
+          width: 100% !important;
+          max-width: 968px !important;
+          margin: 0 !important;
+          gap: 18px !important;
+          font-size: 16px !important;
+          line-height: 1.72 !important;
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 980px) {
+        html[lang="en"] .philosophy .copy-field {
+          width: 100% !important;
+          max-width: none !important;
+          margin: 0 !important;
+          padding: var(--ktop-space-top, 96px) var(--ktop-space-x, 72px) var(--ktop-space-bottom, 72px) !important;
+          gap: 28px !important;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          position: relative !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          order: 0 !important;
+          width: 100% !important;
+          max-width: 640px !important;
+          height: auto !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          gap: 16px !important;
+        }
+
+        html[lang="en"] .philosophy .title-en {
+          position: static !important;
+          order: 0 !important;
+          width: auto !important;
+          max-width: 100% !important;
+          height: auto !important;
+          margin: 0 !important;
+          font-size: 20px !important;
+          line-height: 1.6 !important;
+          white-space: normal !important;
+          writing-mode: horizontal-tb !important;
+          text-orientation: mixed !important;
+        }
+
+        html[lang="en"] .philosophy .title-main-wrap {
+          display: flex !important;
+          flex-direction: column-reverse !important;
+          align-items: flex-start !important;
+          order: 1 !important;
+          width: 100% !important;
+          gap: 32px !important;
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          width: auto !important;
+          margin: 0 !important;
+          font-size: var(--ktop-title-ja, 40px) !important;
+          line-height: 1.35 !important;
+          letter-spacing: 0 !important;
+          white-space: nowrap !important;
+          writing-mode: horizontal-tb !important;
+          text-orientation: mixed !important;
+        }
+
+        html[lang="en"] .philosophy .title-rule {
+          width: 176px !important;
+          height: 3px !important;
+          margin-top: 0 !important;
+          overflow: hidden !important;
+          background: var(--kameya-rule-short) center / 100% 100% no-repeat !important;
+        }
+
+        html[lang="en"] .philosophy .title-rule::before {
+          content: none !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          order: 1 !important;
+          width: 100% !important;
+          max-width: 640px !important;
+          margin: 0 !important;
+          font-size: 16px !important;
+          line-height: 1.72 !important;
+        }
+      }
+
+      @media (max-width: 640px) {
+        html[lang="en"] .philosophy .copy-field {
+          width: 100% !important;
+          max-width: none !important;
+          margin: 0 !important;
+          padding: var(--ktop-space-top, 72px) var(--ktop-space-x, 24px) var(--ktop-space-bottom, 64px) !important;
+          gap: 28px !important;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          position: relative !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          order: 0 !important;
+          width: 100% !important;
+          height: auto !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          gap: 16px !important;
+        }
+
+        html[lang="en"] .philosophy .title-en {
+          position: static !important;
+          order: 0 !important;
+          width: auto !important;
+          max-width: 100% !important;
+          height: auto !important;
+          margin: 0 !important;
+          font-size: var(--ktop-title-en, 16px) !important;
+          line-height: 1.6 !important;
+          white-space: normal !important;
+          writing-mode: horizontal-tb !important;
+          text-orientation: mixed !important;
+        }
+
+        html[lang="en"] .philosophy .title-main-wrap {
+          display: flex !important;
+          flex-direction: column-reverse !important;
+          align-items: flex-start !important;
+          order: 1 !important;
+          width: 100% !important;
+          gap: 32px !important;
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          width: auto !important;
+          margin: 0 !important;
+          font-size: var(--ktop-title-ja, clamp(30px, 7.8vw, 32px)) !important;
+          line-height: 1.35 !important;
+          letter-spacing: 0 !important;
+          white-space: nowrap !important;
+          writing-mode: horizontal-tb !important;
+          text-orientation: mixed !important;
+        }
+
+        html[lang="en"] .philosophy .title-rule {
+          width: 176px !important;
+          height: 3px !important;
+          margin-top: 0 !important;
+          overflow: hidden !important;
+          background: var(--kameya-rule-short) center / 100% 100% no-repeat !important;
+        }
+
+        html[lang="en"] .philosophy .title-rule::before {
+          content: none !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          order: 1 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          font-size: 14px !important;
+          line-height: 1.78 !important;
+        }
+      }
+
+      /* English CTA title lock: final English typography treatment. */
+      html[lang="en"] .co-page .title-block {
+        display: block !important;
+        top: var(--title-y) !important;
+        left: calc(var(--frame-width) - var(--copy-one-x) - min(460px, calc(100vw - var(--copy-one-x) - 40px))) !important;
+        width: min(460px, calc(100vw - var(--copy-one-x) - 40px)) !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+      }
+
+      html[lang="en"] .co-page .title-rule,
+      html[lang="en"] .co-page .title-rule:last-child {
+        display: none !important;
+      }
+
+      html[lang="en"] .co-page .title-lines {
+        display: flex !important;
+        min-width: 0 !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+      }
+
+      html[lang="en"] .co-page .title-lines p,
+      html[lang="en"] .co-page .title-lines p:not(.title-secondary) {
+        order: 1 !important;
+        width: auto !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding-top: 0 !important;
+        color: var(--ink) !important;
+        font-size: clamp(40px, 3.4vw, 50px) !important;
+        line-height: 0.98 !important;
+        letter-spacing: 0 !important;
+        white-space: normal !important;
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        text-transform: none !important;
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+      }
+
+      html[lang="en"] .co-page .title-lines .title-secondary {
+        display: inline-flex !important;
+        order: 2 !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding-top: 0 !important;
+        align-items: center !important;
+        gap: 16px !important;
+        color: rgba(142, 112, 58, 0.72) !important;
+        font-size: clamp(13px, 1.1vw, 16px) !important;
+        letter-spacing: 0.22em !important;
+        line-height: 1.1 !important;
+        text-transform: uppercase !important;
+        white-space: nowrap !important;
+        writing-mode: horizontal-tb !important;
+      }
+
+      html[lang="en"] .co-page .title-lines .title-secondary::after {
+        display: block !important;
+        flex: 0 0 clamp(64px, 8vw, 104px) !important;
+        width: clamp(64px, 8vw, 104px) !important;
+        height: 1px !important;
+        background: linear-gradient(90deg, rgba(142, 112, 58, 0.58), transparent) !important;
+        content: "" !important;
+      }
+
+      @media (min-width: 960px) and (max-width: 1279px) {
+        html[lang="en"] .co-page .title-block {
+          left: max(620px, calc(100vw - 440px)) !important;
+          width: min(360px, calc(100vw - 660px)) !important;
+        }
+      }
+
+      @media (max-width: 720px) {
+        html[lang="en"] .co-page .title-block {
+          left: 24px !important;
+          width: calc(100vw - 48px) !important;
+          height: auto !important;
+        }
+
+        html[lang="en"] .co-page .title-lines {
+          gap: 8px !important;
+        }
+
+        html[lang="en"] .co-page .title-lines p,
+        html[lang="en"] .co-page .title-lines p:not(.title-secondary) {
+          width: auto !important;
+          font-size: clamp(34px, 9vw, 40px) !important;
+          line-height: 1.02 !important;
+        }
+
+        html[lang="en"] .co-page .title-lines .title-secondary {
+          gap: 12px !important;
+          font-size: 13px !important;
+          letter-spacing: 0.18em !important;
+        }
+
+        html[lang="en"] .co-page .title-lines .title-secondary::after {
+          flex-basis: 72px !important;
+          width: 72px !important;
+        }
+      }
+    </style>
+
+    <style id="kameya-en-subtitle-unify">
+      html[lang="en"] #philosophy .title-en,
+      html[lang="en"] #works .works-eyebrow,
+      html[lang="en"] #initiatives .eyebrow,
+      html[lang="en"] #achievements .section-kicker {
+        font-family: "Cormorant Garamond", "Times New Roman", serif !important;
+        font-size: clamp(20px, 1.8vw, 24px) !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.06em !important;
+        text-transform: none !important;
+      }
+
+      @media (min-width: 721px) and (max-width: 1100px) {
+        html[lang="en"] #philosophy .title-en,
+        html[lang="en"] #works .works-eyebrow,
+        html[lang="en"] #initiatives .eyebrow,
+        html[lang="en"] #achievements .section-kicker {
+          font-size: clamp(20px, 1.8vw, 24px) !important;
+          letter-spacing: 0.06em !important;
+        }
+      }
+
+      @media (max-width: 720px) {
+        html[lang="en"] #philosophy .title-en,
+        html[lang="en"] #works .works-eyebrow,
+        html[lang="en"] #initiatives .eyebrow,
+        html[lang="en"] #achievements .section-kicker {
+          font-size: 16px !important;
+          letter-spacing: 0.06em !important;
+        }
+      }
+
+      @media (min-width: 981px) {
+        html[lang="en"] #philosophy .title-rule {
+          width: 3px !important;
+          height: 176px !important;
+          background: var(--kameya-rule-short) center / 100% 100% no-repeat !important;
+          transform: rotate(90deg) !important;
+        }
+
+        html[lang="en"] #philosophy .title-rule::before {
+          content: none !important;
+        }
+      }
+
+      @media (max-width: 980px) {
+        html[lang="en"] #philosophy .title-rule {
+          transform: none !important;
+        }
+      }
+    </style>
+
+  </head>
+  <body class="is-opening">
+    <div class="opening" data-opening aria-label="Loading">
+      <div class="opening__inner">
+        <p class="opening__kicker">Kameya Japan Tradition</p>
+        <h1 class="opening__text" aria-label="The spirit of Japan,resonating with the world.">
+          <span class="opening__line" data-letter-flow data-line="0">The spirit of Japan,</span>
+          <span class="opening__line" data-letter-flow data-line="1">resonating with the world.</span>
+        </h1>
+        <span class="opening__rule" aria-hidden="true"></span>
+      </div>
+    </div>
+
+    <header class="global-header" aria-label="Site header">
+      <a class="global-brand" href="#top" aria-label="Kameya Japan Tradition home">
+        <img class="global-brand__mark" src="/about/assets/figma/logo-mark.png" alt="" aria-hidden="true" />
+        <span class="global-brand__copy">
+          <span class="global-brand__ja">Kameya Japan Tradition Co., Ltd.</span>
+          <span class="global-brand__en">Kameya Japan Tradition</span>
+        </span>
+      </a>
+      <nav id="global-nav" class="global-nav" aria-label="In-page navigation" aria-hidden="true">
+        <a href="/en/about/" style="--nav-index: 0">Philosophy</a>
+        <a href="/en/essay/" style="--nav-index: 1">Founder's Essay</a>
+        <a href="/en/services/" style="--nav-index: 2">Services</a>
+        <a href="/en/works/" style="--nav-index: 3">Projects</a>
+        <a href="/en/artists/" style="--nav-index: 4">Artists and Works</a>
+        <a href="/en/kogei/" style="--nav-index: 5">Craft Potential</a>
+        <a href="/en/news/" style="--nav-index: 6">News</a>
+        <a href="/en/contact/" style="--nav-index: 7">Contact</a>
+      </nav>
+      <button class="global-menu" type="button" aria-label="Menu" aria-controls="global-nav" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </header>
+
+    <main class="page" aria-label="Kameya Japan Tradition Co., Ltd. integrated top page">
+      <section id="top" class="home-section home-section--fv is-loading" style="--desktop-height: 100svh; --mobile-height: 100svh" aria-label="First View">
+        <iframe data-src="/en/top/sections/01_FV制作/90_切替アニメーション/index.html?v=20260603-fv-responsive-jp1" title="First View" loading="eager" scrolling="no" tabindex="-1"></iframe>
+        <a class="scroll-cue" href="#philosophy" aria-label="Next section">
+          <span>Scroll</span>
+          <span class="scroll-cue__line" aria-hidden="true"></span>
+        </a>
+      </section>
+
+      <section id="philosophy" class="home-section is-loading" style="--desktop-height: 840px; --mobile-height: 768px; --philosophy-mobile-height: 768px" aria-label="Our Philosophy">
+        <iframe data-src="/en/top/sections/02_我々の想い/index.html?v=20260603-mobile-no-katana" title="Our Philosophy" scrolling="no" tabindex="-1"></iframe>
+      </section>
+
+      <section id="works" class="home-section is-loading" style="--desktop-height: 1080px; --mobile-height: 1192px" aria-label="What We Do">
+        <iframe data-src="/en/top/sections/03_我々が行っていること/index.html?v=20260602-desktop-flow" title="What We Do" scrolling="no" tabindex="-1"></iframe>
+      </section>
+
+      <section id="initiatives" class="home-section is-loading" style="--desktop-height: 2208px; --mobile-height: 2520px" aria-label="Core Practices">
+        <iframe data-src="/en/top/sections/04_主な取り組み/index.html?v=20260603-spacing1" title="Core Practices" scrolling="no" tabindex="-1"></iframe>
+      </section>
+
+      <section id="achievements" class="home-section is-loading" style="--desktop-height: 888px; --mobile-height: 1456px" aria-label="Achievements">
+        <iframe data-src="/en/top/sections/05_実績/index.html?v=20260602-desktop-flow" title="Achievements" scrolling="no" tabindex="-1"></iframe>
+      </section>
+
+      <section id="co-create" class="home-section is-loading" style="--desktop-height: 2136px; --mobile-height: 3032px" aria-label="Co-creating Culture">
+        <iframe data-src="/en/top/sections/06_文化を共につくる/paper-transition.html?v=20260602-cocreate-center" title="Co-creating Culture" scrolling="no" tabindex="-1"></iframe>
+      </section>
+    </main>
+
+    <script>
+      (() => {
+        const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const body = document.body;
+        const opening = document.querySelector("[data-opening]");
+        const frames = [...document.querySelectorAll("iframe")];
+        const sections = [...document.querySelectorAll(".home-section")];
+        const menuButton = document.querySelector(".global-menu");
+        const navLinks = [...document.querySelectorAll(".global-nav a")];
+        const openingDuration = 4700;
+        const firstFramePreloadDelay = 80;
+        const deferredFrameDelay = 360;
+        const deferredFrameStagger = 180;
+        const firstFrame = frames[0];
+        const scrollStorageKey = "kameyaTopScrollY";
+        const nameStateMarker = "__kameyaTopState=";
+        const readNameState = () => {
+          const match = window.name.match(new RegExp(`${nameStateMarker}([^;]+)`));
+          if (!match) return {};
+          try {
+            return JSON.parse(decodeURIComponent(match[1])) || {};
+          } catch {
+            return {};
+          }
+        };
+
+        const writeNameState = (patch) => {
+          const state = { ...readNameState(), ...patch };
+          const encoded = `${nameStateMarker}${encodeURIComponent(JSON.stringify(state))}`;
+          if (window.name.includes(nameStateMarker)) {
+            window.name = window.name.replace(new RegExp(`${nameStateMarker}[^;]+`), encoded);
+          } else {
+            window.name = window.name ? `${window.name};${encoded}` : encoded;
+          }
+        };
+
+        const writeSession = (key, value) => {
+          try {
+            window.sessionStorage.setItem(key, value);
+          } catch {
+            // sessionStorage is unavailable in some file:// review contexts.
+          }
+        };
+
+        body.classList.add("has-js");
+        if ("scrollRestoration" in window.history) {
+          window.history.scrollRestoration = "manual";
+        }
+        window.scrollTo(0, 0);
+
+        const splitLetters = (element) => {
+          const text = element.textContent.trim();
+          const line = Number(element.dataset.line || 0);
+          element.textContent = "";
+
+          [...text].forEach((letter, index) => {
+            const span = document.createElement("span");
+            span.className = letter === " " ? "char char--space" : "char";
+            span.style.setProperty("--i", index);
+            span.style.setProperty("--line", line);
+            span.textContent = letter === " " ? "\u00a0" : letter;
+            element.appendChild(span);
+          });
+        };
+
+        document.querySelectorAll("[data-letter-flow]").forEach(splitLetters);
+
+        const setNavOpen = (isOpen) => {
+          body.classList.toggle("is-nav-open", isOpen);
+          menuButton?.setAttribute("aria-expanded", String(isOpen));
+          menuButton?.setAttribute("aria-label", isOpen ? "Close menu" : "Menu");
+          document.querySelector(".global-nav")?.setAttribute("aria-hidden", String(!isOpen));
+        };
+
+        menuButton?.addEventListener("click", () => {
+          setNavOpen(!body.classList.contains("is-nav-open"));
+        });
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            setNavOpen(false);
+          });
+        });
+
+        document.addEventListener("pointerdown", (event) => {
+          if (!body.classList.contains("is-nav-open")) return;
+          if (event.target instanceof Element && event.target.closest(".global-header")) return;
+          setNavOpen(false);
+        });
+
+        window.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") setNavOpen(false);
+        });
+
+        const loadFrame = (frame) => {
+          const src = frame.dataset.src;
+          if (!src || frame.hasAttribute("src")) return;
+          frame.src = src;
+        };
+
+        const loadFrames = () => {
+          frames.forEach(loadFrame);
+        };
+
+        const loadDeferredFrames = () => {
+          frames.slice(1).forEach((frame, index) => {
+            window.setTimeout(() => loadFrame(frame), index * deferredFrameStagger);
+          });
+        };
+
+        const notifySectionVisible = (section) => {
+          if (!section) return;
+          if (body.classList.contains("is-opening") && section.classList.contains("home-section--fv")) return;
+          section.querySelector("iframe")?.contentWindow?.postMessage({ type: "kameya:section-visible" }, "*");
+        };
+
+        const revealSection = (section) => {
+          section.classList.add("is-visible");
+          notifySectionVisible(section);
+        };
+
+        const nestedRevealSelector = "[data-nested-reveal], [data-reveal], .reveal";
+        const postNestedVisibility = () => {
+          const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+
+          frames.forEach((frame) => {
+            const doc = frame.contentDocument;
+            if (!doc) return;
+
+            const frameRect = frame.getBoundingClientRect();
+            if (frameRect.bottom < viewportHeight * -0.45 || frameRect.top > viewportHeight * 1.45) return;
+
+            const targets = [...doc.querySelectorAll(nestedRevealSelector)].filter((target, index, list) => list.indexOf(target) === index);
+            if (!targets.length) return;
+
+            const visible = targets
+              .map((target, index) => {
+                const rect = target.getBoundingClientRect();
+                const top = frameRect.top + rect.top;
+                const bottom = frameRect.top + rect.bottom;
+                const isInitiativesFrame = Boolean(doc.querySelector(".initiatives"));
+                const enterLine = isInitiativesFrame ? viewportHeight * 0.62 : viewportHeight * 0.88;
+                const exitLine = isInitiativesFrame ? viewportHeight * 0.14 : viewportHeight * -0.12;
+                const hasReached = top < enterLine && bottom > exitLine;
+                return hasReached ? index : null;
+              })
+              .filter((index) => index !== null);
+
+            if (visible.length) {
+              frame.contentWindow?.postMessage({ type: "kameya:nested-visible", visible }, "*");
+            }
+          });
+        };
+
+        window.addEventListener("message", (event) => {
+          if (event.data?.type !== "kameya:child-ready") return;
+          const frame = frames.find((candidate) => candidate.contentWindow === event.source);
+          if (!frame) return;
+          const section = frame.closest(".home-section");
+          resizeFrame(frame);
+          if (section?.classList.contains("is-visible")) notifySectionVisible(section);
+          postNestedVisibility();
+          [120, 420, 900, 1800].forEach((delay) =>
+            window.setTimeout(() => {
+              resizeFrame(frame);
+              postNestedVisibility();
+            }, delay)
+          );
+        });
+
+        const hideEmbeddedHeader = (frame) => {
+          const section = frame.closest(".home-section");
+          if (!section?.classList.contains("home-section--fv")) return;
+
+          try {
+            const embeddedHeader = frame.contentDocument?.querySelector(".site-header");
+            if (embeddedHeader) embeddedHeader.hidden = true;
+          } catch {
+            // Same-origin file access is available in review, but keep the parent resilient.
+          }
+        };
+
+        const lockEmbeddedScroll = (frame) => {
+          try {
+            const doc = frame.contentDocument;
+            if (!doc) return;
+
+            const root = doc.documentElement;
+            const childBody = doc.body;
+            if (!root || !childBody) return;
+
+            root.style.overflow = "hidden";
+            root.style.overscrollBehavior = "none";
+            childBody.style.overflow = "hidden";
+            childBody.style.overscrollBehavior = "none";
+            root.scrollTop = 0;
+            childBody.scrollTop = 0;
+
+            if (doc.querySelector("[data-kameya-top-scroll-lock]")) return;
+
+            const style = doc.createElement("style");
+            style.setAttribute("data-kameya-top-scroll-lock", "");
+            style.textContent = `
+              html,
+              body {
+                overflow: hidden !important;
+                overscroll-behavior: none !important;
+                scrollbar-width: none !important;
+              }
+
+              html::-webkit-scrollbar,
+              body::-webkit-scrollbar {
+                display: none !important;
+              }
+            `;
+            doc.head?.appendChild(style);
+
+            let lastTouchY = 0;
+            doc.addEventListener(
+              "wheel",
+              (event) => {
+                event.preventDefault();
+                window.scrollBy({ left: event.deltaX, top: event.deltaY, behavior: "auto" });
+              },
+              { passive: false }
+            );
+            doc.addEventListener(
+              "touchstart",
+              (event) => {
+                lastTouchY = event.touches?.[0]?.clientY || 0;
+              },
+              { passive: true }
+            );
+            doc.addEventListener(
+              "touchmove",
+              (event) => {
+                const currentTouchY = event.touches?.[0]?.clientY || 0;
+                const deltaY = lastTouchY - currentTouchY;
+                lastTouchY = currentTouchY;
+                if (!deltaY) return;
+                event.preventDefault();
+                window.scrollBy({ top: deltaY, behavior: "auto" });
+              },
+              { passive: false }
+            );
+          } catch {
+            // Same-origin review pages can be controlled; this keeps the shell resilient.
+          }
+        };
+
+        if (prefersReduced || !("IntersectionObserver" in window)) {
+          sections.forEach(revealSection);
+        } else {
+          const revealObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  revealSection(entry.target);
+                  revealObserver.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.18, rootMargin: "0px 0px -14% 0px" }
+          );
+
+          sections.forEach((section) => revealObserver.observe(section));
+        }
+
+        const finishOpening = () => {
+          window.scrollTo(0, 0);
+          if (firstFrame) loadFrame(firstFrame);
+          body.classList.add("is-ready");
+          body.classList.remove("is-opening");
+          sections[0]?.classList.add("is-visible");
+          notifySectionVisible(sections[0]);
+
+          window.setTimeout(loadDeferredFrames, deferredFrameDelay);
+
+          if (!opening) return;
+          opening.classList.add("is-leaving");
+          window.setTimeout(() => opening.remove(), 1120);
+        };
+
+        const skipOpening = () => {
+          loadFrames();
+          if (firstFrame) loadFrame(firstFrame);
+          window.scrollTo(0, 0);
+          body.classList.add("is-ready");
+          body.classList.remove("is-opening");
+          sections[0]?.classList.add("is-visible");
+          notifySectionVisible(sections[0]);
+          opening?.remove();
+        };
+
+        if (prefersReduced) {
+          skipOpening();
+        } else {
+          window.setTimeout(() => {
+            if (firstFrame) loadFrame(firstFrame);
+          }, firstFramePreloadDelay);
+          window.setTimeout(finishOpening, openingDuration);
+        }
+
+        const resizeFrame = (frame) => {
+          const section = frame.closest(".home-section");
+          section?.classList.add("is-loaded");
+          section?.classList.remove("is-loading");
+          hideEmbeddedHeader(frame);
+          lockEmbeddedScroll(frame);
+          if (section?.classList.contains("is-visible")) {
+            notifySectionVisible(section);
+          }
+
+          if (section?.classList.contains("home-section--fv")) {
+            frame.style.height = "100%";
+            return;
+          }
+
+          try {
+            const doc = frame.contentDocument;
+            if (!doc) return;
+
+            const measuredRoot = doc.querySelector(".co-stage, .achievements, .philosophy, .frame-shell, .works");
+            const measuredRootHeight = measuredRoot ? Math.ceil(measuredRoot.getBoundingClientRect().height) : 0;
+            const measuredContent = measuredRoot?.classList.contains("frame-shell")
+              ? doc.querySelector(".frame-shell .content")
+              : null;
+            const contentHeight = measuredContent ? Math.ceil(measuredContent.getBoundingClientRect().bottom) : 0;
+            const scrollHeight = Math.max(
+              doc.body?.scrollHeight || 0,
+              doc.documentElement?.scrollHeight || 0,
+              doc.body?.offsetHeight || 0,
+              doc.documentElement?.offsetHeight || 0
+            );
+            const sectionId = section?.id || "";
+            const targetBottomGap = window.innerWidth >= 1101 ? 120 : window.innerWidth >= 641 ? 96 : 80;
+            const isMeasurable = (element) => {
+              if (!element) return false;
+              const style = doc.defaultView?.getComputedStyle(element);
+              if (!style || style.display === "none" || style.visibility === "hidden") return false;
+              const rect = element.getBoundingClientRect();
+              return rect.width > 0 && rect.height > 0;
+            };
+            const bottomOf = (selectors) => {
+              let bottom = 0;
+              doc.querySelectorAll(selectors).forEach((element) => {
+                if (!isMeasurable(element)) return;
+                bottom = Math.max(bottom, Math.ceil(element.getBoundingClientRect().bottom));
+              });
+              return bottom;
+            };
+            const anchorBottomBySection = {
+              philosophy: () => bottomOf(".katana, .copy-field, .mobile-copy"),
+              works: () => bottomOf(".work-visual, .works-mobile__figure, .works-content, .works-mobile__copy, .works-mobile__artists"),
+              initiatives: () => bottomOf(".closing-copy, .closing-copy-mobile"),
+              achievements: () => bottomOf(".achievement-copy, .achievement-title, .meta"),
+              "co-create": () => bottomOf(window.innerWidth < 960 ? ".copy-block p, .title-shape-culture, .artifact--red" : ".copy-block p, .title-shape-culture")
+            };
+            const anchorBottom = anchorBottomBySection[sectionId]?.() || 0;
+            const fallbackHeight = Math.max(contentHeight, measuredRootHeight, scrollHeight);
+            const sectionBottomGap = sectionId === "achievements"
+              ? 280
+              : sectionId === "philosophy"
+                ? window.innerWidth >= 981 ? 64 : 0
+                : targetBottomGap;
+            const height = anchorBottom > 0
+              ? Math.ceil(anchorBottom + sectionBottomGap)
+              : fallbackHeight;
+
+            if (height > 240) {
+              frame.style.setProperty("height", `${height}px`, "important");
+              frame.style.setProperty("min-height", `${height}px`, "important");
+            }
+          } catch {
+            section?.classList.add("is-loaded");
+            section?.classList.remove("is-loading");
+          }
+        };
+
+        frames.forEach((frame) => {
+          frame.addEventListener("load", () => {
+            resizeFrame(frame);
+            postNestedVisibility();
+            [120, 420, 900, 1600, 2800, 4200].forEach((delay) => {
+              window.setTimeout(() => {
+                resizeFrame(frame);
+                postNestedVisibility();
+              }, delay);
+            });
+          });
+        });
+
+        let ticking = false;
+        let nestedVisibilityTimer = 0;
+        let lastScrollStateWrite = 0;
+        let lastStoredScrollY = -1;
+        const persistScroll = () => {
+          const y = String(Math.round(window.scrollY || 0));
+          writeSession(scrollStorageKey, y);
+          writeNameState({ scrollY: y });
+          lastStoredScrollY = Number(y);
+          lastScrollStateWrite = window.performance.now();
+        };
+
+        const onViewportChange = () => {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(() => {
+            ticking = false;
+            const y = Math.round(window.scrollY || 0);
+            const now = window.performance.now();
+            if (now - lastScrollStateWrite > 220 && Math.abs(y - lastStoredScrollY) > 32) {
+              persistScroll();
+            }
+            postNestedVisibility();
+            window.clearTimeout(nestedVisibilityTimer);
+            nestedVisibilityTimer = window.setTimeout(postNestedVisibility, 240);
+          });
+        };
+
+        window.addEventListener("scroll", onViewportChange, { passive: true });
+        window.addEventListener("pagehide", persistScroll);
+        window.addEventListener("resize", () => {
+          frames.forEach(resizeFrame);
+          postNestedVisibility();
+        });
+      })();
+    </script> <script src="/shared/js/page-transition.js?v=20260619-menu-numbering-20" defer></script>
+  
+    <script id="kameya-en-motion-order">
+      (() => {
+        if (document.documentElement.lang !== "en") return;
+
+        const normalizePhilosophyIntro = () => {
+          const root = document.querySelector(".philosophy");
+          if (!root) return;
+
+          const title = root.querySelector(".title-main");
+          if (title) {
+            title.dataset.flowReady = "en-static";
+            title.setAttribute("aria-label", "Our Vision");
+            title.textContent = "Our Vision";
+          }
+
+          const label = root.querySelector(".title-en");
+          if (label) {
+            label.dataset.flowReady = "en-static";
+            label.setAttribute("aria-label", "Our Philosophy");
+            label.textContent = "Our Philosophy";
+          }
+
+          root.querySelector(".mobile-copy")?.removeAttribute("aria-hidden");
+        };
+
+        const normalizeAchievementTitles = () => {
+          document.querySelectorAll(".achievements .section-title, .achievements .achievement-title").forEach((element) => {
+            const label = (element.getAttribute("aria-label") || element.innerText || element.textContent || "")
+              .replace(/\s+/g, " ")
+              .trim();
+            if (!label) return;
+            element.dataset.flowReady = "en-static";
+            element.dataset.enAchievementReady = "1";
+            element.setAttribute("aria-label", label);
+            element.textContent = label;
+          });
+        };
+
+        const wrapWords = (element, className, propertyName, startIndex = 0, options = {}) => {
+          if (!element) return startIndex;
+          if (element.dataset.enMotionReady === className) {
+            return startIndex + element.querySelectorAll("." + className).length;
+          }
+          const raw = options.preserveLines
+            ? (element.innerText || element.textContent || "")
+            : (element.getAttribute("aria-label") || element.innerText || element.textContent || "");
+          const label = raw.replace(/\s+/g, " ").trim();
+          if (!label) return startIndex;
+          const lines = options.preserveLines
+            ? raw.split(/\n+/).map((line) => line.replace(/\s+/g, " ").trim()).filter(Boolean)
+            : [label];
+
+          element.dataset.enMotionReady = className;
+          element.setAttribute("aria-label", label);
+          element.textContent = "";
+
+          let index = startIndex;
+          lines.forEach((line, lineIndex) => {
+            if (lineIndex > 0) {
+              element.append(document.createElement("br"));
+            }
+            line.split(/(\s+)/).forEach((part) => {
+              if (!part) return;
+              if (/^\s+$/.test(part)) {
+                element.append(document.createTextNode(" "));
+                return;
+              }
+
+              const span = document.createElement("span");
+              span.className = className;
+              span.setAttribute("aria-hidden", "true");
+              span.style.setProperty(propertyName, index);
+              span.textContent = part;
+              element.append(span);
+              index += 1;
+            });
+          });
+          return index;
+        };
+
+        const normalize = () => {
+          normalizePhilosophyIntro();
+          normalizeAchievementTitles();
+          document.querySelectorAll(".slide").forEach((slide) => {
+            let headlineIndex = 0;
+            slide.querySelectorAll(".headline-col").forEach((element, lineIndex) => {
+              headlineIndex = wrapWords(element, "headline-word", "--word-index", headlineIndex);
+              element.style.setProperty("--line-index", lineIndex);
+            });
+          });
+          document.querySelectorAll(".work-title").forEach((element) =>
+            wrapWords(element, "work-title-word", "--title-word-index", 0, { preserveLines: true })
+          );
+          document
+            .querySelectorAll(".frame-shell .head .title, .frame-shell .initiative-title")
+            .forEach((element) => wrapWords(element, "flow-word", "--flow-word-index"));
+        };
+
+        normalize();
+        window.requestAnimationFrame(normalize);
+      })();
+    </script>
+
+  </body>
+</html>

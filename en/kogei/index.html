@@ -1,0 +1,4503 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <base target="_self" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kameya Japan Tradition Co., Ltd. | Craft Potential</title>
+    <meta
+      name="description"
+      content="Craft Potential page for Kameya Japan Tradition Co., Ltd., expressing a vision for a new age where craft expands through a paper background and large craft objects."
+    />
+    <link rel="preload" as="image" href="/kogei/assets/figma/paper.webp" />
+    <link rel="preload" as="image" href="/kogei/assets/figma/kogei-hero-pottery.webp" />
+    <link rel="preload" as="image" href="/kogei/assets/figma/kogei-bamboo.webp" />
+    <link rel="preload" as="image" href="/kogei/assets/figma/kogei-black-bowl.webp" />
+    <link rel="preload" as="image" href="/kogei/assets/figma/kogei-red-tray.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f8f4ec;
+        --paper-soft: #fbf8f1;
+        --ink: #333333;
+        --ink-deep: #1a1a1a;
+        --ink-muted: #767676;
+        --brown: #6b4f3a;
+        --gold: #957c4c;
+        --rule: rgba(149, 124, 76, 0.42);
+        --footer: #1b1d22;
+        --footer-mobile: #242220;
+	        --white: #ffffff;
+	        --stage-width: 1208px;
+	        --stage-height: 2438px;
+	        --tablet-silver-height: 548px;
+	      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      body {
+        min-width: 320px;
+        overflow-x: hidden;
+        background:
+          linear-gradient(rgba(248, 244, 236, 0.54), rgba(248, 244, 236, 0.54)),
+          url("/kogei/assets/figma/paper.webp") center top / 1416px 1000px repeat,
+          var(--paper);
+        color: var(--ink);
+        font-family: "Zen Old Mincho", "Hiragino Mincho ProN", serif;
+        font-size: 16px;
+        letter-spacing: 0;
+      }
+
+      body::before {
+        content: "";
+        display: none;
+      }
+
+      body::after {
+        content: "";
+        display: none;
+      }
+
+      h1,
+      h2,
+      p,
+      figure {
+        margin: 0;
+      }
+
+      h1,
+      h2,
+      p,
+      a {
+        overflow-wrap: anywhere;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: none;
+        user-select: none;
+        -webkit-user-drag: none;
+      }
+
+      button {
+        font: inherit;
+      }
+
+      .kogei-page {
+        overflow: hidden;
+        background: transparent;
+      }
+
+      .site-header {
+        position: relative;
+        z-index: 30;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        padding: 16px 24px;
+      }
+
+      .brand-lockup {
+        display: flex;
+        flex: 1 1 auto;
+        align-items: center;
+        min-width: 0;
+        gap: 8px;
+      }
+
+      .brand-mark {
+        position: relative;
+        width: 40px;
+        height: 38px;
+        overflow: hidden;
+        flex: 0 0 auto;
+      }
+
+      .brand-mark img {
+        position: absolute;
+        top: -50%;
+        left: -58.89%;
+        width: 214.44%;
+        height: 214.44%;
+        object-fit: cover;
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        line-height: 1.15;
+        white-space: nowrap;
+      }
+
+      .brand-name {
+        color: var(--brown);
+        font-size: 15px;
+        font-weight: 400;
+      }
+
+      .brand-roman {
+        color: var(--ink-muted);
+        font-size: 14px;
+      }
+
+      .menu-button {
+        display: flex;
+        width: 50px;
+        height: 41px;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(51, 51, 51, 0.75);
+        border-radius: 999px;
+        background: transparent;
+        color: var(--ink);
+        cursor: pointer;
+      }
+
+      .menu-button img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .stage-wrap {
+        position: relative;
+        width: 100%;
+        height: var(--stage-height);
+        overflow: hidden;
+      }
+
+      @media (min-width: 641px) {
+        body.kameya-common-header-ready .stage-wrap {
+          margin-top: clamp(112px, 10vw, 144px);
+        }
+
+        body.kameya-common-header-ready .kogei-stage {
+          padding-top: 0 !important;
+        }
+      }
+
+      .stage-wrap::before,
+      .stage-wrap::after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 5;
+        width: clamp(64px, 9vw, 128px);
+        content: "";
+        pointer-events: none;
+      }
+
+      .stage-wrap::before {
+        left: 0;
+        background: linear-gradient(90deg, rgba(248, 244, 236, 0.58), rgba(248, 244, 236, 0));
+      }
+
+      .stage-wrap::after {
+        right: 0;
+        background: linear-gradient(270deg, rgba(248, 244, 236, 0.58), rgba(248, 244, 236, 0));
+      }
+
+      .kogei-stage {
+        position: relative;
+        width: var(--stage-width);
+        height: var(--stage-height);
+        margin: 0 auto;
+        transform: none;
+      }
+
+      .heading-block,
+      .copy-block {
+        position: absolute;
+        z-index: 10;
+      }
+
+      .heading-block {
+        top: 40px;
+        left: 120px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        width: 470px;
+      }
+
+      .section-title-group {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+      }
+
+      .section-label {
+        color: var(--gold);
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+      .section-title {
+        color: var(--ink);
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .title-rule {
+        width: 177px;
+        height: 1px;
+        background: var(--rule);
+      }
+
+      .lead-copy {
+        color: var(--gold);
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+	      .copy-block {
+	        display: flex;
+	        flex-direction: column;
+	        gap: 32px;
+	        color: var(--ink);
+	        font-size: 16px;
+	        font-weight: 400;
+	        line-height: 2;
+	        text-shadow: 0 1px 18px rgba(251, 248, 241, 0.78);
+	      }
+
+      .copy-block::before {
+        position: absolute;
+        inset: -40px -56px;
+        z-index: -1;
+        background: radial-gradient(
+          ellipse at 50% 48%,
+          rgba(251, 248, 241, 0.5),
+          rgba(251, 248, 241, 0.32) 50%,
+          rgba(251, 248, 241, 0) 96%
+        );
+        content: "";
+        filter: blur(16px);
+        pointer-events: none;
+      }
+
+	      .copy-intro {
+	        top: 356px;
+	        left: 120px;
+	        width: 444px;
+	        gap: 0;
+	      }
+
+	      .copy-right {
+	        top: 678px;
+	        left: 644px;
+	        width: 444px;
+	      }
+
+	      .copy-left-long {
+	        top: 1352px;
+	        left: 120px;
+	        width: 444px;
+	        font-size: 18px;
+	      }
+
+	      .wide-break {
+	        display: inline;
+	      }
+
+	      .copy-bottom {
+	        top: 1972px;
+	        left: 644px;
+	        width: 444px;
+	        font-size: 18px;
+	      }
+
+	      .artifact {
+	        position: absolute;
+	        z-index: 2;
+	        height: auto;
+	        object-fit: cover;
+	        pointer-events: none;
+	        filter: brightness(0.96) contrast(1.02) saturate(0.93) drop-shadow(0 24px 28px rgba(38, 28, 18, 0.12));
+	      }
+
+	      .artifact--hero {
+	        top: 40px;
+	        left: 624px;
+	        width: 574px;
+	        height: 582px;
+	        z-index: 4;
+	      }
+
+	      .artifact--bamboo {
+	        top: 660px;
+	        left: -474px;
+	        width: 1038px;
+	        height: 612px;
+	      }
+
+	      .artifact--bowl {
+	        top: 1352px;
+	        left: 644px;
+	        width: 796px;
+	        height: 468px;
+	      }
+
+	      .artifact--red {
+	        top: 1835px;
+	        left: -232px;
+	        width: 796px;
+	        height: 523px;
+	      }
+
+      .artifact--tablet-blue,
+      .artifact--tablet-silver,
+      .artifact--tablet-wood {
+        display: none;
+      }
+
+      .site-footer {
+        position: relative;
+        z-index: 20;
+        display: flex;
+        min-height: 622px;
+        gap: 80px;
+        align-items: flex-start;
+        padding: 120px;
+        background: var(--footer);
+        color: var(--white);
+      }
+
+      .footer-profile {
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .footer-company {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: 0.06em;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      .footer-address {
+        display: flex;
+        width: 360px;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        font-size: 15px;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      .footer-mail {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        width: 100%;
+      }
+
+      .footer-mail span:first-child {
+        white-space: nowrap;
+      }
+
+      .footer-mail span:last-child {
+        min-width: 0;
+        white-space: nowrap;
+        overflow-wrap: normal;
+      }
+
+      .socials {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .socials img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .copyright {
+        color: #666666;
+        font-size: 16px;
+        line-height: 1;
+        text-align: center;
+      }
+
+      .footer-divider {
+        width: 1px;
+        align-self: stretch;
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .footer-right {
+        display: flex;
+        flex: 1 1 auto;
+        min-width: 0;
+        flex-direction: column;
+        gap: 118px;
+        align-items: center;
+      }
+
+      .footer-nav {
+        display: flex;
+        gap: 60px;
+        align-items: flex-start;
+        justify-content: center;
+        color: var(--white);
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .footer-nav a {
+        display: block;
+        width: 20px;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+      }
+
+      .footer-legal {
+        display: flex;
+        width: 100%;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        line-height: 1.5;
+        white-space: nowrap;
+      }
+
+      .legal-divider {
+        width: 1px;
+        height: 24px;
+        background: rgba(255, 255, 255, 0.28);
+      }
+
+		      @media (max-width: 1207px) {
+		        :root {
+		          --stage-width: 802px;
+		          --stage-height: 2605px;
+	        }
+
+	        .heading-block {
+	          top: 40px;
+	          left: 80px;
+	          width: 301px;
+	        }
+
+	        .copy-block {
+	          gap: 32px;
+	          font-size: 16px;
+	          line-height: 2;
+	        }
+
+	        .copy-intro {
+	          gap: 0;
+	        }
+
+	        .copy-intro {
+	          top: 356px;
+	          left: 80px;
+	          width: 301px;
+	        }
+
+	        .copy-right {
+	          top: 788px;
+	          left: 421px;
+	          width: 301px;
+	          gap: 24px;
+	        }
+
+	        .copy-left-long {
+	          top: 1604px;
+	          left: 80px;
+	          width: 301px;
+	          font-size: 16px;
+	        }
+
+	        .copy-bottom {
+	          top: 2232px;
+	          left: 421px;
+	          width: 301px;
+	          font-size: 16px;
+	        }
+
+	        .artifact--hero {
+	          top: 40px;
+	          left: 421px;
+	          width: 618px;
+	          height: auto;
+	        }
+
+        .artifact--bamboo,
+        .artifact--bowl,
+        .artifact--red {
+          display: none;
+        }
+
+        .artifact--tablet-blue,
+        .artifact--tablet-silver,
+        .artifact--tablet-wood {
+          display: block;
+        }
+
+	        .artifact--tablet-blue {
+	          top: 788px;
+	          left: -148px;
+	          width: 529px;
+	          height: 736px;
+	        }
+
+	        .artifact--tablet-silver {
+	          top: 1604px;
+	          left: 421px;
+	          width: 524px;
+	          height: var(--tablet-silver-height);
+	        }
+
+	        .artifact--tablet-wood {
+	          top: 2232px;
+	          left: -203px;
+	          width: 608px;
+	          height: 333px;
+	          object-position: center 54%;
+	        }
+
+        .site-footer {
+          min-height: 1068px;
+          flex-direction: column;
+          gap: 80px;
+          align-items: center;
+          padding: 120px 80px;
+          background: var(--footer-mobile);
+        }
+
+        .footer-profile {
+          order: 2;
+          width: 100%;
+          max-width: 640px;
+        }
+
+        .footer-divider {
+          order: 3;
+          width: 100%;
+          max-width: 640px;
+          height: 1px;
+          align-self: center;
+        }
+
+        .footer-right {
+          display: contents;
+        }
+
+        .footer-nav {
+          order: 1;
+          width: 100%;
+          max-width: 640px;
+          justify-content: space-between;
+          gap: 24px;
+          padding: 0 40px;
+        }
+
+        .footer-legal {
+          order: 4;
+          width: 100%;
+          max-width: 640px;
+          flex-wrap: wrap;
+        }
+      }
+
+	      @media (max-width: 768px) {
+	        .stage-wrap::before,
+	        .stage-wrap::after {
+	          display: none;
+	        }
+
+	        .stage-wrap {
+	          height: auto;
+	          overflow: hidden;
+	        }
+
+	        .kogei-stage {
+	          display: flex;
+	          width: 100%;
+	          height: auto;
+	          flex-direction: column;
+	          align-items: center;
+	          gap: 24px;
+	          margin: 0 auto;
+	          padding: 24px 24px 0;
+	          transform: none;
+	        }
+
+        .site-header {
+          padding: 16px;
+        }
+
+	        .brand-name {
+	          font-size: 14px;
+	        }
+
+	        .brand-roman {
+	          font-size: 14px;
+	          transform: none;
+	        }
+
+	        .heading-block {
+	          position: static;
+	          order: 1;
+	          width: 100%;
+	          gap: 32px;
+	          margin-bottom: 8px;
+	        }
+
+        .section-label {
+          font-size: 18px;
+        }
+
+        .section-title {
+          font-size: 32px;
+        }
+
+        .lead-copy {
+          font-size: 24px;
+        }
+
+	        .copy-block {
+	          position: static;
+	          width: 100%;
+	          min-width: 0;
+	          max-width: 100%;
+	          gap: 24px;
+	          color: var(--ink-deep);
+	          font-size: 16px;
+	          line-height: 2;
+	          overflow-wrap: anywhere;
+	          line-break: anywhere;
+	          text-shadow: none;
+	        }
+
+	        .copy-block p {
+	          min-width: 0;
+	          max-width: 100%;
+	          overflow-wrap: anywhere;
+	          line-break: anywhere;
+	        }
+
+	        .wide-break {
+	          display: none;
+	        }
+
+	        .copy-intro {
+	          order: 3;
+	          gap: 0;
+	        }
+
+        .copy-block::before {
+          display: none;
+        }
+
+	        .copy-right {
+	          order: 4;
+	        }
+
+	        .copy-left-long {
+	          order: 6;
+	        }
+
+	        .copy-bottom {
+	          order: 8;
+	        }
+
+	        .artifact {
+	          position: static;
+	          width: calc(100vw + 88px);
+	          height: auto;
+	          max-width: none;
+	          flex: 0 0 auto;
+	          object-fit: contain;
+	          filter: none;
+	        }
+
+	        .artifact--hero {
+	          order: 2;
+	          width: calc(100vw + 48px);
+	          clip-path: inset(9.57% 0 9.57% 0);
+	        }
+
+	        .artifact--bamboo,
+        .artifact--bowl,
+        .artifact--red {
+          display: block;
+        }
+
+        .artifact--tablet-blue,
+        .artifact--tablet-silver,
+        .artifact--tablet-wood {
+          display: none;
+        }
+
+	        .artifact--bamboo {
+	          order: 5;
+	          clip-path: inset(26.38% 0 26.38% 0);
+	        }
+
+	        .artifact--bowl {
+	          order: 7;
+	          clip-path: inset(26.46% 0 26.29% 0);
+	        }
+
+	        .artifact--red {
+	          order: 9;
+	          width: calc(100vw + 152px);
+	          clip-path: inset(34.72% 0 19.88% 0);
+	          object-position: center 58%;
+	        }
+
+	        .site-footer {
+	          min-height: auto;
+	          gap: 40px;
+	          align-items: flex-start;
+	          padding: 64px 24px 36px;
+	        }
+
+        .footer-nav {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 16px;
+          max-width: 400px;
+          padding: 0;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+
+        .footer-nav a {
+          width: 100%;
+          writing-mode: horizontal-tb;
+          text-orientation: mixed;
+        }
+
+        .footer-profile {
+          max-width: 400px;
+          gap: 32px;
+        }
+
+        .footer-company {
+          font-size: 27px;
+          letter-spacing: 0.06em;
+        }
+
+	        .footer-address {
+	          width: 100%;
+	          align-items: flex-start;
+	          text-align: left;
+	        }
+
+	        .footer-mail {
+	          display: flex;
+	        }
+
+        .footer-divider {
+          max-width: 400px;
+        }
+
+        .footer-legal {
+          flex-direction: column;
+          gap: 12px;
+          align-items: center;
+          max-width: 400px;
+          white-space: normal;
+        }
+
+        .legal-divider {
+          display: none;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .brand-text {
+          align-items: flex-start;
+        }
+
+        .menu-button {
+          width: 44px;
+        }
+
+        .footer-company {
+          font-size: 24px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+      }
+    </style>
+      <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
+    <link rel="stylesheet" href="/shared/css/reveal.css" />
+    <link rel="stylesheet" href="/shared/css/kameya-design-system.css?v=20260619-menu-numbering-fix" />
+  
+    <style id="kameya-en-horizontal-overrides">
+      html[lang="en"] body {
+        overflow-x: clip;
+      }
+
+      html[lang="en"] {
+        --intro-delay: 180ms;
+        --object-delay: 520ms;
+        --info-delay: 760ms;
+      }
+
+      html[lang="en"] *,
+      html[lang="en"] *::before,
+      html[lang="en"] *::after {
+        min-width: 0;
+        box-sizing: border-box;
+      }
+
+      html[lang="en"] :where(h1, h2, h3, h4, p, a, span, li, dt, dd, button, label, figcaption, small, strong, em) {
+        overflow-wrap: break-word;
+        word-break: normal;
+        hyphens: none;
+      }
+
+      html[lang="en"] .opening__inner {
+        width: min(920px, 100%);
+      }
+
+      html[lang="en"] .opening__text {
+        max-width: 100%;
+        font-size: clamp(32px, 6vw, 78px);
+        line-height: 1.2;
+        letter-spacing: 0.04em;
+      }
+
+      html[lang="en"] .opening__line {
+        overflow: visible;
+        white-space: nowrap;
+      }
+
+      html[lang="en"] .opening .char {
+        animation-duration: 820ms !important;
+        animation-delay: calc(180ms + var(--line) * 320ms + var(--i) * 36ms) !important;
+      }
+
+      html[lang="en"] .opening__kicker {
+        animation-duration: 820ms !important;
+        animation-delay: 160ms !important;
+      }
+
+      html[lang="en"] .opening__rule {
+        animation-duration: 680ms !important;
+        animation-delay: 1120ms !important;
+      }
+
+      html[lang="en"] .slide.is-active .headline-char,
+      html[lang="en"] .slide.is-active .headline-word {
+        animation-name: letter-presence !important;
+        animation-duration: 920ms !important;
+        animation-timing-function: var(--ease-presence) !important;
+        animation-fill-mode: both !important;
+        animation-delay: calc(180ms + var(--char-index, var(--word-index, 0)) * 108ms) !important;
+      }
+
+      html[lang="en"] .slide.is-active .work-info {
+        animation-duration: 900ms !important;
+        animation-delay: var(--info-delay) !important;
+      }
+
+      html[lang="en"] .slide.is-active .work-title-char,
+      html[lang="en"] .slide.is-active .work-title-word {
+        animation-name: title-flow-presence !important;
+        animation-duration: 860ms !important;
+        animation-timing-function: var(--ease-presence) !important;
+        animation-fill-mode: both !important;
+        animation-delay: calc(var(--info-delay) + 120ms + var(--title-index, var(--title-word-index, 0)) * 84ms) !important;
+      }
+
+      html[lang="en"] .slide.is-active .work-object,
+      html[lang="en"] .slide.is-active .object-shadow {
+        animation-duration: 920ms !important;
+        animation-delay: var(--object-delay) !important;
+      }
+
+      html[lang="en"] .headline-char,
+      html[lang="en"] .headline-word,
+      html[lang="en"] .work-title-char,
+      html[lang="en"] .work-title-word {
+        will-change: opacity, transform;
+      }
+
+      html[lang="en"] .headline-word,
+      html[lang="en"] .work-title-word,
+      html[lang="en"] .flow-word {
+        display: inline-block;
+      }
+
+      html[lang="en"] .headline-word,
+      html[lang="en"] .work-title-word {
+        opacity: 0;
+        transform: translate3d(0, 0.36em, 0);
+      }
+
+      html[lang="en"] .frame-shell.nested-motion-ready .flow-char,
+      html[lang="en"] .frame-shell.nested-motion-ready .flow-word {
+        display: inline-block;
+        opacity: 0;
+        transform: translate3d(0, 0.32em, 0);
+        transition:
+          opacity 680ms cubic-bezier(0.22, 1, 0.36, 1),
+          transform 940ms cubic-bezier(0.16, 1, 0.3, 1);
+        transition-delay: calc(var(--flow-index, var(--flow-word-index, 0)) * 74ms);
+      }
+
+      html[lang="en"] .frame-shell.nested-motion-ready .is-seen .flow-char,
+      html[lang="en"] .frame-shell.nested-motion-ready .is-seen .flow-word {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+
+      html[lang="en"] [data-reveal] {
+        transition-duration: 900ms !important;
+        transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
+      }
+
+      html[lang="en"] .headline,
+      html[lang="en"] .slide--daruma .headline {
+        display: flex !important;
+        min-width: 0 !important;
+        width: min(440px, 34vw) !important;
+        max-width: min(440px, 34vw) !important;
+        min-height: 132px !important;
+        flex-direction: column !important;
+        gap: 11px !important;
+        align-items: flex-start !important;
+        justify-self: start !important;
+        font-size: clamp(27px, 2.18vw, 31px) !important;
+        line-height: 1.24 !important;
+      }
+
+      html[lang="en"] .headline-col,
+      html[lang="en"] .slide--daruma .headline-col,
+      html[lang="en"] .vertical-line,
+      html[lang="en"] .title-main,
+      html[lang="en"] .title-en,
+      html[lang="en"] .motto-text p,
+      html[lang="en"] .vertical-group p,
+      html[lang="en"] .title-lines p,
+      html[lang="en"] .footer-nav a {
+        width: auto !important;
+        max-width: 100% !important;
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        white-space: normal !important;
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+      }
+
+      html[lang="en"] .opening__line,
+      html[lang="en"] .headline-col,
+      html[lang="en"] .work-title,
+      html[lang="en"] .title-lines p,
+      html[lang="en"] .motto-text p,
+      html[lang="en"] .works-mobile__motto {
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+        hyphens: none !important;
+      }
+
+      html[lang="en"] .headline-col {
+        width: 100% !important;
+        min-height: 1.24em !important;
+      }
+
+      html[lang="en"] .lead p,
+      html[lang="en"] .desc,
+      html[lang="en"] .desc p,
+      html[lang="en"] .theme,
+      html[lang="en"] .initiative-copy,
+      html[lang="en"] .initiative-copy p,
+      html[lang="en"] .list li {
+        line-break: auto !important;
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+        hyphens: none !important;
+      }
+
+      html[lang="en"] .work-info,
+      html[lang="en"] .slide--plate .work-info,
+      html[lang="en"] .slide--daruma .work-info,
+      html[lang="en"] .slide--kashiki .work-info {
+        width: min(360px, 31vw) !important;
+        min-width: 0 !important;
+      }
+
+      html[lang="en"] .work-title {
+        max-width: 100% !important;
+        font-size: clamp(22px, 2.2vw, 28px) !important;
+        line-height: 1.18 !important;
+        white-space: normal !important;
+      }
+
+      html[lang="en"] .about-page .content-stack,
+      html[lang="en"] .about-page .about-section,
+      html[lang="en"] .about-page .section-heading,
+      html[lang="en"] .about-page .section-title-group,
+      html[lang="en"] .about-page .section-layout,
+      html[lang="en"] .about-page .body-copy,
+      html[lang="en"] .about-page .body-copy p {
+        min-width: 0 !important;
+        max-width: 100% !important;
+      }
+
+      html[lang="en"] .about-page .body-copy,
+      html[lang="en"] .about-page .body-copy p,
+      html[lang="en"] .about-page .section-title,
+      html[lang="en"] .about-page .statement-title {
+        white-space: normal !important;
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+        hyphens: none !important;
+      }
+
+      html[lang="en"] .work-en {
+        letter-spacing: 0.08em !important;
+      }
+
+      html[lang="en"] .philosophy {
+        min-height: 850px;
+      }
+
+      html[lang="en"] .philosophy .copy-field {
+        display: grid;
+        grid-template-columns: minmax(150px, 230px) minmax(0, 688px);
+        align-items: start;
+        justify-content: center;
+        width: min(100%, 1200px);
+        padding: 140px 120px 0;
+        gap: 50px;
+      }
+
+      html[lang="en"] .philosophy .copy-columns {
+        display: none !important;
+      }
+
+      html[lang="en"] .philosophy .mobile-copy {
+        display: flex !important;
+        grid-column: 2;
+        grid-row: 1;
+        flex-direction: column;
+        min-width: 0;
+        max-width: 688px;
+        gap: 20px;
+        color: rgb(var(--kameya-ink));
+        font-family: "EB Garamond", "Cormorant Garamond", "Times New Roman", serif;
+        font-size: 18px;
+        line-height: 1.3;
+        letter-spacing: 0;
+        overflow-wrap: break-word;
+        word-break: normal;
+      }
+
+      html[lang="en"] .philosophy .mobile-copy p {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+      }
+
+      html[lang="en"] .philosophy .title-block {
+        min-width: 0;
+        grid-column: 1;
+        grid-row: 1;
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 8px;
+        align-items: flex-start;
+        width: auto;
+      }
+
+      html[lang="en"] .philosophy .title-main-wrap {
+        min-width: 0;
+        flex-direction: column-reverse;
+        gap: 24px;
+        align-items: flex-start;
+      }
+
+      html[lang="en"] .philosophy .title-rule {
+        width: 112px;
+        height: 6px;
+        background: var(--kameya-rule-short) center / 100% 100% no-repeat;
+      }
+
+      html[lang="en"] .philosophy .title-rule::before {
+        content: none;
+      }
+
+      html[lang="en"] .philosophy .title-main {
+        display: grid;
+        gap: 0;
+        width: auto;
+        color: rgb(var(--kameya-ink));
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1.12;
+        letter-spacing: 0;
+        white-space: normal !important;
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+      }
+
+      html[lang="en"] .philosophy .title-en {
+        width: 30px !important;
+        height: 135px;
+        color: #cebd9d;
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.5;
+        letter-spacing: 0;
+        opacity: 0.9;
+        white-space: nowrap !important;
+        writing-mode: vertical-rl !important;
+        text-orientation: mixed !important;
+      }
+
+      html[lang="en"] .watermark {
+        top: 504px;
+        opacity: 0.14;
+      }
+
+      html[lang="en"] .katana {
+        top: 712px;
+      }
+
+      html[lang="en"] .katana-shadow {
+        top: 804px;
+      }
+
+      html[lang="en"] .works-eyebrow {
+        top: calc(var(--works-content-top) - 42px);
+        left: var(--works-content-left);
+        width: auto;
+        max-width: min(420px, calc(100vw - var(--works-content-left) - 40px));
+        font-size: clamp(18px, 1.35vw, 22px);
+        line-height: 1.15;
+        letter-spacing: 0.04em;
+        writing-mode: horizontal-tb !important;
+        white-space: nowrap !important;
+        overflow-wrap: break-word;
+      }
+
+      html[lang="en"] .works-copy br,
+      html[lang="en"] .works-mobile__copy br {
+        display: none;
+      }
+
+      html[lang="en"] .kogei-page .copy-block br {
+        display: none;
+      }
+
+      html[lang="en"] .works-copy,
+      html[lang="en"] .works-mobile__copy {
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+        hyphens: none;
+      }
+
+      html[lang="en"] .works-copy p,
+      html[lang="en"] .works-mobile__copy p {
+        max-width: 36em;
+      }
+
+      html[lang="en"] .artist-list {
+        white-space: normal !important;
+      }
+
+      html[lang="en"] .achievements .heading {
+        width: min(520px, 100%);
+      }
+
+      html[lang="en"] .achievements .section-title {
+        max-width: 100%;
+        font-size: clamp(38px, 3.6vw, 48px);
+        line-height: 1.08;
+        white-space: normal;
+        overflow-wrap: normal;
+      }
+
+      html[lang="en"] .achievements .achievement-title {
+        max-width: 558px;
+        font-size: clamp(24px, 2.2vw, 30px);
+        line-height: 1.3;
+        overflow-wrap: normal;
+      }
+
+      @media (min-width: 981px) {
+        html[lang="en"] .kogei-page .heading-block {
+          top: 40px !important;
+        }
+      }
+
+      html[lang="en"] .initiative-title,
+      html[lang="en"] .theme,
+      html[lang="en"] .desc,
+      html[lang="en"] .list li {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        white-space: normal !important;
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+        hyphens: none !important;
+      }
+
+      html[lang="en"] .initiative-title {
+        line-height: 1.24 !important;
+      }
+
+      html[lang="en"] .theme {
+        line-height: 1.36 !important;
+      }
+
+      html[lang="en"] .desc,
+      html[lang="en"] .list li {
+        line-height: 1.58 !important;
+      }
+
+      html[lang="en"] .works-content {
+        top: var(--works-content-top);
+        width: min(42vw, 520px);
+      }
+
+      html[lang="en"] .works-title h1 {
+        font-size: clamp(36px, 3.35vw, 50px);
+        line-height: 0.98;
+      }
+
+      html[lang="en"] .works-fit {
+        --works-section-gap: clamp(48px, 5vw, 72px);
+      }
+
+      html[lang="en"] .work-visual {
+        top: clamp(500px, 42vw, 560px);
+        width: clamp(340px, 38vw, 487px);
+      }
+
+      html[lang="en"] .work-frame {
+        top: clamp(690px, 58vw, 760px);
+      }
+
+      html[lang="en"] .works-motto {
+        max-width: min(360px, 34vw);
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      html[lang="en"] .motto-text {
+        min-width: 0;
+        flex-direction: column;
+        gap: 8px;
+        line-height: 1.36;
+      }
+
+      html[lang="en"] .motto-rule {
+        order: -1;
+        width: 96px;
+        height: 3px;
+      }
+
+      html[lang="en"] .motto-rule img {
+        width: 96px;
+        transform: none;
+      }
+
+      html[lang="en"] .closing-text {
+        align-items: flex-start;
+        flex: 0 1 560px;
+        max-width: 560px;
+        min-width: 0;
+      }
+
+      html[lang="en"] .vertical-copy {
+        display: block;
+        width: 100%;
+        min-width: 0;
+      }
+
+      html[lang="en"] .vertical-group {
+        display: contents;
+        font-size: 15px;
+        line-height: 1.78;
+      }
+
+      html[lang="en"] .closing-copy {
+        width: min(620px, 100%);
+        color: var(--ink);
+        font-size: 17px;
+        line-height: 1.78;
+        letter-spacing: 0;
+      }
+
+      html[lang="en"] .closing-copy p {
+        margin: 0;
+      }
+
+      html[lang="en"] .closing-copy p + p {
+        margin-top: 16px;
+      }
+
+      html[lang="en"] .vertical-group > div {
+        display: contents;
+      }
+
+      html[lang="en"] .co-page .title-block {
+        display: grid;
+        width: clamp(380px, 38vw, 520px);
+        height: auto;
+        left: 740px;
+        gap: 18px;
+        align-items: start;
+        justify-content: stretch;
+      }
+
+      html[lang="en"] .co-page .title-rule {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(26, 26, 26, 0.62) 12%,
+          rgba(26, 26, 26, 0.62) 88%,
+          transparent
+        );
+      }
+
+      html[lang="en"] .title-lines {
+        min-width: 0;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      html[lang="en"] .title-lines p {
+        font-size: clamp(36px, 4vw, 56px);
+        line-height: 1.16;
+      }
+
+      html[lang="en"] .title-lines .title-secondary {
+        padding-top: 0;
+        order: 2;
+      }
+
+      html[lang="en"] .title-lines p:not(.title-secondary) {
+        order: 1;
+      }
+
+      html[lang="en"] .footer-nav {
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      @media (min-width: 1280px) {
+        html[lang="en"] .co-page .title-block {
+          left: calc(var(--frame-width) - 620px);
+        }
+      }
+
+      @media (max-width: 980px) {
+        html[lang="en"] .philosophy {
+          min-height: 1060px;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          display: flex;
+          flex-direction: column;
+          padding: 112px 80px 120px;
+          gap: 44px;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          flex-direction: row-reverse;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          grid-column: auto;
+          grid-row: auto;
+          max-width: 36em;
+          font-size: 16px;
+          line-height: 1.72;
+        }
+      }
+
+      @media (max-width: 959px) {
+        html[lang="en"] .headline,
+        html[lang="en"] .slide--daruma .headline {
+          width: min(390px, 50vw) !important;
+          max-width: min(390px, 50vw) !important;
+          min-height: 124px !important;
+          font-size: clamp(24px, 3.45vw, 30px) !important;
+        }
+
+        html[lang="en"] .co-page .title-block {
+          width: 320px;
+          left: 420px;
+        }
+
+        html[lang="en"] .title-lines p {
+          font-size: 34px;
+        }
+      }
+
+      @media (min-width: 960px) and (max-width: 1279px) {
+        html[lang="en"] .slide .slide-inner {
+          --pc-side-inset: clamp(20px, 2.8vw, 36px);
+          --pc-side-column: clamp(232px, 28vw, 312px);
+        }
+
+        html[lang="en"] .work-info,
+        html[lang="en"] .slide--plate .work-info,
+        html[lang="en"] .slide--daruma .work-info,
+        html[lang="en"] .slide--kashiki .work-info {
+          right: var(--pc-side-inset) !important;
+          width: var(--pc-side-column) !important;
+          gap: 14px !important;
+        }
+
+        html[lang="en"] .work-title,
+        html[lang="en"] .slide--daruma .work-title,
+        html[lang="en"] .slide--bamboo .work-title,
+        html[lang="en"] .slide--kashiki .work-title {
+          font-size: clamp(20px, 2.08vw, 26px) !important;
+          line-height: 1.16 !important;
+        }
+
+        html[lang="en"] .slide--kashiki .work-title {
+          font-size: clamp(18px, 1.92vw, 24px) !important;
+        }
+
+        html[lang="en"] .work-en {
+          font-size: clamp(13px, 1.35vw, 16px) !important;
+          line-height: 1.42 !important;
+          letter-spacing: 0.06em !important;
+        }
+
+        html[lang="en"] .work-meta {
+          font-size: 13px !important;
+          line-height: 1.52 !important;
+        }
+
+        html[lang="en"] .slide--plate .work-object.plate-composite,
+        html[lang="en"] .slide--plate .figma-object--plate,
+        html[lang="en"] .slide--daruma .work-object.daruma-composite,
+        html[lang="en"] .slide--daruma .figma-object--daruma,
+        html[lang="en"] .slide--bamboo .work-object.bamboo-composite,
+        html[lang="en"] .slide--bamboo .figma-object--bamboo,
+        html[lang="en"] .slide--kashiki .work-object.kashiki-composite,
+        html[lang="en"] .slide--kashiki .figma-object--kashiki {
+          left: 44% !important;
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 1024px) {
+        html[lang="en"] .vertical-copy {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 24px 32px;
+        }
+
+        html[lang="en"] .vertical-group {
+          font-size: 15px;
+          line-height: 1.78;
+        }
+      }
+
+      @media (max-width: 720px) {
+        html[lang="en"] .philosophy {
+          min-height: 1160px;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          padding: 88px 32px 120px;
+          gap: 36px;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          font-size: 34px;
+        }
+
+        html[lang="en"] .philosophy .title-en {
+          width: auto !important;
+          height: auto;
+          font-size: 18px;
+          writing-mode: horizontal-tb !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          grid-column: auto;
+          grid-row: auto;
+          max-width: 100%;
+          font-size: 14px;
+          line-height: 1.85;
+          gap: 18px;
+        }
+
+        html[lang="en"] .works-mobile__motto {
+          width: min(320px, 100%);
+          margin-left: auto;
+          padding-top: 0;
+          padding-left: 0;
+          line-height: 1.36;
+          text-align: right;
+          white-space: normal;
+          overflow-wrap: normal;
+        }
+
+        html[lang="en"] .works-mobile__motto::after {
+          display: none !important;
+          content: none !important;
+        }
+      }
+
+      @media (max-width: 799px) {
+        html[lang="en"] .works-mobile {
+          width: 100vw;
+          max-width: 100vw;
+          overflow: hidden;
+        }
+
+        html[lang="en"] .works-mobile__inner {
+          width: calc(100vw - 48px);
+          margin-right: auto;
+          margin-left: auto;
+        }
+
+        html[lang="en"] .works-mobile__inner,
+        html[lang="en"] .works-mobile__meta,
+        html[lang="en"] .works-mobile header,
+        html[lang="en"] .works-mobile__copy,
+        html[lang="en"] .works-mobile__artists,
+        html[lang="en"] .works-mobile__figure {
+          min-width: 0;
+          max-width: 100%;
+        }
+
+        html[lang="en"] .works-mobile__motto {
+          justify-self: end;
+          width: min(300px, 100%);
+          max-width: 100%;
+          padding-right: 0;
+          text-align: right;
+          font-size: clamp(20px, 5.6vw, 24px);
+          line-height: 1.32;
+        }
+
+        html[lang="en"] .works-mobile .title-rule {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        html[lang="en"] .works-mobile__copy p,
+        html[lang="en"] .works-mobile__artists li {
+          width: 100%;
+          max-width: 100%;
+          white-space: normal !important;
+          overflow-wrap: break-word !important;
+          word-break: normal !important;
+        }
+
+        html[lang="en"] .works-mobile__copy {
+          font-size: 15px;
+          line-height: 1.78;
+        }
+      }
+
+      @media (max-width: 639px) {
+        html[lang="en"] .about-page .about-main {
+          padding-right: 24px !important;
+          padding-left: 24px !important;
+        }
+
+        html[lang="en"] .about-page .content-stack {
+          width: calc(100vw - 48px) !important;
+          max-width: calc(100vw - 48px) !important;
+          margin-right: 0 !important;
+          margin-left: 0 !important;
+        }
+
+        html[lang="en"] .about-page .section-heading,
+        html[lang="en"] .about-page .section-title-group,
+        html[lang="en"] .about-page .section-title,
+        html[lang="en"] .about-page .statement-title,
+        html[lang="en"] .about-page .section-layout,
+        html[lang="en"] .about-page .body-copy,
+        html[lang="en"] .about-page .body-copy p {
+          width: calc(100vw - 48px) !important;
+          max-width: calc(100vw - 48px) !important;
+          inline-size: calc(100vw - 48px) !important;
+          max-inline-size: calc(100vw - 48px) !important;
+        }
+
+        html[lang="en"] .about-page #about-title {
+          font-size: clamp(34px, 10vw, 40px) !important;
+          line-height: 1.08 !important;
+          letter-spacing: 0.06em !important;
+        }
+
+        html[lang="en"] .about-page h2.section-title {
+          font-size: clamp(22px, 6vw, 26px) !important;
+          line-height: 1.18 !important;
+          letter-spacing: 0.05em !important;
+        }
+
+        html[lang="en"] .about-page .body-copy {
+          font-size: 14px !important;
+          line-height: 2 !important;
+        }
+      }
+
+      @media (max-width: 520px) {
+        html[lang="en"] .works-mobile__inner {
+          width: 100%;
+          max-width: 428px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+
+      @media (max-width: 640px) {
+        html[lang="en"] .opening__text {
+          font-size: clamp(24px, 6.4vw, 32px);
+          line-height: 1.22;
+          letter-spacing: 0.03em;
+        }
+
+        html[lang="en"] .slide .slide-inner {
+          display: flex !important;
+          width: 100vw !important;
+          height: 100svh !important;
+          min-height: 760px !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          justify-content: flex-start !important;
+          gap: 0 !important;
+          padding: clamp(76px, 10svh, 96px) 24px 0 !important;
+          transform: none !important;
+        }
+
+        html[lang="en"] .headline,
+        html[lang="en"] .slide--daruma .headline {
+          position: relative !important;
+          top: auto !important;
+          right: auto !important;
+          left: auto !important;
+          order: 1 !important;
+          width: min(420px, calc(100vw - 48px)) !important;
+          max-width: calc(100vw - 48px) !important;
+          min-height: clamp(156px, 23svh, 220px) !important;
+          transform: none !important;
+          align-items: center !important;
+          justify-content: center !important;
+          align-self: center !important;
+          justify-self: auto !important;
+          padding-top: 0 !important;
+          gap: 8px !important;
+          text-align: center !important;
+          font-size: clamp(20px, 5.25vw, 24px) !important;
+          line-height: 1.26 !important;
+        }
+
+        html[lang="en"] .headline-col,
+        html[lang="en"] .slide--daruma .headline-col {
+          width: 100% !important;
+          min-height: 1.26em !important;
+          text-align: center !important;
+        }
+
+        html[lang="en"] .slide .object-stage {
+          position: relative !important;
+          inset: auto !important;
+          order: 2 !important;
+          display: block !important;
+          width: 100% !important;
+          height: clamp(252px, 36svh, 334px) !important;
+          min-height: clamp(252px, 36svh, 334px) !important;
+          margin-top: 0 !important;
+          align-self: stretch !important;
+        }
+
+        html[lang="en"] .figma-object,
+        html[lang="en"] .slide--plate .figma-object--plate,
+        html[lang="en"] .slide--daruma .figma-object--daruma,
+        html[lang="en"] .slide--bamboo .figma-object--bamboo,
+        html[lang="en"] .slide--kashiki .figma-object--kashiki {
+          position: absolute !important;
+          top: 50% !important;
+          left: 50% !important;
+          transform: translate(-50%, -50%) !important;
+        }
+
+        html[lang="en"] .slide--plate .work-object.plate-composite {
+          width: min(91vw, 342px) !important;
+          height: min(58vw, 216px) !important;
+          overflow: visible !important;
+        }
+
+        html[lang="en"] .slide--daruma .work-object.daruma-composite {
+          left: calc(50% + 5px) !important;
+          width: min(60vw, 240px) !important;
+          height: min(74vw, 295px) !important;
+        }
+
+        html[lang="en"] .slide--bamboo .work-object.bamboo-composite {
+          width: min(80vw, 326px) !important;
+          height: min(80vw, 326px) !important;
+        }
+
+        html[lang="en"] .slide--kashiki .work-object.kashiki-composite {
+          width: min(78vw, 318px) !important;
+          height: min(70vw, 286px) !important;
+        }
+
+        html[lang="en"] .work-info,
+        html[lang="en"] .slide--plate .work-info,
+        html[lang="en"] .slide--daruma .work-info,
+        html[lang="en"] .slide--kashiki .work-info {
+          position: relative !important;
+          top: auto !important;
+          right: auto !important;
+          bottom: auto !important;
+          left: auto !important;
+          order: 3 !important;
+          width: min(340px, calc(100vw - 48px)) !important;
+          margin: clamp(8px, 2svh, 16px) auto 0 !important;
+          align-items: center !important;
+          align-self: center !important;
+          justify-self: auto !important;
+          padding-right: 0 !important;
+          gap: 8px !important;
+          text-align: center !important;
+        }
+
+        html[lang="en"] .work-title {
+          font-size: clamp(22px, 6.2vw, 28px) !important;
+          line-height: 1.18 !important;
+          white-space: normal !important;
+        }
+
+        html[lang="en"] .work-en,
+        html[lang="en"] .work-meta {
+          font-size: 14px !important;
+          line-height: 1.34 !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        html[lang="en"] .co-page .title-block {
+          width: calc(100vw - 48px);
+          left: 24px;
+        }
+
+        html[lang="en"] .title-lines p {
+          font-size: 34px;
+        }
+      }
+
+      /* English top-page polish: align the Japanese-page spacing decisions after all legacy media rules. */
+      html[lang="en"] .philosophy {
+        min-height: 948px !important;
+      }
+
+      html[lang="en"] .philosophy .copy-field {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        width: min(1208px, calc(100% - 240px)) !important;
+        margin: 0 auto !important;
+        padding: 120px 0 96px !important;
+        gap: 32px !important;
+      }
+
+      html[lang="en"] .philosophy .title-block {
+        position: relative !important;
+        display: block !important;
+        justify-self: start !important;
+        order: 0 !important;
+        width: min(760px, 100%) !important;
+        padding-left: 54px !important;
+        gap: 0 !important;
+      }
+
+      html[lang="en"] .philosophy .title-main-wrap {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        gap: 18px !important;
+        align-items: flex-start !important;
+      }
+
+      html[lang="en"] .philosophy .title-main {
+        display: inline-flex !important;
+        gap: 0.22em !important;
+        font-size: 48px !important;
+        line-height: 1 !important;
+        white-space: nowrap !important;
+      }
+
+      html[lang="en"] .philosophy .title-en {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 30px !important;
+        height: auto !important;
+        margin: 0 !important;
+        color: #cebd9d;
+        font-size: 20px !important;
+        line-height: 1.5 !important;
+        text-orientation: mixed !important;
+        white-space: nowrap !important;
+        writing-mode: vertical-rl !important;
+      }
+
+      html[lang="en"] .philosophy .title-rule {
+        width: 264px !important;
+        margin-top: 0 !important;
+      }
+
+      html[lang="en"] .philosophy .mobile-copy {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        order: 1 !important;
+        width: min(760px, calc(100% - 54px)) !important;
+        max-width: min(760px, calc(100% - 54px)) !important;
+        margin-left: 54px !important;
+        gap: 18px !important;
+        font-size: 17px !important;
+        line-height: 1.58 !important;
+      }
+
+      html[lang="en"] .watermark {
+        top: 492px !important;
+      }
+
+      html[lang="en"] .katana {
+        top: 720px !important;
+        width: min(1080px, 90vw) !important;
+      }
+
+      html[lang="en"] .katana-shadow {
+        top: 820px !important;
+        width: min(920px, 76vw) !important;
+      }
+
+      html[lang="en"] #co-create,
+      html[lang="en"] #co-create iframe {
+        min-height: 2400px !important;
+        height: 2400px !important;
+      }
+
+      html[lang="en"] .works-eyebrow,
+      html[lang="en"] .works-content,
+      html[lang="en"] .works-text-block,
+      html[lang="en"] .works-title,
+      html[lang="en"] .works-copy {
+        text-align: left !important;
+      }
+
+      html[lang="en"] .works-eyebrow {
+        top: var(--works-content-top) !important;
+        left: calc(var(--works-content-left) - 54px) !important;
+        width: 30px !important;
+        max-width: none !important;
+        font-size: clamp(18px, 1.2vw, 20px) !important;
+        line-height: 1.5 !important;
+        letter-spacing: 0 !important;
+        text-orientation: mixed !important;
+        white-space: nowrap !important;
+        writing-mode: vertical-rl !important;
+      }
+
+      html[lang="en"] .works-title,
+      html[lang="en"] .works-copy {
+        align-items: flex-start !important;
+      }
+
+      html[lang="en"] .works-title .title-rule {
+        margin-right: auto !important;
+        margin-left: 0 !important;
+      }
+
+      html[lang="en"] .works-motto {
+        align-items: flex-end !important;
+        gap: 0 !important;
+        text-align: right !important;
+      }
+
+      html[lang="en"] .motto-text {
+        align-items: flex-end !important;
+        width: min(360px, 34vw) !important;
+        text-align: right !important;
+      }
+
+      html[lang="en"] .motto-text p {
+        width: 100% !important;
+        text-align: right !important;
+      }
+
+      html[lang="en"] .motto-rule,
+      html[lang="en"] .motto-rule img {
+        display: none !important;
+      }
+
+      html[lang="en"] .co-stage {
+        min-height: 2400px !important;
+      }
+
+      html[lang="en"] .co-page {
+        --frame-height: 2400px;
+        --copy-size: 16px;
+        --copy-lead-size: 16px;
+        --copy-leading: 1.72;
+        --copy-gap: 28px;
+        --title-y: 120px;
+        --wood-y: 488px;
+        --copy-one-y: 660px;
+        --copy-two-y: 1198px;
+        --bowl-y: 1128px;
+        --copy-three-y: 1632px;
+        --red-y: calc(var(--copy-three-y) - 128px);
+        height: var(--frame-height) !important;
+      }
+
+      html[lang="en"] .co-page .title-block {
+        top: var(--title-y) !important;
+        left: calc(var(--frame-width) - 620px) !important;
+        width: clamp(420px, 38vw, 520px) !important;
+        gap: 18px !important;
+      }
+
+      html[lang="en"] .co-page .copy-block,
+      html[lang="en"] .co-page .copy-block--two {
+        gap: var(--copy-gap) !important;
+        line-height: var(--copy-leading) !important;
+      }
+
+      html[lang="en"] .co-page .copy-block br {
+        display: none !important;
+      }
+
+      html[lang="en"] .co-page .copy-block p {
+        overflow-wrap: break-word !important;
+        word-break: normal !important;
+        hyphens: none !important;
+      }
+
+      html[lang="en"] .co-page .copy-block::before {
+        inset: -32px -36px -30px -32px !important;
+      }
+
+      @media (min-width: 960px) and (max-width: 1279px) {
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe,
+        html[lang="en"] .co-stage {
+          min-height: 2480px !important;
+          height: 2480px !important;
+        }
+
+        html[lang="en"] .co-page {
+          --frame-height: 2480px;
+          --copy-one-x: 80px;
+          --copy-one-y: 660px;
+          --copy-one-w: min(480px, calc(100vw - 160px));
+          --wood-x: max(600px, calc(100vw - 760px));
+          --wood-y: 488px;
+          --copy-two-x: max(520px, calc(100vw - 560px));
+          --copy-two-y: 1198px;
+          --copy-two-w: 400px;
+          --bowl-x: -170px;
+          --bowl-y: 1128px;
+          --bowl-w: clamp(560px, 56vw, 680px);
+          --copy-three-x: 80px;
+          --copy-three-y: calc(1372px + 21.5vw);
+          --copy-three-w: 420px;
+          --red-x: clamp(520px, calc(100vw - 560px), 640px);
+          --red-y: calc(var(--copy-three-y) - 152px);
+          --red-w: clamp(720px, 74vw, 900px);
+        }
+
+        html[lang="en"] .co-page .title-block {
+          left: max(640px, calc(100vw - 400px)) !important;
+          width: min(320px, calc(100vw - 672px)) !important;
+        }
+
+        html[lang="en"] .title-lines p {
+          font-size: 40px !important;
+          line-height: 1.14 !important;
+        }
+      }
+
+      @media (max-width: 980px) {
+        html[lang="en"] .philosophy {
+          min-height: auto !important;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          width: calc(100% - 160px) !important;
+          padding: 96px 0 88px !important;
+          gap: 36px !important;
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          font-size: 40px !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          width: calc(100% - 54px) !important;
+          max-width: min(40em, calc(100% - 54px)) !important;
+          margin-left: 54px !important;
+          font-size: 16px !important;
+          line-height: 1.72 !important;
+        }
+      }
+
+      @media (min-width: 721px) and (max-width: 959px) {
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe {
+          min-height: 3500px !important;
+          height: 3500px !important;
+        }
+
+        html[lang="en"] .co-stage {
+          min-height: 3500px !important;
+        }
+
+        html[lang="en"] .co-page {
+          --frame-height: 3500px;
+          --title-y: 96px;
+          --pottery-x: 80px;
+          --pottery-y: 360px;
+          --pottery-w: min(560px, calc(100vw - 160px));
+          --copy-one-x: 80px;
+          --copy-one-y: 980px;
+          --copy-one-w: calc(100vw - 160px);
+          --wood-x: 80px;
+          --wood-y: 1350px;
+          --wood-w: min(688px, calc(100vw - 160px));
+          --copy-two-x: 80px;
+          --copy-two-y: 1916px;
+          --copy-two-w: calc(100vw - 160px);
+          --bowl-x: 80px;
+          --bowl-y: 2230px;
+          --bowl-w: min(620px, calc(100vw - 160px));
+          --copy-three-x: 80px;
+          --copy-three-y: 2650px;
+          --copy-three-w: calc(100vw - 160px);
+          --red-x: 80px;
+          --red-y: 3040px;
+          --red-w: min(720px, calc(100vw - 80px));
+          height: var(--frame-height) !important;
+        }
+
+        html[lang="en"] .co-page .title-block {
+          left: 80px !important;
+          width: calc(100vw - 160px) !important;
+        }
+
+        html[lang="en"] .title-lines p {
+          font-size: 40px !important;
+        }
+      }
+
+      @media (max-width: 720px) {
+        html[lang="en"] .philosophy {
+          padding: 0 !important;
+        }
+
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe {
+          min-height: 3000px !important;
+          height: 3000px !important;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          width: calc(100% - 48px) !important;
+          padding: 88px 0 80px !important;
+          gap: 32px !important;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          width: 100% !important;
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          font-size: 36px !important;
+        }
+
+        html[lang="en"] .philosophy .title-en {
+          margin-top: 10px !important;
+          font-size: 16px !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          width: calc(100% - 54px) !important;
+          max-width: calc(100% - 54px) !important;
+          margin-left: 54px !important;
+          font-size: 14px !important;
+          line-height: 1.78 !important;
+          gap: 18px !important;
+        }
+
+        html[lang="en"] .co-stage {
+          min-height: 3000px !important;
+        }
+
+        html[lang="en"] .co-page {
+          --frame-height: 3000px;
+          --copy-leading: 1.72;
+          --copy-gap: 24px;
+          --title-y: 72px;
+          --pottery-x: max(15px, calc((100vw - 360px) / 2));
+          --pottery-y: 360px;
+          --pottery-w: min(360px, calc(100vw - 30px));
+          --copy-one-x: 24px;
+          --copy-one-y: 780px;
+          --copy-one-w: calc(100vw - 48px);
+          --wood-x: max(8px, calc((100vw - 384px) / 2));
+          --wood-y: 1160px;
+          --wood-w: min(384px, calc(100vw - 16px));
+          --copy-two-x: 24px;
+          --copy-two-y: 1496px;
+          --copy-two-w: calc(100vw - 48px);
+          --bowl-x: max(16px, calc((100vw - 374px) / 2));
+          --bowl-y: 1864px;
+          --bowl-w: min(374px, calc(100vw - 32px));
+          --copy-three-x: 24px;
+          --copy-three-y: 2140px;
+          --copy-three-w: calc(100vw - 48px);
+          --red-x: max(0px, calc((100vw - 390px) / 2));
+          --red-y: 2480px;
+          --red-w: min(390px, 100vw);
+          height: var(--frame-height) !important;
+        }
+
+        html[lang="en"] .co-page .title-block {
+          left: 24px !important;
+          width: calc(100vw - 48px) !important;
+        }
+
+        html[lang="en"] .title-lines p {
+          font-size: clamp(34px, 9vw, 40px) !important;
+          line-height: 1.12 !important;
+        }
+      }
+
+      @media (min-width: 981px) {
+        html[lang="en"] .philosophy {
+          --philosophy-label-left: max(66px, calc((100vw - 1208px) / 2 + 66px));
+          --philosophy-copy-left: max(120px, calc((100vw - 1208px) / 2 + 120px));
+          --philosophy-copy-width: min(1022px, calc(100vw - var(--philosophy-copy-left) - var(--philosophy-label-left)));
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          width: 100% !important;
+          max-width: none !important;
+          margin-right: 0 !important;
+          margin-left: 0 !important;
+          padding: 120px 0 96px !important;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          width: var(--philosophy-copy-width) !important;
+          margin-left: var(--philosophy-label-left) !important;
+          padding-left: 54px !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          width: var(--philosophy-copy-width) !important;
+          max-width: var(--philosophy-copy-width) !important;
+          margin-right: var(--philosophy-label-left) !important;
+          margin-left: var(--philosophy-copy-left) !important;
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 980px) {
+        html[lang="en"] .philosophy {
+          padding: 0 !important;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          width: calc(100% - 160px) !important;
+          max-width: none !important;
+          margin-right: auto !important;
+          margin-left: auto !important;
+          padding: 96px 0 72px !important;
+          gap: 36px !important;
+        }
+
+        html[lang="en"] .philosophy .title-block,
+        html[lang="en"] .works-mobile header {
+          position: relative !important;
+          display: block !important;
+          width: 100% !important;
+          padding-left: 54px !important;
+          gap: 0 !important;
+        }
+
+        html[lang="en"] .philosophy .title-en,
+        html[lang="en"] .works-mobile__eyebrow {
+          position: absolute !important;
+          top: 0 !important;
+          left: 0 !important;
+          display: block !important;
+          width: 30px !important;
+          height: auto !important;
+          margin: 0 !important;
+          font-size: 20px !important;
+          line-height: 1.5 !important;
+          text-orientation: mixed !important;
+          white-space: nowrap !important;
+          writing-mode: vertical-rl !important;
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          font-size: 40px !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy,
+        html[lang="en"] .works-mobile__copy,
+        html[lang="en"] .works-mobile__artists {
+          width: calc(100% - 54px) !important;
+          max-width: calc(100% - 54px) !important;
+          margin-right: 0 !important;
+          margin-left: 54px !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          font-size: 16px !important;
+          line-height: 1.72 !important;
+        }
+      }
+
+      @media (max-width: 640px) {
+        html[lang="en"] .philosophy .copy-field {
+          width: calc(100% - 48px) !important;
+          max-width: none !important;
+          margin-right: auto !important;
+          margin-left: auto !important;
+          padding: 88px 0 80px !important;
+          gap: 32px !important;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          position: relative !important;
+          display: flex !important;
+          flex-direction: column !important;
+          width: 100% !important;
+          padding-left: 0 !important;
+          gap: 12px !important;
+        }
+
+        html[lang="en"] .philosophy .title-main-wrap {
+          gap: 12px !important;
+        }
+
+        html[lang="en"] .philosophy .title-en {
+          position: static !important;
+          display: block !important;
+          width: auto !important;
+          height: auto !important;
+          margin: 0 !important;
+          font-size: 16px !important;
+          line-height: 1.6 !important;
+          text-orientation: mixed !important;
+          white-space: normal !important;
+          writing-mode: horizontal-tb !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          width: 100% !important;
+          max-width: 100% !important;
+          margin-left: 0 !important;
+          font-size: 14px !important;
+          line-height: 1.78 !important;
+          gap: 18px !important;
+        }
+      }
+
+      /* English top-page responsive rhythm: normalize every post-FV section after legacy rules. */
+      html[lang="en"] {
+        --ktop-en-space-x: 120px;
+        --ktop-en-space-top: 120px;
+        --ktop-en-space-bottom: 96px;
+        --ktop-en-block-gap: 64px;
+        --ktop-en-practice-gap: 56px;
+        --ktop-en-co-height: 2264px;
+      }
+
+      html[lang="en"] #co-create,
+      html[lang="en"] #co-create iframe {
+        min-height: var(--ktop-en-co-height) !important;
+        height: var(--ktop-en-co-height) !important;
+      }
+
+      html[lang="en"] .philosophy {
+        min-height: 880px !important;
+      }
+
+      html[lang="en"] .philosophy .copy-field {
+        width: min(1208px, calc(100% - (var(--ktop-en-space-x) * 2))) !important;
+        max-width: none !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+        padding: var(--ktop-en-space-top) 0 var(--ktop-en-space-bottom) !important;
+        gap: 32px !important;
+      }
+
+      html[lang="en"] .works-fit {
+        --works-content-top: var(--ktop-en-space-top) !important;
+        --works-section-gap: var(--ktop-en-block-gap) !important;
+      }
+
+      html[lang="en"] .works-mobile {
+        padding: var(--ktop-en-space-top) var(--ktop-en-space-x) var(--ktop-en-space-bottom) !important;
+      }
+
+      html[lang="en"] .works-mobile__inner {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      html[lang="en"] .frame-shell .content {
+        gap: var(--ktop-en-block-gap) !important;
+        padding: var(--ktop-en-space-top) var(--ktop-en-space-x) var(--ktop-en-space-bottom) !important;
+      }
+
+      html[lang="en"] .frame-shell .head {
+        gap: 32px !important;
+      }
+
+      html[lang="en"] .frame-shell .initiatives {
+        gap: var(--ktop-en-practice-gap) !important;
+      }
+
+      html[lang="en"] .co-stage {
+        min-height: var(--ktop-en-co-height) !important;
+        height: var(--ktop-en-co-height) !important;
+      }
+
+      html[lang="en"] .co-page {
+        --frame-height: var(--ktop-en-co-height);
+        --copy-size: 16px;
+        --copy-lead-size: 16px;
+        --copy-leading: 1.72;
+        --copy-gap: 32px;
+        --title-y: 120px;
+        --pottery-y: 72px;
+        --wood-y: 612px;
+        --copy-one-y: 684px;
+        --copy-two-y: 1264px;
+        --bowl-y: 1232px;
+        --copy-three-y: 1696px;
+        --red-y: calc(var(--copy-three-y) - 24px);
+        height: var(--frame-height) !important;
+      }
+
+      html[lang="en"] .co-page .title-block {
+        top: var(--title-y) !important;
+        left: calc(var(--frame-width) - var(--ktop-en-space-x) - 420px) !important;
+        display: flex !important;
+        width: clamp(360px, 34vw, 420px) !important;
+        height: 240px !important;
+        gap: 18px !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+      }
+
+      html[lang="en"] .co-page .title-rule {
+        flex: 0 0 3px !important;
+        width: 3px !important;
+        height: 220px !important;
+        background: linear-gradient(180deg, transparent, rgba(185, 154, 94, 0.88) 12%, rgba(185, 154, 94, 0.88) 88%, transparent) !important;
+      }
+
+      html[lang="en"] .co-page .title-lines {
+        display: flex !important;
+        flex: 1 1 auto !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        align-items: flex-start !important;
+        min-width: 0 !important;
+      }
+
+      html[lang="en"] .co-page .title-lines p {
+        width: auto !important;
+        max-width: 100% !important;
+        font-size: clamp(38px, 3.6vw, 48px) !important;
+        line-height: 1.08 !important;
+        writing-mode: horizontal-tb !important;
+        white-space: normal !important;
+      }
+
+      html[lang="en"] .co-page .title-lines .title-secondary {
+        order: 2 !important;
+        padding-top: 0 !important;
+      }
+
+      html[lang="en"] .co-page .title-lines p:not(.title-secondary) {
+        order: 1 !important;
+      }
+
+      html[lang="en"] .co-page .artifact--pottery {
+        width: min(548px, calc(100vw - (var(--ktop-en-space-x) * 2))) !important;
+      }
+
+      html[lang="en"] .co-page .artifact--wood {
+        width: min(800px, calc(100vw - 240px)) !important;
+      }
+
+      html[lang="en"] .co-page .artifact--bowl {
+        width: clamp(600px, 48vw, 680px) !important;
+      }
+
+      html[lang="en"] .co-page .artifact--red {
+        width: clamp(760px, 58vw, 860px) !important;
+      }
+
+      html[lang="en"] .co-page .copy-block,
+      html[lang="en"] .co-page .copy-block--two {
+        gap: var(--copy-gap) !important;
+        line-height: var(--copy-leading) !important;
+      }
+
+      @media (min-width: 721px) and (max-width: 1100px) {
+        html[lang="en"] {
+          --ktop-en-space-x: 80px;
+          --ktop-en-space-top: 96px;
+          --ktop-en-space-bottom: 72px;
+          --ktop-en-block-gap: 64px;
+          --ktop-en-practice-gap: 56px;
+          --ktop-en-co-height: 3560px;
+        }
+
+        html[lang="en"] .philosophy {
+          min-height: auto !important;
+          padding: 0 !important;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          width: calc(100% - (var(--ktop-en-space-x) * 2)) !important;
+          padding: var(--ktop-en-space-top) 0 var(--ktop-en-space-bottom) !important;
+          gap: 36px !important;
+        }
+
+        html[lang="en"] .works-mobile {
+          padding: var(--ktop-en-space-top) var(--ktop-en-space-x) var(--ktop-en-space-bottom) !important;
+        }
+
+        html[lang="en"] .works-mobile header,
+        html[lang="en"] .works-mobile__copy,
+        html[lang="en"] .works-mobile__artists {
+          margin-left: 54px !important;
+          width: calc(100% - 54px) !important;
+          max-width: calc(100% - 54px) !important;
+        }
+
+        html[lang="en"] .frame-shell .content {
+          padding: var(--ktop-en-space-top) var(--ktop-en-space-x) var(--ktop-en-space-bottom) !important;
+        }
+
+        html[lang="en"] .co-page {
+          --frame-height: var(--ktop-en-co-height);
+          --copy-leading: 1.72;
+          --copy-gap: 28px;
+          --title-y: 96px;
+          --pottery-x: var(--ktop-en-space-x);
+          --pottery-y: 360px;
+          --pottery-w: min(520px, calc(100vw - (var(--ktop-en-space-x) * 2)));
+          --copy-one-x: var(--ktop-en-space-x);
+          --copy-one-y: 920px;
+          --copy-one-w: calc(100vw - (var(--ktop-en-space-x) * 2));
+          --wood-x: var(--ktop-en-space-x);
+          --wood-y: 1400px;
+          --wood-w: min(688px, calc(100vw - (var(--ktop-en-space-x) * 2)));
+          --copy-two-x: var(--ktop-en-space-x);
+          --copy-two-y: 1888px;
+          --copy-two-w: calc(100vw - (var(--ktop-en-space-x) * 2));
+          --bowl-x: var(--ktop-en-space-x);
+          --bowl-y: 2240px;
+          --bowl-w: min(620px, calc(100vw - (var(--ktop-en-space-x) * 2)));
+          --copy-three-x: var(--ktop-en-space-x);
+          --copy-three-y: 2640px;
+          --copy-three-w: calc(100vw - (var(--ktop-en-space-x) * 2));
+          --red-x: var(--ktop-en-space-x);
+          --red-y: 3024px;
+          --red-w: min(720px, calc(100vw - var(--ktop-en-space-x)));
+        }
+
+        html[lang="en"] .co-page .artifact--pottery {
+          width: var(--pottery-w) !important;
+        }
+
+        html[lang="en"] .co-page .artifact--wood {
+          width: var(--wood-w) !important;
+        }
+
+        html[lang="en"] .co-page .artifact--bowl {
+          width: var(--bowl-w) !important;
+        }
+
+        html[lang="en"] .co-page .artifact--red {
+          width: var(--red-w) !important;
+        }
+
+        html[lang="en"] .co-page .title-block {
+          left: var(--ktop-en-space-x) !important;
+          width: calc(100vw - (var(--ktop-en-space-x) * 2)) !important;
+          height: 208px !important;
+        }
+
+        html[lang="en"] .co-page .title-rule {
+          height: 184px !important;
+        }
+
+        html[lang="en"] .co-page .title-lines p {
+          font-size: 40px !important;
+        }
+      }
+
+      @media (min-width: 960px) and (max-width: 1279px) {
+        html[lang="en"] {
+          --ktop-en-co-height: 2368px;
+        }
+
+        html[lang="en"] .co-page {
+          --frame-height: var(--ktop-en-co-height);
+          --pottery-y: 72px;
+          --pottery-x: 80px;
+          --copy-one-x: 80px;
+          --copy-one-y: 700px;
+          --copy-one-w: min(488px, calc(100vw - 160px));
+          --wood-x: max(600px, calc(100vw - 760px));
+          --wood-y: 612px;
+          --copy-two-x: max(520px, calc(100vw - 560px));
+          --copy-two-y: 1296px;
+          --copy-two-w: 400px;
+          --bowl-x: -156px;
+          --bowl-y: 1264px;
+          --bowl-w: clamp(560px, 56vw, 680px);
+          --copy-three-x: 80px;
+          --copy-three-y: 1744px;
+          --copy-three-w: 424px;
+          --red-x: clamp(520px, calc(100vw - 560px), 640px);
+          --red-y: 1712px;
+          --red-w: clamp(720px, 74vw, 860px);
+        }
+
+        html[lang="en"] .co-page .title-block {
+          left: max(620px, calc(100vw - 400px)) !important;
+          width: min(320px, calc(100vw - 700px)) !important;
+        }
+      }
+
+      @media (max-width: 640px) {
+        html[lang="en"] {
+          --ktop-en-space-x: 24px;
+          --ktop-en-space-top: 72px;
+          --ktop-en-space-bottom: 64px;
+          --ktop-en-block-gap: 48px;
+          --ktop-en-practice-gap: 48px;
+          --ktop-en-co-height: 3240px;
+        }
+
+        html[lang="en"] .philosophy {
+          min-height: auto !important;
+          padding: 0 !important;
+        }
+
+        html[lang="en"] .philosophy .copy-field,
+        html[lang="en"] .works-mobile,
+        html[lang="en"] .frame-shell .content {
+          width: auto !important;
+          max-width: none !important;
+          padding: var(--ktop-en-space-top) var(--ktop-en-space-x) var(--ktop-en-space-bottom) !important;
+        }
+
+        html[lang="en"] .frame-shell[aria-label="Core Practices"] .content {
+          padding-bottom: 40px !important;
+        }
+
+        html[lang="en"] .frame-shell[aria-label="Core Practices"] .closing {
+          gap: 24px !important;
+        }
+
+        html[lang="en"] .frame-shell[aria-label="Core Practices"] .closing-text {
+          flex: 0 0 auto !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          min-height: 0 !important;
+        }
+
+        html[lang="en"] .frame-shell[aria-label="Core Practices"] .closing-copy {
+          width: 100% !important;
+          font-size: 15px !important;
+          line-height: 1.72 !important;
+        }
+
+        html[lang="en"] .frame-shell[aria-label="Core Practices"] :where(.lead p, .theme, .desc, .list li, .closing-copy p) {
+          max-width: 100% !important;
+          overflow-wrap: anywhere !important;
+          word-break: normal !important;
+          hyphens: none !important;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          margin: 0 !important;
+          gap: 32px !important;
+        }
+
+        html[lang="en"] .works-mobile__inner {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+
+        html[lang="en"] .co-page {
+          --frame-height: var(--ktop-en-co-height);
+          --copy-size: 15px;
+          --copy-lead-size: 15px;
+          --copy-leading: 1.74;
+          --copy-gap: 24px;
+          --title-y: 72px;
+          --pottery-x: 0px;
+          --pottery-y: 520px;
+          --pottery-w: 100vw;
+          --copy-one-x: var(--ktop-en-space-x);
+          --copy-one-y: 960px;
+          --copy-one-w: calc(100vw - (var(--ktop-en-space-x) * 2));
+          --wood-x: 0px;
+          --wood-y: 1460px;
+          --wood-w: 100vw;
+          --copy-two-x: var(--ktop-en-space-x);
+          --copy-two-y: 1800px;
+          --copy-two-w: calc(100vw - (var(--ktop-en-space-x) * 2));
+          --bowl-x: 0px;
+          --bowl-y: 2168px;
+          --bowl-w: 100vw;
+          --copy-three-x: var(--ktop-en-space-x);
+          --copy-three-y: 2488px;
+          --copy-three-w: calc(100vw - (var(--ktop-en-space-x) * 2));
+          --red-x: 0px;
+          --red-y: 2900px;
+          --red-w: 100vw;
+        }
+
+        html[lang="en"] .co-page .artifact--pottery {
+          width: var(--pottery-w) !important;
+        }
+
+        html[lang="en"] .co-page .artifact--wood {
+          width: var(--wood-w) !important;
+        }
+
+        html[lang="en"] .co-page .artifact--bowl {
+          width: var(--bowl-w) !important;
+        }
+
+        html[lang="en"] .co-page .artifact--red {
+          width: var(--red-w) !important;
+        }
+
+        html[lang="en"] .co-page .title-block {
+          left: var(--ktop-en-space-x) !important;
+          width: calc(100vw - (var(--ktop-en-space-x) * 2)) !important;
+          height: 224px !important;
+          gap: 16px !important;
+        }
+
+        html[lang="en"] .co-page .title-rule {
+          height: 192px !important;
+        }
+
+        html[lang="en"] .co-page .title-lines p {
+          font-size: clamp(34px, 9vw, 38px) !important;
+          line-height: 1.1 !important;
+        }
+      }
+
+      @media (min-width: 480px) and (max-width: 640px) {
+        html[lang="en"] {
+          --ktop-en-space-x: 40px;
+          --ktop-en-co-height: calc(2840px + 114vw);
+        }
+
+        html[lang="en"] .co-page {
+          --copy-one-y: calc(660px + 78vw);
+          --wood-y: calc(1100px + 78vw);
+          --copy-two-y: calc(1300px + 114vw);
+          --bowl-y: calc(1700px + 114vw);
+          --copy-three-y: calc(2100px + 114vw);
+          --red-y: calc(2480px + 114vw);
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 720px) {
+        html[lang="en"] {
+          --ktop-en-space-x: 80px;
+          --ktop-en-space-top: 96px;
+          --ktop-en-space-bottom: 72px;
+          --ktop-en-block-gap: 64px;
+          --ktop-en-practice-gap: 56px;
+          --ktop-en-co-height: 3560px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        html[lang="en"] #initiatives iframe {
+          min-height: 2416px !important;
+          height: 2416px !important;
+        }
+      }
+
+      /* English co-create final pass: keep the craft objects on the Japanese layout grid. */
+      html[lang="en"] {
+        --ktop-en-co-parent-height: 2136px;
+      }
+
+      html[lang="en"] #co-create,
+      html[lang="en"] #co-create iframe {
+        min-height: var(--ktop-en-co-parent-height) !important;
+        height: var(--ktop-en-co-parent-height) !important;
+      }
+
+      html[lang="en"] .co-stage {
+        min-height: var(--frame-height) !important;
+        height: var(--frame-height) !important;
+      }
+
+      html[lang="en"] .co-page {
+        --frame-height: 2136px;
+        --copy-size: 16px;
+        --copy-lead-size: 16px;
+        --copy-leading: 1.76;
+        --copy-gap: 64px;
+        --title-y: 128px;
+        --pottery-x: calc((var(--frame-width) - 1210px) * 0.22 + 120px);
+        --pottery-y: 64px;
+        --pottery-w: 548px;
+        --copy-one-x: calc((var(--frame-width) - 1210px) * 0.2 + 120px);
+        --copy-one-y: 658px;
+        --copy-one-w: 480px;
+        --wood-x: max(660px, calc(var(--frame-width) - 760px));
+        --wood-y: 596px;
+        --wood-w: 800px;
+        --copy-two-x: calc(var(--frame-width) - 650px);
+        --copy-two-y: 1256px;
+        --copy-two-w: 440px;
+        --bowl-x: -72px;
+        --bowl-y: 1224px;
+        --bowl-w: 660px;
+        --copy-three-x: calc((var(--frame-width) - 1210px) * 0.2 + 128px);
+        --copy-three-y: 1664px;
+        --copy-three-w: 480px;
+        --red-x: calc(var(--frame-width) - 640px);
+        --red-y: calc(var(--copy-three-y) - 32px);
+        --red-w: 760px;
+        height: var(--frame-height) !important;
+      }
+
+      html[lang="en"] .co-page .artifact--pottery,
+      html[lang="en"] .co-page .artifact--wood,
+      html[lang="en"] .co-page .artifact--bowl,
+      html[lang="en"] .co-page .artifact--red {
+        height: auto !important;
+      }
+
+      html[lang="en"] .co-page .artifact--pottery {
+        top: var(--pottery-y) !important;
+        left: var(--pottery-x) !important;
+        width: var(--pottery-w) !important;
+      }
+
+      html[lang="en"] .co-page .artifact--wood {
+        top: var(--wood-y) !important;
+        left: var(--wood-x) !important;
+        width: var(--wood-w) !important;
+      }
+
+      html[lang="en"] .co-page .artifact--bowl {
+        top: var(--bowl-y) !important;
+        left: var(--bowl-x) !important;
+        width: var(--bowl-w) !important;
+      }
+
+      html[lang="en"] .co-page .artifact--red {
+        top: var(--red-y) !important;
+        left: var(--red-x) !important;
+        width: var(--red-w) !important;
+      }
+
+      html[lang="en"] .co-page .copy-block--one {
+        top: var(--copy-one-y) !important;
+        left: var(--copy-one-x) !important;
+        width: var(--copy-one-w) !important;
+      }
+
+      html[lang="en"] .co-page .copy-block--two {
+        top: var(--copy-two-y) !important;
+        left: var(--copy-two-x) !important;
+        width: var(--copy-two-w) !important;
+      }
+
+      html[lang="en"] .co-page .copy-block--three {
+        top: var(--copy-three-y) !important;
+        left: var(--copy-three-x) !important;
+        width: var(--copy-three-w) !important;
+      }
+
+      html[lang="en"] .co-page .copy-block p {
+        display: block !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        inline-size: 100% !important;
+        white-space: normal !important;
+        overflow-wrap: anywhere !important;
+        word-break: normal !important;
+      }
+
+      html[lang="en"] .co-page .copy-block br {
+        display: initial !important;
+      }
+
+      html[lang="en"] .co-page .copy-block {
+        min-width: 0 !important;
+        max-width: calc(100vw - 48px) !important;
+      }
+
+      html[lang="en"] .co-page .title-block {
+        top: var(--title-y) !important;
+        left: calc(var(--frame-width) - var(--copy-one-x) - min(420px, calc(100vw - var(--copy-one-x) - 40px))) !important;
+        width: min(420px, calc(100vw - var(--copy-one-x) - 40px)) !important;
+        height: 240px !important;
+      }
+
+      @media (min-width: 960px) and (max-width: 1279px) {
+        html[lang="en"] {
+          --ktop-en-co-parent-height: 2160px;
+        }
+
+        html[lang="en"] .co-page {
+          --frame-width: 100vw;
+          --frame-height: 2160px;
+          --copy-gap: 58px;
+          --pottery-x: 80px;
+          --copy-one-x: 80px;
+          --copy-one-w: min(480px, calc(100vw - 160px));
+          --wood-x: max(600px, calc(100vw - 760px));
+          --wood-y: 584px;
+          --copy-two-x: max(520px, calc(100vw - 560px));
+          --copy-two-y: 1264px;
+          --copy-two-w: 400px;
+          --bowl-x: -170px;
+          --bowl-y: 1224px;
+          --bowl-w: clamp(560px, 56vw, 680px);
+          --copy-three-x: 80px;
+          --copy-three-y: 1664px;
+          --copy-three-w: 420px;
+          --red-x: clamp(520px, calc(100vw - 560px), 640px);
+          --red-y: calc(var(--copy-three-y) - 80px);
+          --red-w: clamp(720px, 74vw, 900px);
+        }
+
+        html[lang="en"] .co-page .title-block {
+          left: max(620px, calc(100vw - 400px)) !important;
+          width: min(320px, calc(100vw - 700px)) !important;
+        }
+      }
+
+      @media (max-width: 959px) {
+        html[lang="en"] {
+          --ktop-en-co-parent-height: 3032px;
+        }
+
+        html[lang="en"] .co-page {
+          --frame-width: 100vw;
+          --frame-height: 3032px;
+          --copy-leading: 1.72;
+          --copy-gap: 28px;
+          --title-y: 96px;
+          --pottery-x: 80px;
+          --pottery-y: 360px;
+          --pottery-w: min(560px, calc(100vw - 160px));
+          --copy-one-x: 80px;
+          --copy-one-y: 920px;
+          --copy-one-w: calc(100vw - 160px);
+          --wood-x: 80px;
+          --wood-y: 1350px;
+          --wood-w: min(688px, calc(100vw - 160px));
+          --copy-two-x: 80px;
+          --copy-two-y: 1888px;
+          --copy-two-w: calc(100vw - 160px);
+          --bowl-x: 80px;
+          --bowl-y: 2240px;
+          --bowl-w: min(620px, calc(100vw - 160px));
+          --copy-three-x: 80px;
+          --copy-three-y: 2640px;
+          --copy-three-w: calc(100vw - 160px);
+          --red-x: 80px;
+          --red-y: 3024px;
+          --red-w: min(720px, calc(100vw - 80px));
+        }
+
+        html[lang="en"] .co-page .title-block {
+          left: 80px !important;
+          width: calc(100vw - 160px) !important;
+          height: 208px !important;
+        }
+      }
+
+      @media (max-width: 640px) {
+        html[lang="en"] .co-page {
+          --frame-height: 3000px;
+          --copy-size: 14px;
+          --copy-lead-size: 14px;
+          --copy-leading: 1.72;
+          --copy-gap: 24px;
+          --title-y: 72px;
+          --pottery-x: 0px;
+          --pottery-y: 360px;
+          --pottery-w: 100vw;
+          --copy-one-x: 24px;
+          --copy-one-y: 900px;
+          --copy-one-w: calc(100vw - 48px);
+          --wood-x: 0px;
+          --wood-y: 1160px;
+          --wood-w: 100vw;
+          --copy-two-x: 24px;
+          --copy-two-y: 1496px;
+          --copy-two-w: calc(100vw - 48px);
+          --bowl-x: 0px;
+          --bowl-y: 1864px;
+          --bowl-w: 100vw;
+          --copy-three-x: 24px;
+          --copy-three-y: 2140px;
+          --copy-three-w: calc(100vw - 48px);
+          --red-x: 0px;
+          --red-y: 2480px;
+          --red-w: 100vw;
+        }
+
+        html[lang="en"] .co-page .title-block {
+          left: 24px !important;
+          width: calc(100vw - 48px) !important;
+          height: 208px !important;
+        }
+      }
+
+      /* English co-create heading: replace the heavy vertical rails with quiet horizontal rules. */
+      html[lang="en"] .co-page .title-block {
+        display: grid !important;
+        height: auto !important;
+        min-height: 0 !important;
+        grid-template-rows: auto auto auto !important;
+        gap: 14px !important;
+        align-items: start !important;
+        justify-content: stretch !important;
+      }
+
+      html[lang="en"] .co-page .title-rule {
+        display: block !important;
+        flex: none !important;
+        width: 100% !important;
+        height: 1px !important;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(185, 154, 94, 0.68) 12%,
+          rgba(185, 154, 94, 0.9) 50%,
+          rgba(185, 154, 94, 0.68) 88%,
+          transparent
+        ) !important;
+      }
+
+      html[lang="en"] .co-page .title-rule:last-child {
+        width: min(220px, 58%) !important;
+        justify-self: end !important;
+        opacity: 0.84 !important;
+      }
+
+      html[lang="en"] .co-page .title-lines {
+        gap: 6px !important;
+      }
+
+      html[lang="en"] .co-page .title-lines p:not(.title-secondary) {
+        font-size: clamp(40px, 3.8vw, 54px) !important;
+        line-height: 1.02 !important;
+      }
+
+      html[lang="en"] .co-page .title-lines .title-secondary {
+        color: rgb(185, 154, 94) !important;
+        font-size: clamp(22px, 2vw, 28px) !important;
+        letter-spacing: 0.08em !important;
+        line-height: 1.1 !important;
+        text-transform: uppercase !important;
+      }
+
+      @media (max-width: 640px) {
+        html[lang="en"] .co-page .title-block {
+          gap: 12px !important;
+        }
+
+        html[lang="en"] .co-page .title-rule:last-child {
+          width: min(184px, 64%) !important;
+        }
+
+        html[lang="en"] .co-page .title-lines p:not(.title-secondary) {
+          font-size: clamp(34px, 9vw, 40px) !important;
+        }
+
+        html[lang="en"] .co-page .title-lines .title-secondary {
+          font-size: clamp(18px, 5vw, 22px) !important;
+        }
+      }
+
+      /* English Our Vision final pass: keep the Japanese section rhythm, with horizontal English heading labels. */
+      html[lang="en"] .philosophy {
+        min-height: 880px !important;
+        padding: 0 !important;
+      }
+
+      html[lang="en"] .philosophy .copy-field {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        width: min(1208px, calc(100% - 240px)) !important;
+        max-width: none !important;
+        margin: 0 auto !important;
+        padding: 120px 0 96px !important;
+        gap: 32px !important;
+      }
+
+      html[lang="en"] .philosophy .title-block {
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        width: min(760px, 100%) !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding-left: 0 !important;
+        gap: 12px !important;
+        order: 0 !important;
+      }
+
+      html[lang="en"] .philosophy .title-main-wrap {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+        gap: 18px !important;
+      }
+
+      html[lang="en"] .philosophy .title-main {
+        display: block !important;
+        width: auto !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        font-size: 48px !important;
+        line-height: 1.08 !important;
+        letter-spacing: 0 !important;
+        white-space: normal !important;
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+      }
+
+      html[lang="en"] .philosophy .title-en {
+        position: static !important;
+        display: block !important;
+        width: auto !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        color: #cebd9d;
+        font-size: 20px !important;
+        line-height: 1.5 !important;
+        letter-spacing: 0 !important;
+        white-space: normal !important;
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        order: 1 !important;
+      }
+
+      html[lang="en"] .philosophy .title-rule {
+        width: min(264px, 100%) !important;
+        height: 6px !important;
+        margin-top: 0 !important;
+        background: var(--kameya-rule-short) center / 100% 100% no-repeat !important;
+      }
+
+      html[lang="en"] .philosophy .title-rule::before {
+        content: none !important;
+      }
+
+      html[lang="en"] .philosophy .mobile-copy {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-column: auto !important;
+        grid-row: auto !important;
+        width: min(760px, 100%) !important;
+        max-width: min(760px, 100%) !important;
+        margin: 0 !important;
+        gap: 18px !important;
+        font-size: 17px !important;
+        line-height: 1.58 !important;
+        order: 1 !important;
+      }
+
+      @media (min-width: 721px) and (max-width: 1100px) {
+        html[lang="en"] .philosophy {
+          min-height: var(--responsive-section-min-height, 840px) !important;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          width: calc(100% - 160px) !important;
+          padding: 96px 0 72px !important;
+          gap: 36px !important;
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          font-size: 40px !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          width: min(40em, 100%) !important;
+          max-width: min(40em, 100%) !important;
+          font-size: 16px !important;
+          line-height: 1.72 !important;
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 720px) {
+        html[lang="en"] .philosophy .copy-field {
+          width: calc(100% - 160px) !important;
+        }
+      }
+
+      @media (max-width: 640px) {
+        html[lang="en"] .philosophy {
+          min-height: var(--responsive-section-min-height, auto) !important;
+          padding: 0 !important;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          width: 100% !important;
+          padding: 72px 24px 64px !important;
+          gap: 32px !important;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          width: 100% !important;
+          gap: 12px !important;
+        }
+
+        html[lang="en"] .philosophy .title-main-wrap {
+          gap: 12px !important;
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          font-size: clamp(30px, 7.8vw, 32px) !important;
+          line-height: 1.35 !important;
+        }
+
+        html[lang="en"] .philosophy .title-en {
+          font-size: 16px !important;
+          line-height: 1.6 !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          width: 100% !important;
+          max-width: 100% !important;
+          font-size: 14px !important;
+          line-height: 1.78 !important;
+          gap: 18px !important;
+        }
+      }
+
+      /* English top final lock: preserve the Japanese top-page layout grid and section rhythm. */
+      html[lang="en"] .philosophy .copy-columns {
+        display: none !important;
+      }
+
+      html[lang="en"] .philosophy .mobile-copy {
+        overflow-wrap: anywhere !important;
+      }
+
+      @media (min-width: 981px) {
+        html[lang="en"] .philosophy {
+          min-height: 880px !important;
+          padding: 0 !important;
+        }
+
+        html[lang="en"] .philosophy .copy-field {
+          display: flex !important;
+          flex-direction: row !important;
+          align-items: flex-start !important;
+          justify-content: flex-end !important;
+          width: min(100%, 1208px) !important;
+          max-width: 1208px !important;
+          margin: 0 auto !important;
+          padding: var(--ktop-space-top, 120px) var(--ktop-space-x, 120px) var(--ktop-space-bottom, 96px) !important;
+          gap: 48px !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          display: flex !important;
+          flex: 0 1 auto !important;
+          flex-direction: column !important;
+          order: 0 !important;
+          width: min(760px, calc(100% - 150px)) !important;
+          max-width: min(760px, calc(100% - 150px)) !important;
+          margin: 0 !important;
+          gap: 18px !important;
+          font-size: 16px !important;
+          line-height: 1.72 !important;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          position: relative !important;
+          display: flex !important;
+          flex: 0 0 152px !important;
+          flex-direction: row !important;
+          order: 1 !important;
+          align-items: flex-start !important;
+          justify-content: flex-start !important;
+          width: 152px !important;
+          height: 360px !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          gap: 8px !important;
+        }
+
+        html[lang="en"] .philosophy .title-main-wrap {
+          display: flex !important;
+          flex-direction: row !important;
+          align-items: flex-start !important;
+          width: auto !important;
+          gap: 24px !important;
+        }
+
+        html[lang="en"] .philosophy .title-rule {
+          position: relative !important;
+          width: 6px !important;
+          height: 176px !important;
+          margin-top: 0 !important;
+          overflow: visible !important;
+          background: transparent !important;
+        }
+
+        html[lang="en"] .philosophy .title-rule::before {
+          position: absolute !important;
+          top: 0 !important;
+          left: 0 !important;
+          width: 176px !important;
+          height: 6px !important;
+          background: var(--kameya-rule-short) center / 100% 100% no-repeat !important;
+          content: "" !important;
+          transform: rotate(90deg) translateY(-6px) !important;
+          transform-origin: left top !important;
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          width: 40px !important;
+          margin: 0 !important;
+          font-size: 40px !important;
+          line-height: 1.18 !important;
+          white-space: nowrap !important;
+          writing-mode: vertical-rl !important;
+          text-orientation: mixed !important;
+        }
+
+        html[lang="en"] .philosophy .title-en {
+          position: static !important;
+          order: 0 !important;
+          width: 32px !important;
+          height: auto !important;
+          margin: 0 !important;
+          font-size: 20px !important;
+          line-height: 1.5 !important;
+          white-space: nowrap !important;
+          writing-mode: vertical-rl !important;
+          text-orientation: mixed !important;
+        }
+      }
+
+      @media (min-width: 721px) and (max-width: 980px) {
+        html[lang="en"] .philosophy {
+          min-height: var(--responsive-section-min-height, 936px) !important;
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 720px) {
+        html[lang="en"] .philosophy {
+          min-height: 808px !important;
+        }
+      }
+
+      @media (min-width: 480px) and (max-width: 520px) {
+        html[lang="en"] .philosophy {
+          min-height: 872px !important;
+        }
+      }
+
+      @media (min-width: 421px) and (max-width: 479px) {
+        html[lang="en"] .philosophy {
+          min-height: 904px !important;
+        }
+      }
+
+      @media (max-width: 420px) {
+        html[lang="en"] .philosophy {
+          min-height: 968px !important;
+        }
+      }
+
+      html[lang="en"] .frame-shell .content {
+        gap: 96px !important;
+        padding: var(--ktop-space-top, 120px) var(--ktop-space-x, 120px) 120px !important;
+      }
+
+      html[lang="en"] .frame-shell .initiatives {
+        gap: var(--ktop-block-gap, 64px) !important;
+      }
+
+      @media (min-width: 641px) and (max-width: 1100px) {
+        html[lang="en"] .frame-shell .content {
+          gap: 72px !important;
+          padding: var(--ktop-space-top, 96px) var(--ktop-space-x, 72px) var(--ktop-space-bottom, 72px) !important;
+        }
+
+        html[lang="en"] .frame-shell .head {
+          gap: 32px !important;
+        }
+      }
+
+      @media (max-width: 640px) {
+        html[lang="en"] .frame-shell .content {
+          gap: var(--ktop-block-gap, 48px) !important;
+          padding: var(--ktop-space-top, 72px) var(--ktop-space-x, 24px) var(--ktop-space-bottom, 64px) !important;
+        }
+
+        html[lang="en"] .frame-shell .head {
+          gap: 28px !important;
+        }
+
+        html[lang="en"] .frame-shell .initiatives {
+          gap: 56px !important;
+        }
+      }
+
+      @media (max-width: 420px) {
+        html[lang="en"] #initiatives iframe,
+        html[lang="en"] .frame-shell {
+          min-height: 2488px !important;
+          height: 2488px !important;
+        }
+      }
+
+      @media (min-width: 421px) and (max-width: 520px) {
+        html[lang="en"] #initiatives iframe,
+        html[lang="en"] .frame-shell {
+          min-height: 2488px !important;
+          height: 2488px !important;
+        }
+      }
+
+      @media (min-width: 521px) and (max-width: 640px) {
+        html[lang="en"] #initiatives iframe,
+        html[lang="en"] .frame-shell {
+          min-height: 2480px !important;
+          height: 2480px !important;
+        }
+      }
+
+      @media (min-width: 721px) and (max-width: 799px) {
+        html[lang="en"] #initiatives iframe,
+        html[lang="en"] .frame-shell {
+          min-height: 2704px !important;
+          height: 2704px !important;
+        }
+      }
+
+      @media (min-width: 800px) and (max-width: 900px) {
+        html[lang="en"] #initiatives iframe,
+        html[lang="en"] .frame-shell {
+          min-height: 2792px !important;
+          height: 2792px !important;
+        }
+      }
+
+      @media (min-width: 901px) and (max-width: 1024px) {
+        html[lang="en"] #initiatives iframe,
+        html[lang="en"] .frame-shell {
+          min-height: 2824px !important;
+          height: 2824px !important;
+        }
+      }
+
+      @media (min-width: 1101px) {
+        html[lang="en"] .frame-shell {
+          min-height: 2328px !important;
+          height: 2328px !important;
+        }
+      }
+
+      html[lang="en"] .co-page .title-block {
+        display: grid !important;
+        top: var(--title-y) !important;
+        left: calc(var(--frame-width) - var(--copy-one-x) - min(460px, calc(100vw - var(--copy-one-x) - 40px))) !important;
+        width: min(460px, calc(100vw - var(--copy-one-x) - 40px)) !important;
+        height: auto !important;
+        min-height: 0 !important;
+        grid-template-rows: auto auto auto !important;
+        gap: 14px !important;
+        align-items: start !important;
+        justify-content: stretch !important;
+        overflow: visible !important;
+      }
+
+      html[lang="en"] .co-page .title-rule {
+        display: block !important;
+        flex: none !important;
+        width: 100% !important;
+        height: 1px !important;
+        background: linear-gradient(90deg, transparent, rgba(185, 154, 94, 0.68) 12%, rgba(185, 154, 94, 0.9) 50%, rgba(185, 154, 94, 0.68) 88%, transparent) !important;
+      }
+
+      html[lang="en"] .co-page .title-rule:last-child {
+        width: min(220px, 58%) !important;
+        justify-self: end !important;
+        opacity: 0.84 !important;
+      }
+
+      html[lang="en"] .co-page .title-lines {
+        display: flex !important;
+        min-width: 0 !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+      }
+
+      html[lang="en"] .co-page .title-lines p {
+        width: auto !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        font-size: clamp(38px, 3.2vw, 46px) !important;
+        line-height: 1.04 !important;
+        white-space: normal !important;
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+      }
+
+      html[lang="en"] .co-page .title-lines p:not(.title-secondary) {
+        order: 1 !important;
+      }
+
+      html[lang="en"] .co-page .title-lines .title-secondary {
+        order: 2 !important;
+        padding-top: 0 !important;
+        color: rgb(185, 154, 94) !important;
+        font-size: clamp(20px, 1.8vw, 26px) !important;
+        letter-spacing: 0.08em !important;
+        line-height: 1.1 !important;
+        text-transform: uppercase !important;
+      }
+
+      @media (min-width: 1280px) {
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe {
+          min-height: 2136px !important;
+          height: 2136px !important;
+        }
+
+        html[lang="en"] .co-page,
+        html[lang="en"] .co-stage {
+          --frame-height: 2136px;
+          min-height: 2136px !important;
+          height: 2136px !important;
+        }
+
+        html[lang="en"] .co-page .title-block {
+          top: var(--title-y) !important;
+          left: calc(var(--frame-width) - var(--copy-one-x) - min(460px, calc(100vw - var(--copy-one-x) - 40px))) !important;
+          width: min(460px, calc(100vw - var(--copy-one-x) - 40px)) !important;
+          height: auto !important;
+        }
+      }
+
+      @media (min-width: 960px) and (max-width: 1279px) {
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe {
+          min-height: 2160px !important;
+          height: 2160px !important;
+        }
+
+        html[lang="en"] .co-page,
+        html[lang="en"] .co-stage {
+          --frame-height: 2160px;
+          min-height: 2160px !important;
+          height: 2160px !important;
+        }
+
+        html[lang="en"] .co-page .title-block {
+          top: var(--title-y) !important;
+          left: var(--title-x) !important;
+          width: 152px !important;
+          height: 360px !important;
+        }
+      }
+
+      @media (min-width: 721px) and (max-width: 959px) {
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe {
+          min-height: 3032px !important;
+          height: 3032px !important;
+        }
+
+        html[lang="en"] .co-page,
+        html[lang="en"] .co-stage {
+          --frame-height: 3032px;
+          min-height: 3032px !important;
+          height: 3032px !important;
+        }
+
+        html[lang="en"] .co-page .title-block {
+          top: var(--title-y) !important;
+          left: 80px !important;
+          width: calc(100vw - 160px) !important;
+          height: auto !important;
+        }
+      }
+
+      @media (max-width: 720px) {
+        html[lang="en"] .co-page .title-block {
+          top: var(--title-y) !important;
+          left: 24px !important;
+          width: calc(100vw - 48px) !important;
+          height: auto !important;
+          gap: 12px !important;
+        }
+
+        html[lang="en"] .co-page .title-rule {
+          height: 1px !important;
+        }
+
+        html[lang="en"] .co-page .title-lines {
+          gap: 6px !important;
+        }
+
+        html[lang="en"] .co-page .title-lines p {
+          width: auto !important;
+          font-size: clamp(34px, 9vw, 40px) !important;
+        }
+
+        html[lang="en"] .co-page .title-lines .title-secondary {
+          padding-top: 0 !important;
+          font-size: clamp(18px, 5vw, 22px) !important;
+        }
+      }
+
+      @media (max-width: 420px) {
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe {
+          min-height: 2928px !important;
+          height: 2928px !important;
+        }
+
+        html[lang="en"] .co-page,
+        html[lang="en"] .co-stage {
+          --frame-height: 2928px;
+          min-height: 2928px !important;
+          height: 2928px !important;
+        }
+      }
+
+      @media (min-width: 421px) and (max-width: 560px) {
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe {
+          min-height: calc(2492px + 173vw) !important;
+          height: calc(2492px + 173vw) !important;
+        }
+
+        html[lang="en"] .co-page,
+        html[lang="en"] .co-stage {
+          --frame-height: calc(2492px + 173vw);
+          min-height: calc(2492px + 173vw) !important;
+          height: calc(2492px + 173vw) !important;
+        }
+      }
+
+      @media (min-width: 561px) and (max-width: 680px) {
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe {
+          min-height: calc(2564px + 173vw) !important;
+          height: calc(2564px + 173vw) !important;
+        }
+
+        html[lang="en"] .co-page,
+        html[lang="en"] .co-stage {
+          --frame-height: calc(2564px + 173vw);
+          min-height: calc(2564px + 173vw) !important;
+          height: calc(2564px + 173vw) !important;
+        }
+      }
+
+      @media (min-width: 681px) and (max-width: 720px) {
+        html[lang="en"] #co-create,
+        html[lang="en"] #co-create iframe {
+          min-height: calc(2532px + 173vw) !important;
+          height: calc(2532px + 173vw) !important;
+        }
+
+        html[lang="en"] .co-page,
+        html[lang="en"] .co-stage {
+          --frame-height: calc(2532px + 173vw);
+          min-height: calc(2532px + 173vw) !important;
+          height: calc(2532px + 173vw) !important;
+        }
+      }
+
+      /* English top Japanese baseline lock v2: reset variables still changed by earlier EN-only passes. */
+      @media (min-width: 981px) and (max-width: 1100px) {
+        html[lang="en"] .philosophy {
+          min-height: 840px !important;
+        }
+      }
+
+      @media (min-width: 721px) and (max-width: 980px) {
+        html[lang="en"] .philosophy {
+          min-height: 936px !important;
+        }
+      }
+
+      @media (max-width: 420px) {
+        html[lang="en"] .philosophy {
+          min-height: 1025px !important;
+        }
+      }
+
+      @media (min-width: 960px) and (max-width: 1279px) {
+        html[lang="en"] .co-page {
+          --title-y: var(--ktop-space-top, 96px);
+          --title-x: calc(100vw - var(--ktop-space-x, 72px) - 204px);
+          --pottery-x: 80px;
+          --pottery-y: 64px;
+          --pottery-w: 548px;
+          --copy-one-x: var(--ktop-space-x, 72px);
+          --copy-one-y: 658px;
+          --copy-one-w: calc(100vw - (var(--ktop-space-x, 72px) * 2));
+          --wood-x: max(600px, calc(100vw - 760px));
+          --wood-y: 584px;
+          --wood-w: 800px;
+          --copy-two-x: var(--ktop-space-x, 72px);
+          --copy-two-y: 1264px;
+          --copy-two-w: calc(100vw - (var(--ktop-space-x, 72px) * 2));
+          --bowl-x: -170px;
+          --bowl-y: 1224px;
+          --bowl-w: clamp(560px, 56vw, 680px);
+          --copy-three-x: var(--ktop-space-x, 72px);
+          --copy-three-y: 1664px;
+          --copy-three-w: calc(100vw - (var(--ktop-space-x, 72px) * 2));
+          --red-x: clamp(520px, calc(100vw - 560px), 640px);
+          --red-y: calc(var(--copy-three-y) - 80px);
+          --red-w: clamp(720px, 74vw, 900px);
+        }
+
+        html[lang="en"] .co-page .title-block {
+          top: var(--title-y) !important;
+          left: max(620px, calc(100vw - 440px)) !important;
+          width: min(360px, calc(100vw - 660px)) !important;
+          height: auto !important;
+        }
+      }
+
+      @media (min-width: 721px) and (max-width: 959px) {
+        html[lang="en"] .co-page {
+          --title-y: var(--ktop-space-top, 96px);
+          --title-x: calc(100vw - var(--ktop-space-x, 72px) - 204px);
+          --pottery-x: -16px;
+          --pottery-y: 64px;
+          --pottery-w: 500px;
+          --copy-one-x: var(--ktop-space-x, 72px);
+          --copy-one-y: 608px;
+          --copy-one-w: calc(100vw - (var(--ktop-space-x, 72px) * 2));
+          --wood-x: 24px;
+          --wood-y: 1004px;
+          --wood-w: min(632px, calc(100vw - 48px));
+          --copy-two-x: var(--ktop-space-x, 72px);
+          --copy-two-y: 1504px;
+          --copy-two-w: calc(100vw - (var(--ktop-space-x, 72px) * 2));
+          --bowl-x: 50px;
+          --bowl-y: 1824px;
+          --bowl-w: min(592px, calc(100vw - 100px));
+          --copy-three-x: var(--ktop-space-x, 72px);
+          --copy-three-y: 2248px;
+          --copy-three-w: calc(100vw - (var(--ktop-space-x, 72px) * 2));
+          --red-x: 56px;
+          --red-y: 2600px;
+          --red-w: min(600px, calc(100vw - 56px));
+        }
+      }
+
+      @media (max-width: 720px) {
+        html[lang="en"] .co-page {
+          --title-y: var(--ktop-space-top, 72px);
+          --title-x: calc(100vw - var(--ktop-space-x, 24px) - 172px);
+          --pottery-x: 0px;
+          --pottery-y: 528px;
+          --pottery-w: 100vw;
+          --copy-one-x: var(--ktop-space-x, 24px);
+          --copy-one-y: 920px;
+          --copy-one-w: calc(100vw - (var(--ktop-space-x, 24px) * 2));
+          --wood-x: 0px;
+          --wood-y: 1344px;
+          --wood-w: 100vw;
+          --copy-two-x: var(--ktop-space-x, 24px);
+          --copy-two-y: 1656px;
+          --copy-two-w: calc(100vw - (var(--ktop-space-x, 24px) * 2));
+          --bowl-x: 0px;
+          --bowl-y: 1952px;
+          --bowl-w: 100vw;
+          --copy-three-x: var(--ktop-space-x, 24px);
+          --copy-three-y: 2240px;
+          --copy-three-w: calc(100vw - (var(--ktop-space-x, 24px) * 2));
+          --red-x: 0px;
+          --red-y: 2608px;
+          --red-w: 100vw;
+        }
+      }
+
+      @media (min-width: 421px) and (max-width: 720px) {
+        html[lang="en"] .co-page {
+          --frame-height: calc(2564px + 173vw);
+          --pottery-y: 536px;
+          --copy-one-x: 32px;
+          --copy-one-y: calc(685px + 78vw);
+          --copy-one-w: calc(100vw - 64px);
+          --copy-two-x: 32px;
+          --copy-two-y: calc(1365px + 114vw);
+          --copy-two-w: calc(100vw - 64px);
+          --copy-three-x: 32px;
+          --copy-three-y: calc(2118px + 114vw);
+          --copy-three-w: calc(100vw - 64px);
+          --wood-y: calc(1100px + 78vw);
+          --bowl-y: calc(1700px + 114vw);
+          --red-y: calc(2494px + 114vw);
+        }
+      }
+
+      @media (min-width: 421px) and (max-width: 560px) {
+        html[lang="en"] .co-page {
+          --frame-height: calc(2492px + 173vw);
+          --copy-one-y: calc(661px + 78vw);
+          --wood-y: calc(1076px + 78vw);
+          --copy-two-y: calc(1293px + 114vw);
+          --copy-three-y: calc(2046px + 114vw);
+          --red-y: calc(2422px + 114vw);
+        }
+      }
+
+      @media (min-width: 480px) and (max-width: 640px) {
+        html[lang="en"] .co-page {
+          --copy-one-x: 40px;
+          --copy-one-w: calc(100vw - 80px);
+          --title-x: calc(100vw - var(--copy-one-x) - 172px);
+          --copy-two-x: 40px;
+          --copy-two-w: calc(100vw - 80px);
+          --copy-three-x: 40px;
+          --copy-three-w: calc(100vw - 80px);
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 720px) {
+        html[lang="en"] .co-page {
+          --copy-one-x: 80px;
+          --copy-one-w: calc(100vw - 160px);
+          --title-x: calc(100vw - var(--copy-one-x) - 172px);
+          --copy-two-x: 80px;
+          --copy-two-w: calc(100vw - 160px);
+          --copy-three-x: 80px;
+          --copy-three-w: calc(100vw - 160px);
+        }
+      }
+
+      @media (min-width: 681px) and (max-width: 720px) {
+        html[lang="en"] .co-page {
+          --frame-height: calc(2532px + 173vw);
+          --copy-one-y: calc(653px + 78vw);
+          --wood-w: min(640px, calc(100vw - 80px));
+          --bowl-w: min(600px, calc(100vw - 120px));
+          --red-w: min(640px, calc(100vw - 80px));
+        }
+      }
+
+      /* English Our Vision: match the heading axis and responsive side rhythm of Core Practices. */
+      @media (min-width: 981px) {
+        html[lang="en"] .philosophy .copy-field {
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          justify-content: flex-start !important;
+          width: 100% !important;
+          max-width: 1208px !important;
+          margin: 0 auto !important;
+          padding: var(--ktop-space-top, 120px) var(--ktop-space-x, 120px) var(--ktop-space-bottom, 96px) !important;
+          gap: 32px !important;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          position: relative !important;
+          display: flex !important;
+          flex: none !important;
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          justify-content: flex-start !important;
+          order: 0 !important;
+          width: 100% !important;
+          max-width: 968px !important;
+          height: auto !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          gap: 0 !important;
+        }
+
+        html[lang="en"] .philosophy .title-en {
+          position: absolute !important;
+          top: 0 !important;
+          left: -54px !important;
+          order: 0 !important;
+          width: 30px !important;
+          height: auto !important;
+          margin: 0 !important;
+          font-size: 20px !important;
+          line-height: 1.5 !important;
+          white-space: nowrap !important;
+          writing-mode: vertical-rl !important;
+          text-orientation: mixed !important;
+        }
+
+        html[lang="en"] .philosophy .title-main-wrap {
+          display: flex !important;
+          flex-direction: column-reverse !important;
+          align-items: flex-start !important;
+          order: 1 !important;
+          width: 100% !important;
+          gap: 32px !important;
+        }
+
+        @media (min-width: 1101px) {
+          html[lang="en"] .philosophy .title-main-wrap {
+            gap: 36px !important;
+          }
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          width: auto !important;
+          margin: 0 !important;
+          font-size: 40px !important;
+          line-height: 1 !important;
+          letter-spacing: 0 !important;
+          white-space: nowrap !important;
+          writing-mode: horizontal-tb !important;
+          text-orientation: mixed !important;
+        }
+
+        html[lang="en"] .philosophy .title-rule {
+          position: relative !important;
+          width: 264px !important;
+          height: 3px !important;
+          margin-top: 0 !important;
+          overflow: hidden !important;
+          background: var(--kameya-rule-short) center / 100% 100% no-repeat !important;
+        }
+
+        html[lang="en"] .philosophy .title-rule::before {
+          content: none !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          order: 1 !important;
+          width: 100% !important;
+          max-width: 968px !important;
+          margin: 0 !important;
+          gap: 18px !important;
+          font-size: 16px !important;
+          line-height: 1.72 !important;
+        }
+      }
+
+      @media (min-width: 641px) and (max-width: 980px) {
+        html[lang="en"] .philosophy .copy-field {
+          width: 100% !important;
+          max-width: none !important;
+          margin: 0 !important;
+          padding: var(--ktop-space-top, 96px) var(--ktop-space-x, 72px) var(--ktop-space-bottom, 72px) !important;
+          gap: 28px !important;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          position: relative !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          order: 0 !important;
+          width: 100% !important;
+          max-width: 640px !important;
+          height: auto !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          gap: 16px !important;
+        }
+
+        html[lang="en"] .philosophy .title-en {
+          position: static !important;
+          order: 0 !important;
+          width: auto !important;
+          max-width: 100% !important;
+          height: auto !important;
+          margin: 0 !important;
+          font-size: 20px !important;
+          line-height: 1.6 !important;
+          white-space: normal !important;
+          writing-mode: horizontal-tb !important;
+          text-orientation: mixed !important;
+        }
+
+        html[lang="en"] .philosophy .title-main-wrap {
+          display: flex !important;
+          flex-direction: column-reverse !important;
+          align-items: flex-start !important;
+          order: 1 !important;
+          width: 100% !important;
+          gap: 32px !important;
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          width: auto !important;
+          margin: 0 !important;
+          font-size: var(--ktop-title-ja, 40px) !important;
+          line-height: 1.35 !important;
+          letter-spacing: 0 !important;
+          white-space: nowrap !important;
+          writing-mode: horizontal-tb !important;
+          text-orientation: mixed !important;
+        }
+
+        html[lang="en"] .philosophy .title-rule {
+          width: 176px !important;
+          height: 3px !important;
+          margin-top: 0 !important;
+          overflow: hidden !important;
+          background: var(--kameya-rule-short) center / 100% 100% no-repeat !important;
+        }
+
+        html[lang="en"] .philosophy .title-rule::before {
+          content: none !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          order: 1 !important;
+          width: 100% !important;
+          max-width: 640px !important;
+          margin: 0 !important;
+          font-size: 16px !important;
+          line-height: 1.72 !important;
+        }
+      }
+
+      @media (max-width: 640px) {
+        html[lang="en"] .philosophy .copy-field {
+          width: 100% !important;
+          max-width: none !important;
+          margin: 0 !important;
+          padding: var(--ktop-space-top, 72px) var(--ktop-space-x, 24px) var(--ktop-space-bottom, 64px) !important;
+          gap: 28px !important;
+        }
+
+        html[lang="en"] .philosophy .title-block {
+          position: relative !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: flex-start !important;
+          order: 0 !important;
+          width: 100% !important;
+          height: auto !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          gap: 16px !important;
+        }
+
+        html[lang="en"] .philosophy .title-en {
+          position: static !important;
+          order: 0 !important;
+          width: auto !important;
+          max-width: 100% !important;
+          height: auto !important;
+          margin: 0 !important;
+          font-size: var(--ktop-title-en, 16px) !important;
+          line-height: 1.6 !important;
+          white-space: normal !important;
+          writing-mode: horizontal-tb !important;
+          text-orientation: mixed !important;
+        }
+
+        html[lang="en"] .philosophy .title-main-wrap {
+          display: flex !important;
+          flex-direction: column-reverse !important;
+          align-items: flex-start !important;
+          order: 1 !important;
+          width: 100% !important;
+          gap: 32px !important;
+        }
+
+        html[lang="en"] .philosophy .title-main {
+          width: auto !important;
+          margin: 0 !important;
+          font-size: var(--ktop-title-ja, clamp(30px, 7.8vw, 32px)) !important;
+          line-height: 1.35 !important;
+          letter-spacing: 0 !important;
+          white-space: nowrap !important;
+          writing-mode: horizontal-tb !important;
+          text-orientation: mixed !important;
+        }
+
+        html[lang="en"] .philosophy .title-rule {
+          width: 176px !important;
+          height: 3px !important;
+          margin-top: 0 !important;
+          overflow: hidden !important;
+          background: var(--kameya-rule-short) center / 100% 100% no-repeat !important;
+        }
+
+        html[lang="en"] .philosophy .title-rule::before {
+          content: none !important;
+        }
+
+        html[lang="en"] .philosophy .mobile-copy {
+          order: 1 !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+          font-size: 14px !important;
+          line-height: 1.78 !important;
+        }
+      }
+
+      /* English CTA title lock: override the earlier horizontal English title treatment. */
+      html[lang="en"] .co-page .title-block {
+        display: flex !important;
+        top: var(--title-y) !important;
+        left: var(--title-x) !important;
+        width: 204px !important;
+        height: 360px !important;
+        min-height: 0 !important;
+        gap: 16px !important;
+        align-items: stretch !important;
+        justify-content: space-between !important;
+        overflow: visible !important;
+      }
+
+      html[lang="en"] .co-page .title-rule,
+      html[lang="en"] .co-page .title-rule:last-child {
+        display: block !important;
+        flex: none !important;
+        width: 3px !important;
+        height: 360px !important;
+        justify-self: auto !important;
+        background: linear-gradient(180deg, transparent, rgba(185, 154, 94, 0.88) 12%, rgba(185, 154, 94, 0.88) 88%, transparent) !important;
+        opacity: 1 !important;
+      }
+
+      html[lang="en"] .co-page .title-lines {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        gap: 16px !important;
+      }
+
+      html[lang="en"] .co-page .title-lines p,
+      html[lang="en"] .co-page .title-lines p:not(.title-secondary),
+      html[lang="en"] .co-page .title-lines .title-secondary {
+        order: initial !important;
+        width: 40px !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding-top: 0 !important;
+        color: var(--ink) !important;
+        font-size: 40px !important;
+        line-height: 1.08 !important;
+        letter-spacing: 0 !important;
+        white-space: normal !important;
+        writing-mode: vertical-rl !important;
+        text-orientation: mixed !important;
+        text-transform: none !important;
+        overflow-wrap: normal !important;
+        word-break: normal !important;
+      }
+
+      html[lang="en"] .co-page .title-lines .title-secondary {
+        padding-top: 96px !important;
+      }
+
+      @media (max-width: 720px) {
+        html[lang="en"] .co-page .title-block {
+          width: 172px !important;
+          height: 304px !important;
+          gap: 12px !important;
+        }
+
+        html[lang="en"] .co-page .title-rule,
+        html[lang="en"] .co-page .title-rule:last-child {
+          width: 3px !important;
+          height: 304px !important;
+        }
+
+        html[lang="en"] .co-page .title-lines {
+          gap: 12px !important;
+        }
+
+        html[lang="en"] .co-page .title-lines p,
+        html[lang="en"] .co-page .title-lines p:not(.title-secondary),
+        html[lang="en"] .co-page .title-lines .title-secondary {
+          width: clamp(30px, 7.8vw, 32px) !important;
+          font-size: clamp(30px, 7.8vw, 32px) !important;
+        }
+
+        html[lang="en"] .co-page .title-lines .title-secondary {
+          padding-top: 76px !important;
+        }
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="kogei-page">
+      <header class="site-header" aria-label="Site header">
+        <a class="brand-lockup" href="/" aria-label="Kameya Japan Tradition home">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="/kogei/assets/figma/logo-mark.png" alt="" />
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">Kameya Japan Tradition Co., Ltd.</span>
+            <span class="brand-roman">KAMEYA&nbsp;&nbsp;JAPAN&nbsp;&nbsp;TRADITION</span>
+          </span>
+        </a>
+        <button class="menu-button" type="button" aria-label="Menuを開く">
+          <img src="/kogei/assets/figma/menu.svg" alt="" />
+        </button>
+      </header>
+
+      <main>
+        <div class="stage-wrap">
+          <section class="kogei-stage" aria-labelledby="kogei-title">
+            <div class="heading-block">
+              <div class="section-title-group">
+                <p class="section-label">Potential</p>
+                <h1 class="section-title" id="kogei-title">Craft Potential</h1>
+                <div class="title-rule" aria-hidden="true"></div>
+              </div>
+              <p class="lead-copy">A new age where<br />craft expands</p>
+            </div>
+
+            <img class="artifact artifact--hero" src="/kogei/assets/figma/kogei-hero-pottery.webp" alt="" aria-hidden="true" />
+            <img class="artifact artifact--bamboo" src="/kogei/assets/figma/kogei-bamboo.webp" alt="" aria-hidden="true" />
+            <img class="artifact artifact--bowl" src="/kogei/assets/figma/kogei-black-bowl.webp" alt="" aria-hidden="true" />
+            <img class="artifact artifact--red" src="/kogei/assets/figma/kogei-red-tray.webp" alt="" aria-hidden="true" />
+            <img class="artifact artifact--tablet-blue" src="/kogei/assets/figma/kogei-blue-vase.webp" alt="" aria-hidden="true" />
+            <img class="artifact artifact--tablet-silver" src="/kogei/assets/figma/kogei-silver-box.webp" alt="" aria-hidden="true" />
+            <img class="artifact artifact--tablet-wood" src="/kogei/assets/figma/kogei-wood-tray.webp" alt="" aria-hidden="true" />
+
+	            <div class="copy-block copy-intro" aria-label="工芸が持つ価値">
+	              <p>Japanese craft deeply attracts people,<br />and continues to hold value across time.<br />Techniques refined over long years, a sense of beauty, and an eye for materials.<br />and work accumulated by human hands.</p>
+	              <p>Craft born from such accumulation can affect people's values and<br class="wide-break" />even their standards of beauty, we believe.</p>
+	            </div>
+
+	            <div class="copy-block copy-right" aria-label="工芸との接点">
+	              <p>Yet today, opportunities to naturally encounter that value, feel drawn to it, and want to bring it into life are gradually moving away from the everyday.</p>
+	              <p>What is missing is not value, but contact.<br />What is missing is not appeal, but an opportunity.</p>
+	              <p>That is why we increase Japanese craft'swith your life<br />opportunities to intersectwithin society.<br />Kameya Japan Tradition Co., Ltd. brings Japanese craft closer to being continuously chosen, not only protected.</p>
+	              <p>We create encounters where Japanese craft becomes part of everyday life,<br />and draws people in naturally,through collaborations across industries.</p>
+	              <p>We work with artists including Living National Treasures,<br />together with those who stand at the highest level of technique today.</p>
+	            </div>
+
+	            <div class="copy-block copy-left-long" aria-label="暮らしに重なる工芸">
+	              <p>We create encounters where Japanese craft becomes part of everyday life,<br />and draws people in naturally,through collaborations across industries.</p>
+	              <p>We work with artists including Living National Treasures,<br />together with those who stand at the highest level of technique today.</p>
+	              <p>We create encounters where Japanese craft becomes part of everyday life,<br />and draws people in naturally,through collaborations across industries.</p>
+	              <p>We work with artists including Living National Treasures,<br />together with those who stand at the highest level of technique today.</p>
+	            </div>
+
+	            <div class="copy-block copy-bottom" aria-label="未来の日常に向けて">
+	              <p>We create encounters where Japanese craft becomes part of everyday life,<br />and draws people in naturally,<br />through collaborations across industries.</p>
+	              <p>We work with artists including Living National Treasures,<br />together with those who stand at the highest level of technique today.</p>
+	            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="site-footer" aria-label="サイトフッター">
+        <div class="footer-profile">
+          <p class="footer-company">Kameya Japan Tradition Co., Ltd.</p>
+          <div class="footer-address">
+            <p>〒330-0043<br />1-16-5 Daito, Urawa-ku, Saitama City, Saitama 330-0043, Japan</p>
+            <p class="footer-mail"><span>E-mail:</span><span>contact@kameya-japan-tradition.com</span></p>
+          </div>
+          <div class="socials" aria-label="SNSリンク">
+            <a href="https://www.facebook.com/p/%E4%BA%80%E5%B1%8B%E5%A4%A2%E6%9C%88-100026775131911/" aria-label="Facebook">
+              <img src="/kogei/assets/figma/facebook.svg" alt="" />
+            </a>
+            <a href="https://www.instagram.com/kameya.official.japan/" aria-label="Instagram">
+              <img src="/kogei/assets/figma/instagram.svg" alt="" />
+            </a>
+          </div>
+          <p class="copyright">© Kameya Japan Tradition Co., Ltd.</p>
+        </div>
+        <div class="footer-divider" aria-hidden="true"></div>
+        <div class="footer-right">
+          <nav class="footer-nav" aria-label="フッターナビゲーション">
+            <a href="/en/news/">News</a>
+            <a href="/en/about/">Philosophy</a>
+            <a href="/en/services/">Services</a>
+            <a href="/en/works/">Projects</a>
+            <a href="/en/artists/">Artists and Works</a>
+            <a href="/en/kogei/">Craft Potential</a>
+          </nav>
+          <div class="footer-legal">
+            <a href="/en/contact/">Contact</a>
+            <span class="legal-divider" aria-hidden="true"></span>
+            <a href="/en/privacy/">Privacy Policy</a>
+            <span class="legal-divider" aria-hidden="true"></span>
+            <a href="/en/deal/">Legal Notice</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+	    <script>
+	      const artboards = {
+	        desktop: { width: 1208, height: 2438 },
+		        tablet: { width: 802, height: 2605 },
+	      };
+
+	      const mobileArtifactCrops = [
+	        { selector: ".artifact--hero", top: 0.0957, bottom: 0.0957 },
+	        { selector: ".artifact--bamboo", top: 0.2638, bottom: 0.2638 },
+	        { selector: ".artifact--bowl", top: 0.2646, bottom: 0.2629 },
+	        { selector: ".artifact--red", top: 0.3472, bottom: 0.1988 },
+	      ];
+
+		      function currentArtboard(viewportWidth) {
+		        if (viewportWidth <= 1207) return artboards.tablet;
+		        return artboards.desktop;
+		      }
+
+	      function syncMeasuredArtifacts(viewportWidth, scale) {
+	        const copyLeftLong = document.querySelector(".copy-left-long");
+	        if (!copyLeftLong || viewportWidth <= 640 || viewportWidth > 959) return;
+
+	        const measuredHeight = copyLeftLong.getBoundingClientRect().height / scale;
+	        document.documentElement.style.setProperty("--tablet-silver-height", `${measuredHeight}px`);
+	      }
+
+	      function syncMobileArtifactCrops(viewportWidth) {
+	        mobileArtifactCrops.forEach(({ selector, top, bottom }) => {
+	          const artifact = document.querySelector(selector);
+	          if (!artifact) return;
+
+	          if (viewportWidth > 640) {
+	            artifact.style.marginTop = "";
+	            artifact.style.marginBottom = "";
+	            return;
+	          }
+
+	          const width = artifact.getBoundingClientRect().width;
+	          artifact.style.marginTop = `${Math.round(width * top * -10) / 10}px`;
+	          artifact.style.marginBottom = `${Math.round(width * bottom * -10) / 10}px`;
+	        });
+	      }
+
+      function fitStage() {
+	        const stageWrap = document.querySelector(".stage-wrap");
+	        const stage = document.querySelector(".kogei-stage");
+	        const viewportWidth = document.documentElement.clientWidth;
+
+		        if (viewportWidth <= 768) {
+		          stageWrap.style.height = "";
+		          stage.style.marginLeft = "";
+		          stage.style.marginRight = "";
+	          syncMobileArtifactCrops(viewportWidth);
+	          return;
+	        }
+
+	        const artboard = currentArtboard(viewportWidth);
+        const offsetX = Math.max(0, (viewportWidth - artboard.width) / 2);
+
+        document.documentElement.style.setProperty("--stage-width", `${artboard.width}px`);
+        document.documentElement.style.setProperty("--stage-height", `${artboard.height}px`);
+	        stageWrap.style.height = `${artboard.height}px`;
+	        stage.style.marginLeft = `${offsetX}px`;
+	        stage.style.marginRight = "0";
+	        syncMobileArtifactCrops(viewportWidth);
+	        syncMeasuredArtifacts(viewportWidth, 1);
+	      }
+
+      fitStage();
+	      if (document.fonts) {
+	        document.fonts.ready.then(fitStage);
+	      }
+	      window.addEventListener("load", fitStage, { once: true });
+	      window.addEventListener("resize", fitStage, { passive: true });
+    </script> <script src="/shared/js/reveal.js" defer></script> <script src="/shared/js/page-transition.js?v=20260619-menu-numbering-20" defer></script>
+  
+    <script id="kameya-en-motion-order">
+      (() => {
+        if (document.documentElement.lang !== "en") return;
+
+        const normalizePhilosophyIntro = () => {
+          const root = document.querySelector(".philosophy");
+          if (!root) return;
+
+          const title = root.querySelector(".title-main");
+          if (title) {
+            title.dataset.flowReady = "en-static";
+            title.setAttribute("aria-label", "Our Vision");
+            title.textContent = "Our Vision";
+          }
+
+          const label = root.querySelector(".title-en");
+          if (label) {
+            label.dataset.flowReady = "en-static";
+            label.setAttribute("aria-label", "Our Philosophy");
+            label.textContent = "Our Philosophy";
+          }
+
+          root.querySelector(".mobile-copy")?.removeAttribute("aria-hidden");
+        };
+
+        const normalizeAchievementTitles = () => {
+          document.querySelectorAll(".achievements .section-title, .achievements .achievement-title").forEach((element) => {
+            const label = (element.getAttribute("aria-label") || element.innerText || element.textContent || "")
+              .replace(/\s+/g, " ")
+              .trim();
+            if (!label) return;
+            element.dataset.flowReady = "en-static";
+            element.dataset.enAchievementReady = "1";
+            element.setAttribute("aria-label", label);
+            element.textContent = label;
+          });
+        };
+
+        const wrapWords = (element, className, propertyName, startIndex = 0, options = {}) => {
+          if (!element) return startIndex;
+          if (element.dataset.enMotionReady === className) {
+            return startIndex + element.querySelectorAll("." + className).length;
+          }
+          const raw = options.preserveLines
+            ? (element.innerText || element.textContent || "")
+            : (element.getAttribute("aria-label") || element.innerText || element.textContent || "");
+          const label = raw.replace(/\s+/g, " ").trim();
+          if (!label) return startIndex;
+          const lines = options.preserveLines
+            ? raw.split(/\n+/).map((line) => line.replace(/\s+/g, " ").trim()).filter(Boolean)
+            : [label];
+
+          element.dataset.enMotionReady = className;
+          element.setAttribute("aria-label", label);
+          element.textContent = "";
+
+          let index = startIndex;
+          lines.forEach((line, lineIndex) => {
+            if (lineIndex > 0) {
+              element.append(document.createElement("br"));
+            }
+            line.split(/(\s+)/).forEach((part) => {
+              if (!part) return;
+              if (/^\s+$/.test(part)) {
+                element.append(document.createTextNode(" "));
+                return;
+              }
+
+              const span = document.createElement("span");
+              span.className = className;
+              span.setAttribute("aria-hidden", "true");
+              span.style.setProperty(propertyName, index);
+              span.textContent = part;
+              element.append(span);
+              index += 1;
+            });
+          });
+          return index;
+        };
+
+        const normalize = () => {
+          normalizePhilosophyIntro();
+          normalizeAchievementTitles();
+          document.querySelectorAll(".slide").forEach((slide) => {
+            let headlineIndex = 0;
+            slide.querySelectorAll(".headline-col").forEach((element, lineIndex) => {
+              headlineIndex = wrapWords(element, "headline-word", "--word-index", headlineIndex);
+              element.style.setProperty("--line-index", lineIndex);
+            });
+          });
+          document.querySelectorAll(".work-title").forEach((element) =>
+            wrapWords(element, "work-title-word", "--title-word-index", 0, { preserveLines: true })
+          );
+          document
+            .querySelectorAll(".frame-shell .head .title, .frame-shell .initiative-title")
+            .forEach((element) => wrapWords(element, "flow-word", "--flow-word-index"));
+        };
+
+        normalize();
+        window.requestAnimationFrame(normalize);
+      })();
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,919 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VKVLXC7MK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7VKVLXC7MK');
+    </script>
+<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>思想と未来 | 亀屋日本伝統株式会社</title>
+    <meta
+      name="description"
+      content="亀屋日本伝統株式会社が大切にする思想、代表の言葉、目指す未来を紹介します。"
+    />
+    <link rel="preload" as="image" href="assets/figma/paper.webp" />
+    <link rel="preload" as="image" href="assets/figma/ink-wash.webp" />
+    <link rel="preload" as="image" href="assets/figma/pattern-vision.webp" />
+    <link rel="preload" as="image" href="assets/figma/portrait.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f8f4ec;
+        --paper-soft: #fbf8f1;
+        --ink: #3b2f28;
+        --ink-soft: rgba(59, 47, 40, 0.86);
+        --ink-muted: #767676;
+        --brown: #6b4f3a;
+        --title: #333333;
+        --accent: #957c4c;
+        --rule: rgba(149, 124, 76, 0.34);
+        --footer: #1b1d22;
+        --footer-mobile: #242220;
+        --white: #ffffff;
+        --content-max: 1200px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      body {
+        overflow-x: hidden;
+        background:
+          linear-gradient(rgba(248, 244, 236, 0.56), rgba(248, 244, 236, 0.56)),
+          url("assets/figma/paper.webp") center top / 1416px 1000px repeat,
+          var(--paper);
+        color: var(--ink);
+        font-family: "Zen Old Mincho", "Hiragino Mincho ProN", serif;
+      }
+
+      body::before {
+        content: "";
+        display: none;
+      }
+
+      body::after {
+        content: "";
+        display: none;
+      }
+
+      p,
+      h1,
+      h2,
+      figure {
+        margin: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: none;
+        user-select: none;
+        -webkit-user-drag: none;
+      }
+
+      .about-page {
+        min-height: 100vh;
+        overflow: hidden;
+        background: transparent;
+      }
+
+      .site-header {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        padding: 16px 24px;
+      }
+
+      .brand-lockup {
+        display: flex;
+        flex: 1 1 auto;
+        align-items: center;
+        min-width: 0;
+        gap: 8px;
+      }
+
+      .brand-mark {
+        position: relative;
+        width: 40px;
+        height: 38px;
+        overflow: hidden;
+        flex: 0 0 auto;
+      }
+
+      .brand-mark img {
+        position: absolute;
+        top: -50%;
+        left: -58.89%;
+        width: 214.44%;
+        height: 214.44%;
+        object-fit: cover;
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        line-height: 1.15;
+        white-space: nowrap;
+      }
+
+      .brand-name {
+        color: var(--brown);
+        font-size: 15px;
+      }
+
+      .brand-roman {
+        color: var(--ink-muted);
+        font-size: 14px;
+      }
+
+      .menu-button {
+        display: flex;
+        width: 50px;
+        height: 41px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(51, 51, 51, 0.75);
+        border-radius: 999px;
+        background: transparent;
+      }
+
+      .menu-button img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .about-main {
+        position: relative;
+        overflow: hidden;
+        min-height: 0;
+        padding: 40px 120px 200px;
+      }
+
+      .decor {
+        position: absolute;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .decor-ink {
+        top: 134px;
+        left: 0;
+        width: 684px;
+        height: 513px;
+        object-fit: cover;
+        opacity: 0.6;
+      }
+
+      .decor-pattern-vision {
+        top: 219px;
+        right: -122px;
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        opacity: 0.5;
+      }
+
+      .content-stack {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: var(--content-max);
+        margin: 0 auto;
+        gap: 80px;
+      }
+
+      .about-section {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        align-items: flex-end;
+      }
+
+      .vision {
+        gap: 24px;
+      }
+
+      .section-heading {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+      }
+
+      .section-title-group {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+      }
+
+      .section-label {
+        color: var(--accent);
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+      .section-title {
+        color: var(--title);
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .section-rule {
+        width: 100%;
+        height: 1px;
+        background: var(--rule);
+      }
+
+      .section-layout {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 360px minmax(0, 1fr);
+        gap: 40px;
+        align-items: start;
+      }
+
+      .statement-title {
+        color: var(--accent);
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+      .body-copy {
+        color: var(--ink);
+        font-size: 16px;
+        line-height: 2;
+        text-wrap: pretty;
+      }
+
+      .body-copy p + p {
+        margin-top: 2em;
+      }
+
+      .vision .body-copy p:has(> strong) {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.95;
+      }
+
+      .vision .body-copy p:has(> strong) strong {
+        display: inline-block;
+        margin-bottom: 8px;
+        color: var(--accent);
+        font-size: 22px;
+        line-height: 1.5;
+      }
+
+      .message-copy {
+        font-size: 16px;
+        line-height: 2;
+      }
+
+      .profile {
+        display: flex;
+        width: 360px;
+        flex-direction: column;
+        gap: 24px;
+        align-items: flex-start;
+      }
+
+      .portrait-frame {
+        position: relative;
+        width: 214px;
+        height: 214px;
+        overflow: hidden;
+        border-radius: 8px;
+        background: linear-gradient(180deg, rgba(28, 43, 58, 0.1) 0%, rgba(28, 43, 58, 0.3) 57.7%, #1c2b3a 100%);
+      }
+
+      .portrait-frame img {
+        position: absolute;
+        top: 9px;
+        left: 22px;
+        width: 170px;
+        height: 205px;
+        object-fit: cover;
+      }
+
+      .profile-text {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 8px;
+        color: var(--ink);
+        padding-left: 2px;
+      }
+
+      .profile-role {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+      .profile-name {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+      .spacer {
+        width: 360px;
+        height: 225px;
+      }
+
+      .site-footer {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        min-height: 622px;
+        gap: 80px;
+        align-items: flex-start;
+        padding: 120px;
+        background: var(--footer);
+        color: var(--white);
+      }
+
+      .footer-profile {
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .footer-company {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: 0.06em;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      .footer-address {
+        display: flex;
+        width: 360px;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        font-size: 15px;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      .footer-mail {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        width: 100%;
+      }
+
+      .footer-mail span:first-child {
+        white-space: nowrap;
+      }
+
+      .footer-mail span:last-child {
+        min-width: 0;
+        white-space: nowrap;
+        overflow-wrap: normal;
+      }
+
+      .socials {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .socials img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .copyright {
+        color: #666666;
+        font-size: 16px;
+        line-height: 1;
+        text-align: center;
+      }
+
+      .footer-divider {
+        width: 1px;
+        align-self: stretch;
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .footer-right {
+        display: flex;
+        flex: 1 1 auto;
+        min-width: 0;
+        flex-direction: column;
+        gap: 118px;
+        align-items: center;
+      }
+
+      .footer-nav {
+        display: flex;
+        gap: 60px;
+        align-items: flex-start;
+        justify-content: center;
+        color: var(--white);
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .footer-nav a {
+        display: block;
+        width: 20px;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+      }
+
+      .footer-legal {
+        display: flex;
+        width: 100%;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        line-height: 1.5;
+        white-space: nowrap;
+      }
+
+      .legal-divider {
+        width: 1px;
+        height: 24px;
+        background: rgba(255, 255, 255, 0.28);
+      }
+
+      @media (max-width: 959px) {
+        .about-main {
+          min-height: 0;
+          padding: 40px 40px 192px;
+        }
+
+        .decor-ink {
+          display: none;
+        }
+
+        .decor-pattern-vision {
+          top: 189px;
+          right: -70px;
+          left: auto;
+        }
+
+        .content-stack {
+          gap: 80px;
+        }
+
+        .about-section {
+          gap: 24px;
+        }
+
+        .section-heading {
+          gap: 20px;
+        }
+
+        .section-title-group {
+          gap: 8px;
+        }
+
+        .section-label {
+          color: var(--accent);
+          font-size: 16px;
+        }
+
+        .section-title {
+          color: var(--title);
+          font-size: 32px;
+        }
+
+        .section-layout {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+        }
+
+        .statement-title {
+          width: 100%;
+          color: var(--accent);
+          font-size: 28px;
+        }
+
+        .body-copy {
+          width: 100%;
+          color: var(--ink);
+        }
+
+        .message .profile {
+          order: 2;
+          flex-direction: row;
+          width: 100%;
+          gap: 24px;
+          align-items: flex-end;
+        }
+
+        .message .body-copy {
+          order: 1;
+        }
+
+        .portrait-frame {
+          width: 136px;
+          height: 136px;
+          flex: 0 0 auto;
+        }
+
+        .portrait-frame img {
+          top: 6px;
+          left: 15px;
+          width: 106px;
+          height: 130px;
+        }
+
+        .profile-role {
+          font-size: 14px;
+        }
+
+        .profile-name {
+          font-size: 15px;
+        }
+
+        .spacer {
+          display: none;
+        }
+
+        .site-footer {
+          min-height: 1068px;
+          flex-direction: column;
+          gap: 80px;
+          align-items: center;
+          padding: 120px 80px;
+          background: var(--footer-mobile);
+        }
+
+        .footer-profile {
+          order: 2;
+          width: 100%;
+          max-width: 640px;
+        }
+
+        .footer-divider {
+          order: 3;
+          width: 100%;
+          max-width: 640px;
+          height: 1px;
+          align-self: center;
+        }
+
+        .footer-right {
+          display: contents;
+        }
+
+        .footer-nav {
+          order: 1;
+          width: 100%;
+          max-width: 640px;
+          justify-content: space-between;
+          gap: 24px;
+          padding: 0 40px;
+        }
+
+        .footer-legal {
+          order: 4;
+          width: 100%;
+          max-width: 640px;
+          flex-wrap: wrap;
+        }
+      }
+
+      @media (max-width: 639px) {
+        .site-header {
+          padding: 16px 16px;
+        }
+
+        .brand-name {
+          font-size: 14px;
+        }
+
+        .brand-roman {
+          font-size: 14px;
+        }
+
+        .about-main {
+          min-height: 0;
+          padding: 40px 24px 152px;
+        }
+
+        .decor-pattern-vision {
+          top: 5px;
+          right: auto;
+          left: 168px;
+        }
+
+        .content-stack {
+          gap: 80px;
+        }
+
+        .about-section {
+          gap: 16px;
+        }
+
+        .section-heading {
+          gap: 24px;
+        }
+
+        .section-title {
+          font-size: 28px;
+          line-height: 1;
+        }
+
+        .section-layout {
+          gap: 24px;
+        }
+
+        .statement-title {
+          font-size: 23px;
+        }
+
+        .body-copy {
+          font-size: 14px;
+          min-width: 0;
+          max-width: 100%;
+          overflow-wrap: anywhere;
+          line-break: anywhere;
+          text-wrap: wrap;
+        }
+
+        .body-copy p {
+          min-width: 0;
+          max-width: 100%;
+          overflow-wrap: anywhere;
+          line-break: anywhere;
+        }
+
+        .vision .body-copy p:has(> strong) {
+          font-size: 16px;
+          line-height: 1.95;
+        }
+
+        .vision .body-copy p:has(> strong) strong {
+          margin-bottom: 4px;
+          font-size: 18px;
+        }
+
+        .message .section-layout {
+          gap: 80px;
+        }
+
+        .message .profile {
+          gap: 24px;
+        }
+
+        .portrait-frame {
+          width: 112px;
+          height: 112px;
+        }
+
+        .portrait-frame img {
+          top: 5px;
+          left: 12px;
+          width: 88px;
+          height: 107px;
+        }
+
+        .site-footer {
+          min-height: auto;
+          gap: 40px;
+          align-items: flex-start;
+          padding: 64px 24px;
+        }
+
+        .footer-nav {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 16px;
+          max-width: 400px;
+          padding: 0;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+
+        .footer-nav a {
+          width: 100%;
+          writing-mode: horizontal-tb;
+          text-orientation: mixed;
+        }
+
+        .footer-profile {
+          max-width: 400px;
+          gap: 32px;
+        }
+
+        .footer-company {
+          font-size: 27px;
+          letter-spacing: 0.06em;
+        }
+
+        .footer-address {
+          align-items: flex-start;
+          text-align: left;
+        }
+
+        .footer-mail {
+          display: none;
+        }
+
+        .footer-divider {
+          max-width: 400px;
+        }
+
+        .footer-legal {
+          flex-direction: column;
+          gap: 12px;
+          align-items: center;
+          max-width: 400px;
+          white-space: normal;
+        }
+
+        .legal-divider {
+          display: none;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .brand-text {
+          align-items: flex-start;
+        }
+
+        .brand-roman {
+          transform-origin: left top;
+        }
+
+        .menu-button {
+          width: 44px;
+        }
+
+        .footer-company {
+          font-size: 24px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
+    <link rel="stylesheet" href="/shared/css/reveal.css" />
+    <link rel="stylesheet" href="/shared/css/kameya-design-system.css?v=20260619-menu-numbering-fix" />
+  </head>
+  <body>
+    <div class="about-page">
+      <header class="site-header" aria-label="サイトヘッダー">
+        <a class="brand-lockup" href="/" aria-label="亀屋日本伝統株式会社 トップへ">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="assets/figma/logo-mark.png" alt="" />
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">亀屋日本伝統株式会社</span>
+            <span class="brand-roman">KAMEYA&nbsp;&nbsp;JAPAN&nbsp;&nbsp;TRADITION</span>
+          </span>
+        </a>
+        <button class="menu-button" type="button" aria-label="メニューを開く">
+          <img src="assets/figma/menu.svg" alt="" />
+        </button>
+      </header>
+
+      <main class="about-main">
+        <img class="decor decor-ink" src="assets/figma/ink-wash.webp" alt="" aria-hidden="true" />
+        <img class="decor decor-pattern-vision" src="assets/figma/pattern-vision.webp" alt="" aria-hidden="true" />
+
+        <div class="content-stack">
+          <section class="about-section vision" aria-labelledby="about-title">
+            <div class="section-heading">
+              <div class="section-title-group">
+                <p class="section-label">About</p>
+                <h1 class="section-title" id="about-title">我々について</h1>
+              </div>
+              <div class="section-rule" aria-hidden="true"></div>
+            </div>
+            <div class="section-layout">
+              <h2 class="statement-title">文化は、<br />守る対象ではない。</h2>
+              <div class="body-copy">
+                <p>人が良いと思い、楽しみ、自分の人生の中に取り入れることで、時代を超えて残ってきたもの。</p>
+                <p><strong>Purpose</strong><br />人生を豊かにする文化体験をつくる。</p>
+                <p><strong>Vision</strong><br />誰もが、自分の好きな工芸を語れる世界へ。</p>
+                <p><strong>Mission</strong><br />伝統文化との、新しい出会いをつくる。</p>
+                <p>人間国宝をはじめとする作家本人との直接的な対話を通じて、古くから続く伝統文化を現代を生きる人々の人生へ接続していきます。</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="about-section message" aria-labelledby="message-title">
+            <div class="section-heading">
+              <div class="section-title-group">
+                <h2 class="section-title" id="message-title">代表挨拶</h2>
+              </div>
+              <div class="section-rule" aria-hidden="true"></div>
+            </div>
+            <div class="section-layout">
+              <figure class="profile">
+                <div class="portrait-frame">
+                  <img src="assets/figma/portrait.webp" alt="亀屋日本伝統株式会社 代表 亀屋夢月" />
+                </div>
+                <figcaption class="profile-text">
+                  <span class="profile-role">亀屋日本伝統株式会社<br />代表取締役</span>
+                  <span class="profile-name">亀屋 夢月</span>
+                </figcaption>
+              </figure>
+              <div class="body-copy message-copy">
+                <p>私は、20年以上、工芸とは無縁に生きてきました。</p>
+                <p>だからこそ、「工芸を知らない人が、どこで遠く感じるのか」「どうすれば面白いと思えるのか」を、外側の感覚として持っています。</p>
+                <p>一方で現在は、人間国宝の先生方をはじめ、日本最高峰の工芸作家の方々と、日々直接お話をさせていただいています。工芸の世界の外側と内側、その両方の感覚を持っていることが、自分にできる役割につながっていると思っています。</p>
+                <p>私は、工芸を「一部の詳しい人だけの世界」にしたいわけではありません。本当に良いものを見たとき、人は自然と心を動かされます。</p>
+                <p>だから、まだ工芸に触れたことのない人にも、「なんだか好きだ」「面白い」「また見たい」と思える出会いを届けたいと思っています。</p>
+                <p>今なら、まだ間に合うと思っています。日本には、技術力と表現力の双方において、世界でも類を見ない工芸文化が、まだ確かに残っています。そして、本当に良いものを見て、「良い」と感じられる心も、まだ社会の中に残っていると思っています。</p>
+                <p>私は、本当に良いものを作る人が、社会の中で憧れの存在になることが、とても重要だと思っています。その作品に触れ、「かっこいい」「自分もやってみたい」と思う人が増えていくこと。</p>
+                <p>そうした憧れと循環が続いていくことで、文化は未来へ続いていくのだと思っています。</p>
+                <p>亀屋日本伝統株式会社<br />代表取締役 亀屋夢月</p>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </main>
+
+      <footer class="site-footer" aria-label="サイトフッター">
+        <div class="footer-profile">
+          <p class="footer-company">亀屋日本伝統株式会社</p>
+          <div class="footer-address">
+            <p>〒330-0043<br />埼玉県さいたま市浦和区大東1丁目16番5号</p>
+            <p class="footer-mail"><span>E-mail:</span><span>desk@kameya-japan-tradition.com</span></p>
+          </div>
+          <div class="socials" aria-label="SNSリンク">
+            <a href="https://www.facebook.com/p/%E4%BA%80%E5%B1%8B%E5%A4%A2%E6%9C%88-100026775131911/" aria-label="Facebook">
+              <img src="assets/figma/facebook.svg" alt="" />
+            </a>
+            <a href="https://www.instagram.com/kameya.official.japan/" aria-label="Instagram">
+              <img src="assets/figma/instagram.svg" alt="" />
+            </a>
+          </div>
+          <p class="copyright">© 亀屋日本伝統株式会社</p>
+        </div>
+        <div class="footer-divider" aria-hidden="true"></div>
+        <div class="footer-right">
+          <nav class="footer-nav" aria-label="フッターナビゲーション">
+            <a href="/news">お知らせ</a>
+            <a href="/about">亀屋について</a>
+            <a href="/services">事業内容</a>
+            <a href="/kogei">工芸の可能性について</a>
+          </nav>
+          <div class="footer-legal">
+            <a href="/contact">お問い合わせ</a>
+            <span class="legal-divider" aria-hidden="true"></span>
+            <a href="/privacy">プライバシーポリシー</a>
+            <span class="legal-divider" aria-hidden="true"></span>
+            <a href="/deal">特定商取引法に基づく表記</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="/shared/js/reveal.js" defer></script>
+    <script src="/shared/js/page-transition.js?v=20260619-menu-numbering-20" defer></script>
+  </body>
+</html>

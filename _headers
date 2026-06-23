@@ -1,0 +1,6 @@
+/artists/*
+  X-Robots-Tag: noindex
+/works/*
+  X-Robots-Tag: noindex
+/en/*
+  X-Robots-Tag: noindex

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VKVLXC7MK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7VKVLXC7MK');
+    </script>
+<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>お知らせ | 亀屋日本伝統株式会社</title>
+    <meta
+      name="description"
+      content="亀屋日本伝統株式会社のお知らせ一覧。展示、講演、工芸に関する取り組み、公開情報を掲載します。"
+    />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
+    <link rel="stylesheet" href="/shared/css/reveal.css" />
+    <link rel="stylesheet" href="/shared/css/utility-pages.css" />
+    <style>
+      body.news-body {
+        background:
+          linear-gradient(rgba(248, 244, 234, 0.72), rgba(248, 244, 234, 0.82)),
+          url("/about/assets/figma/paper.webp") center / 760px auto repeat;
+      }
+
+      .news-main {
+        width: min(1208px, 100%);
+        margin: 0 auto;
+        padding: 136px clamp(24px, 9.9vw, 120px) 96px;
+      }
+
+      .news-heading {
+        display: grid;
+        gap: 18px;
+        margin-bottom: 40px;
+      }
+
+      .news-kicker {
+        margin: 0;
+        color: var(--utility-gold);
+        font-family: "Times New Roman", serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.25;
+        letter-spacing: 0.02em;
+      }
+
+      .news-heading h1 {
+        margin: 0;
+        color: var(--utility-ink);
+        font-size: clamp(32px, 4vw, 40px);
+        font-weight: 700;
+        line-height: 1.45;
+        letter-spacing: 0.08em;
+      }
+
+      .news-heading__rule {
+        display: block;
+        width: 177px;
+        height: 1px;
+        background: rgba(183, 164, 109, 0.72);
+      }
+
+      .news-lead {
+        max-width: 720px;
+        margin: 10px 0 0;
+        color: rgba(29, 28, 24, 0.64);
+        font-size: 16px;
+        line-height: 2;
+        overflow-wrap: anywhere;
+      }
+
+      .news-page-list {
+        display: grid;
+        gap: 0;
+      }
+
+      .news-page-card {
+        position: relative;
+        display: grid;
+        grid-template-columns: 285px minmax(0, 1fr) 32px;
+        gap: 24px;
+        align-items: center;
+        padding: 28px 0;
+        border-bottom: 1px solid rgba(29, 28, 24, 0.16);
+        color: inherit;
+        text-decoration: none;
+        transition: opacity 260ms var(--utility-ease);
+      }
+
+      .news-page-card:first-child {
+        border-top: 1px solid rgba(29, 28, 24, 0.16);
+      }
+
+      .news-page-thumb {
+        width: 285px;
+        height: 190px;
+        display: block;
+        object-fit: cover;
+      }
+
+      .news-page-thumb--empty {
+        border: 1px solid rgba(183, 164, 109, 0.28);
+        background:
+          linear-gradient(rgba(248, 244, 234, 0.82), rgba(248, 244, 234, 0.92)),
+          url("/about/assets/figma/paper.webp") center / 320px auto repeat;
+      }
+
+      .news-page-thumb--contain {
+        padding: 16px;
+        border: 1px solid rgba(183, 164, 109, 0.24);
+        background: rgba(255, 255, 255, 0.62);
+        object-fit: contain;
+      }
+
+      .news-page-copy {
+        display: grid;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .news-page-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        align-items: center;
+        color: rgba(29, 28, 24, 0.58);
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      .news-page-tag {
+        color: var(--utility-gold);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+      }
+
+      .news-page-card h2 {
+        margin: 0;
+        color: var(--utility-ink);
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.6;
+        letter-spacing: 0.06em;
+        overflow-wrap: anywhere;
+      }
+
+      .news-page-card p {
+        margin: 0;
+        color: rgba(29, 28, 24, 0.74);
+        font-size: 16px;
+        line-height: 1.85;
+      }
+
+      .news-page-arrow {
+        position: relative;
+        display: block;
+        width: 32px;
+        height: 18px;
+        color: var(--utility-green);
+      }
+
+      .news-page-arrow::before,
+      .news-page-arrow::after {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        content: "";
+        background: currentColor;
+        transition:
+          width 320ms var(--utility-ease),
+          transform 320ms var(--utility-ease);
+      }
+
+      .news-page-arrow::before {
+        width: 18px;
+        height: 1px;
+        transform: translateY(-50%);
+      }
+
+      .news-page-arrow::after {
+        width: 8px;
+        height: 8px;
+        border-top: 1px solid currentColor;
+        border-right: 1px solid currentColor;
+        background: transparent;
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      .news-page-card:hover {
+        opacity: 0.72;
+      }
+
+      .news-page-card:hover .news-page-arrow::before {
+        width: 32px;
+      }
+
+      @media (max-width: 860px) {
+        .news-main {
+          width: min(390px, 100%);
+          margin-left: 0;
+          margin-right: auto;
+          padding-top: 124px;
+          padding-inline: 24px;
+        }
+
+        .news-page-card {
+          grid-template-columns: 120px minmax(0, 1fr) 24px;
+          gap: 12px;
+          align-items: start;
+          padding: 20px 0;
+        }
+
+        .news-page-thumb {
+          width: 120px;
+          height: 80px;
+        }
+
+        .news-page-thumb--contain {
+          padding: 6px;
+        }
+
+        .news-page-meta {
+          gap: 10px;
+          font-size: 14px;
+          line-height: 1.4;
+        }
+
+        .news-page-card h2 {
+          font-size: 14px;
+          line-height: 1.55;
+        }
+
+        .news-page-card p {
+          display: none;
+        }
+
+        .news-page-arrow {
+          justify-self: end;
+          align-self: center;
+          width: 24px;
+          height: 16px;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .news-main {
+          width: 100%;
+          padding-inline: 24px;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="/shared/css/kameya-design-system.css?v=20260619-menu-numbering-fix" />
+  </head>
+  <body class="utility-body news-body">
+    <div class="utility-shell">
+      <header class="site-header" aria-label="サイトヘッダー">
+        <a class="brand-lockup" href="/top/" aria-label="亀屋日本伝統株式会社 トップへ">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="/about/assets/figma/logo-mark.png" alt="" />
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">亀屋日本伝統株式会社</span>
+            <span class="brand-roman">KAMEYA&nbsp;&nbsp;JAPAN&nbsp;&nbsp;TRADITION</span>
+          </span>
+        </a>
+        <button class="menu-button" type="button" aria-label="メニューを開く">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </header>
+
+      <main class="news-main">
+        <section class="news-heading" aria-labelledby="news-title">
+          <p class="news-kicker">News</p>
+          <h1 id="news-title">お知らせ</h1>
+          <span class="news-heading__rule" aria-hidden="true"></span>
+          <p class="news-lead">
+            講演、展示、海外文化機関との協働、文化体験型イベントなど、亀屋日本伝統の活動を掲載します。
+          </p>
+        </section>
+
+        <section class="news-page-list" aria-label="お知らせ一覧">
+          <a class="news-page-card" href="/news/detail/001/">
+            <span class="news-page-thumb news-page-thumb--empty" aria-hidden="true"></span>
+            <div class="news-page-copy">
+              <div class="news-page-meta">
+                <time datetime="2026-05-01">2026.05.01</time>
+                <span class="news-page-tag">お知らせ</span>
+              </div>
+              <h2>2026/7/18~8/2に、上野マルイ5Fにて工芸品の展示販売とセル画ワークショップを行います</h2>
+              <p>2026年7月18日から8月2日まで、上野マルイ5Fにて、工芸品の展示販売とセル画ワークショップを行います。</p>
+            </div>
+            <span class="news-page-arrow" aria-hidden="true"></span>
+          </a>
+
+          <a class="news-page-card" href="/news/detail/002/">
+            <span class="news-page-thumb news-page-thumb--empty" aria-hidden="true"></span>
+            <div class="news-page-copy">
+              <div class="news-page-meta">
+                <time datetime="2026-04-01">2026.04.01</time>
+                <span class="news-page-tag">お知らせ</span>
+              </div>
+              <h2>埼玉県立近代美術館にて『人間国宝の工芸を「感じる」展』を開催します</h2>
+              <p>亀屋日本伝統株式会社は、2026年8月11日から8月23日まで、埼玉県立近代美術館 地下 一般展示室2にて『人間国宝の工芸を「感じる」展 ― 次世代へつなぐ日本の技 ―』を開催します。</p>
+            </div>
+            <span class="news-page-arrow" aria-hidden="true"></span>
+          </a>
+
+          <a class="news-page-card" href="/news/detail/003/">
+            <img class="news-page-thumb news-page-thumb--contain" src="/news/assets/oman-national-museum.webp" alt="" />
+            <div class="news-page-copy">
+              <div class="news-page-meta">
+                <time datetime="2026-01-26">2026.01.26</time>
+                <span class="news-page-tag">お知らせ</span>
+              </div>
+              <h2>オマーン国立博物館との協働関係を、Official Collaborative Partnerとして掲載しました</h2>
+              <p>亀屋日本伝統は、オマーン国立博物館より許可をいただき、同館を当社公式ホームページ上におけるOfficial Collaborative Partnerとして掲載しました。</p>
+            </div>
+            <span class="news-page-arrow" aria-hidden="true"></span>
+          </a>
+
+          <a class="news-page-card" href="/news/detail/007/">
+            <span class="news-page-thumb news-page-thumb--empty" aria-hidden="true"></span>
+            <div class="news-page-copy">
+              <div class="news-page-meta">
+                <time datetime="2026-01-05">2026.01.05</time>
+                <span class="news-page-tag">お知らせ</span>
+              </div>
+              <h2>帝国ホテルで行われた、新年宴会 New Year Reception 2026で人間国宝作品の展示をしました。</h2>
+              <p>亀屋日本伝統株式会社が2026年1月5日に帝国ホテル 本館3階「富士の間」で行われた、新年宴会 New Year Reception 2026で工芸品展示を担当いたしました。</p>
+            </div>
+            <span class="news-page-arrow" aria-hidden="true"></span>
+          </a>
+
+          <a class="news-page-card" href="/news/detail/004/">
+            <img class="news-page-thumb news-page-thumb--contain" src="/news/assets/the-japan-essence-expo-2026.webp" alt="" />
+            <div class="news-page-copy">
+              <div class="news-page-meta">
+                <time datetime="2025-11-22">2025.11.22</time>
+                <span class="news-page-tag">お知らせ</span>
+              </div>
+              <h2>「THE JAPAN ESSENCE – GLOBAL EXPO 2026」実行委員に選任されました</h2>
+              <p>代表の亀屋夢月が、アゼルバイジャンで開催予定の「THE JAPAN ESSENCE – GLOBAL EXPO 2026」において、実行委員に選任されました。</p>
+            </div>
+            <span class="news-page-arrow" aria-hidden="true"></span>
+          </a>
+
+          <a class="news-page-card" href="/news/detail/005/">
+            <img class="news-page-thumb" src="/news/assets/munakata-environment-conference.webp" alt="" />
+            <div class="news-page-copy">
+              <div class="news-page-meta">
+                <time datetime="2025-10-28">2025.10.28</time>
+                <span class="news-page-tag">実績</span>
+              </div>
+              <h2>第12回宗像国際環境会議に登壇しました ― 工芸と環境をつなぐ視点から</h2>
+              <p>福岡県宗像市・宗像大社で開催された「宗像国際環境会議」に、代表の亀屋夢月が登壇しました。</p>
+            </div>
+            <span class="news-page-arrow" aria-hidden="true"></span>
+          </a>
+
+          <a class="news-page-card" href="/news/detail/006/">
+            <img class="news-page-thumb news-page-thumb--contain" src="/news/assets/oman-national-museum.webp" alt="" />
+            <div class="news-page-copy">
+              <div class="news-page-meta">
+                <time datetime="2025-10-22">2025.10.22</time>
+                <span class="news-page-tag">実績</span>
+              </div>
+              <h2>オマーン国立博物館へ、imamah用の手織布を納品しました</h2>
+              <p>オマーン国立博物館にimamah用手織布を納品いたしました。</p>
+            </div>
+            <span class="news-page-arrow" aria-hidden="true"></span>
+          </a>
+        </section>
+
+        <footer class="site-footer">
+          <span>© 2026 亀屋日本伝統株式会社</span>
+          <nav class="footer-links" aria-label="フッターリンク">
+            <a href="/contact/">お問い合わせ</a>
+            <a href="/privacy/">プライバシーポリシー</a>
+            <a href="/deal/">特定商取引法に基づく表記</a>
+          </nav>
+        </footer>
+      </main>
+    </div>
+    <script src="/shared/js/reveal.js" defer></script>
+    <script src="/shared/js/page-transition.js?v=20260619-menu-numbering-20" defer></script>
+  </body>
+</html>

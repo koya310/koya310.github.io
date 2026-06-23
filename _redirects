@@ -1,0 +1,15 @@
+/ /top/ 302
+/essay/story /essay/story/ 301
+/artists /top/ 302
+/artists/ /top/ 302
+/artists/* /top/ 302
+/works /top/ 302
+/works/ /top/ 302
+/works/* /top/ 302
+/en /top/ 302
+/en/ /top/ 302
+/en/* /top/ 302
+
+/essay /essay/story/ 301
+/essay/ /essay/story/ 301
+/news/detail/007/ /news/ 302

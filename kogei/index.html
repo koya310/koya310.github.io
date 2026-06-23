@@ -1,0 +1,1056 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VKVLXC7MK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7VKVLXC7MK');
+    </script>
+<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>亀屋日本伝統株式会社 | 工芸の可能性</title>
+    <meta
+      name="description"
+      content="亀屋日本伝統株式会社の工芸の可能性ページ。工芸の魅力が広がる新しい時代へ向けた思想を、紙背景と大きな工芸品で表現する。"
+    />
+    <link rel="preload" as="image" href="assets/figma/paper.webp" />
+    <link rel="preload" as="image" href="assets/figma/kogei-hero-pottery.webp" />
+    <link rel="preload" as="image" href="assets/figma/kogei-bamboo.webp" />
+    <link rel="preload" as="image" href="assets/figma/kogei-black-bowl.webp" />
+    <link rel="preload" as="image" href="assets/figma/kogei-red-tray.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --paper: #f8f4ec;
+        --paper-soft: #fbf8f1;
+        --ink: #333333;
+        --ink-deep: #1a1a1a;
+        --ink-muted: #767676;
+        --brown: #6b4f3a;
+        --gold: #957c4c;
+        --rule: rgba(149, 124, 76, 0.42);
+        --footer: #1b1d22;
+        --footer-mobile: #242220;
+	        --white: #ffffff;
+	        --stage-width: 1208px;
+	        --stage-height: 2438px;
+	        --tablet-silver-height: 548px;
+	      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      body {
+        min-width: 320px;
+        overflow-x: hidden;
+        background:
+          linear-gradient(rgba(248, 244, 236, 0.54), rgba(248, 244, 236, 0.54)),
+          url("assets/figma/paper.webp") center top / 1416px 1000px repeat,
+          var(--paper);
+        color: var(--ink);
+        font-family: "Zen Old Mincho", "Hiragino Mincho ProN", serif;
+        font-size: 16px;
+        letter-spacing: 0;
+      }
+
+      body::before {
+        content: "";
+        display: none;
+      }
+
+      body::after {
+        content: "";
+        display: none;
+      }
+
+      h1,
+      h2,
+      p,
+      figure {
+        margin: 0;
+      }
+
+      h1,
+      h2,
+      p,
+      a {
+        overflow-wrap: anywhere;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: none;
+        user-select: none;
+        -webkit-user-drag: none;
+      }
+
+      button {
+        font: inherit;
+      }
+
+      .kogei-page {
+        overflow: hidden;
+        background: transparent;
+      }
+
+      .site-header {
+        position: relative;
+        z-index: 30;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        padding: 16px 24px;
+      }
+
+      .brand-lockup {
+        display: flex;
+        flex: 1 1 auto;
+        align-items: center;
+        min-width: 0;
+        gap: 8px;
+      }
+
+      .brand-mark {
+        position: relative;
+        width: 40px;
+        height: 38px;
+        overflow: hidden;
+        flex: 0 0 auto;
+      }
+
+      .brand-mark img {
+        position: absolute;
+        top: -50%;
+        left: -58.89%;
+        width: 214.44%;
+        height: 214.44%;
+        object-fit: cover;
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        line-height: 1.15;
+        white-space: nowrap;
+      }
+
+      .brand-name {
+        color: var(--brown);
+        font-size: 15px;
+        font-weight: 400;
+      }
+
+      .brand-roman {
+        color: var(--ink-muted);
+        font-size: 14px;
+      }
+
+      .menu-button {
+        display: flex;
+        width: 50px;
+        height: 41px;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(51, 51, 51, 0.75);
+        border-radius: 999px;
+        background: transparent;
+        color: var(--ink);
+        cursor: pointer;
+      }
+
+      .menu-button img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .stage-wrap {
+        position: relative;
+        width: 100%;
+        height: var(--stage-height);
+        overflow: hidden;
+      }
+
+      @media (min-width: 641px) {
+        body.kameya-common-header-ready .stage-wrap {
+          margin-top: clamp(112px, 10vw, 144px);
+        }
+
+        body.kameya-common-header-ready .kogei-stage {
+          padding-top: 0 !important;
+        }
+      }
+
+      .stage-wrap::before,
+      .stage-wrap::after {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 5;
+        width: clamp(64px, 9vw, 128px);
+        content: "";
+        pointer-events: none;
+      }
+
+      .stage-wrap::before {
+        left: 0;
+        background: linear-gradient(90deg, rgba(248, 244, 236, 0.58), rgba(248, 244, 236, 0));
+      }
+
+      .stage-wrap::after {
+        right: 0;
+        background: linear-gradient(270deg, rgba(248, 244, 236, 0.58), rgba(248, 244, 236, 0));
+      }
+
+      .kogei-stage {
+        position: relative;
+        width: var(--stage-width);
+        height: var(--stage-height);
+        margin: 0 auto;
+        transform: none;
+      }
+
+      .heading-block,
+      .copy-block {
+        position: absolute;
+        z-index: 10;
+      }
+
+      .heading-block {
+        top: 40px;
+        left: 120px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        width: 470px;
+      }
+
+      .section-title-group {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+      }
+
+      .section-label {
+        color: var(--gold);
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+      .section-title {
+        color: var(--ink);
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .title-rule {
+        width: 177px;
+        height: 1px;
+        background: var(--rule);
+      }
+
+      .lead-copy {
+        color: var(--gold);
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+	      .copy-block {
+	        display: flex;
+	        flex-direction: column;
+	        gap: 32px;
+	        color: var(--ink);
+	        font-size: 16px;
+	        font-weight: 400;
+	        line-height: 2;
+	        text-shadow: 0 1px 18px rgba(251, 248, 241, 0.78);
+	      }
+
+      .copy-block::before {
+        position: absolute;
+        inset: -40px -56px;
+        z-index: -1;
+        background: radial-gradient(
+          ellipse at 50% 48%,
+          rgba(251, 248, 241, 0.5),
+          rgba(251, 248, 241, 0.32) 50%,
+          rgba(251, 248, 241, 0) 96%
+        );
+        content: "";
+        filter: blur(16px);
+        pointer-events: none;
+      }
+
+	      .copy-intro {
+	        top: 356px;
+	        left: 120px;
+	        width: 444px;
+	        gap: 0;
+	      }
+
+	      .copy-right {
+	        top: 678px;
+	        left: 644px;
+	        width: 444px;
+	      }
+
+	      .copy-left-long {
+	        top: 1352px;
+	        left: 120px;
+	        width: 444px;
+	        font-size: 18px;
+	      }
+
+	      .wide-break {
+	        display: inline;
+	      }
+
+	      .copy-bottom {
+	        top: 1972px;
+	        left: 644px;
+	        width: 444px;
+	        font-size: 18px;
+	      }
+
+	      .artifact {
+	        position: absolute;
+	        z-index: 2;
+	        height: auto;
+	        object-fit: cover;
+	        pointer-events: none;
+	        filter: brightness(0.96) contrast(1.02) saturate(0.93) drop-shadow(0 24px 28px rgba(38, 28, 18, 0.12));
+	      }
+
+	      .artifact--hero {
+	        top: 40px;
+	        left: 624px;
+	        width: 574px;
+	        height: 582px;
+	        z-index: 4;
+	      }
+
+	      .artifact--bamboo {
+	        top: 660px;
+	        left: -474px;
+	        width: 1038px;
+	        height: 612px;
+	      }
+
+	      .artifact--bowl {
+	        top: 1352px;
+	        left: 644px;
+	        width: 796px;
+	        height: 468px;
+	      }
+
+	      .artifact--red {
+	        top: 1835px;
+	        left: -232px;
+	        width: 796px;
+	        height: 523px;
+	      }
+
+      .artifact--tablet-blue,
+      .artifact--tablet-silver,
+      .artifact--tablet-wood {
+        display: none;
+      }
+
+      .site-footer {
+        position: relative;
+        z-index: 20;
+        display: flex;
+        min-height: 622px;
+        gap: 80px;
+        align-items: flex-start;
+        padding: 120px;
+        background: var(--footer);
+        color: var(--white);
+      }
+
+      .footer-profile {
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .footer-company {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 1.5;
+        letter-spacing: 0.06em;
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      .footer-address {
+        display: flex;
+        width: 360px;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        font-size: 15px;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      .footer-mail {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+        width: 100%;
+      }
+
+      .footer-mail span:first-child {
+        white-space: nowrap;
+      }
+
+      .footer-mail span:last-child {
+        min-width: 0;
+        white-space: nowrap;
+        overflow-wrap: normal;
+      }
+
+      .socials {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .socials img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .copyright {
+        color: #666666;
+        font-size: 16px;
+        line-height: 1;
+        text-align: center;
+      }
+
+      .footer-divider {
+        width: 1px;
+        align-self: stretch;
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .footer-right {
+        display: flex;
+        flex: 1 1 auto;
+        min-width: 0;
+        flex-direction: column;
+        gap: 118px;
+        align-items: center;
+      }
+
+      .footer-nav {
+        display: flex;
+        gap: 60px;
+        align-items: flex-start;
+        justify-content: center;
+        color: var(--white);
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .footer-nav a {
+        display: block;
+        width: 20px;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+      }
+
+      .footer-legal {
+        display: flex;
+        width: 100%;
+        gap: 24px;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        line-height: 1.5;
+        white-space: nowrap;
+      }
+
+      .legal-divider {
+        width: 1px;
+        height: 24px;
+        background: rgba(255, 255, 255, 0.28);
+      }
+
+		      @media (max-width: 1207px) {
+		        :root {
+		          --stage-width: 802px;
+		          --stage-height: 2605px;
+	        }
+
+	        .heading-block {
+	          top: 40px;
+	          left: 80px;
+	          width: 301px;
+	        }
+
+	        .copy-block {
+	          gap: 32px;
+	          font-size: 16px;
+	          line-height: 2;
+	        }
+
+	        .copy-intro {
+	          gap: 0;
+	        }
+
+	        .copy-intro {
+	          top: 356px;
+	          left: 80px;
+	          width: 301px;
+	        }
+
+	        .copy-right {
+	          top: 788px;
+	          left: 421px;
+	          width: 301px;
+	          gap: 24px;
+	        }
+
+	        .copy-left-long {
+	          top: 1604px;
+	          left: 80px;
+	          width: 301px;
+	          font-size: 16px;
+	        }
+
+	        .copy-bottom {
+	          top: 2232px;
+	          left: 421px;
+	          width: 301px;
+	          font-size: 16px;
+	        }
+
+	        .artifact--hero {
+	          top: 40px;
+	          left: 421px;
+	          width: 618px;
+	          height: auto;
+	        }
+
+        .artifact--bamboo,
+        .artifact--bowl,
+        .artifact--red {
+          display: none;
+        }
+
+        .artifact--tablet-blue,
+        .artifact--tablet-silver,
+        .artifact--tablet-wood {
+          display: block;
+        }
+
+	        .artifact--tablet-blue {
+	          top: 788px;
+	          left: -148px;
+	          width: 529px;
+	          height: 736px;
+	        }
+
+	        .artifact--tablet-silver {
+	          top: 1604px;
+	          left: 421px;
+	          width: 524px;
+	          height: var(--tablet-silver-height);
+	        }
+
+	        .artifact--tablet-wood {
+	          top: 2232px;
+	          left: -203px;
+	          width: 608px;
+	          height: 333px;
+	          object-position: center 54%;
+	        }
+
+        .site-footer {
+          min-height: 1068px;
+          flex-direction: column;
+          gap: 80px;
+          align-items: center;
+          padding: 120px 80px;
+          background: var(--footer-mobile);
+        }
+
+        .footer-profile {
+          order: 2;
+          width: 100%;
+          max-width: 640px;
+        }
+
+        .footer-divider {
+          order: 3;
+          width: 100%;
+          max-width: 640px;
+          height: 1px;
+          align-self: center;
+        }
+
+        .footer-right {
+          display: contents;
+        }
+
+        .footer-nav {
+          order: 1;
+          width: 100%;
+          max-width: 640px;
+          justify-content: space-between;
+          gap: 24px;
+          padding: 0 40px;
+        }
+
+        .footer-legal {
+          order: 4;
+          width: 100%;
+          max-width: 640px;
+          flex-wrap: wrap;
+        }
+      }
+
+	      @media (max-width: 768px) {
+	        .stage-wrap::before,
+	        .stage-wrap::after {
+	          display: none;
+	        }
+
+	        .stage-wrap {
+	          height: auto;
+	          overflow: hidden;
+	        }
+
+	        .kogei-stage {
+	          display: flex;
+	          width: 100%;
+	          height: auto;
+	          flex-direction: column;
+	          align-items: center;
+	          gap: 24px;
+	          margin: 0 auto;
+	          padding: 24px 24px 0;
+	          transform: none;
+	        }
+
+        .site-header {
+          padding: 16px;
+        }
+
+	        .brand-name {
+	          font-size: 14px;
+	        }
+
+	        .brand-roman {
+	          font-size: 14px;
+	          transform: none;
+	        }
+
+	        .heading-block {
+	          position: static;
+	          order: 1;
+	          width: 100%;
+	          gap: 32px;
+	          margin-bottom: 8px;
+	        }
+
+        .section-label {
+          font-size: 18px;
+        }
+
+        .section-title {
+          font-size: 32px;
+        }
+
+        .lead-copy {
+          font-size: 24px;
+        }
+
+	        .copy-block {
+	          position: static;
+	          width: 100%;
+	          min-width: 0;
+	          max-width: 100%;
+	          gap: 24px;
+	          color: var(--ink-deep);
+	          font-size: 16px;
+	          line-height: 2;
+	          overflow-wrap: anywhere;
+	          line-break: anywhere;
+	          text-shadow: none;
+	        }
+
+	        .copy-block p {
+	          min-width: 0;
+	          max-width: 100%;
+	          overflow-wrap: anywhere;
+	          line-break: anywhere;
+	        }
+
+	        .wide-break {
+	          display: none;
+	        }
+
+	        .copy-intro {
+	          order: 3;
+	          gap: 0;
+	        }
+
+        .copy-block::before {
+          display: none;
+        }
+
+	        .copy-right {
+	          order: 4;
+	        }
+
+	        .copy-left-long {
+	          order: 6;
+	        }
+
+	        .copy-bottom {
+	          order: 8;
+	        }
+
+	        .artifact {
+	          position: static;
+	          width: calc(100vw + 88px);
+	          height: auto;
+	          max-width: none;
+	          flex: 0 0 auto;
+	          object-fit: contain;
+	          filter: none;
+	        }
+
+	        .artifact--hero {
+	          order: 2;
+	          width: calc(100vw + 48px);
+	          clip-path: inset(9.57% 0 9.57% 0);
+	        }
+
+	        .artifact--bamboo,
+        .artifact--bowl,
+        .artifact--red {
+          display: block;
+        }
+
+        .artifact--tablet-blue,
+        .artifact--tablet-silver,
+        .artifact--tablet-wood {
+          display: none;
+        }
+
+	        .artifact--bamboo {
+	          order: 5;
+	          clip-path: inset(26.38% 0 26.38% 0);
+	        }
+
+	        .artifact--bowl {
+	          order: 7;
+	          clip-path: inset(26.46% 0 26.29% 0);
+	        }
+
+	        .artifact--red {
+	          order: 9;
+	          width: calc(100vw + 152px);
+	          clip-path: inset(34.72% 0 19.88% 0);
+	          object-position: center 58%;
+	        }
+
+	        .site-footer {
+	          min-height: auto;
+	          gap: 40px;
+	          align-items: flex-start;
+	          padding: 64px 24px 36px;
+	        }
+
+        .footer-nav {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 16px;
+          max-width: 400px;
+          padding: 0;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+
+        .footer-nav a {
+          width: 100%;
+          writing-mode: horizontal-tb;
+          text-orientation: mixed;
+        }
+
+        .footer-profile {
+          max-width: 400px;
+          gap: 32px;
+        }
+
+        .footer-company {
+          font-size: 27px;
+          letter-spacing: 0.06em;
+        }
+
+	        .footer-address {
+	          width: 100%;
+	          align-items: flex-start;
+	          text-align: left;
+	        }
+
+	        .footer-mail {
+	          display: flex;
+	        }
+
+        .footer-divider {
+          max-width: 400px;
+        }
+
+        .footer-legal {
+          flex-direction: column;
+          gap: 12px;
+          align-items: center;
+          max-width: 400px;
+          white-space: normal;
+        }
+
+        .legal-divider {
+          display: none;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .brand-text {
+          align-items: flex-start;
+        }
+
+        .menu-button {
+          width: 44px;
+        }
+
+        .footer-company {
+          font-size: 24px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+        }
+      }
+    </style>
+      <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
+    <link rel="stylesheet" href="/shared/css/reveal.css" />
+    <link rel="stylesheet" href="/shared/css/kameya-design-system.css?v=20260619-menu-numbering-fix" />
+  </head>
+  <body>
+    <div class="kogei-page">
+      <header class="site-header" aria-label="サイトヘッダー">
+        <a class="brand-lockup" href="/" aria-label="亀屋日本伝統株式会社 トップへ">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="assets/figma/logo-mark.png" alt="" />
+          </span>
+          <span class="brand-text">
+            <span class="brand-name">亀屋日本伝統株式会社</span>
+            <span class="brand-roman">KAMEYA&nbsp;&nbsp;JAPAN&nbsp;&nbsp;TRADITION</span>
+          </span>
+        </a>
+        <button class="menu-button" type="button" aria-label="メニューを開く">
+          <img src="assets/figma/menu.svg" alt="" />
+        </button>
+      </header>
+
+      <main>
+        <div class="stage-wrap">
+          <section class="kogei-stage" aria-labelledby="kogei-title">
+            <div class="heading-block">
+              <div class="section-title-group">
+                <p class="section-label">Potential</p>
+                <h1 class="section-title" id="kogei-title">工芸の可能性</h1>
+                <div class="title-rule" aria-hidden="true"></div>
+              </div>
+              <p class="lead-copy">工芸は、伝統的な品物のことだけではありません</p>
+            </div>
+
+            <img class="artifact artifact--hero" src="assets/figma/kogei-hero-pottery.webp" alt="" aria-hidden="true" />
+            <img class="artifact artifact--bamboo" src="assets/figma/kogei-bamboo.webp" alt="" aria-hidden="true" />
+            <img class="artifact artifact--bowl" src="assets/figma/kogei-black-bowl.webp" alt="" aria-hidden="true" />
+            <img class="artifact artifact--red" src="assets/figma/kogei-red-tray.webp" alt="" aria-hidden="true" />
+            <img class="artifact artifact--tablet-blue" src="assets/figma/kogei-blue-vase.webp" alt="" aria-hidden="true" />
+            <img class="artifact artifact--tablet-silver" src="assets/figma/kogei-silver-box.webp" alt="" aria-hidden="true" />
+            <img class="artifact artifact--tablet-wood" src="assets/figma/kogei-wood-tray.webp" alt="" aria-hidden="true" />
+
+	            <div class="copy-block copy-intro" aria-label="工芸が持つ可能性">
+                <p>工芸品ときいて、何を想像しますか。<br />壺、花瓶、皿や小箱を想像する方が多いでしょう。<br />それらは間違いではありませんが、それらが全てだと思うのは少し早計です。</p>
+                <p>工芸品には、過去から受け継がれてきた形状があります。<br />また、形状だけではなく技術も工芸の一端です。</p>
+              </div>
+
+              <div class="copy-block copy-right" aria-label="現代社会への広がり">
+                <p>一つの工芸品を、素材、技法、色、質感、作り手という視点で見ていくと、そこには、現代社会に広がる大きな可能性があります。</p>
+                <p>日本の伝統には興味があるが、壺を置く場所はないし着物も着ない。<br />そのような方は非常に多いです。</p>
+                <p>過去の文化を現代にそのまま当てはめる必要はありません。</p>
+              </div>
+
+              <div class="copy-block copy-left-long" aria-label="工芸技術の応用例">
+                <p>壺を作るための技術とは何か。<br />着物を作るための反物を使うと他には何ができるのか。</p>
+                <p>あなたのお気に入りの腕時計に、漆の深い艶をまとわせる。<br />手に程よくおさまる焼き物のざらざら感を、ドアの取っ手として毎日触れる。</p>
+                <p>陶芸の釉薬が生む深く複雑な色合いを、洗面台やカウンターの一部に使う。</p>
+              </div>
+
+              <div class="copy-block copy-bottom" aria-label="未来の日常に向けて">
+                <p>工芸の可能性は無限大。<br />自然な形で現代に取り入れることで、新たな刺激を生み出します。</p>
+              </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="site-footer" aria-label="サイトフッター">
+        <div class="footer-profile">
+          <p class="footer-company">亀屋日本伝統株式会社</p>
+          <div class="footer-address">
+            <p>〒330-0043<br />埼玉県さいたま市浦和区大東1丁目16番5号</p>
+            <p class="footer-mail"><span>E-mail:</span><span>desk@kameya-japan-tradition.com</span></p>
+          </div>
+          <div class="socials" aria-label="SNSリンク">
+            <a href="https://www.facebook.com/p/%E4%BA%80%E5%B1%8B%E5%A4%A2%E6%9C%88-100026775131911/" aria-label="Facebook">
+              <img src="assets/figma/facebook.svg" alt="" />
+            </a>
+            <a href="https://www.instagram.com/kameya.official.japan/" aria-label="Instagram">
+              <img src="assets/figma/instagram.svg" alt="" />
+            </a>
+          </div>
+          <p class="copyright">© 亀屋日本伝統株式会社</p>
+        </div>
+        <div class="footer-divider" aria-hidden="true"></div>
+        <div class="footer-right">
+          <nav class="footer-nav" aria-label="フッターナビゲーション">
+            <a href="/news">お知らせ</a>
+            <a href="/about">亀屋について</a>
+            <a href="/services">事業内容</a>
+
+            <a href="/kogei">工芸の可能性について</a>
+          </nav>
+          <div class="footer-legal">
+            <a href="/contact">お問い合わせ</a>
+            <span class="legal-divider" aria-hidden="true"></span>
+            <a href="/privacy">プライバシーポリシー</a>
+            <span class="legal-divider" aria-hidden="true"></span>
+            <a href="/deal">特定商取引法に基づく表記</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+	    <script>
+	      const artboards = {
+	        desktop: { width: 1208, height: 2438 },
+		        tablet: { width: 802, height: 2605 },
+	      };
+
+	      const mobileArtifactCrops = [
+	        { selector: ".artifact--hero", top: 0.0957, bottom: 0.0957 },
+	        { selector: ".artifact--bamboo", top: 0.2638, bottom: 0.2638 },
+	        { selector: ".artifact--bowl", top: 0.2646, bottom: 0.2629 },
+	        { selector: ".artifact--red", top: 0.3472, bottom: 0.1988 },
+	      ];
+
+		      function currentArtboard(viewportWidth) {
+		        if (viewportWidth <= 1207) return artboards.tablet;
+		        return artboards.desktop;
+		      }
+
+	      function syncMeasuredArtifacts(viewportWidth, scale) {
+	        const copyLeftLong = document.querySelector(".copy-left-long");
+	        if (!copyLeftLong || viewportWidth <= 640 || viewportWidth > 959) return;
+
+	        const measuredHeight = copyLeftLong.getBoundingClientRect().height / scale;
+	        document.documentElement.style.setProperty("--tablet-silver-height", `${measuredHeight}px`);
+	      }
+
+	      function syncMobileArtifactCrops(viewportWidth) {
+	        mobileArtifactCrops.forEach(({ selector, top, bottom }) => {
+	          const artifact = document.querySelector(selector);
+	          if (!artifact) return;
+
+	          if (viewportWidth > 640) {
+	            artifact.style.marginTop = "";
+	            artifact.style.marginBottom = "";
+	            return;
+	          }
+
+	          const width = artifact.getBoundingClientRect().width;
+	          artifact.style.marginTop = `${Math.round(width * top * -10) / 10}px`;
+	          artifact.style.marginBottom = `${Math.round(width * bottom * -10) / 10}px`;
+	        });
+	      }
+
+      function fitStage() {
+	        const stageWrap = document.querySelector(".stage-wrap");
+	        const stage = document.querySelector(".kogei-stage");
+	        const viewportWidth = document.documentElement.clientWidth;
+
+		        if (viewportWidth <= 768) {
+		          stageWrap.style.height = "";
+		          stage.style.marginLeft = "";
+		          stage.style.marginRight = "";
+	          syncMobileArtifactCrops(viewportWidth);
+	          return;
+	        }
+
+	        const artboard = currentArtboard(viewportWidth);
+        const offsetX = Math.max(0, (viewportWidth - artboard.width) / 2);
+
+        document.documentElement.style.setProperty("--stage-width", `${artboard.width}px`);
+        document.documentElement.style.setProperty("--stage-height", `${artboard.height}px`);
+	        stageWrap.style.height = `${artboard.height}px`;
+	        stage.style.marginLeft = `${offsetX}px`;
+	        stage.style.marginRight = "0";
+	        syncMobileArtifactCrops(viewportWidth);
+	        syncMeasuredArtifacts(viewportWidth, 1);
+	      }
+
+      fitStage();
+	      if (document.fonts) {
+	        document.fonts.ready.then(fitStage);
+	      }
+	      window.addEventListener("load", fitStage, { once: true });
+	      window.addEventListener("resize", fitStage, { passive: true });
+    </script>
+      <script src="/shared/js/reveal.js" defer></script>
+    <script src="/shared/js/page-transition.js?v=20260619-menu-numbering-20" defer></script>
+  </body>
+</html>
