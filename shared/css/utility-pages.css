@@ -358,9 +358,59 @@ body.utility-body {
   padding-top: 32px;
 }
 
+.contact-page .contact-embed-grid {
+  display: grid;
+  width: min(100%, 960px);
+  gap: 24px;
+}
+
 .contact-page .contact-form {
   gap: 24px;
   padding-top: 0;
+}
+
+.contact-page .contact-mobile-direct {
+  display: none;
+}
+
+.contact-page .contact-frame {
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid var(--utility-line);
+  border-bottom: 1px solid var(--utility-line);
+}
+
+.contact-page .contact-form-frame {
+  display: block;
+  width: 100%;
+  min-height: 1440px;
+  border: 0;
+  background: transparent;
+}
+
+.contact-page .contact-support {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  align-items: baseline;
+  margin: 0;
+  color: var(--utility-muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.contact-page .contact-inline-link {
+  color: var(--utility-green);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.contact-page .contact-inline-link:hover,
+.contact-page .contact-inline-link:focus-visible,
+.contact-page .mail-link:hover,
+.contact-page .mail-link:focus-visible {
+  color: var(--utility-gold);
+  outline: none;
 }
 
 .contact-page .form-field input,
@@ -381,6 +431,7 @@ body.utility-body {
   color: var(--utility-green);
   text-decoration: none;
   border-bottom: 1px solid currentColor;
+  overflow-wrap: anywhere;
 }
 
 .legal-article {
@@ -601,6 +652,50 @@ body.utility-body {
 
   .contact-page .utility-content {
     padding-top: 24px;
+  }
+
+  .contact-page .contact-embed-grid {
+    width: 100%;
+  }
+
+  .contact-page .contact-mobile-direct {
+    display: block;
+    margin: 0;
+    padding: 24px 0;
+    border-top: 1px solid var(--utility-line);
+    border-bottom: 1px solid var(--utility-line);
+    color: var(--utility-muted);
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .contact-page .contact-frame {
+    display: none;
+  }
+
+  .contact-page .contact-support > .contact-inline-link {
+    display: none;
+  }
+
+  .contact-page .contact-support {
+    display: grid;
+    gap: 8px;
+  }
+
+  .contact-page .contact-support span {
+    display: grid;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .contact-page .mail-link {
+    display: inline-block;
+    max-width: 100%;
+    word-break: break-word;
+  }
+
+  .contact-page .contact-form-frame {
+    min-height: 1520px;
   }
 
   .contact-form,
