@@ -998,10 +998,11 @@ h1.section-title,
     margin-top: 20px !important;
   }
 
-  #initiatives .lead {
+  #initiatives .lead,
+  .frame-shell .lead {
     max-width: 100% !important;
     color: #957c4c !important;
-    font-size: 20px !important;
+    font-size: 18px !important;
     line-height: 1.5 !important;
     letter-spacing: 0 !important;
   }
