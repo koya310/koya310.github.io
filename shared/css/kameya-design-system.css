@@ -18,8 +18,8 @@
   --kds-line-strong: rgba(206, 189, 157, 0.72);
   --kds-hairline: rgba(107, 79, 58, 0.16);
   --kds-back-icon: url("data:image/svg+xml,%3Csvg%20viewBox%3D%270%200%2016%2016%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20fill%3D%27none%27%3E%3Cpath%20d%3D%27M10%204.5%206.5%208l3.5%203.5%27%20stroke%3D%27black%27%20stroke-width%3D%271.7%27%20stroke-linecap%3D%27round%27%20stroke-linejoin%3D%27round%27/%3E%3C/svg%3E");
-  --kds-rule-short: url("/top/sections/04_主な取り組み/assets/figma-replay/rule-short.svg");
-  --kds-rule-long: url("/top/sections/04_主な取り組み/assets/figma-replay/rule-long.svg");
+  --kds-rule-short: url("/shared/assets/rule-short.svg");
+  --kds-rule-long: url("/shared/assets/rule-long.svg");
   --kds-rule-display-width: 200px;
   --kds-rule-display-height: 3px;
   --kds-font-ja: "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
@@ -55,18 +55,34 @@
 }
 
 .contact-page .utility-main {
-  width: min(640px, calc(100% - (var(--kds-page-x) * 2))) !important;
-  max-width: 640px !important;
+  width: min(680px, calc(100% - (var(--kds-page-x) * 2))) !important;
+  max-width: 680px !important;
 }
 
 .contact-page .utility-hero,
 .contact-page .utility-content,
-.contact-page .contact-embed-grid,
-.contact-page .contact-frame,
-.contact-page .contact-form-frame,
+.contact-page .contact-grid,
 .contact-page .contact-support {
   width: 100% !important;
   max-width: 100% !important;
+}
+
+.contact-page .form-field label,
+.contact-page .contact-support,
+.contact-page .contact-card p {
+  color: rgba(29, 28, 24, 0.9) !important;
+}
+
+.contact-page .form-field input,
+.contact-page .form-field textarea {
+  border-color: rgba(107, 79, 58, 0.38) !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+}
+
+.contact-page .form-field input:focus,
+.contact-page .form-field textarea:focus {
+  border-color: rgba(107, 79, 58, 0.42) !important;
+  background: rgba(255, 255, 255, 0.82) !important;
 }
 
 html {
@@ -1078,6 +1094,14 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
     font-size: 14px;
     line-height: 1.9;
     letter-spacing: 0.035em;
+  }
+
+  .contact-page .submit-button,
+  .contact-page .text-link {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding-right: 24px !important;
+    padding-left: 24px !important;
   }
 
   .opening__text {

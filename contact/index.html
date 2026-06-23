@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-        <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VKVLXC7MK"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -58,48 +58,47 @@
           </div>
         </section>
 
-        <section class="utility-content contact-embed-grid" aria-label="お問い合わせフォーム">
-          <div class="utility-panel contact-form">
-            <p class="contact-mobile-direct">
-              <a
-                class="contact-inline-link"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSc7gKbStHexvQ8IvcR5i_T4dlJIPeMVzoz1mY3v-wztzQ-4Ww/viewform"
-                target="_blank"
-                rel="noopener"
-              >
-                フォームを別タブで開く
-              </a>
-            </p>
-            <div class="contact-frame">
-              <iframe
-                class="contact-form-frame"
-                title="亀屋日本伝統株式会社 お問い合わせフォーム"
-                src="https://docs.google.com/forms/d/e/1FAIpQLSc7gKbStHexvQ8IvcR5i_T4dlJIPeMVzoz1mY3v-wztzQ-4Ww/viewform?embedded=true"
-                width="100%"
-                height="1600"
-                frameborder="0"
-                marginheight="0"
-                marginwidth="0"
-                loading="lazy"
-              >
-                読み込んでいます…
-              </iframe>
+        <section class="utility-content contact-grid" aria-label="お問い合わせフォーム">
+          <form
+            class="utility-panel contact-form"
+            action=""
+            method="post"
+            data-contact-form
+            data-gas-endpoint=""
+            data-mail-to="desk@kameya-japan-tradition.com"
+          >
+            <input type="hidden" name="formStartedAt" data-contact-started-at />
+            <input type="hidden" name="source" value="site-contact" />
+            <input class="contact-honeypot" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <div class="form-field">
+              <label for="name">お名前 <span class="required">必須</span></label>
+              <input id="name" name="name" type="text" autocomplete="name" maxlength="80" required />
             </div>
+            <div class="form-field">
+              <label for="company">会社名・所属 <span class="required">必須</span></label>
+              <input id="company" name="company" type="text" autocomplete="organization" maxlength="120" required />
+            </div>
+            <div class="form-field">
+              <label for="email">メールアドレス <span class="required">必須</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" maxlength="120" required />
+            </div>
+            <div class="form-field">
+              <label for="phone">電話番号</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40" />
+            </div>
+            <div class="form-field">
+              <label for="message">お問い合わせ内容 <span class="required">必須</span></label>
+              <textarea id="message" name="message" minlength="10" maxlength="2000" required></textarea>
+            </div>
+            <div class="form-actions">
+              <button class="submit-button" type="submit">送信する</button>
+              <a class="text-link" href="mailto:desk@kameya-japan-tradition.com">メールで送る</a>
+            </div>
+            <p class="form-status" data-contact-status aria-live="polite"></p>
             <p class="contact-support">
-              <span class="contact-form-fallback">
-                フォームが表示されない場合は<a
-                  class="contact-inline-link"
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSc7gKbStHexvQ8IvcR5i_T4dlJIPeMVzoz1mY3v-wztzQ-4Ww/viewform"
-                  target="_blank"
-                  rel="noopener"
-                >こちら</a>
-              </span>
-              <span>
-                メールでのお問い合わせ:
-                <a class="mail-link" href="mailto:desk@kameya-japan-tradition.com">desk@kameya-japan-tradition.com</a>
-              </span>
+              個人情報の取り扱いは<a class="contact-inline-link" href="/privacy/">プライバシーポリシー</a>をご確認ください。
             </p>
-          </div>
+          </form>
         </section>
 
         <footer class="site-footer">
@@ -112,6 +111,7 @@
       </main>
     </div>
     <script src="/shared/js/reveal.js" defer></script>
+    <script src="/shared/js/contact-form.js" defer></script>
     <script src="/shared/js/page-transition.js?v=20260619-menu-numbering-20" defer></script>
   </body>
 </html>

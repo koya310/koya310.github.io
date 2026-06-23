@@ -187,6 +187,16 @@ body.utility-body {
   gap: 9px;
 }
 
+.contact-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .form-field label {
   color: var(--utility-green);
   font-size: 14px;
@@ -345,7 +355,11 @@ body.utility-body {
 }
 
 .contact-page .utility-main {
-  width: min(640px, calc(100% - 160px));
+  width: min(680px, calc(100% - 160px));
+}
+
+.contact-page .utility-hero > div {
+  max-width: 680px;
 }
 
 .contact-page .utility-side-note,
@@ -362,10 +376,8 @@ body.utility-body {
   padding-top: 32px;
 }
 
-.contact-page .contact-embed-grid {
-  display: grid;
-  width: 100%;
-  gap: 24px;
+.contact-page .contact-grid {
+  display: block;
 }
 
 .contact-page .contact-form {
@@ -373,30 +385,8 @@ body.utility-body {
   padding-top: 0;
 }
 
-.contact-page .contact-mobile-direct {
-  display: none;
-}
-
-.contact-page .contact-frame {
-  width: 100%;
-  overflow: hidden;
-  border-top: 1px solid var(--utility-line);
-  border-bottom: 1px solid var(--utility-line);
-}
-
-.contact-page .contact-form-frame {
-  display: block;
-  width: 100%;
-  min-height: 1600px;
-  border: 0;
-  background: transparent;
-}
-
 .contact-page .contact-support {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 24px;
-  align-items: baseline;
+  display: block;
   margin: 0;
   color: var(--utility-muted);
   font-size: 14px;
@@ -408,10 +398,6 @@ body.utility-body {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
-}
-
-.contact-page .contact-form-fallback {
-  white-space: nowrap;
 }
 
 .contact-page .contact-inline-link:hover,
@@ -613,6 +599,10 @@ body.utility-body {
   .contact-card {
     padding-top: 0;
   }
+
+  .contact-page .contact-card {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
@@ -668,42 +658,8 @@ body.utility-body {
     width: calc(100% - 40px);
   }
 
-  .contact-page .contact-embed-grid {
-    width: 100%;
-  }
-
-  .contact-page .contact-mobile-direct {
-    display: none;
-    margin: 0;
-    padding: 24px 0;
-    border-top: 1px solid var(--utility-line);
-    border-bottom: 0;
-    color: var(--utility-muted);
-    font-size: 14px;
-    line-height: 1.9;
-  }
-
-  .contact-page .contact-frame {
-    display: none;
-  }
-
-  .contact-page .contact-form-fallback {
-    display: block;
-  }
-
   .contact-page .contact-support {
-    display: grid;
-    gap: 8px;
-  }
-
-  .contact-page .contact-support span {
-    display: block;
-    min-width: 0;
-  }
-
-  .contact-page .contact-support span:not(.contact-form-fallback) {
-    display: grid;
-    gap: 4px;
+    line-height: 2;
   }
 
   .contact-page .mail-link {
@@ -712,8 +668,17 @@ body.utility-body {
     word-break: break-word;
   }
 
-  .contact-page .contact-form-frame {
-    min-height: 1600px;
+  .contact-page .form-actions {
+    display: grid;
+    gap: 12px;
+  }
+
+  .contact-page .submit-button,
+  .contact-page .text-link {
+    width: 100%;
+    min-width: 0;
+    padding-right: 24px;
+    padding-left: 24px;
   }
 
   .contact-form,
