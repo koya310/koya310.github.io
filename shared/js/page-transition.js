@@ -29,9 +29,8 @@
         ["04", "事業内容", "/services/"],
         ["05", "工芸の可能性", "/kogei/"],
         ["06", "作家・作品", "/artists/"],
-        ["07", "参加ページ", "/ueno/"],
-        ["08", "お知らせ", "/news/"],
-        ["09", "お問い合わせ", "/contact/"],
+        ["07", "お知らせ", "/news/"],
+        ["08", "お問い合わせ", "/contact/"],
       ],
       footerPrimaryItems: [
         ["トップ", "/top/"],
@@ -40,7 +39,6 @@
         ["事業内容", "/services/"],
         ["工芸の可能性", "/kogei/"],
         ["作家・作品", "/artists/"],
-        ["参加ページ", "/ueno/"],
         ["お知らせ", "/news/"],
       ],
       footerLegalItems: [
@@ -75,9 +73,8 @@
         ["04", "Services", "/services/"],
         ["05", "Possibility of Craft", "/kogei/"],
         ["06", "Artists", "/artists/"],
-        ["07", "Visit Page", "/ueno/"],
-        ["08", "News", "/news/"],
-        ["09", "Contact", "/contact/"],
+        ["07", "News", "/news/"],
+        ["08", "Contact", "/contact/"],
       ],
       footerPrimaryItems: [
         ["Top", "/top/"],
@@ -86,7 +83,6 @@
         ["Services", "/services/"],
         ["Possibility of Craft", "/kogei/"],
         ["Artists", "/artists/"],
-        ["Visit Page", "/ueno/"],
         ["News", "/news/"],
       ],
       footerLegalItems: [
