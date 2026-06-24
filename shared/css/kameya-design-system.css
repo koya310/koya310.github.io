@@ -1636,6 +1636,10 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
   }
 }
 
+.kogei-page .artifact-frame {
+  display: contents;
+}
+
 @media (min-width: 641px) and (max-width: 1207px) {
   body.kameya-common-header-ready .kogei-page .stage-wrap {
     height: auto !important;
@@ -1654,20 +1658,19 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
 
   .kogei-page .kogei-stage {
     display: grid !important;
-    width: min(100%, 1040px) !important;
+    width: min(100%, 802px) !important;
     height: auto !important;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
     align-items: center !important;
-    column-gap: clamp(32px, 6vw, 80px) !important;
-    row-gap: clamp(48px, 7vw, 80px) !important;
+    column-gap: 40px !important;
+    row-gap: 80px !important;
     margin: 0 auto !important;
-    padding: 40px clamp(48px, 8vw, 120px) 120px !important;
+    padding: 40px clamp(24px, 9.98vw, 80px) 80px !important;
     transform: none !important;
   }
 
   .kogei-page .heading-block,
-  .kogei-page .copy-block,
-  .kogei-page .artifact {
+  .kogei-page .copy-block {
     position: relative !important;
     top: auto !important;
     right: auto !important;
@@ -1677,11 +1680,41 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
     margin: 0 !important;
   }
 
+  .kogei-page .artifact-frame {
+    display: block !important;
+    position: relative !important;
+    overflow: hidden !important;
+    max-width: none !important;
+    pointer-events: none !important;
+  }
+
+  .kogei-page .artifact {
+    position: absolute !important;
+    display: block !important;
+    max-width: none !important;
+    height: auto !important;
+    margin: 0 !important;
+    clip-path: none !important;
+    filter: none !important;
+  }
+
   .kogei-page .heading-block {
     display: flex !important;
     grid-column: 1 !important;
     grid-row: 1 !important;
     align-self: start !important;
+  }
+
+  .kogei-page .section-label {
+    font-size: clamp(18px, 2.99vw, 24px) !important;
+  }
+
+  .kogei-page .section-title {
+    font-size: clamp(32px, 4.99vw, 40px) !important;
+  }
+
+  .kogei-page .lead-copy {
+    font-size: clamp(24px, 3.99vw, 32px) !important;
   }
 
   .kogei-page .copy-block {
@@ -1694,61 +1727,97 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
   .kogei-page .copy-intro {
     grid-column: 1 !important;
     grid-row: 2 !important;
+    align-self: center !important;
   }
 
   .kogei-page .copy-right {
     grid-column: 2 !important;
     grid-row: 3 !important;
+    align-self: center !important;
   }
 
   .kogei-page .copy-left-long {
     grid-column: 1 !important;
     grid-row: 4 !important;
+    align-self: start !important;
   }
 
   .kogei-page .copy-bottom {
     grid-column: 2 !important;
     grid-row: 5 !important;
+    align-self: center !important;
   }
 
-  .kogei-page .artifact--hero,
-  .kogei-page .artifact--bamboo,
-  .kogei-page .artifact--bowl,
-  .kogei-page .artifact--red {
+  .kogei-page .artifact-frame--hero,
+  .kogei-page .artifact-frame--bamboo,
+  .kogei-page .artifact-frame--bowl,
+  .kogei-page .artifact-frame--red {
     display: block !important;
-    height: auto !important;
-    clip-path: none !important;
-    object-fit: contain !important;
-    max-width: none !important;
   }
 
-  .kogei-page .artifact--hero {
+  .kogei-page .artifact-frame--hero {
     grid-column: 2 !important;
-    grid-row: 1 !important;
+    grid-row: 1 / 3 !important;
     justify-self: start !important;
-    height: clamp(240px, 31vw, 320px) !important;
+    align-self: start !important;
+    width: clamp(500px, 72.82vw, 584px) !important;
+    height: clamp(506px, 73.82vw, 592px) !important;
     z-index: 4 !important;
   }
 
-  .kogei-page .artifact--bamboo {
+  .kogei-page .artifact-frame--bamboo {
     grid-column: 1 !important;
     grid-row: 3 !important;
     justify-self: end !important;
-    height: clamp(200px, 25vw, 260px) !important;
+    align-self: center !important;
+    width: clamp(488px, 76.31vw, 612px) !important;
+    aspect-ratio: 612 / 361 !important;
   }
 
-  .kogei-page .artifact--bowl {
+  .kogei-page .artifact-frame--bowl {
     grid-column: 2 !important;
     grid-row: 4 !important;
     justify-self: start !important;
-    height: clamp(220px, 27vw, 280px) !important;
+    align-self: start !important;
+    width: clamp(510px, 79.55vw, 638px) !important;
+    aspect-ratio: 638 / 375 !important;
   }
 
-  .kogei-page .artifact--red {
+  .kogei-page .artifact-frame--red {
     grid-column: 1 !important;
     grid-row: 5 !important;
     justify-self: end !important;
-    height: clamp(136px, 18vw, 190px) !important;
+    align-self: center !important;
+    width: clamp(352px, 54.74vw, 439px) !important;
+    aspect-ratio: 439 / 288 !important;
+  }
+
+  .kogei-page .artifact--hero {
+    top: -10.7% !important;
+    left: -11.49% !important;
+    width: 122.98% !important;
+    height: 121.41% !important;
+  }
+
+  .kogei-page .artifact--bamboo {
+    top: -51.43% !important;
+    left: -9.9% !important;
+    width: 119.8% !important;
+    height: 202.85% !important;
+  }
+
+  .kogei-page .artifact--bowl {
+    top: -42.62% !important;
+    left: -4.43% !important;
+    width: 108.86% !important;
+    height: 185.23% !important;
+  }
+
+  .kogei-page .artifact--red {
+    top: -66.05% !important;
+    left: -15.8% !important;
+    width: 131.39% !important;
+    height: 200% !important;
   }
 
   .kogei-page .artifact--tablet-blue,
@@ -1776,50 +1845,95 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
     order: 5 !important;
   }
 
+  .kogei-page .copy-left-long {
+    order: 7 !important;
+  }
+
   .kogei-page .copy-bottom {
     order: 9 !important;
   }
 
+  .kogei-page .artifact-frame {
+    display: block !important;
+    position: relative !important;
+    overflow: hidden !important;
+    flex: 0 0 auto !important;
+    max-width: none !important;
+    pointer-events: none !important;
+  }
+
   .kogei-page .artifact {
-    height: auto !important;
+    position: absolute !important;
+    display: block !important;
+    width: auto !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     clip-path: none !important;
-    object-fit: contain !important;
     max-width: none !important;
+    filter: none !important;
   }
 
-  .kogei-page .artifact--hero,
-  .kogei-page .artifact--bamboo,
-  .kogei-page .artifact--bowl,
-  .kogei-page .artifact--red {
+  .kogei-page .artifact-frame--hero,
+  .kogei-page .artifact-frame--bamboo,
+  .kogei-page .artifact-frame--bowl,
+  .kogei-page .artifact-frame--red {
     display: block !important;
   }
 
-  .kogei-page .artifact--hero {
-    width: auto !important;
-    height: clamp(220px, 64vw, 300px) !important;
+  .kogei-page .artifact-frame--hero {
+    order: 2 !important;
+    width: min(327px, calc(100vw - 48px)) !important;
+    aspect-ratio: 327 / 332 !important;
     align-self: flex-end !important;
+  }
+
+  .kogei-page .artifact-frame--bamboo {
+    order: 4 !important;
+    width: min(373px, calc(100vw + 1px)) !important;
+    aspect-ratio: 488 / 288 !important;
+    align-self: center !important;
+  }
+
+  .kogei-page .artifact-frame--bowl {
+    order: 6 !important;
+    width: min(369px, calc(100vw - 6px)) !important;
+    aspect-ratio: 337 / 217 !important;
+    align-self: center !important;
+  }
+
+  .kogei-page .artifact-frame--red {
+    order: 8 !important;
+    width: min(366px, calc(100vw - 9px)) !important;
+    aspect-ratio: 366 / 241 !important;
+    align-self: center !important;
+  }
+
+  .kogei-page .artifact--hero {
+    top: -10.7% !important;
+    left: -11.49% !important;
+    width: 122.98% !important;
+    height: 121.41% !important;
   }
 
   .kogei-page .artifact--bamboo {
-    order: 4 !important;
-    width: auto !important;
-    height: clamp(180px, 48vw, 230px) !important;
-    align-self: flex-start !important;
+    top: -51.43% !important;
+    left: -9.9% !important;
+    width: 119.8% !important;
+    height: 202.85% !important;
   }
 
   .kogei-page .artifact--bowl {
-    width: auto !important;
-    height: clamp(180px, 50vw, 240px) !important;
-    align-self: flex-end !important;
+    top: -42.41% !important;
+    left: -9.3% !important;
+    width: 119.2% !important;
+    height: 185.11% !important;
   }
 
   .kogei-page .artifact--red {
-    order: 8 !important;
-    width: auto !important;
-    height: clamp(128px, 38vw, 180px) !important;
-    align-self: flex-start !important;
+    top: -66.05% !important;
+    left: -15.8% !important;
+    width: 131.39% !important;
+    height: 200% !important;
   }
 
   .kogei-page .artifact--tablet-blue,
