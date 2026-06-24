@@ -1636,29 +1636,81 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
   }
 }
 
-@media (min-width: 641px) and (max-width: 768px) {
+@media (min-width: 769px) and (max-width: 1207px) {
+  body.kameya-common-header-ready .kogei-page .stage-wrap,
+  .kogei-page .kogei-stage {
+    height: 2510px !important;
+  }
+
+  .kogei-page .artifact--bamboo,
+  .kogei-page .artifact--bowl,
+  .kogei-page .artifact--red {
+    display: block !important;
+    height: auto !important;
+    clip-path: none !important;
+    object-fit: contain !important;
+  }
+
+  .kogei-page .artifact--tablet-blue,
+  .kogei-page .artifact--tablet-silver,
+  .kogei-page .artifact--tablet-wood {
+    display: none !important;
+  }
+
+  .kogei-page .artifact--bamboo {
+    top: 858px !important;
+    left: -62px !important;
+    width: 420px !important;
+  }
+
+  .kogei-page .artifact--bowl {
+    top: 1676px !important;
+    left: 421px !important;
+    width: 400px !important;
+  }
+
+  .kogei-page .artifact--red {
+    top: 2188px !important;
+    left: 10px !important;
+    width: 320px !important;
+  }
+}
+
+@media (max-width: 768px) {
   body.kameya-common-header-ready .kogei-page .stage-wrap {
     margin-top: 0 !important;
   }
 
+  .kogei-page .kogei-stage {
+    gap: clamp(20px, 3.5vw, 28px) !important;
+  }
+
+  .kogei-page .heading-block {
+    margin-bottom: 0 !important;
+  }
+
+  .kogei-page .artifact {
+    height: auto !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    clip-path: none !important;
+    object-fit: contain !important;
+  }
+
   .kogei-page .artifact--hero {
-    margin-top: calc(-9.57vw - 4.6px) !important;
-    margin-bottom: calc(-9.57vw - 4.6px) !important;
+    width: min(calc(100vw + 24px), 560px) !important;
   }
 
   .kogei-page .artifact--bamboo {
-    margin-top: calc(-26.38vw - 23.2px) !important;
-    margin-bottom: calc(-26.38vw - 23.2px) !important;
+    width: min(calc(100vw + 36px), 500px) !important;
   }
 
   .kogei-page .artifact--bowl {
-    margin-top: calc(-26.46vw - 23.3px) !important;
-    margin-bottom: calc(-26.29vw - 23.1px) !important;
+    width: min(calc(100vw + 24px), 500px) !important;
   }
 
   .kogei-page .artifact--red {
-    margin-top: calc(-34.72vw - 52.8px) !important;
-    margin-bottom: calc(-19.88vw - 30.2px) !important;
+    width: min(calc(100vw + 8px), 440px) !important;
   }
 }
 
