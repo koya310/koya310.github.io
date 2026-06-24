@@ -5844,7 +5844,6 @@
 
       #co-create .co-invite-heading__en {
         white-space: nowrap;
-        writing-mode: horizontal-tb;
         text-orientation: mixed;
       }
 
@@ -5922,14 +5921,11 @@
         }
 
         #co-create .co-invite-heading__en {
-          order: 1;
-          font-size: 24px;
-          line-height: 1.5;
-          writing-mode: horizontal-tb;
+          order: initial;
         }
 
         #co-create .co-invite-heading__title {
-          order: 2;
+          order: 1;
           flex-direction: row-reverse;
           justify-content: flex-end;
           gap: 0;
@@ -5945,7 +5941,7 @@
         }
 
         #co-create .co-invite-heading__rule {
-          order: 3;
+          order: 2;
           flex: none;
           width: 175px;
           height: 3px;
@@ -6090,6 +6086,37 @@
       @media (min-width: 480px) and (max-width: 640px) {
         #co-create {
           --co-edge: clamp(40px, 8vw, 56px);
+        }
+      }
+
+      @media (min-width: 641px) {
+        #co-create .co-invite-heading__en.section-heading__eyebrow {
+          position: absolute;
+          top: 0;
+          left: -54px;
+          display: block;
+          width: 30px;
+          margin: 0;
+          writing-mode: vertical-rl;
+          text-orientation: mixed;
+          white-space: nowrap;
+        }
+      }
+
+      @media (max-width: 640px) {
+        #co-create .co-invite-heading__en.section-heading__eyebrow {
+          position: static;
+          order: 1;
+          width: auto;
+          writing-mode: horizontal-tb;
+        }
+
+        #co-create .co-invite-heading__title {
+          order: 2;
+        }
+
+        #co-create .co-invite-heading__rule {
+          order: 3;
         }
       }
 
