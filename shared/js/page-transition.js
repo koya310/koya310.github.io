@@ -14,7 +14,7 @@
       menuOpen: "メニューを開く",
       menuClose: "メニューを閉じる",
       menuKicker: "Menu",
-      menuTitle: ["日本の文化を、", "次の時代へ。"],
+      menuTitle: ["古くからある美しさが、", "今を生きる心に", "静かに響く。"],
       menuNavLabel: "グローバルナビゲーション",
       footerLabel: "サイトフッター",
       footerProfileLabel: "会社情報",
