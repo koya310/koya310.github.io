@@ -1643,7 +1643,11 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
 @media (min-width: 641px) and (max-width: 1207px) {
   body.kameya-common-header-ready .kogei-page .stage-wrap {
     height: auto !important;
-    margin-top: clamp(56px, 8vw, 96px) !important;
+    margin-top: clamp(40px, 6vw, 72px) !important;
+  }
+
+  body.kameya-common-header-ready .kogei-page .kogei-stage {
+    padding-top: 40px !important;
   }
 
   .kogei-page .stage-wrap {
@@ -1663,9 +1667,9 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
     align-items: center !important;
     column-gap: 40px !important;
-    row-gap: 80px !important;
+    row-gap: clamp(48px, 7vw, 64px) !important;
     margin: 0 auto !important;
-    padding: 40px clamp(24px, 9.98vw, 80px) 80px !important;
+    padding: 40px clamp(24px, 9.98vw, 80px) 56px !important;
     transform: none !important;
   }
 
@@ -1832,9 +1836,13 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
     margin-top: 0 !important;
   }
 
+  body.kameya-common-header-ready .kogei-page .kogei-stage {
+    padding-top: 48px !important;
+  }
+
   .kogei-page .kogei-stage {
-    gap: 28px !important;
-    padding-bottom: 64px !important;
+    gap: 24px !important;
+    padding-bottom: 48px !important;
   }
 
   .kogei-page .heading-block {
@@ -1884,7 +1892,7 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
     order: 2 !important;
     width: min(327px, calc(100vw - 48px)) !important;
     aspect-ratio: 327 / 332 !important;
-    align-self: flex-end !important;
+    align-self: center !important;
   }
 
   .kogei-page .artifact-frame--bamboo {
