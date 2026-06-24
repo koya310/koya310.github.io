@@ -17,6 +17,7 @@
   const responseSource = "kameya-contact";
   const acceptDelayMs = 3000;
   const transportCleanupMs = 60000;
+  const previewState = new URLSearchParams(window.location.search).get("kmyContactDialogPreview");
   const pending = {
     id: "",
     iframe: null,
@@ -237,6 +238,24 @@
     if (event.key === "Escape") closeDialog();
   });
 
+  const showPreviewDialog = () => {
+    if (previewState === "success") {
+      setStatus("");
+      showDialog("success");
+      return;
+    }
+
+    if (previewState === "pending") {
+      setSubmitting(true);
+      setStatus("");
+      showDialog("pending");
+      window.setTimeout(() => {
+        setSubmitting(false);
+        showDialog("success");
+      }, acceptDelayMs);
+    }
+  };
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -275,4 +294,6 @@
 
     submitToGas();
   });
+
+  showPreviewDialog();
 })();
