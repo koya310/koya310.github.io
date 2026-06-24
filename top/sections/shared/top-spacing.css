@@ -1283,11 +1283,22 @@ h1.section-title,
   margin-bottom: 0 !important;
 }
 
-/* KMY-05: on desktop, the initiatives section ends at the CTA with card-like spacing. */
+/* KMY-05: on desktop, the initiatives CTA keeps card-like spacing above and below. */
 @media (min-width: 1209px) {
   #initiatives .frame-shell,
   #initiatives .works {
-    height: calc(var(--frame-height) - 48px) !important;
+    height: calc(var(--frame-height) + 8px) !important;
+  }
+
+  #initiatives .section-cta {
+    margin-top: -24px !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (min-width: 1101px) and (max-width: 1208px) {
+  #initiatives .content {
+    padding-bottom: 56px !important;
   }
 
   #initiatives .section-cta {
