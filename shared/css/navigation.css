@@ -634,17 +634,18 @@ body.kameya-menu-open .kameya-menu-overlay {
   display: flex;
   flex-wrap: wrap;
   column-gap: 0.56em;
-  row-gap: 0.04em;
+  row-gap: 0.08em;
   margin: 0;
   font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-  font-size: clamp(30px, 4.2vw, 56px);
+  font-size: clamp(32px, 5vw, 72px);
   font-weight: 500;
-  line-height: 1.22;
+  line-height: 1.28;
   letter-spacing: 0.08em;
 }
 
 .kameya-menu-overlay__title span {
-  display: inline-block;
+  display: block;
+  width: 100%;
   white-space: nowrap;
 }
 
@@ -1065,20 +1066,20 @@ body[data-kameya-lang="en"] .kameya-menu-overlay__title span {
 
   .kameya-menu-overlay {
     place-items: start stretch;
-    padding: 72px 24px 32px;
+    padding: 88px 28px 44px;
   }
 
   .kameya-menu-overlay__inner {
     width: 100%;
     grid-template-columns: 1fr;
-    gap: 22px;
+    gap: 36px;
   }
 
   .kameya-menu-overlay__kicker {
     grid-template-columns: 32px auto;
     gap: 12px;
-    margin-bottom: 12px;
-    font-size: 13px;
+    margin-bottom: 18px;
+    font-size: 14px;
     letter-spacing: 0.18em;
   }
 
@@ -1088,9 +1089,9 @@ body[data-kameya-lang="en"] .kameya-menu-overlay__title span {
 
   .kameya-menu-overlay__title {
     column-gap: 0;
-    row-gap: 0;
-    font-size: clamp(26px, 7.4vw, 34px);
-    line-height: 1.24;
+    row-gap: 0.04em;
+    font-size: clamp(28px, 7.4vw, 34px);
+    line-height: 1.34;
   }
 
   .kameya-menu-overlay__title span {
@@ -1109,28 +1110,27 @@ body[data-kameya-lang="en"] .kameya-menu-overlay__title span {
   }
 
   .kameya-menu-overlay__nav a {
-    grid-template-columns: 48px minmax(0, 1fr);
-    padding: 7px 0;
-    font-size: clamp(16px, 4.4vw, 19px);
-    line-height: 1.36;
+    grid-template-columns: 52px minmax(0, 1fr);
+    padding: 12px 0;
+    font-size: clamp(17px, 5vw, 22px);
   }
 
   .kameya-menu-overlay__nav a::before {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
 @media (max-width: 390px) {
   .kameya-menu-overlay {
-    padding-inline: 22px;
+    padding-inline: 24px;
   }
 
   .kameya-menu-overlay__inner {
-    gap: 18px;
+    gap: 30px;
   }
 
   .kameya-menu-overlay__nav a {
-    padding: 6px 0;
+    padding: 11px 0;
   }
 }
 
