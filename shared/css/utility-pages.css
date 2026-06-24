@@ -366,14 +366,7 @@ body.utility-body {
 }
 
 .contact-submit-dialog__panel::before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 4px;
-  background: var(--utility-green);
-  content: "";
-  pointer-events: none;
+  display: none;
 }
 
 .contact-submit-dialog__visual {
@@ -495,7 +488,7 @@ body.utility-body {
 }
 
 .contact-submit-dialog[data-state="error"] .contact-submit-dialog__panel::before {
-  background: var(--utility-gold);
+  display: none;
 }
 
 .contact-submit-dialog[data-state="error"] .contact-submit-dialog__panel h2 {
@@ -605,8 +598,38 @@ body.utility-body {
 }
 
 .contact-page .contact-form {
-  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 28px;
+  row-gap: 26px;
   padding-top: 0;
+}
+
+.contact-page .contact-form > .form-field:nth-of-type(5),
+.contact-page .contact-form > .form-actions,
+.contact-page .contact-form > .form-status,
+.contact-page .contact-form > .contact-support {
+  grid-column: 1 / -1;
+}
+
+.contact-page .form-field {
+  gap: 8px;
+}
+
+.contact-page .form-field label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  color: rgba(107, 79, 58, 0.78);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+}
+
+.contact-page .required {
+  flex: 0 0 auto;
+  color: rgba(149, 124, 76, 0.78);
+  font-size: 12px;
+  letter-spacing: 0.12em;
 }
 
 .contact-page .contact-support {
@@ -638,16 +661,27 @@ body.utility-body {
 
 .contact-page .form-field input,
 .contact-page .form-field textarea {
-  border: 1px solid rgba(107, 79, 58, 0.08);
-  border-bottom-color: rgba(107, 79, 58, 0.16);
-  background: rgba(255, 255, 255, 0.5);
-  padding: 14px 16px;
+  border: 0;
+  border-bottom: 1px solid rgba(107, 79, 58, 0.2);
+  background: transparent;
+  padding: 12px 2px;
+  transition:
+    background-color 260ms var(--utility-ease),
+    border-color 260ms var(--utility-ease),
+    box-shadow 260ms var(--utility-ease);
+}
+
+.contact-page .form-field textarea {
+  min-height: 152px;
+  border-top: 1px solid rgba(107, 79, 58, 0.1);
+  padding: 16px 2px 12px;
 }
 
 .contact-page .form-field input:focus,
 .contact-page .form-field textarea:focus {
-  border-color: rgba(107, 79, 58, 0.34);
-  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(107, 79, 58, 0.58);
+  background: rgba(255, 253, 247, 0.24);
+  box-shadow: inset 0 -1px 0 rgba(107, 79, 58, 0.34);
 }
 
 .mail-link {
@@ -907,6 +941,18 @@ body.utility-body {
     min-width: 0;
     padding-right: 24px;
     padding-left: 24px;
+  }
+
+  .contact-page .contact-form {
+    grid-template-columns: 1fr;
+    row-gap: 22px;
+  }
+
+  .contact-page .contact-form > .form-field,
+  .contact-page .contact-form > .form-actions,
+  .contact-page .contact-form > .form-status,
+  .contact-page .contact-form > .contact-support {
+    grid-column: 1 / -1;
   }
 
   .contact-submit-dialog {
