@@ -29,7 +29,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
     <link rel="stylesheet" href="/shared/css/reveal.css" />
-    <link rel="stylesheet" href="/shared/css/utility-pages.css?v=20260624-contact-complete-dialog" />
+    <link rel="stylesheet" href="/shared/css/utility-pages.css?v=20260624-contact-dialog-polish" />
     <link rel="stylesheet" href="/shared/css/kameya-design-system.css?v=20260624-contact-mail-link" />
   </head>
   <body class="utility-body contact-page">
@@ -116,14 +116,28 @@
           hidden
         >
           <div class="contact-submit-dialog__panel" data-contact-dialog-panel>
-            <p class="contact-submit-dialog__kicker" data-contact-dialog-kicker>送信中</p>
-            <h2 id="contact-dialog-title" data-contact-dialog-title>送信しています</h2>
-            <p id="contact-dialog-message" data-contact-dialog-message>
-              この画面のままお待ちください。
-            </p>
-            <button class="contact-submit-dialog__button" type="button" data-contact-dialog-close>
-              閉じる
-            </button>
+            <div class="contact-submit-dialog__visual" aria-hidden="true">
+              <span class="contact-submit-dialog__roman">Contact</span>
+              <span class="contact-submit-dialog__crest">
+                <img src="/about/assets/figma/logo-mark.png" alt="" />
+              </span>
+              <span class="contact-submit-dialog__rule"></span>
+            </div>
+            <div class="contact-submit-dialog__content">
+              <p class="contact-submit-dialog__kicker" data-contact-dialog-kicker>送信中</p>
+              <h2 id="contact-dialog-title" data-contact-dialog-title>送信しています</h2>
+              <p id="contact-dialog-message" data-contact-dialog-message>
+                この画面のままお待ちください。
+              </p>
+              <div class="contact-submit-dialog__progress" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <button class="contact-submit-dialog__button" type="button" data-contact-dialog-close>
+                閉じる
+              </button>
+            </div>
           </div>
         </div>
 
@@ -137,7 +151,7 @@
       </main>
     </div>
     <script src="/shared/js/reveal.js" defer></script>
-    <script src="/shared/js/contact-form.js?v=20260624-contact-complete-dialog" defer></script>
+    <script src="/shared/js/contact-form.js?v=20260624-contact-dialog-polish" defer></script>
     <script src="/shared/js/page-transition.js?v=20260619-menu-numbering-20" defer></script>
   </body>
 </html>

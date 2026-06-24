@@ -34,7 +34,7 @@
     pendingMessage: "この画面のままお待ちください。",
     successKicker: "送信完了",
     successTitle: "送信完了しました",
-    successMessage: "お問い合わせ内容を受け付けました。確認のうえ、担当者よりご連絡いたします。",
+    successMessage: "お問い合わせ内容を受け付けました。確認後、担当者よりご連絡いたします。",
   };
   let previousFocus = null;
 

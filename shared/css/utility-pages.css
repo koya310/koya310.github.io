@@ -348,51 +348,171 @@ body.utility-body {
   z-index: 320;
   display: grid;
   place-items: center;
-  padding: 24px;
-  background: rgba(29, 28, 24, 0.38);
+  padding: 32px;
+  background: rgba(29, 28, 24, 0.44);
 }
 
 .contact-submit-dialog__panel {
-  width: min(480px, 100%);
+  position: relative;
+  display: grid;
+  grid-template-columns: 176px minmax(0, 1fr);
+  gap: 48px;
+  width: min(720px, calc(100vw - 64px));
+  min-height: 320px;
   border: 1px solid var(--utility-line);
-  background: rgba(255, 253, 247, 0.96);
-  padding: 32px;
+  background:
+    linear-gradient(rgba(255, 253, 247, 0.94), rgba(255, 253, 247, 0.94)),
+    url("/about/assets/figma/paper.webp") center / 720px auto repeat;
+  padding: 48px;
   color: var(--utility-ink);
+}
+
+.contact-submit-dialog__panel::before,
+.contact-submit-dialog__panel::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.contact-submit-dialog__panel::before {
+  inset: 16px;
+  border: 1px solid rgba(206, 189, 157, 0.54);
+}
+
+.contact-submit-dialog__panel::after {
+  top: 0;
+  right: 40px;
+  bottom: 0;
+  width: 1px;
+  background: rgba(206, 189, 157, 0.46);
+}
+
+.contact-submit-dialog__visual {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: auto minmax(96px, 1fr) auto;
+  min-height: 224px;
+  align-items: center;
+}
+
+.contact-submit-dialog__roman {
+  color: rgba(107, 79, 58, 0.54);
+  font-family: "Times New Roman", serif;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+
+.contact-submit-dialog__crest {
+  position: relative;
+  display: grid;
+  width: 112px;
+  height: 112px;
+  place-items: center;
+  margin: 0 auto;
+  border: 1px solid rgba(107, 79, 58, 0.24);
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.contact-submit-dialog__crest::before {
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(149, 124, 76, 0.28);
+  content: "";
+}
+
+.contact-submit-dialog__crest img {
+  position: relative;
+  display: block;
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  opacity: 0.82;
+}
+
+.contact-submit-dialog__rule {
+  display: block;
+  width: 1px;
+  height: 64px;
+  margin: 0 auto;
+  background: rgba(107, 79, 58, 0.28);
+}
+
+.contact-submit-dialog__content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-content: center;
 }
 
 .contact-submit-dialog__kicker {
   margin: 0 0 12px;
   color: var(--utility-gold);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.4;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
 }
 
 .contact-submit-dialog__panel h2 {
   margin: 0;
   color: var(--utility-green);
-  font-size: 24px;
+  font-size: clamp(30px, 4.4vw, 42px);
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
 }
 
 .contact-submit-dialog__panel p {
-  margin: 16px 0 0;
+  max-width: 360px;
+  margin: 24px 0 0;
   color: var(--utility-muted);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 2;
+}
+
+.contact-submit-dialog__progress {
+  display: flex;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.contact-submit-dialog__progress span {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: rgba(107, 79, 58, 0.34);
+  animation: contact-dialog-progress 1200ms var(--utility-ease) infinite;
+}
+
+.contact-submit-dialog__progress span:nth-child(2) {
+  animation-delay: 160ms;
+}
+
+.contact-submit-dialog__progress span:nth-child(3) {
+  animation-delay: 320ms;
+}
+
+.contact-submit-dialog[data-state="success"] .contact-submit-dialog__progress {
+  display: none;
+}
+
+.contact-submit-dialog[data-state="success"] .contact-submit-dialog__crest {
+  border-color: rgba(149, 124, 76, 0.46);
 }
 
 .contact-submit-dialog__button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 120px;
-  min-height: 44px;
-  margin-top: 24px;
-  border: 1px solid rgba(107, 79, 58, 0.34);
-  background: rgba(255, 255, 255, 0.48);
-  color: var(--utility-green);
+  width: min(192px, 100%);
+  min-height: 52px;
+  margin-top: 40px;
+  border: 1px solid rgba(107, 79, 58, 0.78);
+  background: rgba(107, 79, 58, 0.94);
+  color: rgba(255, 253, 247, 0.96);
   font: inherit;
   font-size: 14px;
   line-height: 1;
@@ -400,11 +520,30 @@ body.utility-body {
   cursor: pointer;
 }
 
+.contact-submit-dialog__button[hidden] {
+  display: none;
+}
+
 .contact-submit-dialog__button:hover,
 .contact-submit-dialog__button:focus-visible {
-  border-color: rgba(107, 79, 58, 0.58);
-  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(149, 124, 76, 0.86);
+  background: rgba(88, 65, 48, 0.98);
   outline: none;
+}
+
+@keyframes contact-dialog-progress {
+  0%,
+  100% {
+    opacity: 0.34;
+    transform: scaleX(0.72);
+    transform-origin: left center;
+  }
+
+  48% {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
 }
 
 .contact-card {
@@ -772,19 +911,76 @@ body.utility-body {
   }
 
   .contact-submit-dialog {
-    padding: 20px;
+    padding: 16px;
   }
 
   .contact-submit-dialog__panel {
-    padding: 24px 20px;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    width: min(100%, calc(100vw - 32px));
+    min-height: 0;
+    padding: 32px 24px;
+  }
+
+  .contact-submit-dialog__panel::before {
+    inset: 12px;
+  }
+
+  .contact-submit-dialog__panel::after {
+    display: none;
+  }
+
+  .contact-submit-dialog__visual {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    min-height: 0;
+    gap: 16px;
+  }
+
+  .contact-submit-dialog__roman {
+    writing-mode: horizontal-tb;
+  }
+
+  .contact-submit-dialog__crest {
+    width: 72px;
+    height: 72px;
+    margin: 0;
+    justify-self: end;
+  }
+
+  .contact-submit-dialog__crest::before {
+    inset: 8px;
+  }
+
+  .contact-submit-dialog__crest img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .contact-submit-dialog__rule {
+    display: none;
+  }
+
+  .contact-submit-dialog__content {
+    align-content: start;
   }
 
   .contact-submit-dialog__panel h2 {
-    font-size: 22px;
+    font-size: 28px;
+  }
+
+  .contact-submit-dialog__panel p {
+    margin-top: 16px;
+    font-size: 14px;
+  }
+
+  .contact-submit-dialog__progress {
+    margin-top: 24px;
   }
 
   .contact-submit-dialog__button {
     width: 100%;
+    margin-top: 32px;
   }
 
   .contact-form,
