@@ -1299,6 +1299,12 @@ h1.section-title,
   }
 }
 
+/* KMY-04: works should be sized by its visible artwork, not by the old iframe height token. */
+#works.home-section[style*="--desktop-height"] {
+  min-height: 0 !important;
+  height: auto !important;
+}
+
 /* SP typography: KAMEYA-DESIGN defines body copy as 14px on mobile. */
 @media (max-width: 640px) {
   #philosophy .mobile-copy,
