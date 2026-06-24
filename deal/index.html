@@ -1,134 +1,214 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-protected-route="kameya-site">
   <head>
-        <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VKVLXC7MK"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-7VKVLXC7MK');
-    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>特定商取引法に基づく表記 | 亀屋日本伝統株式会社</title>
-    <meta name="description" content="亀屋日本伝統株式会社の特定商取引法に基づく表記です。" />
-
-    <link rel="canonical" href="https://koya310.github.io/deal/" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta property="og:site_name" content="亀屋日本伝統株式会社" />
-    <meta property="og:locale" content="ja_JP" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="特定商取引法に基づく表記 | 亀屋日本伝統株式会社" />
-    <meta property="og:description" content="亀屋日本伝統株式会社の特定商取引法に基づく表記です。" />
-    <meta property="og:url" content="https://koya310.github.io/deal/" />
-    <meta property="og:image" content="https://koya310.github.io/about/assets/figma/logo-mark.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
-    <link rel="stylesheet" href="/shared/css/reveal.css" />
-    <link rel="stylesheet" href="/shared/css/utility-pages.css" />
-    <link rel="stylesheet" href="/shared/css/kameya-design-system.css?v=20260619-menu-numbering-fix" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>亀屋日本伝統株式会社 | Access</title>
+    <style>
+      :root {
+        --paper: #f8f5ec;
+        --ink: #1a1a1a;
+        --muted: rgba(26, 26, 26, 0.64);
+        --line: rgba(26, 26, 26, 0.16);
+        --accent: #6b4f3a;
+        --accent-soft: rgba(107, 79, 58, 0.12);
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; min-height: 100%; }
+      body {
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        padding: 32px;
+        background:
+          linear-gradient(135deg, rgba(248, 245, 236, 0.98), rgba(244, 238, 223, 0.92)),
+          radial-gradient(circle at 80% 12%, rgba(107, 79, 58, 0.08), transparent 32%);
+        color: var(--ink);
+        font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      }
+      main {
+        width: min(440px, 100%);
+        padding: 40px;
+        border: 1px solid var(--line);
+        background: rgba(248, 245, 236, 0.86);
+      }
+      .kicker {
+        margin: 0 0 16px;
+        color: var(--accent);
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: 28px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        line-height: 1.5;
+      }
+      p {
+        margin: 0 0 28px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.9;
+      }
+      label {
+        display: grid;
+        gap: 8px;
+        margin: 0 0 16px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      input {
+        width: 100%;
+        min-height: 48px;
+        border: 1px solid var(--line);
+        border-radius: 0;
+        padding: 12px 14px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        font: 16px/1.4 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      input:focus {
+        border-color: rgba(107, 79, 58, 0.58);
+        box-shadow: 0 0 0 3px var(--accent-soft);
+        outline: none;
+      }
+      button {
+        width: 100%;
+        min-height: 48px;
+        margin-top: 8px;
+        border: 1px solid var(--accent);
+        border-radius: 0;
+        background: var(--accent);
+        color: #fff;
+        cursor: pointer;
+        font: 600 14px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        letter-spacing: 0.08em;
+      }
+      button:disabled {
+        cursor: wait;
+        opacity: 0.7;
+      }
+      .error {
+        min-height: 22px;
+        margin: 16px 0 0;
+        color: #8a2b1d;
+        font: 13px/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      @media (max-width: 520px) {
+        body { padding: 20px; }
+        main { padding: 28px 24px; }
+        h1 { font-size: 24px; }
+      }
+    </style>
   </head>
-  <body class="utility-body">
-    <div class="utility-shell">
-      <header class="site-header" aria-label="サイトヘッダー">
-        <a class="brand-lockup" href="/top/" aria-label="亀屋日本伝統株式会社 トップへ">
-          <span class="brand-mark" aria-hidden="true">
-            <img src="/about/assets/figma/logo-mark.png" alt="" />
-          </span>
-          <span class="brand-text">
-            <span class="brand-name">亀屋日本伝統株式会社</span>
-            <span class="brand-roman">KAMEYA&nbsp;&nbsp;JAPAN&nbsp;&nbsp;TRADITION</span>
-          </span>
-        </a>
-        <button class="menu-button" type="button" aria-label="メニューを開く">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </button>
-      </header>
+  <body>
+    <main>
+      <p class="kicker">Private Preview</p>
+      <h1>亀屋日本伝統株式会社</h1>
+      <p>共有されたIDとPassを入力してください。</p>
+      <form id="access-form" autocomplete="off">
+        <label>ID<input id="access-id" name="id" type="text" autocomplete="username" required /></label>
+        <label>Pass<input id="access-pass" name="pass" type="password" autocomplete="current-password" required /></label>
+        <button type="submit">表示</button>
+        <div class="error" id="access-error" role="status" aria-live="polite"></div>
+      </form>
+    </main>
+    <script type="application/json" id="protected-payload">{"salt":"lXKhP4aONU8ye8cx4BbpHg==","iv":"VzhnNtvxN7K68WwX","ciphertext":"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","iterations":240000}</script>
+    <script>
+      (() => {
+        const payload = JSON.parse(document.getElementById("protected-payload").textContent);
+        const storageKey = "kameyaSitePreviewKey";
+        const form = document.getElementById("access-form");
+        const idInput = document.getElementById("access-id");
+        const passInput = document.getElementById("access-pass");
+        const error = document.getElementById("access-error");
+        const button = form.querySelector("button");
+        const decoder = new TextDecoder();
+        const encoder = new TextEncoder();
 
-      <main class="utility-main">
-        <section class="utility-hero" aria-labelledby="deal-title">
-          <div>
-            <p class="utility-kicker">Legal</p>
-            <h1 class="utility-title" id="deal-title">特定商取引法に基づく表記</h1>
-            <p class="utility-lead">
-              亀屋日本伝統株式会社が提供する商品・サービスの取引条件について、以下のとおり表示します。個別条件は各商品・サービスの案内時にご確認ください。
-            </p>
-          </div>
-        </section>
+        function fromBase64(value) {
+          return Uint8Array.from(atob(value), (char) => char.charCodeAt(0));
+        }
 
-        <section class="utility-content" aria-label="特定商取引法に基づく表記の一覧">
-          <div class="utility-panel">
-            <table class="deal-table">
-              <tbody>
-                <tr>
-                  <th scope="row">販売業者</th>
-                  <td>亀屋日本伝統株式会社</td>
-                </tr>
-                <tr>
-                  <th scope="row">代表責任者</th>
-                  <td>亀屋夢月</td>
-                </tr>
-                <tr>
-                  <th scope="row">メールアドレス</th>
-                  <td><a class="mail-link" href="mailto:desk@kameya-japan-tradition.com">desk@kameya-japan-tradition.com</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">サイトURL</th>
-                  <td>https://www.kameya-japan-tradition.com/</td>
-                </tr>
-                <tr>
-                  <th scope="row">商品販売価格</th>
-                  <td>各商品ページまたは各サービスページに税込価格で表示します。</td>
-                </tr>
-                <tr>
-                  <th scope="row">商品代金以外にかかる料金</th>
-                  <td>送料、銀行振込手数料、その他商品ページまたは注文確認画面に表示する費用が発生する場合があります。<br />送料は各商品ページまたは注文確認画面に表示します。</td>
-                </tr>
-                <tr>
-                  <th scope="row">支払方法</th>
-                  <td>クレジットカード、銀行振込、その他当社が指定する方法。</td>
-                </tr>
-                <tr>
-                  <th scope="row">支払時期</th>
-                  <td>クレジットカード決済の場合、在庫が確保されている商品については、注文完了時に決済が確定します。<br />在庫確認、価格確認、納期確認その他当社による確認が必要な商品については、お客様からの注文は購入申込みとして受け付け、当社が在庫・納期等を確認したうえで注文受領のご連絡をした時点で注文が確定します。決済・支払の時期は、注文受領のご連絡時、決済画面、または当社からの個別案内に表示します。<br />銀行振込の場合、当社から注文受領のご連絡をした後、当社が指定する期日までにお支払いください。</td>
-                </tr>
-                <tr>
-                  <th scope="row">販売数量の制限・在庫切れ</th>
-                  <td>商品により販売数量に限りがあります。在庫切れ、販売終了、受注不可の場合は、注文をお受けできないことがあります。</td>
-                </tr>
-                <tr>
-                  <th scope="row">商品の引渡期間</th>
-                  <td>在庫がある商品については、決済確認後、通常5営業日以内に発送します。<br />在庫確認、受注制作、取寄せ等が必要な商品については、各商品ページに記載の納期、または注文受領後に当社から個別にご案内する納期に従って発送します。<br />商品ごとの具体的な発送時期・納期については、各商品ページをご確認ください。</td>
-                </tr>
-                <tr>
-                  <th scope="row">返金・交換</th>
-                  <td>お客様都合による返品・交換は原則としてお受けできません。<br />商品に不良・破損・誤配送がある場合は、商品到着後7日以内にご連絡ください。<br />体験・ワークショップのキャンセルについては、各サービスページに記載のキャンセルポリシーに従います。</td>
-                </tr>
-                <tr>
-                  <th scope="row">返品送料</th>
-                  <td>商品に不良・破損・誤配送がある場合は当社が負担します。お客様都合による返品・交換を当社が認める場合の送料は、お客様負担となります。</td>
-                </tr>
-                <tr>
-                  <th scope="row">所在地および電話番号</th>
-                  <td>所在地および電話番号については、特定商取引法第11条ただし書きに基づき表示を省略しています。請求があった場合には、申込みの意思決定に先立って遅滞なく、電子メール等により開示いたします。</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
+        function toBase64(bytes) {
+          let binary = "";
+          bytes.forEach((byte) => { binary += String.fromCharCode(byte); });
+          return btoa(binary);
+        }
 
-        <footer class="site-footer">
-          <span>© 2026 亀屋日本伝統株式会社</span>
-          <nav class="footer-links" aria-label="フッターリンク">
-            <a href="/contact/">お問い合わせ</a>
-            <a href="/privacy/">プライバシーポリシー</a>
-          </nav>
-        </footer>
-      </main>
-    </div>
-    <script src="/shared/js/reveal.js" defer></script>
-    <script src="/shared/js/page-transition.js?v=20260619-menu-numbering-20" defer></script>
+        async function deriveKey(id, pass) {
+          const baseKey = await crypto.subtle.importKey(
+            "raw",
+            encoder.encode(id + "\n" + pass),
+            "PBKDF2",
+            false,
+            ["deriveKey"]
+          );
+          return crypto.subtle.deriveKey(
+            { name: "PBKDF2", salt: fromBase64(payload.salt), iterations: payload.iterations, hash: "SHA-256" },
+            baseKey,
+            { name: "AES-GCM", length: 256 },
+            true,
+            ["decrypt"]
+          );
+        }
+
+        async function decryptWithKey(key) {
+          const packed = fromBase64(payload.ciphertext);
+          const body = packed.slice(0, -16);
+          const tag = packed.slice(-16);
+          const encrypted = new Uint8Array(body.length + tag.length);
+          encrypted.set(body);
+          encrypted.set(tag, body.length);
+          const plain = await crypto.subtle.decrypt(
+            { name: "AES-GCM", iv: fromBase64(payload.iv), tagLength: 128 },
+            key,
+            encrypted
+          );
+          return decoder.decode(plain);
+        }
+
+        async function reveal(html) {
+          document.open();
+          document.write(html);
+          document.close();
+        }
+
+        async function tryStoredKey() {
+          const stored = sessionStorage.getItem(storageKey);
+          if (!stored) return;
+          try {
+            const key = await crypto.subtle.importKey("raw", fromBase64(stored), "AES-GCM", true, ["decrypt"]);
+            await reveal(await decryptWithKey(key));
+          } catch {
+            sessionStorage.removeItem(storageKey);
+          }
+        }
+
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          error.textContent = "";
+          button.disabled = true;
+          try {
+            const key = await deriveKey(idInput.value.trim(), passInput.value);
+            const html = await decryptWithKey(key);
+            const rawKey = new Uint8Array(await crypto.subtle.exportKey("raw", key));
+            sessionStorage.setItem(storageKey, toBase64(rawKey));
+            await reveal(html);
+          } catch {
+            error.textContent = "IDまたはPassが違います。";
+            passInput.value = "";
+            passInput.focus();
+          } finally {
+            button.disabled = false;
+          }
+        });
+
+        tryStoredKey();
+      })();
+    </script>
   </body>
 </html>

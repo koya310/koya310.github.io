@@ -1,157 +1,214 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-protected-route="kameya-site">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VKVLXC7MK"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-7VKVLXC7MK');
-    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>お問い合わせ | 亀屋日本伝統株式会社</title>
-    <meta name="description" content="亀屋日本伝統株式会社へのお問い合わせページ。講演、展示、空間導入、商品企画、作家・工芸品に関するご相談を受け付けています。" />
-
-    <link rel="canonical" href="https://koya310.github.io/contact/" />
-    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
-    <link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <meta property="og:site_name" content="亀屋日本伝統株式会社" />
-    <meta property="og:locale" content="ja_JP" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="お問い合わせ | 亀屋日本伝統株式会社" />
-    <meta property="og:description" content="亀屋日本伝統株式会社へのお問い合わせページ。講演、展示、空間導入、商品企画、作家・工芸品に関するご相談を受け付けています。" />
-    <meta property="og:url" content="https://koya310.github.io/contact/" />
-    <meta property="og:image" content="https://koya310.github.io/about/assets/figma/logo-mark.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
-    <link rel="stylesheet" href="/shared/css/reveal.css" />
-    <link rel="stylesheet" href="/shared/css/utility-pages.css?v=20260625-contact-readable-form" />
-    <link rel="stylesheet" href="/shared/css/kameya-design-system.css?v=20260624-contact-form-polish" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>亀屋日本伝統株式会社 | Access</title>
+    <style>
+      :root {
+        --paper: #f8f5ec;
+        --ink: #1a1a1a;
+        --muted: rgba(26, 26, 26, 0.64);
+        --line: rgba(26, 26, 26, 0.16);
+        --accent: #6b4f3a;
+        --accent-soft: rgba(107, 79, 58, 0.12);
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; min-height: 100%; }
+      body {
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        padding: 32px;
+        background:
+          linear-gradient(135deg, rgba(248, 245, 236, 0.98), rgba(244, 238, 223, 0.92)),
+          radial-gradient(circle at 80% 12%, rgba(107, 79, 58, 0.08), transparent 32%);
+        color: var(--ink);
+        font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      }
+      main {
+        width: min(440px, 100%);
+        padding: 40px;
+        border: 1px solid var(--line);
+        background: rgba(248, 245, 236, 0.86);
+      }
+      .kicker {
+        margin: 0 0 16px;
+        color: var(--accent);
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: 28px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        line-height: 1.5;
+      }
+      p {
+        margin: 0 0 28px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.9;
+      }
+      label {
+        display: grid;
+        gap: 8px;
+        margin: 0 0 16px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      input {
+        width: 100%;
+        min-height: 48px;
+        border: 1px solid var(--line);
+        border-radius: 0;
+        padding: 12px 14px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        font: 16px/1.4 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      input:focus {
+        border-color: rgba(107, 79, 58, 0.58);
+        box-shadow: 0 0 0 3px var(--accent-soft);
+        outline: none;
+      }
+      button {
+        width: 100%;
+        min-height: 48px;
+        margin-top: 8px;
+        border: 1px solid var(--accent);
+        border-radius: 0;
+        background: var(--accent);
+        color: #fff;
+        cursor: pointer;
+        font: 600 14px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        letter-spacing: 0.08em;
+      }
+      button:disabled {
+        cursor: wait;
+        opacity: 0.7;
+      }
+      .error {
+        min-height: 22px;
+        margin: 16px 0 0;
+        color: #8a2b1d;
+        font: 13px/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      @media (max-width: 520px) {
+        body { padding: 20px; }
+        main { padding: 28px 24px; }
+        h1 { font-size: 24px; }
+      }
+    </style>
   </head>
-  <body class="utility-body contact-page">
-    <div class="utility-shell">
-      <header class="site-header" aria-label="サイトヘッダー">
-        <a class="brand-lockup" href="/top/" aria-label="亀屋日本伝統株式会社 トップへ">
-          <span class="brand-mark" aria-hidden="true">
-            <img src="/about/assets/figma/logo-mark.png" alt="" />
-          </span>
-          <span class="brand-text">
-            <span class="brand-name">亀屋日本伝統株式会社</span>
-            <span class="brand-roman">KAMEYA&nbsp;&nbsp;JAPAN&nbsp;&nbsp;TRADITION</span>
-          </span>
-        </a>
-        <button class="menu-button" type="button" aria-label="メニューを開く">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </button>
-      </header>
+  <body>
+    <main>
+      <p class="kicker">Private Preview</p>
+      <h1>亀屋日本伝統株式会社</h1>
+      <p>共有されたIDとPassを入力してください。</p>
+      <form id="access-form" autocomplete="off">
+        <label>ID<input id="access-id" name="id" type="text" autocomplete="username" required /></label>
+        <label>Pass<input id="access-pass" name="pass" type="password" autocomplete="current-password" required /></label>
+        <button type="submit">表示</button>
+        <div class="error" id="access-error" role="status" aria-live="polite"></div>
+      </form>
+    </main>
+    <script type="application/json" id="protected-payload">{"salt":"lXKhP4aONU8ye8cx4BbpHg==","iv":"CxF5w+aPYiw6h0Fc","ciphertext":"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","iterations":240000}</script>
+    <script>
+      (() => {
+        const payload = JSON.parse(document.getElementById("protected-payload").textContent);
+        const storageKey = "kameyaSitePreviewKey";
+        const form = document.getElementById("access-form");
+        const idInput = document.getElementById("access-id");
+        const passInput = document.getElementById("access-pass");
+        const error = document.getElementById("access-error");
+        const button = form.querySelector("button");
+        const decoder = new TextDecoder();
+        const encoder = new TextEncoder();
 
-      <main class="utility-main">
-        <section class="utility-hero" aria-labelledby="contact-title">
-          <div>
-            <p class="utility-kicker">Contact</p>
-            <h1 class="utility-title" id="contact-title">お問い合わせ</h1>
-            <p class="utility-lead">
-              講演、展示、空間への工芸導入、商品企画、文化体験などのご相談は、以下のフォームよりお送りください。
-            </p>
-          </div>
-        </section>
+        function fromBase64(value) {
+          return Uint8Array.from(atob(value), (char) => char.charCodeAt(0));
+        }
 
-        <section class="utility-content contact-grid" aria-label="お問い合わせフォーム">
-          <form
-            class="utility-panel contact-form"
-            action=""
-            method="post"
-            data-contact-form
-            data-gas-endpoint="https://script.google.com/macros/s/AKfycbxm9oQ83CY_Fr3TfUZm-KrrUOirg34baVOm69dQPa8vHcJ0PWm35Lbj3GHZAQucNo4a5w/exec"
-            data-mail-to="desk@kameya-japan-tradition.com"
-          >
-            <input type="hidden" name="formStartedAt" data-contact-started-at />
-            <input type="hidden" name="source" value="site-contact" />
-            <input class="contact-honeypot" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
-            <div class="form-field">
-              <label for="name">お名前 <span class="required">必須</span></label>
-              <input id="name" name="name" type="text" autocomplete="name" maxlength="80" placeholder="例）亀屋 太郎" required />
-            </div>
-            <div class="form-field">
-              <label for="company">会社名・所属 <span class="required">必須</span></label>
-              <input id="company" name="company" type="text" autocomplete="organization" maxlength="120" placeholder="例）亀屋日本伝統株式会社" required />
-            </div>
-            <div class="form-field">
-              <label for="email">メールアドレス <span class="required">必須</span></label>
-              <input id="email" name="email" type="email" autocomplete="email" maxlength="120" placeholder="例）desk@example.com" required />
-            </div>
-            <div class="form-field">
-              <label for="phone">電話番号</label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="例）03-0000-0000" />
-            </div>
-            <div class="form-field">
-              <label for="message">お問い合わせ内容 <span class="required">必須</span></label>
-              <textarea id="message" name="message" minlength="10" maxlength="2000" placeholder="ご相談内容をできるだけ具体的にご記入ください。" required></textarea>
-            </div>
-            <div class="form-actions">
-              <button class="submit-button" type="submit">送信する</button>
-            </div>
-            <p class="form-status" data-contact-status aria-live="polite"></p>
-            <p class="contact-support">
-              個人情報の取り扱いは<a class="contact-inline-link" href="/privacy/">プライバシーポリシー</a>をご確認ください。
-            </p>
-            <p class="contact-support contact-mail-support">
-              フォームを使用せずメールで送信したい場合は、<a class="contact-inline-link" href="mailto:desk@kameya-japan-tradition.com">こちらからメールでお問い合わせください</a>。
-            </p>
-          </form>
-        </section>
+        function toBase64(bytes) {
+          let binary = "";
+          bytes.forEach((byte) => { binary += String.fromCharCode(byte); });
+          return btoa(binary);
+        }
 
-        <div
-          class="contact-submit-dialog"
-          data-contact-dialog
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="contact-dialog-title"
-          aria-describedby="contact-dialog-message"
-          hidden
-        >
-          <div class="contact-submit-dialog__panel" data-contact-dialog-panel>
-            <div class="contact-submit-dialog__visual" aria-hidden="true">
-              <span class="contact-submit-dialog__roman">Contact</span>
-              <span class="contact-submit-dialog__crest">
-                <img src="/about/assets/figma/logo-mark.png" alt="" />
-              </span>
-              <span class="contact-submit-dialog__rule"></span>
-            </div>
-            <div class="contact-submit-dialog__content">
-              <p class="contact-submit-dialog__kicker" data-contact-dialog-kicker>送信中</p>
-              <h2 id="contact-dialog-title" data-contact-dialog-title>送信しています</h2>
-              <p id="contact-dialog-message" data-contact-dialog-message>
-                この画面のままお待ちください。
-              </p>
-              <div class="contact-submit-dialog__progress" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <button class="contact-submit-dialog__button" type="button" data-contact-dialog-close>
-                閉じる
-              </button>
-            </div>
-          </div>
-        </div>
+        async function deriveKey(id, pass) {
+          const baseKey = await crypto.subtle.importKey(
+            "raw",
+            encoder.encode(id + "\n" + pass),
+            "PBKDF2",
+            false,
+            ["deriveKey"]
+          );
+          return crypto.subtle.deriveKey(
+            { name: "PBKDF2", salt: fromBase64(payload.salt), iterations: payload.iterations, hash: "SHA-256" },
+            baseKey,
+            { name: "AES-GCM", length: 256 },
+            true,
+            ["decrypt"]
+          );
+        }
 
-        <footer class="site-footer">
-          <span>© 2026 亀屋日本伝統株式会社</span>
-          <nav class="footer-links" aria-label="フッターリンク">
-            <a href="/privacy/">プライバシーポリシー</a>
-            <a href="/deal/">特定商取引法に基づく表記</a>
-          </nav>
-        </footer>
-      </main>
-    </div>
-    <script src="/shared/js/reveal.js" defer></script>
-    <script src="/shared/js/contact-form.js?v=20260624-contact-reliable-submit" defer></script>
-    <script src="/shared/js/page-transition.js?v=20260619-menu-numbering-20" defer></script>
+        async function decryptWithKey(key) {
+          const packed = fromBase64(payload.ciphertext);
+          const body = packed.slice(0, -16);
+          const tag = packed.slice(-16);
+          const encrypted = new Uint8Array(body.length + tag.length);
+          encrypted.set(body);
+          encrypted.set(tag, body.length);
+          const plain = await crypto.subtle.decrypt(
+            { name: "AES-GCM", iv: fromBase64(payload.iv), tagLength: 128 },
+            key,
+            encrypted
+          );
+          return decoder.decode(plain);
+        }
+
+        async function reveal(html) {
+          document.open();
+          document.write(html);
+          document.close();
+        }
+
+        async function tryStoredKey() {
+          const stored = sessionStorage.getItem(storageKey);
+          if (!stored) return;
+          try {
+            const key = await crypto.subtle.importKey("raw", fromBase64(stored), "AES-GCM", true, ["decrypt"]);
+            await reveal(await decryptWithKey(key));
+          } catch {
+            sessionStorage.removeItem(storageKey);
+          }
+        }
+
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          error.textContent = "";
+          button.disabled = true;
+          try {
+            const key = await deriveKey(idInput.value.trim(), passInput.value);
+            const html = await decryptWithKey(key);
+            const rawKey = new Uint8Array(await crypto.subtle.exportKey("raw", key));
+            sessionStorage.setItem(storageKey, toBase64(rawKey));
+            await reveal(html);
+          } catch {
+            error.textContent = "IDまたはPassが違います。";
+            passInput.value = "";
+            passInput.focus();
+          } finally {
+            button.disabled = false;
+          }
+        });
+
+        tryStoredKey();
+      })();
+    </script>
   </body>
 </html>

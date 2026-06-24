@@ -1,51 +1,214 @@
-<!doctype html>
-<html lang="ja">
+<!DOCTYPE html>
+<html lang="ja" data-protected-route="kameya-site">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VKVLXC7MK"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-7VKVLXC7MK');
-    </script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="refresh" content="0; url=/top/" />
-    <title>亀屋日本伝統株式会社</title>
-    <meta name="description" content="亀屋日本伝統株式会社の公式サイトです。" />
-
-    <meta name="robots" content="noindex, follow" />
-    <link rel="canonical" href="https://koya310.github.io/top/" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta property="og:site_name" content="亀屋日本伝統株式会社" />
-    <meta property="og:locale" content="ja_JP" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="亀屋日本伝統株式会社" />
-    <meta property="og:description" content="亀屋日本伝統株式会社の公式サイトです。" />
-    <meta property="og:url" content="https://koya310.github.io/top/" />
-    <meta property="og:image" content="https://koya310.github.io/about/assets/figma/logo-mark.png" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>亀屋日本伝統株式会社 | Access</title>
     <style>
-      body {
-        margin: 0;
-        min-height: 100svh;
-        display: grid;
-        place-items: center;
-        background: #f8f4ec;
-        color: #332c26;
-        font-family: "Hiragino Mincho ProN", serif;
+      :root {
+        --paper: #f8f5ec;
+        --ink: #1a1a1a;
+        --muted: rgba(26, 26, 26, 0.64);
+        --line: rgba(26, 26, 26, 0.16);
+        --accent: #6b4f3a;
+        --accent-soft: rgba(107, 79, 58, 0.12);
       }
-
-      a {
-        color: inherit;
+      * { box-sizing: border-box; }
+      html, body { margin: 0; min-height: 100%; }
+      body {
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        padding: 32px;
+        background:
+          linear-gradient(135deg, rgba(248, 245, 236, 0.98), rgba(244, 238, 223, 0.92)),
+          radial-gradient(circle at 80% 12%, rgba(107, 79, 58, 0.08), transparent 32%);
+        color: var(--ink);
+        font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      }
+      main {
+        width: min(440px, 100%);
+        padding: 40px;
+        border: 1px solid var(--line);
+        background: rgba(248, 245, 236, 0.86);
+      }
+      .kicker {
+        margin: 0 0 16px;
+        color: var(--accent);
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: 28px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        line-height: 1.5;
+      }
+      p {
+        margin: 0 0 28px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.9;
+      }
+      label {
+        display: grid;
+        gap: 8px;
+        margin: 0 0 16px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      input {
+        width: 100%;
+        min-height: 48px;
+        border: 1px solid var(--line);
+        border-radius: 0;
+        padding: 12px 14px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        font: 16px/1.4 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      input:focus {
+        border-color: rgba(107, 79, 58, 0.58);
+        box-shadow: 0 0 0 3px var(--accent-soft);
+        outline: none;
+      }
+      button {
+        width: 100%;
+        min-height: 48px;
+        margin-top: 8px;
+        border: 1px solid var(--accent);
+        border-radius: 0;
+        background: var(--accent);
+        color: #fff;
+        cursor: pointer;
+        font: 600 14px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        letter-spacing: 0.08em;
+      }
+      button:disabled {
+        cursor: wait;
+        opacity: 0.7;
+      }
+      .error {
+        min-height: 22px;
+        margin: 16px 0 0;
+        color: #8a2b1d;
+        font: 13px/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      @media (max-width: 520px) {
+        body { padding: 20px; }
+        main { padding: 28px 24px; }
+        h1 { font-size: 24px; }
       }
     </style>
   </head>
   <body>
-    <p><a href="/top/">亀屋日本伝統株式会社のトップページへ移動します。</a></p>
+    <main>
+      <p class="kicker">Private Preview</p>
+      <h1>亀屋日本伝統株式会社</h1>
+      <p>共有されたIDとPassを入力してください。</p>
+      <form id="access-form" autocomplete="off">
+        <label>ID<input id="access-id" name="id" type="text" autocomplete="username" required /></label>
+        <label>Pass<input id="access-pass" name="pass" type="password" autocomplete="current-password" required /></label>
+        <button type="submit">表示</button>
+        <div class="error" id="access-error" role="status" aria-live="polite"></div>
+      </form>
+    </main>
+    <script type="application/json" id="protected-payload">{"salt":"lXKhP4aONU8ye8cx4BbpHg==","iv":"0rYrBvT1VSpgnrhD","ciphertext":"rFyUevuoW2X8dCfAXlwYgcJqboaURAifU7Vc7SmDD5CfAwJjpY8eNHBOfX37X+9YrWqNrEEOHpvHGYFZmTj89B3GKr5NZuj5lqQinsKczTlckGyP5AJhlhdqACF/SO7G79Sf2lr8i02W3/29GjuqWtb5WcGSo+dQYCeKeEGHEmvpq/e5oU/SlaGMsyjmX9OE4GX7/vF2AbNLFdAEpv//qXeV92gGSY99oAj8KrCZb3Wr+SLKzmGBcUfmkrtWv9zDsrXDOCgP5PlxxrH97R01RwzPW1ALHVNPPFY1lg7c0FBhCh6eKRiyMHnjzMzl6F1qTeRaHZk8BSkNxHvv5JRQ6iZuH1gO8BeaeNZHYZTiYYydJjnRYQo1eZTfQuowwR0kt3nGzDvy+qTTyxKfV/E02hH8a+BCZUX9zVPiRnwbM4egnaFe/VGM4s2c/IeZ/ulDgCYrLfX52g9tBstPi9lMjykRTiXPuuTmI+iUmGOK8qJGDoLyl45Gn+uAd/62lBzabIQTLh3PYdIBo0/ZQ6IyqzQT8tomBAXRJt8Pmu31+7/s+mKKfvN2D/HoeblskEi8yBXlH+R2xExWJREZfjm3oy45I4GO/N5VE67R4zoAr9MTytG/tbqncOL/0x2tdqSEvmDDtiw7Ktl2KEyRpBlSDKnl3baIb0gXsBPB5HhUzhMXUfMxDwrmhZsVL1XExhRrex4eHqF0b9m8WusF9tTi7gaLnlrSNcJjhPWvhcGScK3CVYmrJzhtqaQn2rRcc5X99D2ThYwa6sur6wGRgctfmXLSKoasMK8q/GPAk/6CsECuBmXpdZie+NiOV8jinF7kcqAWGmqGhWWETMQTCwj578cRKlVU91Eip27GkdVYPoxXWxJsnWt4shFBp8b8SYXQ6mnLJSpnWrcYer7oMJbZUA+vsKyyQ3Ap/QsITEahvipl0KxTLUjZQX5Byt2h6D1aqCeaS1GXifVtyNV28CwfdiHwA9HqJLtJCJ0S+T5fb9+ERGnU3xHEORibmXgpjyCFVxlP0ap/q6z8SG4UtLA9E0lywLyvtD+54D8aKJKa+Z5ikXdPtwlK2WNLUbj8Ei6DaMjo36GYEfQD/wIvKqwICf1wNiXTKxaZ7w4AIn512syf3V4wJGaGL0laD/52DTEHe/oJ0pdwrRUL4ch/uTVH68rq235JomJnZkOZnifVxTTvmVkGqUnaV71CLC0fcM/ywjCkFmCfptK2E6OCJ6VQ0Sv7/5K+KF+ReuVGa/Dq639PbHbu3Ti1kd67qtOCuI704mhzjlQksJhRKvpyt1X7R9PCgvQA8eZS2gY2/cSJBosISkC7kQTp5IWf8XgbgSHjEzSqn8yNgk998AgcAltN8Dqh46AdNbIWmHJb7BoA+QruJgpu1D6ao3I04Zi0j/3DafcqZeOsFnwdRqNa4HVAk7af9Z/LV0cymAYxgSaRUF8lvjs+9seYj8CW8pokflxtrA3yFkcbBFhfpmHcpvPV4+Q1Lphrynx/dxCpj7ZC9m+4/5dKbO5Xl98DgjWshWB35sTjats8ViAF7Y/sEVpOPLVIkwT9Ixo9AKrIP0bKPnZlGFPJIVKOh2P2DfYfxCQja7JGZ8FbXC7Art1CPI0y/VvOExs+bymSO8mKiCBEuJ9X8i+ECecCKp/EL5wtjQxtUVZv3R+VaW3ke7CFUHUeIUj9xWXU91YUJtn8Fio4w/PQSU74A3/0bPkMjv9lkpXXQVuDZI0S3ctHKqmBsBuJ8PmeIs9KVkWyr9zzzWDJCLujT7kI8XWh9IS5i56oqaOBkcgp6EHYx89F24VEo/fUjU0TXWVc+nCbOD9sOyugvIFb2/EceYbinJ/sUGaUcp/jcEBCleAnrLstm6xWQog98c2gv3t1dE4hqc7wV7iURrNQenvEv2rsQUcJjXwYLgnqSdRb/IYr36seB1IlG5E1oKDubAsMNN348uWuywQEHaoCHFfgz0MVbJCdqMv7Ax5XynpaWdHWfMeFOY9pJEUFcqkWAA1Ql4j6qL4+kZdVQWfI07TASTRb1D4w7qmLR9w44UpVdG5BPxTnsLeZXacgSAMdrWZ/OzZ3PLLauz38Xzz1U01NTTeg4c8EDQdqSX/JJbYl2UKY5GVVASIVxv/ObfZwXAlsJLGJFT6H2AY2jXjh75qS63iSJ+MTYSGD6YGaMweMdHVELycTUpQPoxHjg83841/Zi+ZN/cyt7gu/AECnonKcRCaBStg3kTvSbEGyQsTR1/6Lo5stZQzmeBgGatI++RPxhLI+2pSJrsAE9w7hmSaDJI7KK5oKM74ASSfYp9VJMxaKaGZV1RHQzpVBrPJ8cab3Th2yHYf8YCg8mbAEUch40HebhUBXJF3w0aLWgpbilor+of+30hYiHD99RLgHZKuD9gEOJjuCvB8tWXAOCM74ADhI+zTjF/OrYg12LGLa5jqfbEuILJPEE5VwhnG0B97BCdpYtiQ4N8VqBLM5ETEUFuhf0V4k2+F6dOou6EcKi8tBcEghNjH2Vw+/p3kfhyA3arcoJ93YvoZ7DJ8ong5B6FLJGIPn4JVQLBXGStoyPwwzd80xH88ynZAd1inqpfBTO8uSh7oVwvuXIw4zOrx3vU/jYt6Buj9z5MRZsxOs","iterations":240000}</script>
     <script>
-      window.location.replace("/top/");
+      (() => {
+        const payload = JSON.parse(document.getElementById("protected-payload").textContent);
+        const storageKey = "kameyaSitePreviewKey";
+        const form = document.getElementById("access-form");
+        const idInput = document.getElementById("access-id");
+        const passInput = document.getElementById("access-pass");
+        const error = document.getElementById("access-error");
+        const button = form.querySelector("button");
+        const decoder = new TextDecoder();
+        const encoder = new TextEncoder();
+
+        function fromBase64(value) {
+          return Uint8Array.from(atob(value), (char) => char.charCodeAt(0));
+        }
+
+        function toBase64(bytes) {
+          let binary = "";
+          bytes.forEach((byte) => { binary += String.fromCharCode(byte); });
+          return btoa(binary);
+        }
+
+        async function deriveKey(id, pass) {
+          const baseKey = await crypto.subtle.importKey(
+            "raw",
+            encoder.encode(id + "\n" + pass),
+            "PBKDF2",
+            false,
+            ["deriveKey"]
+          );
+          return crypto.subtle.deriveKey(
+            { name: "PBKDF2", salt: fromBase64(payload.salt), iterations: payload.iterations, hash: "SHA-256" },
+            baseKey,
+            { name: "AES-GCM", length: 256 },
+            true,
+            ["decrypt"]
+          );
+        }
+
+        async function decryptWithKey(key) {
+          const packed = fromBase64(payload.ciphertext);
+          const body = packed.slice(0, -16);
+          const tag = packed.slice(-16);
+          const encrypted = new Uint8Array(body.length + tag.length);
+          encrypted.set(body);
+          encrypted.set(tag, body.length);
+          const plain = await crypto.subtle.decrypt(
+            { name: "AES-GCM", iv: fromBase64(payload.iv), tagLength: 128 },
+            key,
+            encrypted
+          );
+          return decoder.decode(plain);
+        }
+
+        async function reveal(html) {
+          document.open();
+          document.write(html);
+          document.close();
+        }
+
+        async function tryStoredKey() {
+          const stored = sessionStorage.getItem(storageKey);
+          if (!stored) return;
+          try {
+            const key = await crypto.subtle.importKey("raw", fromBase64(stored), "AES-GCM", true, ["decrypt"]);
+            await reveal(await decryptWithKey(key));
+          } catch {
+            sessionStorage.removeItem(storageKey);
+          }
+        }
+
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          error.textContent = "";
+          button.disabled = true;
+          try {
+            const key = await deriveKey(idInput.value.trim(), passInput.value);
+            const html = await decryptWithKey(key);
+            const rawKey = new Uint8Array(await crypto.subtle.exportKey("raw", key));
+            sessionStorage.setItem(storageKey, toBase64(rawKey));
+            await reveal(html);
+          } catch {
+            error.textContent = "IDまたはPassが違います。";
+            passInput.value = "";
+            passInput.focus();
+          } finally {
+            button.disabled = false;
+          }
+        });
+
+        tryStoredKey();
+      })();
     </script>
   </body>
 </html>

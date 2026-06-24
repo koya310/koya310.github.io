@@ -1,88 +1,214 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-protected-route="kameya-site">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VKVLXC7MK"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-7VKVLXC7MK');
-    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>上野CEL | 亀屋日本伝統株式会社</title>
-    <meta name="description" content="亀屋日本伝統株式会社の上野CELに関するご案内ページです。詳細は準備中です。" />
-    <meta name="robots" content="noindex,follow" />
-
-    <link rel="canonical" href="https://www.kameya-japan-tradition.com/uenocel/" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta property="og:site_name" content="亀屋日本伝統株式会社" />
-    <meta property="og:locale" content="ja_JP" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="上野CEL | 亀屋日本伝統株式会社" />
-    <meta property="og:description" content="亀屋日本伝統株式会社の上野CELに関するご案内ページです。詳細は準備中です。" />
-    <meta property="og:url" content="https://www.kameya-japan-tradition.com/uenocel/" />
-    <meta property="og:image" content="https://www.kameya-japan-tradition.com/about/assets/figma/logo-mark.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
-    <link rel="stylesheet" href="/shared/css/reveal.css" />
-    <link rel="stylesheet" href="/shared/css/utility-pages.css" />
-    <link rel="stylesheet" href="/shared/css/kameya-design-system.css?v=20260623-contact-simple" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>亀屋日本伝統株式会社 | Access</title>
+    <style>
+      :root {
+        --paper: #f8f5ec;
+        --ink: #1a1a1a;
+        --muted: rgba(26, 26, 26, 0.64);
+        --line: rgba(26, 26, 26, 0.16);
+        --accent: #6b4f3a;
+        --accent-soft: rgba(107, 79, 58, 0.12);
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; min-height: 100%; }
+      body {
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        padding: 32px;
+        background:
+          linear-gradient(135deg, rgba(248, 245, 236, 0.98), rgba(244, 238, 223, 0.92)),
+          radial-gradient(circle at 80% 12%, rgba(107, 79, 58, 0.08), transparent 32%);
+        color: var(--ink);
+        font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+      }
+      main {
+        width: min(440px, 100%);
+        padding: 40px;
+        border: 1px solid var(--line);
+        background: rgba(248, 245, 236, 0.86);
+      }
+      .kicker {
+        margin: 0 0 16px;
+        color: var(--accent);
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: 28px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        line-height: 1.5;
+      }
+      p {
+        margin: 0 0 28px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.9;
+      }
+      label {
+        display: grid;
+        gap: 8px;
+        margin: 0 0 16px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      input {
+        width: 100%;
+        min-height: 48px;
+        border: 1px solid var(--line);
+        border-radius: 0;
+        padding: 12px 14px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        font: 16px/1.4 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      input:focus {
+        border-color: rgba(107, 79, 58, 0.58);
+        box-shadow: 0 0 0 3px var(--accent-soft);
+        outline: none;
+      }
+      button {
+        width: 100%;
+        min-height: 48px;
+        margin-top: 8px;
+        border: 1px solid var(--accent);
+        border-radius: 0;
+        background: var(--accent);
+        color: #fff;
+        cursor: pointer;
+        font: 600 14px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        letter-spacing: 0.08em;
+      }
+      button:disabled {
+        cursor: wait;
+        opacity: 0.7;
+      }
+      .error {
+        min-height: 22px;
+        margin: 16px 0 0;
+        color: #8a2b1d;
+        font: 13px/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      @media (max-width: 520px) {
+        body { padding: 20px; }
+        main { padding: 28px 24px; }
+        h1 { font-size: 24px; }
+      }
+    </style>
   </head>
-  <body class="utility-body">
-    <div class="utility-shell">
-      <header class="site-header" aria-label="サイトヘッダー">
-        <a class="brand-lockup" href="/top/" aria-label="亀屋日本伝統株式会社 トップへ">
-          <span class="brand-mark" aria-hidden="true">
-            <img src="/about/assets/figma/logo-mark.png" alt="" />
-          </span>
-          <span class="brand-text">
-            <span class="brand-name">亀屋日本伝統株式会社</span>
-            <span class="brand-roman">KAMEYA&nbsp;&nbsp;JAPAN&nbsp;&nbsp;TRADITION</span>
-          </span>
-        </a>
-        <button class="menu-button" type="button" aria-label="メニューを開く">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </button>
-      </header>
+  <body>
+    <main>
+      <p class="kicker">Private Preview</p>
+      <h1>亀屋日本伝統株式会社</h1>
+      <p>共有されたIDとPassを入力してください。</p>
+      <form id="access-form" autocomplete="off">
+        <label>ID<input id="access-id" name="id" type="text" autocomplete="username" required /></label>
+        <label>Pass<input id="access-pass" name="pass" type="password" autocomplete="current-password" required /></label>
+        <button type="submit">表示</button>
+        <div class="error" id="access-error" role="status" aria-live="polite"></div>
+      </form>
+    </main>
+    <script type="application/json" id="protected-payload">{"salt":"lXKhP4aONU8ye8cx4BbpHg==","iv":"3DOCmGbyXYSfRKn0","ciphertext":"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","iterations":240000}</script>
+    <script>
+      (() => {
+        const payload = JSON.parse(document.getElementById("protected-payload").textContent);
+        const storageKey = "kameyaSitePreviewKey";
+        const form = document.getElementById("access-form");
+        const idInput = document.getElementById("access-id");
+        const passInput = document.getElementById("access-pass");
+        const error = document.getElementById("access-error");
+        const button = form.querySelector("button");
+        const decoder = new TextDecoder();
+        const encoder = new TextEncoder();
 
-      <main class="utility-main">
-        <section class="utility-hero" aria-labelledby="uenocel-title">
-          <div>
-            <p class="utility-kicker">Ueno CEL</p>
-            <h1 class="utility-title" id="uenocel-title">上野CEL</h1>
-            <p class="utility-lead">
-              亀屋日本伝統株式会社による上野CELの詳細ページは、現在準備中です。
-            </p>
-          </div>
-        </section>
+        function fromBase64(value) {
+          return Uint8Array.from(atob(value), (char) => char.charCodeAt(0));
+        }
 
-        <article class="utility-content legal-article" aria-label="上野CELのご案内">
-          <section class="legal-section">
-            <h2>詳細公開までお待ちください</h2>
-            <p>
-              開催内容、日時、会場、参加方法などの詳細は、準備が整い次第こちらのページでご案内します。
-              先に確認したいことがある場合は、お問い合わせページよりご連絡ください。
-            </p>
-            <div class="form-actions">
-              <a class="text-link" href="/top/">トップへ</a>
-              <a class="text-link" href="/contact/">お問い合わせ</a>
-            </div>
-          </section>
-        </article>
+        function toBase64(bytes) {
+          let binary = "";
+          bytes.forEach((byte) => { binary += String.fromCharCode(byte); });
+          return btoa(binary);
+        }
 
-        <footer class="site-footer">
-          <span>© 2026 亀屋日本伝統株式会社</span>
-          <nav class="footer-links" aria-label="フッターリンク">
-            <a href="/privacy/">プライバシーポリシー</a>
-            <a href="/deal/">特定商取引法に基づく表記</a>
-          </nav>
-        </footer>
-      </main>
-    </div>
-    <script src="/shared/js/reveal.js" defer></script>
-    <script src="/shared/js/page-transition.js?v=20260619-menu-numbering-20" defer></script>
+        async function deriveKey(id, pass) {
+          const baseKey = await crypto.subtle.importKey(
+            "raw",
+            encoder.encode(id + "\n" + pass),
+            "PBKDF2",
+            false,
+            ["deriveKey"]
+          );
+          return crypto.subtle.deriveKey(
+            { name: "PBKDF2", salt: fromBase64(payload.salt), iterations: payload.iterations, hash: "SHA-256" },
+            baseKey,
+            { name: "AES-GCM", length: 256 },
+            true,
+            ["decrypt"]
+          );
+        }
+
+        async function decryptWithKey(key) {
+          const packed = fromBase64(payload.ciphertext);
+          const body = packed.slice(0, -16);
+          const tag = packed.slice(-16);
+          const encrypted = new Uint8Array(body.length + tag.length);
+          encrypted.set(body);
+          encrypted.set(tag, body.length);
+          const plain = await crypto.subtle.decrypt(
+            { name: "AES-GCM", iv: fromBase64(payload.iv), tagLength: 128 },
+            key,
+            encrypted
+          );
+          return decoder.decode(plain);
+        }
+
+        async function reveal(html) {
+          document.open();
+          document.write(html);
+          document.close();
+        }
+
+        async function tryStoredKey() {
+          const stored = sessionStorage.getItem(storageKey);
+          if (!stored) return;
+          try {
+            const key = await crypto.subtle.importKey("raw", fromBase64(stored), "AES-GCM", true, ["decrypt"]);
+            await reveal(await decryptWithKey(key));
+          } catch {
+            sessionStorage.removeItem(storageKey);
+          }
+        }
+
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          error.textContent = "";
+          button.disabled = true;
+          try {
+            const key = await deriveKey(idInput.value.trim(), passInput.value);
+            const html = await decryptWithKey(key);
+            const rawKey = new Uint8Array(await crypto.subtle.exportKey("raw", key));
+            sessionStorage.setItem(storageKey, toBase64(rawKey));
+            await reveal(html);
+          } catch {
+            error.textContent = "IDまたはPassが違います。";
+            passInput.value = "";
+            passInput.focus();
+          } finally {
+            button.disabled = false;
+          }
+        });
+
+        tryStoredKey();
+      })();
+    </script>
   </body>
 </html>

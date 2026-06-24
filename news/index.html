@@ -1,448 +1,214 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-protected-route="kameya-site">
   <head>
-        <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VKVLXC7MK"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-7VKVLXC7MK');
-    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>お知らせ | 亀屋日本伝統株式会社</title>
-    <meta name="description" content="亀屋日本伝統株式会社のお知らせ一覧。展示、催事、文化体験、海外連携、工芸に関する取り組みを掲載しています。" />
-
-    <link rel="canonical" href="https://koya310.github.io/news/" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <meta property="og:site_name" content="亀屋日本伝統株式会社" />
-    <meta property="og:locale" content="ja_JP" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="お知らせ | 亀屋日本伝統株式会社" />
-    <meta property="og:description" content="亀屋日本伝統株式会社のお知らせ一覧。展示、催事、文化体験、海外連携、工芸に関する取り組みを掲載しています。" />
-    <meta property="og:url" content="https://koya310.github.io/news/" />
-    <meta property="og:image" content="https://koya310.github.io/about/assets/figma/logo-mark.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
-    <link rel="stylesheet" href="/shared/css/reveal.css" />
-    <link rel="stylesheet" href="/shared/css/utility-pages.css" />
-    <link rel="stylesheet" href="/shared/css/kmy13-list-controls.css?v=20260624-list-filter" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>亀屋日本伝統株式会社 | Access</title>
     <style>
-      body.news-body {
+      :root {
+        --paper: #f8f5ec;
+        --ink: #1a1a1a;
+        --muted: rgba(26, 26, 26, 0.64);
+        --line: rgba(26, 26, 26, 0.16);
+        --accent: #6b4f3a;
+        --accent-soft: rgba(107, 79, 58, 0.12);
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; min-height: 100%; }
+      body {
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        padding: 32px;
         background:
-          linear-gradient(rgba(248, 244, 234, 0.72), rgba(248, 244, 234, 0.82)),
-          url("/about/assets/figma/paper.webp") center / 760px auto repeat;
+          linear-gradient(135deg, rgba(248, 245, 236, 0.98), rgba(244, 238, 223, 0.92)),
+          radial-gradient(circle at 80% 12%, rgba(107, 79, 58, 0.08), transparent 32%);
+        color: var(--ink);
+        font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
       }
-
-      .news-main {
-        box-sizing: border-box;
-        width: min(1208px, 100%);
-        margin: 0 auto;
-        padding: 136px clamp(24px, 9.9vw, 120px) 96px;
+      main {
+        width: min(440px, 100%);
+        padding: 40px;
+        border: 1px solid var(--line);
+        background: rgba(248, 245, 236, 0.86);
       }
-
-      .news-heading {
-        display: grid;
-        gap: 18px;
-        margin-bottom: 40px;
+      .kicker {
+        margin: 0 0 16px;
+        color: var(--accent);
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
       }
-
-      .news-kicker {
-        margin: 0;
-        color: var(--utility-gold);
-        font-family: "Times New Roman", serif;
-        font-size: 24px;
-        font-weight: 700;
-        line-height: 1.25;
-        letter-spacing: 0.02em;
-      }
-
-      .news-heading h1 {
-        margin: 0;
-        color: var(--utility-ink);
-        font-size: clamp(32px, 4vw, 40px);
-        font-weight: 700;
-        line-height: 1.45;
-        letter-spacing: 0.08em;
-      }
-
-      .news-heading__rule {
-        display: block;
-        width: 177px;
-        height: 1px;
-        background: rgba(183, 164, 109, 0.72);
-      }
-
-      .news-lead {
-        max-width: 720px;
-        margin: 10px 0 0;
-        color: rgba(29, 28, 24, 0.64);
-        font-size: 16px;
-        line-height: 2;
-        overflow-wrap: anywhere;
-      }
-
-      .news-page-list {
-        display: grid;
-        gap: 0;
-      }
-
-      .news-page-card {
-        position: relative;
-        display: grid;
-        grid-template-columns: 285px minmax(0, 1fr) 32px;
-        gap: 24px;
-        align-items: center;
-        padding: 28px 0;
-        border-bottom: 1px solid rgba(29, 28, 24, 0.16);
-        color: inherit;
-        text-decoration: none;
-        transition: opacity 260ms var(--utility-ease);
-      }
-
-      .news-page-thumb {
-        width: 285px;
-        height: 190px;
-        display: block;
-        object-fit: cover;
-      }
-
-      .news-page-thumb--empty {
-        position: relative;
-        overflow: hidden;
-        border: 1px solid rgba(183, 164, 109, 0.28);
-        background:
-          linear-gradient(135deg, rgba(248, 244, 234, 0.88), rgba(255, 255, 255, 0.62)),
-          url("/about/assets/figma/paper.webp") center / 320px auto repeat;
-      }
-
-      .news-page-thumb--empty .news-empty-logo {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: clamp(96px, 30%, 144px);
-        height: clamp(96px, 30%, 144px);
-        object-fit: contain;
-        opacity: 0.26;
-        transform: translate(-50%, -50%);
-      }
-
-      .news-page-thumb--contain {
-        padding: 0;
-        border: 1px solid rgba(183, 164, 109, 0.24);
-        background: rgba(255, 255, 255, 0.62);
-        object-fit: contain;
-        object-position: center;
-      }
-
-      .news-page-copy {
-        display: grid;
-        gap: 12px;
-        min-width: 0;
-      }
-
-      .news-page-meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 18px;
-        align-items: center;
-        color: rgba(29, 28, 24, 0.58);
-        font-size: 16px;
+      h1 {
+        margin: 0 0 12px;
+        font-size: 28px;
+        font-weight: 500;
+        letter-spacing: 0.06em;
         line-height: 1.5;
       }
-
-      .news-page-tag {
-        color: var(--utility-gold);
-        font-weight: 700;
+      p {
+        margin: 0 0 28px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.9;
+      }
+      label {
+        display: grid;
+        gap: 8px;
+        margin: 0 0 16px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      input {
+        width: 100%;
+        min-height: 48px;
+        border: 1px solid var(--line);
+        border-radius: 0;
+        padding: 12px 14px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        font: 16px/1.4 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      input:focus {
+        border-color: rgba(107, 79, 58, 0.58);
+        box-shadow: 0 0 0 3px var(--accent-soft);
+        outline: none;
+      }
+      button {
+        width: 100%;
+        min-height: 48px;
+        margin-top: 8px;
+        border: 1px solid var(--accent);
+        border-radius: 0;
+        background: var(--accent);
+        color: #fff;
+        cursor: pointer;
+        font: 600 14px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         letter-spacing: 0.08em;
       }
-
-      .news-page-card h2 {
-        margin: 0;
-        color: var(--utility-ink);
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 1.6;
-        letter-spacing: 0.06em;
-        overflow-wrap: break-word;
-        word-break: normal;
-        line-break: strict;
+      button:disabled {
+        cursor: wait;
+        opacity: 0.7;
       }
-
-      .news-page-card p {
-        margin: 0;
-        color: rgba(29, 28, 24, 0.74);
-        font-size: 16px;
-        line-height: 1.85;
+      .error {
+        min-height: 22px;
+        margin: 16px 0 0;
+        color: #8a2b1d;
+        font: 13px/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       }
-
-      .news-page-arrow {
-        position: relative;
-        display: block;
-        width: 32px;
-        height: 18px;
-        color: var(--utility-green);
-      }
-
-      .news-page-arrow::before,
-      .news-page-arrow::after {
-        position: absolute;
-        top: 50%;
-        right: 0;
-        content: "";
-        background: currentColor;
-        transition:
-          width 320ms var(--utility-ease),
-          transform 320ms var(--utility-ease);
-      }
-
-      .news-page-arrow::before {
-        width: 18px;
-        height: 1px;
-        transform: translateY(-50%);
-      }
-
-      .news-page-arrow::after {
-        width: 8px;
-        height: 8px;
-        border-top: 1px solid currentColor;
-        border-right: 1px solid currentColor;
-        background: transparent;
-        transform: translateY(-50%) rotate(45deg);
-      }
-
-      .news-page-card:hover {
-        opacity: 0.72;
-      }
-
-      .news-page-card:hover .news-page-arrow::before {
-        width: 32px;
-      }
-
-      @media (max-width: 860px) {
-        .news-main {
-          width: min(390px, 100%);
-          margin-left: 0;
-          margin-right: auto;
-          padding-top: 124px;
-          padding-inline: 24px;
-        }
-
-        .news-page-card {
-          grid-template-columns: 120px minmax(0, 1fr) 24px;
-          gap: 12px;
-          align-items: start;
-          padding: 20px 0;
-        }
-
-        .news-page-thumb {
-          width: 120px;
-          height: 80px;
-        }
-
-        .news-page-meta {
-          gap: 10px;
-          font-size: 14px;
-          line-height: 1.4;
-        }
-
-        .news-page-card h2 {
-          font-size: 14px;
-          line-height: 1.55;
-        }
-
-        .news-page-card p {
-          display: none;
-        }
-
-        .news-page-arrow {
-          justify-self: end;
-          align-self: center;
-          width: 24px;
-          height: 16px;
-        }
-      }
-
-      @media (max-width: 420px) {
-        .news-page-card {
-          grid-template-columns: minmax(0, 1fr) 24px;
-          gap: 14px 16px;
-          padding: 24px 0;
-        }
-
-        .news-page-thumb {
-          grid-column: 1 / -1;
-          width: min(100%, 420px);
-          height: auto;
-          aspect-ratio: 3 / 2;
-        }
-
-        .news-page-copy {
-          grid-column: 1;
-        }
-
-        .news-page-arrow {
-          grid-column: 2;
-          grid-row: 2;
-          align-self: center;
-        }
-      }
-
-      @media (max-width: 420px) {
-        .news-main {
-          width: 100%;
-          padding-inline: 24px;
-        }
-      }
-    </style>
-    <link rel="stylesheet" href="/shared/css/kameya-design-system.css?v=20260619-menu-numbering-fix" />
-    <style>
-      @media (max-width: 860px) {
-        body.news-body .news-page-card h2 {
-          font-size: 16px !important;
-          line-height: 1.55 !important;
-        }
-      }
-
-      @media (max-width: 420px) {
-        body.news-body .news-page-card h2 {
-          font-size: 15px !important;
-          line-height: 1.58 !important;
-        }
+      @media (max-width: 520px) {
+        body { padding: 20px; }
+        main { padding: 28px 24px; }
+        h1 { font-size: 24px; }
       }
     </style>
   </head>
-  <body class="utility-body news-body">
-    <div class="utility-shell">
-      <header class="site-header" aria-label="サイトヘッダー">
-        <a class="brand-lockup" href="/top/" aria-label="亀屋日本伝統株式会社 トップへ">
-          <span class="brand-mark" aria-hidden="true">
-            <img src="/about/assets/figma/logo-mark.png" alt="" />
-          </span>
-          <span class="brand-text">
-            <span class="brand-name">亀屋日本伝統株式会社</span>
-            <span class="brand-roman">KAMEYA&nbsp;&nbsp;JAPAN&nbsp;&nbsp;TRADITION</span>
-          </span>
-        </a>
-        <button class="menu-button" type="button" aria-label="メニューを開く">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </button>
-      </header>
+  <body>
+    <main>
+      <p class="kicker">Private Preview</p>
+      <h1>亀屋日本伝統株式会社</h1>
+      <p>共有されたIDとPassを入力してください。</p>
+      <form id="access-form" autocomplete="off">
+        <label>ID<input id="access-id" name="id" type="text" autocomplete="username" required /></label>
+        <label>Pass<input id="access-pass" name="pass" type="password" autocomplete="current-password" required /></label>
+        <button type="submit">表示</button>
+        <div class="error" id="access-error" role="status" aria-live="polite"></div>
+      </form>
+    </main>
+    <script type="application/json" id="protected-payload">{"salt":"lXKhP4aONU8ye8cx4BbpHg==","iv":"0eDfNI6y0RQghoRP","ciphertext":"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","iterations":240000}</script>
+    <script>
+      (() => {
+        const payload = JSON.parse(document.getElementById("protected-payload").textContent);
+        const storageKey = "kameyaSitePreviewKey";
+        const form = document.getElementById("access-form");
+        const idInput = document.getElementById("access-id");
+        const passInput = document.getElementById("access-pass");
+        const error = document.getElementById("access-error");
+        const button = form.querySelector("button");
+        const decoder = new TextDecoder();
+        const encoder = new TextEncoder();
 
-      <main class="news-main">
-        <section class="news-heading" aria-labelledby="news-title">
-          <p class="news-kicker">News</p>
-          <h1 id="news-title">お知らせ</h1>
-          <span class="news-heading__rule" aria-hidden="true"></span>
-          <p class="news-lead">
-            講演、展示、海外文化機関との協働、文化体験型イベントなど、亀屋日本伝統の活動を掲載します。
-          </p>
-        </section>
+        function fromBase64(value) {
+          return Uint8Array.from(atob(value), (char) => char.charCodeAt(0));
+        }
 
-        <section class="kmy-list-controls" data-kmy-controls="news" aria-label="お知らせの絞り込み" hidden>
-          <div class="kmy-list-controls__row">
-            <div class="kmy-filter-group" data-kmy-filter-group="tag" aria-label="タグ"></div>
-            <button class="kmy-reset" type="button" data-kmy-reset>解除</button>
-          </div>
-          <p class="kmy-status" data-kmy-status aria-live="polite"></p>
-        </section>
+        function toBase64(bytes) {
+          let binary = "";
+          bytes.forEach((byte) => { binary += String.fromCharCode(byte); });
+          return btoa(binary);
+        }
 
-        <section class="news-page-list" data-kmy-list="news" data-kmy-page-size="16" aria-label="お知らせ一覧">
-          <a class="news-page-card" href="/news/detail/001/">
-            <span class="news-page-thumb news-page-thumb--empty" aria-hidden="true"><img class="news-empty-logo" src="/about/assets/figma/logo-mark.png" alt="" loading="lazy" /></span>
-            <div class="news-page-copy">
-              <div class="news-page-meta">
-                <time datetime="2026-05-01">2026.05.01</time>
-                <span class="news-page-tag">お知らせ</span>
-              </div>
-              <h2>2026/7/18~8/2に、上野マルイ5Fにて工芸品の展示販売とセル画ワークショップを行います</h2>
-              <p>2026年7月18日から8月2日まで、上野マルイ5Fにて、工芸品の展示販売とセル画ワークショップを行います。</p>
-            </div>
-            <span class="news-page-arrow" aria-hidden="true"></span>
-          </a>
+        async function deriveKey(id, pass) {
+          const baseKey = await crypto.subtle.importKey(
+            "raw",
+            encoder.encode(id + "\n" + pass),
+            "PBKDF2",
+            false,
+            ["deriveKey"]
+          );
+          return crypto.subtle.deriveKey(
+            { name: "PBKDF2", salt: fromBase64(payload.salt), iterations: payload.iterations, hash: "SHA-256" },
+            baseKey,
+            { name: "AES-GCM", length: 256 },
+            true,
+            ["decrypt"]
+          );
+        }
 
-          <a class="news-page-card" href="/news/detail/002/">
-            <span class="news-page-thumb news-page-thumb--empty" aria-hidden="true"><img class="news-empty-logo" src="/about/assets/figma/logo-mark.png" alt="" loading="lazy" /></span>
-            <div class="news-page-copy">
-              <div class="news-page-meta">
-                <time datetime="2026-04-01">2026.04.01</time>
-                <span class="news-page-tag">お知らせ</span>
-              </div>
-              <h2>埼玉県立近代美術館にて『人間国宝の工芸を「感じる」展』を開催します</h2>
-              <p>亀屋日本伝統株式会社は、2026年8月11日から8月23日まで、埼玉県立近代美術館 地下 一般展示室2にて『人間国宝の工芸を「感じる」展 ― 次世代へつなぐ日本の技 ―』を開催します。</p>
-            </div>
-            <span class="news-page-arrow" aria-hidden="true"></span>
-          </a>
+        async function decryptWithKey(key) {
+          const packed = fromBase64(payload.ciphertext);
+          const body = packed.slice(0, -16);
+          const tag = packed.slice(-16);
+          const encrypted = new Uint8Array(body.length + tag.length);
+          encrypted.set(body);
+          encrypted.set(tag, body.length);
+          const plain = await crypto.subtle.decrypt(
+            { name: "AES-GCM", iv: fromBase64(payload.iv), tagLength: 128 },
+            key,
+            encrypted
+          );
+          return decoder.decode(plain);
+        }
 
-          <a class="news-page-card" href="/news/detail/003/">
-            <img class="news-page-thumb news-page-thumb--contain" src="/news/assets/oman-national-museum.webp" alt="オマーン国立博物館との協働に関するお知らせ画像" />
-            <div class="news-page-copy">
-              <div class="news-page-meta">
-                <time datetime="2026-01-26">2026.01.26</time>
-                <span class="news-page-tag">お知らせ</span>
-              </div>
-              <h2>オマーン国立博物館との協働関係を、Official Collaborative Partnerとして掲載しました</h2>
-              <p>亀屋日本伝統は、オマーン国立博物館より許可をいただき、同館を当社公式ホームページ上におけるOfficial Collaborative Partnerとして掲載しました。</p>
-            </div>
-            <span class="news-page-arrow" aria-hidden="true"></span>
-          </a>
+        async function reveal(html) {
+          document.open();
+          document.write(html);
+          document.close();
+        }
 
-          <a class="news-page-card" href="/news/detail/004/">
-            <img class="news-page-thumb news-page-thumb--contain" src="/news/assets/the-japan-essence-expo-2026.webp" alt="THE JAPAN ESSENCE GLOBAL EXPO 2026に関するお知らせ画像" />
-            <div class="news-page-copy">
-              <div class="news-page-meta">
-                <time datetime="2025-11-22">2025.11.22</time>
-                <span class="news-page-tag">お知らせ</span>
-              </div>
-              <h2>「THE JAPAN ESSENCE – GLOBAL EXPO 2026」実行委員に選任されました</h2>
-              <p>代表の亀屋夢月が、アゼルバイジャンで開催予定の「THE JAPAN ESSENCE – GLOBAL EXPO 2026」において、実行委員に選任されました。</p>
-            </div>
-            <span class="news-page-arrow" aria-hidden="true"></span>
-          </a>
+        async function tryStoredKey() {
+          const stored = sessionStorage.getItem(storageKey);
+          if (!stored) return;
+          try {
+            const key = await crypto.subtle.importKey("raw", fromBase64(stored), "AES-GCM", true, ["decrypt"]);
+            await reveal(await decryptWithKey(key));
+          } catch {
+            sessionStorage.removeItem(storageKey);
+          }
+        }
 
-          <a class="news-page-card" href="/news/detail/005/">
-            <img class="news-page-thumb" src="/news/assets/munakata-environment-conference.webp" alt="宗像国際環境会議に関するお知らせ画像" />
-            <div class="news-page-copy">
-              <div class="news-page-meta">
-                <time datetime="2025-10-28">2025.10.28</time>
-                <span class="news-page-tag">実績</span>
-              </div>
-              <h2>第12回宗像国際環境会議に登壇しました ― 工芸と環境をつなぐ視点から</h2>
-              <p>福岡県宗像市・宗像大社で開催された「宗像国際環境会議」に、代表の亀屋夢月が登壇しました。</p>
-            </div>
-            <span class="news-page-arrow" aria-hidden="true"></span>
-          </a>
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          error.textContent = "";
+          button.disabled = true;
+          try {
+            const key = await deriveKey(idInput.value.trim(), passInput.value);
+            const html = await decryptWithKey(key);
+            const rawKey = new Uint8Array(await crypto.subtle.exportKey("raw", key));
+            sessionStorage.setItem(storageKey, toBase64(rawKey));
+            await reveal(html);
+          } catch {
+            error.textContent = "IDまたはPassが違います。";
+            passInput.value = "";
+            passInput.focus();
+          } finally {
+            button.disabled = false;
+          }
+        });
 
-          <a class="news-page-card" href="/news/detail/006/">
-            <img class="news-page-thumb news-page-thumb--contain" src="/news/assets/oman-national-museum.webp" alt="オマーン国立博物館への納品実績に関するお知らせ画像" />
-            <div class="news-page-copy">
-              <div class="news-page-meta">
-                <time datetime="2025-10-22">2025.10.22</time>
-                <span class="news-page-tag">実績</span>
-              </div>
-              <h2>オマーン国立博物館へ、imamah用の手織布を納品しました</h2>
-              <p>オマーン国立博物館にimamah用手織布を納品いたしました。</p>
-            </div>
-            <span class="news-page-arrow" aria-hidden="true"></span>
-          </a>
-        </section>
-        <p class="kmy-empty" data-kmy-empty="news" hidden>該当するお知らせはありません。</p>
-        <nav class="kmy-pagination" data-kmy-pagination="news" aria-label="お知らせページ送り" hidden></nav>
-
-        <footer class="site-footer">
-          <span>© 2026 亀屋日本伝統株式会社</span>
-          <nav class="footer-links" aria-label="フッターリンク">
-            <a href="/contact/">お問い合わせ</a>
-            <a href="/privacy/">プライバシーポリシー</a>
-            <a href="/deal/">特定商取引法に基づく表記</a>
-          </nav>
-        </footer>
-      </main>
-    </div>
-    <script src="/shared/js/reveal.js" defer></script>
-    <script src="/shared/js/kmy13-list-controls.js?v=20260624-list-filter-preview" defer></script>
-    <script src="/shared/js/page-transition.js?v=20260619-menu-numbering-20" defer></script>
+        tryStoredKey();
+      })();
+    </script>
   </body>
 </html>

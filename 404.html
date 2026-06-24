@@ -1,127 +1,214 @@
-<!doctype html>
-<html lang="ja">
+<!DOCTYPE html>
+<html lang="ja" data-protected-route="kameya-site">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7VKVLXC7MK"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-7VKVLXC7MK');
-    </script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ページが見つかりません | 亀屋日本伝統株式会社</title>
-    <meta name="description" content="指定されたページは見つかりませんでした。亀屋日本伝統株式会社のトップページまたはお問い合わせページへお進みください。" />
-    <meta name="robots" content="noindex, follow" />
-    <link rel="canonical" href="https://koya310.github.io/404.html" />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>亀屋日本伝統株式会社 | Access</title>
     <style>
       :root {
-        --paper: #f8f4ec;
-        --ink: #332c26;
+        --paper: #f8f5ec;
+        --ink: #1a1a1a;
+        --muted: rgba(26, 26, 26, 0.64);
+        --line: rgba(26, 26, 26, 0.16);
         --accent: #6b4f3a;
-        --line: rgba(107, 79, 58, 0.22);
-        --white: #ffffff;
+        --accent-soft: rgba(107, 79, 58, 0.12);
       }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html,
+      * { box-sizing: border-box; }
+      html, body { margin: 0; min-height: 100%; }
       body {
-        margin: 0;
-        min-height: 100%;
-      }
-
-      body {
-        min-height: 100svh;
         display: grid;
+        min-height: 100vh;
         place-items: center;
-        padding: 40px 24px;
+        padding: 32px;
         background:
-          linear-gradient(rgba(248, 244, 236, 0.84), rgba(248, 244, 236, 0.9)),
-          url("/about/assets/figma/paper.webp") center / 760px auto repeat,
-          var(--paper);
+          linear-gradient(135deg, rgba(248, 245, 236, 0.98), rgba(244, 238, 223, 0.92)),
+          radial-gradient(circle at 80% 12%, rgba(107, 79, 58, 0.08), transparent 32%);
         color: var(--ink);
-        font-family: "Zen Old Mincho", "Hiragino Mincho ProN", serif;
+        font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
       }
-
       main {
-        width: min(760px, 100%);
-        padding: clamp(48px, 8vw, 88px) clamp(24px, 7vw, 72px);
+        width: min(440px, 100%);
+        padding: 40px;
         border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.48);
-        text-align: center;
+        background: rgba(248, 245, 236, 0.86);
       }
-
       .kicker {
-        margin: 0 0 20px;
+        margin: 0 0 16px;
         color: var(--accent);
-        font-family: "Times New Roman", serif;
-        font-size: 13px;
-        letter-spacing: 0.22em;
+        font-size: 12px;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
       }
-
       h1 {
-        margin: 0;
-        color: var(--accent);
-        font-size: clamp(32px, 6vw, 56px);
+        margin: 0 0 12px;
+        font-size: 28px;
         font-weight: 500;
-        line-height: 1.35;
+        letter-spacing: 0.06em;
+        line-height: 1.5;
+      }
+      p {
+        margin: 0 0 28px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.9;
+      }
+      label {
+        display: grid;
+        gap: 8px;
+        margin: 0 0 16px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      input {
+        width: 100%;
+        min-height: 48px;
+        border: 1px solid var(--line);
+        border-radius: 0;
+        padding: 12px 14px;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        font: 16px/1.4 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      input:focus {
+        border-color: rgba(107, 79, 58, 0.58);
+        box-shadow: 0 0 0 3px var(--accent-soft);
+        outline: none;
+      }
+      button {
+        width: 100%;
+        min-height: 48px;
+        margin-top: 8px;
+        border: 1px solid var(--accent);
+        border-radius: 0;
+        background: var(--accent);
+        color: #fff;
+        cursor: pointer;
+        font: 600 14px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         letter-spacing: 0.08em;
       }
-
-      p {
-        margin: 24px auto 0;
-        max-width: 520px;
-        font-size: 15px;
-        line-height: 2;
+      button:disabled {
+        cursor: wait;
+        opacity: 0.7;
       }
-
-      nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
-        margin-top: 40px;
+      .error {
+        min-height: 22px;
+        margin: 16px 0 0;
+        color: #8a2b1d;
+        font: 13px/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       }
-
-      a {
-        min-width: 176px;
-        padding: 14px 22px;
-        border: 1px solid var(--accent);
-        color: var(--accent);
-        font-size: 14px;
-        letter-spacing: 0.12em;
-        text-decoration: none;
-      }
-
-      a.primary {
-        background: var(--accent);
-        color: var(--white);
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-          scroll-behavior: auto !important;
-        }
+      @media (max-width: 520px) {
+        body { padding: 20px; }
+        main { padding: 28px 24px; }
+        h1 { font-size: 24px; }
       }
     </style>
   </head>
   <body>
     <main>
-      <p class="kicker">404 Not Found</p>
-      <h1>ページが見つかりません</h1>
-      <p>URLが変更されたか、公開前のページです。トップページまたはお問い合わせページからお進みください。</p>
-      <nav aria-label="404ページナビゲーション">
-        <a class="primary" href="/top/">トップへ戻る</a>
-        <a href="/contact/">お問い合わせ</a>
-      </nav>
+      <p class="kicker">Private Preview</p>
+      <h1>亀屋日本伝統株式会社</h1>
+      <p>共有されたIDとPassを入力してください。</p>
+      <form id="access-form" autocomplete="off">
+        <label>ID<input id="access-id" name="id" type="text" autocomplete="username" required /></label>
+        <label>Pass<input id="access-pass" name="pass" type="password" autocomplete="current-password" required /></label>
+        <button type="submit">表示</button>
+        <div class="error" id="access-error" role="status" aria-live="polite"></div>
+      </form>
     </main>
+    <script type="application/json" id="protected-payload">{"salt":"lXKhP4aONU8ye8cx4BbpHg==","iv":"ocrwlBgPlgakOtUV","ciphertext":"Yh4SA9t/g8Wn27F8o5ZScHdTda7/D7cE9KvSYvzpvaFACJQz/IGmQsjIpIIZhaOJVUJStcK8tXTkQGsPbGphgGxGE/IEZtg8c0o8jv39Z/wTsmyq0uIsWY3RXn6310Mef46ssdE/g5uftf2F9SaZIgi17rmgNvp6yK+6hOp5N6SYUNynn9XB7Xhoabk+fwgVaOWjdRswP+zK6FvYnjplE+8P94l+Ww3R16ayCPmnhtcSmkRMVIAhEHI+dtXBPYMLxzFeamjpIeasW+Gtq+alcPEpZzRD922hVrTq0XtM6rmOcLY14/Rh3eOVzsBWI27K5anhEtRs8t71uojAsAA+rF/sPB/GGdkW8CuPbH2cOdDVU4MSwsDSbwi/x064A4i5hC9FCqsJm8j8KH3iJsMCxoLD7gi3E60obE9AFQNiKyxMX6l78N3SEmceWu497w24p3eBoBqZ2krn4BM051HCm8Fc31cPk30bExQJW2M/yZVxb2RNmAFoM3Hk4V14Nagt6+m6jkG2r6e+NSTA66lkzrbUKQh3b3PNnIB7hqOTE0G99VRupdjI9wIviEEO9ID52ieuRaRY0dmH3c4YfM6acw+gfU5k0TlSmDUn4RFUAV5J8KsTbrKTHiqODau41CsMP5Iwj0bk/Mgj5KaX7/tIPrKqg/WfQtuP70J1Y5/XVysDslQ6citbTbwCNv77a6M0bwYkA2WQYoPQ+Pq74EmPVlcYlmHFwMzZj0UHEsk1lrGVv/4MqVPa9VREh9OQDM1NNJb5VxP7LB43IisdbO8lPvqXTTxw/Oiev9vJHBA00BLkoXQzpcyM6bVXEFRLjqcR9Hs4x604tYEsgXDzu5RQ0WHsD5K3njRsHz4vznxxzHfWiYMZ3QYHezme03UA2CYy21YnzWqQKUQljWkErT9GMruFghYZhrk5mucMGAO9wzNck5WCZ24en9FUAUWJg6NyCgIW/RO+3FANvKaYhkB6VmHKMyI6FvU1jIRrIVTnYZZFqbJjWguYGhtouHvY37bsf08jZqdptgoSmeKRV0d1jAjIKL8kQudd20Nr+zsvjlOJIuliqa5v+RO4yVw/px9+qOTyIpLQJIwnJ/H0vsAZK79AK6RV1KxJqbOEr/b71CLkIgvi4V2v65wDF1yMdtRXVmOlRS/Yzq2gl3kyWpgyZ61R5DmDfLUf2OFlcV780yYIo5yUw0lkbuw9De0w2Al3lgfPNlxmAeuIBEG42ADtFS8wHvJDHHm1957rdSEUClBF5v4eaSFENn/NXhxlrbNnbeb9LF2C4+I1ar/mSUF+pfvWkX5YfmCrgkvJvwvedioMNld4OLH1e+rsHY45lx0Fc3anZaJfYmYBB+tkb/Tfdgh8m5H1Egg8QtOVjf7PTZiZPJUXTmxlKebYFbrh9ZqcN67GKFLB1h5bmGtNo/t9vd5L4nr0oaQ8cwwaOVqGZ2UccsP7JCjR4IHMALlsE/GwWpxNnpGDSlyujRgWoiOqO/MkFyLBYl3Mzg8SPqqIoiqQ6ExNA9THrMvbIJRi0/YWMlEB7pV6J0ysUw9ks7/kuWikGBq4dua89PRxV7Ux4A7R98ZwnSiex6YuVdmbphZC5ZllmeRj/JlZVNxtB1Yi/rKlI0GGrb8BswnqUaWhbl2583Ulf/bqd1tlLqzNYnxfulttfr9ahmkvvCN4wZXAVXEwsrz2ExpTRi6z4xHzDpNpJl4wn2vjweyoVLfDRtE1VgK6PABMSxCaoxRwBK/Ev1R8elvPAwiVu8/39pTQBIA9tO9cmCYKqwPajyuA9J/jlsATvFAPs7zkWX9Zu8Smo3qh2nWw9/ZPw0Ajtw/g6WFfNvopVT1zBA1eYiD7IaU/OpVftX1fimolivSKeKcV+xWp0yg3i+PH+rV/OdDbIapMenBEH61W2J+K+vrLp+i8Kq6C36tHLKdYaut4oxpkJhehiGj0DtsRbWnSIcitZMUE/vSID8CohJN8KYfw8WUlCIUMVDAdK5HcnPPhzMtA/DwdeeauFcZ8LY6nmFtQ51M7xIr6pb0Fdg0R85L0cuZC0Dg8tTGes5SeSAka9697NPLu+WimFph35BeSbV4YQ6qGYAnTgeabjtlaRnBP3RLBAjxNb/m+cQeJrWVSHszgZ767aCYh5bmwO3jc3rxural2y0Z0Jvpkaefufq45eyNoCpRf8BkoNAmAkXphE2w+46rmUrZwi8kczBWjt7onXyPlWPamu3/c4V6YuxzUx2/Bl6Xe04O+PqSPC06D4l5pi0jg9Y9tA5GwplFZ9yuHd66xjZ14ORq3ycD6M8188qoFptpqhJqGnft7h3ghlplPTYHL5gVKC47sxifWbXJ+KOztb2FUbKYF3jM+FPLpuqFvT/xtuob81Kk3Bwk1l1O1VpWP2Z8lWYbVS4tKZsAGH2/MNRvDhOhXwVm8rLHckWXXlVhbvE7Q4F7G5TNI84p1Mszj+aD0PK4JXSyCDBE86nR4SfxClvO0l5HAwxypJqsBNn4dIi6JD2i2pTTltXPJ/iRi9c3p8PKOgeDBHXilm+fFPxpQTYUqC4buKvm2go97mEApx5YZ147rEA5vLgD7HHBh6+FbSmNbRc12p5O3AWE2+THP8TXa7U0TogWstVIQEVLerAYh/i0VMdlQKIDJGP4+0kLBgm8Q6llc3pu93dW2/ulQCNoTh+OGywO6Y4DMcpUA+02m/TXfrUbnVLI//QcP39Mjf95mbZIbMw0qyvENeqCKyEwLSJc6gVPfeuGiiQyUl76vYTtFmORF9fzQsaslHKguva6l9iQ9KRSEJMm1tuhK4pQrhL9BQ1x+2WnGs19xCCN3WQF43PXm5eKNGKojkUO4AgCWED58kQrXEvQ9Tl3wwP+urv7qYNeBpYtZ+Uwtn2Mo6FXBbT0j739c/rrvTYvBrEW25mXafK9FxCsFo0PFMuBP1QDroAtqQ8JHpvSCdsJbYU1s5EtdGRoZCpt+A7DD2hTXBPmOXYN9c7SivAT92CfHEmAm8CMGkv9ijOAJg7xcUOcmhuhzyMhHnpucQ0MUoenHXhJ3Ortzo+U8NRm0lHJ7ILJ57RWLjGNPdPOtu/WhvU/T1pX2WhkfFSvrxT7G9/Rlvw+gMkw9vgCx+EAyG8hyzZSjEuDu8IntYwcOZoMKlslbacvpRU/8V88LuF8iHw8iSr28JWnt/VHAfgwxkALeIuckml6npuw6BX09A6JHdFatYPVq1VW1Rb1zoyMuRX4lEiBHY22LmB8LaFlWNZlTcJADBC88LSAkg1qFqhMi1EH2JhoyHiwj4jdooINCfi8deVZ1rlPis0/+jPujChv3oTEGWr11GjC3PyoOzawsdfHRvJwRMh4cxCQPGu1VGJBGwl8+L4Of8NfnO2Z4qj03+iEwigFMO4Aeh/VznNUzBMqI8oa9jBgh5WzC8go0ucJWQZCepydctj5AFV6+jW3oemC7cxXnSGonyw+5YwRuYypFMn08gEFi0lD64emJQJPj6iR8XDpCOmiHIYPkudUJK8jV6hMnAbSX9n/gExcQ2rVDXnfVRcBwBk2E+NAlvYv2mGUyXMEZS4CYoU8hAlbBRs9UPih0CTaLdrUlirBzaAiS6Uz49mc6xqUG9zgI8Xl4Gkj29CapReJgs/G7/C4TUl7FXLPO3VMLLoAtC3qd7hkNQOPmnEGhIWm8QZSzMmQ4+CUUqUvnZiuctlldfmtKF45RwUmiH4Pj89uF1RI5Sm1hGN2eB66lYTV6lmpaLLm2YwRsRThXcQFa2/yxBi2hNhEtA6hiziZR2Hp2fbGHi0ppRaCtZceTeBmU8RJFFCk50Oa9EJ9nMLSZ+KqKPnFm2PVux2n+12CX/PaIq6mCvAdv4cAq080XmrKzsm6rNyLa3No/Zq6kmGMvt1iFpqIOid/z1Y+kiEilAo7D+XwqkEZqE/oVXW70hDC8FEfZjx5dJ1Zp+KGe5gv07W4ourTNrlINwCz4hvrZuVeWD+ybxyS2H6FUUZVVx4mL5Yl9Q9zpEnE4UzcbaNfDXoLJBzMZvzTXtN4dnFuU0uH/59gHqMjM7QAXOj4sY9pk5m9Sn3Ca5QnTu2dBkSl6bzCzn6rvGanCcVgn+YiQ2xSMfNYi62cfpeORFU0y4OARVdQSdy5ywN9w0Ci/oUgSHnoe8WAzMgEHsFFBfDs1mly4/gRswTN2HuysZOyb2iPvCubBU+SRPF+byZcPAAsMrPvqrrnzDYbfGyUhVXjN1fL9c85EmbvfubotPUC0wItyDSLyq27UVefANrTQZ/9GXLVLZz+fpjLZkEwuBoNvkh5/3bVQ9lGSGgKQDYzf5AUsYq+k/phDVe2GrRclGoTQR7J7VOLufl1bF1rZrJ88u287BU7Fzmr2To0tR/Vx24fMHildPEKeKnNfI9QtawkRJAFpDbmAEqeoW4ETdeI2O5H4VOTFLAiOIR9GwM3SWxpjERyj779Fl7b9n0DJa+JdC5Ge0Yi0x3/b0crOE8t4jJy4mrYtVyR+JzEakY7lvSig3tDIwQkNMggMknwvLclvGrw+zapDD2RWcZY55mkfINWiOCz7M7/BpmlWI+ezkr1xmADDfwzK7PVc/CK/nNUNo1HkJ89XI95w1zLiZ+w4LLr189+V6U39UER5RYtsFT72Ae0uXQGMen2tDFiWT1Ktf409IYl50+UQeLlCC7lEhZAfZyAnSsTYjCQiWRPVTAiuCNvpyljNT3wvGGfTaZAop6EIu+7KSKYIxyLxfboQMk3IK57iNnKxrEUwfjPdvNaCm8PomdaNFCNGCG6kFxI9r7y0gU1wNKWiOSsvlOCwJrQ2+RnB6rnMioxrAbQqKg==","iterations":240000}</script>
+    <script>
+      (() => {
+        const payload = JSON.parse(document.getElementById("protected-payload").textContent);
+        const storageKey = "kameyaSitePreviewKey";
+        const form = document.getElementById("access-form");
+        const idInput = document.getElementById("access-id");
+        const passInput = document.getElementById("access-pass");
+        const error = document.getElementById("access-error");
+        const button = form.querySelector("button");
+        const decoder = new TextDecoder();
+        const encoder = new TextEncoder();
+
+        function fromBase64(value) {
+          return Uint8Array.from(atob(value), (char) => char.charCodeAt(0));
+        }
+
+        function toBase64(bytes) {
+          let binary = "";
+          bytes.forEach((byte) => { binary += String.fromCharCode(byte); });
+          return btoa(binary);
+        }
+
+        async function deriveKey(id, pass) {
+          const baseKey = await crypto.subtle.importKey(
+            "raw",
+            encoder.encode(id + "\n" + pass),
+            "PBKDF2",
+            false,
+            ["deriveKey"]
+          );
+          return crypto.subtle.deriveKey(
+            { name: "PBKDF2", salt: fromBase64(payload.salt), iterations: payload.iterations, hash: "SHA-256" },
+            baseKey,
+            { name: "AES-GCM", length: 256 },
+            true,
+            ["decrypt"]
+          );
+        }
+
+        async function decryptWithKey(key) {
+          const packed = fromBase64(payload.ciphertext);
+          const body = packed.slice(0, -16);
+          const tag = packed.slice(-16);
+          const encrypted = new Uint8Array(body.length + tag.length);
+          encrypted.set(body);
+          encrypted.set(tag, body.length);
+          const plain = await crypto.subtle.decrypt(
+            { name: "AES-GCM", iv: fromBase64(payload.iv), tagLength: 128 },
+            key,
+            encrypted
+          );
+          return decoder.decode(plain);
+        }
+
+        async function reveal(html) {
+          document.open();
+          document.write(html);
+          document.close();
+        }
+
+        async function tryStoredKey() {
+          const stored = sessionStorage.getItem(storageKey);
+          if (!stored) return;
+          try {
+            const key = await crypto.subtle.importKey("raw", fromBase64(stored), "AES-GCM", true, ["decrypt"]);
+            await reveal(await decryptWithKey(key));
+          } catch {
+            sessionStorage.removeItem(storageKey);
+          }
+        }
+
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          error.textContent = "";
+          button.disabled = true;
+          try {
+            const key = await deriveKey(idInput.value.trim(), passInput.value);
+            const html = await decryptWithKey(key);
+            const rawKey = new Uint8Array(await crypto.subtle.exportKey("raw", key));
+            sessionStorage.setItem(storageKey, toBase64(rawKey));
+            await reveal(html);
+          } catch {
+            error.textContent = "IDまたはPassが違います。";
+            passInput.value = "";
+            passInput.focus();
+          } finally {
+            button.disabled = false;
+          }
+        });
+
+        tryStoredKey();
+      })();
+    </script>
   </body>
 </html>

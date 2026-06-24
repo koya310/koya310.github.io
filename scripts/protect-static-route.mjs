@@ -1,17 +1,18 @@
 #!/usr/bin/env node
 import { readFileSync, writeFileSync } from "node:fs";
-import { basename } from "node:path";
-import { pbkdf2Sync, randomBytes, createCipheriv } from "node:crypto";
+import { pbkdf2Sync, randomBytes, createCipheriv, createDecipheriv } from "node:crypto";
 
 const targets = process.argv.slice(2);
 const user = process.env.PROTECT_USER || "kameya";
 const pass = process.env.PROTECT_PASS || randomBytes(12).toString("base64url");
+const oldUser = process.env.PROTECT_OLD_USER || user;
+const oldPass = process.env.PROTECT_OLD_PASS || "";
 const iterations = 240000;
 const salt = randomBytes(16);
 const key = pbkdf2Sync(`${user}\n${pass}`, salt, iterations, 32, "sha256");
 
 if (targets.length === 0) {
-  console.error("usage: PROTECT_USER=<id> PROTECT_PASS=<pass> node scripts/protect-static-route.mjs <html>...");
+  console.error("usage: PROTECT_USER=<id> PROTECT_PASS=<pass> [PROTECT_OLD_PASS=<pass>] node scripts/protect-static-route.mjs <html>...");
   process.exit(1);
 }
 
@@ -30,10 +31,34 @@ function encryptHtml(html) {
   };
 }
 
+function decryptProtectedHtml(html, target) {
+  const match = html.match(/<script type="application\/json" id="protected-payload">([\s\S]*?)<\/script>/);
+  if (!match) {
+    return html;
+  }
+  if (!oldPass) {
+    throw new Error(`${target} is already protected. Set PROTECT_OLD_PASS to re-encrypt it.`);
+  }
+  const payload = JSON.parse(match[1]);
+  const oldKey = pbkdf2Sync(
+    `${oldUser}\n${oldPass}`,
+    Buffer.from(payload.salt, "base64"),
+    payload.iterations,
+    32,
+    "sha256",
+  );
+  const packed = Buffer.from(payload.ciphertext, "base64");
+  const encrypted = packed.subarray(0, -16);
+  const tag = packed.subarray(-16);
+  const decipher = createDecipheriv("aes-256-gcm", oldKey, Buffer.from(payload.iv, "base64"));
+  decipher.setAuthTag(tag);
+  return Buffer.concat([decipher.update(encrypted), decipher.final()]).toString("utf8");
+}
+
 function buildGate({ title, saltBase64, iv, ciphertext }) {
   const payload = JSON.stringify({ salt: saltBase64, iv, ciphertext, iterations });
   return `<!DOCTYPE html>
-<html lang="ja" data-protected-route="kameya-top">
+<html lang="ja" data-protected-route="kameya-site">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -154,7 +179,7 @@ function buildGate({ title, saltBase64, iv, ciphertext }) {
     <script>
       (() => {
         const payload = JSON.parse(document.getElementById("protected-payload").textContent);
-        const storageKey = "kameyaTopPreviewKey";
+        const storageKey = "kameyaSitePreviewKey";
         const form = document.getElementById("access-form");
         const idInput = document.getElementById("access-id");
         const passInput = document.getElementById("access-pass");
@@ -260,15 +285,11 @@ function escapeHtml(value) {
 }
 
 for (const target of targets) {
-  const original = readFileSync(target, "utf8");
-  if (original.includes('data-protected-route="kameya-top"')) {
-    throw new Error(`${target} is already protected. Restore plaintext before rerunning.`);
-  }
-  const title = basename(target) === "index.html" ? "亀屋日本伝統株式会社" : "亀屋日本伝統株式会社";
+  const original = decryptProtectedHtml(readFileSync(target, "utf8"), target);
+  const title = "亀屋日本伝統株式会社";
   const encrypted = encryptHtml(original);
   writeFileSync(target, buildGate({ title, saltBase64: toBase64(salt), ...encrypted }));
 }
 
 console.log(`Protected ${targets.length} file(s).`);
 console.log(`ID: ${user}`);
-console.log(`Pass: ${pass}`);
