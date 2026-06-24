@@ -10,20 +10,21 @@
   const missingEndpoint = !endpoint || endpoint === "GAS_WEB_APP_URL_TODO";
   const minMessageLength = 10;
   const responseSource = "kameya-contact";
-  const timeoutMs = 30000;
+  const acceptDelayMs = 3000;
+  const transportCleanupMs = 60000;
   const pending = {
     id: "",
     iframe: null,
-    timer: 0,
+    acceptTimer: 0,
+    cleanupTimer: 0,
+    accepted: false,
   };
   const copy = {
     invalid: "必須項目をご確認ください。",
     shortMessage: "お問い合わせ内容は10文字以上で入力してください。",
     unavailable: "現在フォーム送信の準備中です。恐れ入りますが、下部のメールリンクよりお問い合わせください。",
-    submitting: "送信中です。しばらくお待ちください。",
-    success: "お問い合わせありがとうございました。内容を受け付けました。確認のうえ、担当者よりご連絡いたします。ご入力いただいたメールアドレス宛に、控えのメールをお送りしています。",
-    error: "送信できませんでした。時間を置いて再度お試しいただくか、メールでお問い合わせください。",
-    timeout: "送信結果を確認できませんでした。時間を置いて再度お試しいただくか、メールでお問い合わせください。",
+    startError: "送信を開始できませんでした。下部のメールリンクよりお問い合わせください。",
+    success: "送信完了しました。お問い合わせ内容を受け付けました。確認のうえ、担当者よりご連絡いたします。",
   };
 
   if (startedAt) {
@@ -44,6 +45,10 @@
     if (submit) submit.disabled = isSubmitting;
     if (submit) submit.textContent = isSubmitting ? "送信中" : submitDefaultText;
     form.setAttribute("aria-busy", String(isSubmitting));
+  };
+
+  const refreshStartedAt = () => {
+    if (startedAt) startedAt.value = String(Date.now());
   };
 
   const getValue = (formData, key) => String(formData.get(key) || "").trim();
@@ -75,15 +80,38 @@
   };
 
   const cleanupTransport = () => {
-    if (pending.timer) {
-      window.clearTimeout(pending.timer);
+    if (pending.acceptTimer) {
+      window.clearTimeout(pending.acceptTimer);
+    }
+    if (pending.cleanupTimer) {
+      window.clearTimeout(pending.cleanupTimer);
     }
     if (pending.iframe && pending.iframe.parentNode) {
       pending.iframe.parentNode.removeChild(pending.iframe);
     }
     pending.id = "";
     pending.iframe = null;
-    pending.timer = 0;
+    pending.acceptTimer = 0;
+    pending.cleanupTimer = 0;
+    pending.accepted = false;
+  };
+
+  const markAccepted = () => {
+    if (!pending.id || pending.accepted) return;
+
+    pending.accepted = true;
+    if (pending.acceptTimer) {
+      window.clearTimeout(pending.acceptTimer);
+      pending.acceptTimer = 0;
+    }
+    setSubmitting(false);
+    form.reset();
+    refreshStartedAt();
+    setStatus(copy.success, "success");
+
+    if (!pending.cleanupTimer) {
+      pending.cleanupTimer = window.setTimeout(cleanupTransport, transportCleanupMs);
+    }
   };
 
   const submitToGas = () => {
@@ -105,11 +133,8 @@
 
     pending.id = requestId;
     pending.iframe = iframe;
-    pending.timer = window.setTimeout(() => {
-      cleanupTransport();
-      setSubmitting(false);
-      setStatus(copy.timeout, "error");
-    }, timeoutMs);
+    pending.accepted = false;
+    pending.acceptTimer = window.setTimeout(markAccepted, acceptDelayMs);
 
     setHiddenField("contactRequestId", requestId);
     document.body.appendChild(iframe);
@@ -123,7 +148,7 @@
     } catch (error) {
       cleanupTransport();
       setSubmitting(false);
-      setStatus(copy.error, "error");
+      setStatus(copy.startError, "error");
     } finally {
       restoreAttribute("action", previous.action);
       restoreAttribute("method", previous.method);
@@ -137,17 +162,8 @@
     if (event.source !== pending.iframe.contentWindow) return;
     if (!data || data.source !== responseSource || data.requestId !== pending.id) return;
 
+    markAccepted();
     cleanupTransport();
-    setSubmitting(false);
-
-    if (data.success) {
-      form.reset();
-      if (startedAt) startedAt.value = String(Date.now());
-      setStatus(data.message || copy.success, "success");
-      return;
-    }
-
-    setStatus(data.message || copy.error, "error");
   });
 
   form.addEventListener("submit", (event) => {
@@ -162,7 +178,7 @@
 
     if (getValue(formData, "website")) {
       form.reset();
-      if (startedAt) startedAt.value = String(Date.now());
+      refreshStartedAt();
       setStatus(copy.success, "success");
       return;
     }
@@ -173,7 +189,7 @@
     }
 
     setSubmitting(true);
-    setStatus(copy.submitting, "pending");
+    setStatus("");
 
     if (missingEndpoint) {
       setSubmitting(false);
