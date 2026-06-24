@@ -1966,6 +1966,34 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
   }
 }
 
+@media (min-width: 1024px) {
+  :root {
+    --stage-height: 2248px !important;
+  }
+
+  body.kameya-common-header-ready .kogei-page .stage-wrap,
+  .kogei-page .stage-wrap,
+  .kogei-page .kogei-stage {
+    height: var(--stage-height) !important;
+  }
+
+  .kogei-page .copy-left-long {
+    top: 1280px !important;
+  }
+
+  .kogei-page .artifact--bowl {
+    top: 1160px !important;
+  }
+
+  .kogei-page .artifact--red {
+    top: 1648px !important;
+  }
+
+  .kogei-page .copy-bottom {
+    top: 1772px !important;
+  }
+}
+
 @media (max-width: 640px) {
   body.kameya-common-header-ready .kogei-page .stage-wrap {
     margin-top: 0 !important;
