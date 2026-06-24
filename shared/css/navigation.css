@@ -634,12 +634,12 @@ body.kameya-menu-open .kameya-menu-overlay {
   display: flex;
   flex-wrap: wrap;
   column-gap: 0.56em;
-  row-gap: 0.08em;
+  row-gap: 0.04em;
   margin: 0;
   font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
-  font-size: clamp(32px, 5vw, 72px);
+  font-size: clamp(30px, 4.2vw, 56px);
   font-weight: 500;
-  line-height: 1.28;
+  line-height: 1.22;
   letter-spacing: 0.08em;
 }
 
@@ -1065,20 +1065,20 @@ body[data-kameya-lang="en"] .kameya-menu-overlay__title span {
 
   .kameya-menu-overlay {
     place-items: start stretch;
-    padding: 88px 28px 44px;
+    padding: 72px 24px 32px;
   }
 
   .kameya-menu-overlay__inner {
     width: 100%;
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 22px;
   }
 
   .kameya-menu-overlay__kicker {
     grid-template-columns: 32px auto;
     gap: 12px;
-    margin-bottom: 18px;
-    font-size: 14px;
+    margin-bottom: 12px;
+    font-size: 13px;
     letter-spacing: 0.18em;
   }
 
@@ -1088,9 +1088,9 @@ body[data-kameya-lang="en"] .kameya-menu-overlay__title span {
 
   .kameya-menu-overlay__title {
     column-gap: 0;
-    row-gap: 0.04em;
-    font-size: clamp(31px, 9.2vw, 42px);
-    line-height: 1.34;
+    row-gap: 0;
+    font-size: clamp(26px, 7.4vw, 34px);
+    line-height: 1.24;
   }
 
   .kameya-menu-overlay__title span {
@@ -1109,27 +1109,28 @@ body[data-kameya-lang="en"] .kameya-menu-overlay__title span {
   }
 
   .kameya-menu-overlay__nav a {
-    grid-template-columns: 52px minmax(0, 1fr);
-    padding: 12px 0;
-    font-size: clamp(17px, 5vw, 22px);
+    grid-template-columns: 48px minmax(0, 1fr);
+    padding: 7px 0;
+    font-size: clamp(16px, 4.4vw, 19px);
+    line-height: 1.36;
   }
 
   .kameya-menu-overlay__nav a::before {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
 @media (max-width: 390px) {
   .kameya-menu-overlay {
-    padding-inline: 24px;
+    padding-inline: 22px;
   }
 
   .kameya-menu-overlay__inner {
-    gap: 30px;
+    gap: 18px;
   }
 
   .kameya-menu-overlay__nav a {
-    padding: 11px 0;
+    padding: 6px 0;
   }
 }
 
