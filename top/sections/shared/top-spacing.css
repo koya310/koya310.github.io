@@ -20,6 +20,7 @@
   --ktop-responsive-bottom: 96px;
   --ktop-responsive-cta-gap: 24px;
   --ktop-works-bg-fill: max(1200px, 100%);
+  --ktop-works-bg-y: -48px;
 }
 
 @media (min-width: 721px) and (max-width: 1100px) {
@@ -349,7 +350,7 @@ h1.section-title,
 .works .works-fit {
   background-color: rgb(var(--kameya-blue)) !important;
   background-image: url("../03_我々が行っていること/assets/figma/profile-bg.webp") !important;
-  background-position: center top !important;
+  background-position: center var(--ktop-works-bg-y) !important;
   background-repeat: repeat-y !important;
   background-size: 100% var(--ktop-works-bg-fill) !important;
 }
@@ -357,7 +358,7 @@ h1.section-title,
 #works .works-bg,
 .works .works-bg {
   background-image: url("../03_我々が行っていること/assets/figma/profile-bg.webp") !important;
-  background-position: center top !important;
+  background-position: center var(--ktop-works-bg-y) !important;
   background-repeat: repeat-y !important;
   background-size: 100% var(--ktop-works-bg-fill) !important;
 }
@@ -371,7 +372,7 @@ h1.section-title,
 .works .works-mobile {
   background-color: rgb(var(--kameya-blue)) !important;
   background-image: url("../03_我々が行っていること/assets/figma/profile-bg.webp") !important;
-  background-position: center top !important;
+  background-position: center var(--ktop-works-bg-y) !important;
   background-repeat: repeat-y !important;
   background-size: 100% var(--ktop-works-bg-fill) !important;
 }
@@ -1280,6 +1281,19 @@ h1.section-title,
 #initiatives .section-cta {
   margin-top: var(--ktop-responsive-cta-gap) !important;
   margin-bottom: 0 !important;
+}
+
+/* KMY-05: on desktop, the initiatives section ends at the CTA with card-like spacing. */
+@media (min-width: 1209px) {
+  #initiatives .frame-shell,
+  #initiatives .works {
+    height: calc(var(--frame-height) - 48px) !important;
+  }
+
+  #initiatives .section-cta {
+    margin-top: -24px !important;
+    margin-bottom: 0 !important;
+  }
 }
 
 @media (max-width: 1100px) {
