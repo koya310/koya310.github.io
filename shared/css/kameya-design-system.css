@@ -1636,12 +1636,82 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
   }
 }
 
-@media (min-width: 769px) and (max-width: 1207px) {
-  body.kameya-common-header-ready .kogei-page .stage-wrap,
-  .kogei-page .kogei-stage {
-    height: 2510px !important;
+@media (min-width: 641px) and (max-width: 1207px) {
+  body.kameya-common-header-ready .kogei-page .stage-wrap {
+    height: auto !important;
+    margin-top: clamp(56px, 8vw, 96px) !important;
   }
 
+  .kogei-page .stage-wrap {
+    height: auto !important;
+    overflow: hidden !important;
+  }
+
+  .kogei-page .stage-wrap::before,
+  .kogei-page .stage-wrap::after {
+    display: none !important;
+  }
+
+  .kogei-page .kogei-stage {
+    display: grid !important;
+    width: min(100%, 1040px) !important;
+    height: auto !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    align-items: center !important;
+    column-gap: clamp(32px, 6vw, 80px) !important;
+    row-gap: clamp(48px, 7vw, 80px) !important;
+    margin: 0 auto !important;
+    padding: 40px clamp(48px, 8vw, 120px) 120px !important;
+    transform: none !important;
+  }
+
+  .kogei-page .heading-block,
+  .kogei-page .copy-block,
+  .kogei-page .artifact {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: auto !important;
+    margin: 0 !important;
+  }
+
+  .kogei-page .heading-block {
+    display: flex !important;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    align-self: start !important;
+  }
+
+  .kogei-page .copy-block {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    gap: 24px !important;
+    text-shadow: 0 1px 18px rgba(251, 248, 241, 0.78) !important;
+  }
+
+  .kogei-page .copy-intro {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+  }
+
+  .kogei-page .copy-right {
+    grid-column: 2 !important;
+    grid-row: 3 !important;
+  }
+
+  .kogei-page .copy-left-long {
+    grid-column: 1 !important;
+    grid-row: 4 !important;
+  }
+
+  .kogei-page .copy-bottom {
+    grid-column: 2 !important;
+    grid-row: 5 !important;
+  }
+
+  .kogei-page .artifact--hero,
   .kogei-page .artifact--bamboo,
   .kogei-page .artifact--bowl,
   .kogei-page .artifact--red {
@@ -1649,6 +1719,36 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
     height: auto !important;
     clip-path: none !important;
     object-fit: contain !important;
+    max-width: none !important;
+  }
+
+  .kogei-page .artifact--hero {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    justify-self: start !important;
+    height: clamp(240px, 31vw, 320px) !important;
+    z-index: 4 !important;
+  }
+
+  .kogei-page .artifact--bamboo {
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+    justify-self: end !important;
+    height: clamp(200px, 25vw, 260px) !important;
+  }
+
+  .kogei-page .artifact--bowl {
+    grid-column: 2 !important;
+    grid-row: 4 !important;
+    justify-self: start !important;
+    height: clamp(220px, 27vw, 280px) !important;
+  }
+
+  .kogei-page .artifact--red {
+    grid-column: 1 !important;
+    grid-row: 5 !important;
+    justify-self: end !important;
+    height: clamp(136px, 18vw, 190px) !important;
   }
 
   .kogei-page .artifact--tablet-blue,
@@ -1656,37 +1756,28 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
   .kogei-page .artifact--tablet-wood {
     display: none !important;
   }
-
-  .kogei-page .artifact--bamboo {
-    top: 858px !important;
-    left: -62px !important;
-    width: 420px !important;
-  }
-
-  .kogei-page .artifact--bowl {
-    top: 1676px !important;
-    left: 421px !important;
-    width: 400px !important;
-  }
-
-  .kogei-page .artifact--red {
-    top: 2188px !important;
-    left: 10px !important;
-    width: 320px !important;
-  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   body.kameya-common-header-ready .kogei-page .stage-wrap {
     margin-top: 0 !important;
   }
 
   .kogei-page .kogei-stage {
-    gap: clamp(20px, 3.5vw, 28px) !important;
+    gap: 28px !important;
+    padding-bottom: 64px !important;
   }
 
   .kogei-page .heading-block {
     margin-bottom: 0 !important;
+  }
+
+  .kogei-page .copy-right {
+    order: 5 !important;
+  }
+
+  .kogei-page .copy-bottom {
+    order: 9 !important;
   }
 
   .kogei-page .artifact {
@@ -1695,22 +1786,46 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
     margin-bottom: 0 !important;
     clip-path: none !important;
     object-fit: contain !important;
+    max-width: none !important;
+  }
+
+  .kogei-page .artifact--hero,
+  .kogei-page .artifact--bamboo,
+  .kogei-page .artifact--bowl,
+  .kogei-page .artifact--red {
+    display: block !important;
   }
 
   .kogei-page .artifact--hero {
-    width: min(calc(100vw + 24px), 560px) !important;
+    width: auto !important;
+    height: clamp(220px, 64vw, 300px) !important;
+    align-self: flex-end !important;
   }
 
   .kogei-page .artifact--bamboo {
-    width: min(calc(100vw + 36px), 500px) !important;
+    order: 4 !important;
+    width: auto !important;
+    height: clamp(180px, 48vw, 230px) !important;
+    align-self: flex-start !important;
   }
 
   .kogei-page .artifact--bowl {
-    width: min(calc(100vw + 24px), 500px) !important;
+    width: auto !important;
+    height: clamp(180px, 50vw, 240px) !important;
+    align-self: flex-end !important;
   }
 
   .kogei-page .artifact--red {
-    width: min(calc(100vw + 8px), 440px) !important;
+    order: 8 !important;
+    width: auto !important;
+    height: clamp(128px, 38vw, 180px) !important;
+    align-self: flex-start !important;
+  }
+
+  .kogei-page .artifact--tablet-blue,
+  .kogei-page .artifact--tablet-silver,
+  .kogei-page .artifact--tablet-wood {
+    display: none !important;
   }
 }
 
