@@ -5808,7 +5808,7 @@
         }
       }
 
-      /* Final alignment pass: keep the plate right-aligned until the copy/media gap becomes too tight. */
+      /* Responsive alignment pass: Figma 4006:592 / 4006:634. */
       #co-create {
         --co-edge: clamp(64px, 8.333vw, 120px);
         --co-copy-column: clamp(420px, 32vw, 500px);
@@ -5878,63 +5878,204 @@
 
       @media (max-width: 1200px) {
         #co-create {
-          --co-edge: clamp(40px, 7vw, 80px);
-          --co-artifact-width: min(720px, calc(100vw - var(--co-edge) - var(--co-edge)));
+          --co-edge: clamp(80px, 10vw, 120px);
+          --co-artifact-width: clamp(539px, 56vw, 680px);
+        }
+
+        #co-create .co-invite-stage {
+          min-height: 835px;
         }
 
         #co-create .co-invite-layout {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr);
+          grid-template-areas:
+            "heading"
+            "copy";
+          align-content: start;
+          row-gap: 40px;
+          min-height: 835px;
+          overflow: hidden;
+          padding: 80px var(--co-edge);
+        }
+
+        #co-create .co-invite-heading {
+          position: relative;
+          top: auto;
+          right: auto;
+          grid-area: heading;
+          display: flex;
+          width: min(100%, 620px);
+          flex-direction: column;
+          align-items: flex-start;
+          justify-self: start;
+          gap: 8px;
+          margin: 0;
+        }
+
+        #co-create .co-invite-heading__en {
+          order: 1;
+          font-size: 24px;
+          line-height: 1.5;
+          writing-mode: horizontal-tb;
+        }
+
+        #co-create .co-invite-heading__title {
+          order: 2;
+          flex-direction: row-reverse;
+          justify-content: flex-end;
+          gap: 0;
+          font-size: 40px;
+          line-height: 1.2;
+          white-space: nowrap;
+        }
+
+        #co-create .co-invite-heading__title span {
+          width: auto;
+          writing-mode: horizontal-tb;
+          text-orientation: mixed;
+        }
+
+        #co-create .co-invite-heading__rule {
+          order: 3;
+          flex: none;
+          width: 175px;
+          height: 3px;
+          margin-top: 8px;
+        }
+
+        #co-create .co-invite-heading__rule::before {
+          top: 0;
+          left: 0;
+          width: 175px;
+          height: 3px;
+          transform: none;
+        }
+
+        #co-create .co-invite-copy {
+          position: relative;
+          grid-area: copy;
+          width: min(100%, 560px);
+          gap: 72px;
+          margin-top: 0;
+        }
+
+        #co-create .co-invite-artifact {
+          position: absolute;
+          top: 447px;
+          right: clamp(-220px, -25vw, -120px);
+          left: auto;
+          width: var(--co-artifact-width);
+          margin-top: 0;
+        }
+
+        #co-create .co-invite-artifact-shadow {
+          position: absolute;
+          top: 648px;
+          right: clamp(-140px, -14vw, -72px);
+          left: auto;
+          display: block;
+          width: 373px;
+          height: 100px;
+          margin: 0;
+        }
+      }
+
+      @media (max-width: 799px) {
+        #co-create {
+          --co-edge: 24px;
+          --co-artifact-width: 100%;
+        }
+
+        #co-create .co-invite-stage {
+          min-height: 0;
+        }
+
+        #co-create .co-invite-layout {
+          display: grid;
           grid-template-columns: minmax(0, 1fr);
           grid-template-areas:
             "heading"
             "copy"
             "artifact";
           min-height: 0;
-          row-gap: 64px;
-          padding: 96px var(--co-edge) 120px;
+          row-gap: 40px;
+          padding: 40px var(--co-edge) 0;
         }
 
         #co-create .co-invite-heading {
-          justify-self: end;
-          margin-right: 0;
+          grid-area: heading;
+          width: 100%;
         }
 
-        #co-create .co-invite-copy {
-          width: min(100%, 560px);
-          gap: 56px;
+        #co-create .co-invite-heading {
+          gap: 8px;
         }
 
-        #co-create .co-invite-artifact {
-          justify-self: end;
+        #co-create .co-invite-heading__title {
+          flex-direction: column-reverse;
+          gap: 0;
+          font-size: 40px;
+          line-height: 1.5;
+          white-space: normal;
+        }
+
+        #co-create .co-invite-heading__title span {
+          line-height: 1.5;
+        }
+
+        #co-create .co-invite-heading__rule {
+          width: 175px;
           margin-top: 0;
         }
 
-        #co-create .co-invite-artifact-shadow {
-          display: none;
-        }
-      }
-
-      @media (max-width: 720px) {
-        #co-create {
-          --co-edge: 24px;
-          --co-artifact-width: min(100vw, 520px);
-        }
-
-        #co-create .co-invite-layout {
-          row-gap: 48px;
-          padding: 80px var(--co-edge) 96px;
-        }
-
-        #co-create .co-invite-heading {
-          gap: 16px;
+        #co-create .co-invite-heading__rule::before {
+          width: 175px;
         }
 
         #co-create .co-invite-artifact {
-          margin-right: calc(var(--co-edge) * -1);
+          position: relative;
+          top: auto;
+          right: auto;
+          left: auto;
+          grid-area: artifact;
+          width: 100%;
+          aspect-ratio: 374 / 202;
+          margin: 0;
+          justify-self: stretch;
+        }
+
+        #co-create .co-invite-artifact-shadow {
+          position: relative;
+          top: auto;
+          right: auto;
+          left: auto;
+          grid-area: artifact;
+          display: block;
+          justify-self: start;
+          align-self: start;
+          width: 69.2%;
+          height: clamp(56px, 15.5vw, 128px);
+          aspect-ratio: 258.8 / 63.45;
+          margin-top: 34.1%;
+          margin-right: 0;
+          margin-left: 16.33%;
         }
 
         #co-create .co-invite-copy {
+          grid-area: copy;
           width: 100%;
-          gap: 40px;
+          gap: 32px;
+          margin-top: 0;
+        }
+
+        #co-create .co-invite-copy__lead {
+          line-height: 2;
+        }
+
+        #co-create .co-invite-copy__line {
+          font-size: 16px;
+          line-height: 1.5;
         }
       }
 
