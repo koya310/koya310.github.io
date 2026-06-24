@@ -348,64 +348,59 @@ body.utility-body {
   z-index: 320;
   display: grid;
   place-items: center;
-  padding: 32px;
-  background: rgba(29, 28, 24, 0.44);
+  padding: 24px;
+  background: rgba(29, 28, 24, 0.5);
 }
 
 .contact-submit-dialog__panel {
   position: relative;
   display: grid;
-  grid-template-columns: 168px minmax(0, 1fr);
-  gap: 32px;
-  width: min(640px, calc(100vw - 64px));
-  min-height: 288px;
+  gap: 24px;
+  width: min(496px, calc(100vw - 48px));
   border: 1px solid var(--utility-line);
   background:
-    linear-gradient(rgba(255, 253, 247, 0.96), rgba(255, 253, 247, 0.96)),
+    linear-gradient(rgba(255, 253, 247, 0.98), rgba(255, 253, 247, 0.98)),
     url("/about/assets/figma/paper.webp") center / 640px auto repeat;
-  padding: 40px;
+  padding: 36px;
   color: var(--utility-ink);
 }
 
-.contact-submit-dialog__panel::before,
-.contact-submit-dialog__panel::after {
+.contact-submit-dialog__panel::before {
   position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  background: var(--utility-green);
   content: "";
   pointer-events: none;
-}
-
-.contact-submit-dialog__panel::before {
-  display: none;
-}
-
-.contact-submit-dialog__panel::after {
-  display: none;
 }
 
 .contact-submit-dialog__visual {
   position: relative;
   z-index: 1;
-  display: grid;
-  align-self: center;
-  min-height: 208px;
-  place-items: center;
-  border: 1px solid rgba(206, 189, 157, 0.4);
-  background:
-    linear-gradient(rgba(248, 244, 236, 0.6), rgba(248, 244, 236, 0.6)),
-    url("/about/assets/figma/paper.webp") center / 420px auto repeat;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .contact-submit-dialog__roman {
-  display: none;
+  display: block;
+  order: 2;
+  color: var(--utility-gold);
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: 0.18em;
 }
 
 .contact-submit-dialog__crest {
   position: relative;
   display: grid;
-  width: 112px;
-  height: 112px;
+  width: 52px;
+  height: 52px;
   place-items: center;
-  margin: 0 auto;
+  flex: 0 0 auto;
+  margin: 0;
   border: 0;
   background: transparent;
 }
@@ -417,14 +412,18 @@ body.utility-body {
 .contact-submit-dialog__crest img {
   position: relative;
   display: block;
-  width: 104px;
-  height: 104px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
   opacity: 0.9;
 }
 
 .contact-submit-dialog__rule {
-  display: none;
+  display: block;
+  order: 3;
+  width: 48px;
+  height: 1px;
+  background: rgba(149, 124, 76, 0.48);
 }
 
 .contact-submit-dialog__content {
@@ -435,7 +434,7 @@ body.utility-body {
 }
 
 .contact-submit-dialog__kicker {
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   color: var(--utility-gold);
   font-size: 14px;
   line-height: 1.4;
@@ -445,33 +444,33 @@ body.utility-body {
 .contact-submit-dialog__panel h2 {
   margin: 0;
   color: var(--utility-green);
-  font-size: clamp(30px, 3.6vw, 36px);
+  font-size: clamp(25px, 5vw, 32px);
   font-weight: 500;
   line-height: 1.35;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   word-break: keep-all;
 }
 
 .contact-submit-dialog__panel p {
-  max-width: 360px;
-  margin: 24px 0 0;
+  max-width: none;
+  margin: 20px 0 0;
   color: var(--utility-muted);
   font-size: 16px;
-  line-height: 2;
+  line-height: 1.9;
 }
 
 .contact-submit-dialog__progress {
   display: flex;
-  gap: 8px;
-  margin-top: 32px;
+  gap: 6px;
+  width: min(168px, 100%);
+  margin-top: 28px;
 }
 
 .contact-submit-dialog__progress span {
   display: block;
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: rgba(107, 79, 58, 0.42);
+  width: 52px;
+  height: 2px;
+  background: rgba(107, 79, 58, 0.26);
   animation: contact-dialog-progress 1200ms var(--utility-ease) infinite;
 }
 
@@ -487,8 +486,20 @@ body.utility-body {
   display: none;
 }
 
+.contact-submit-dialog[data-state="error"] .contact-submit-dialog__progress {
+  display: none;
+}
+
 .contact-submit-dialog[data-state="success"] .contact-submit-dialog__crest {
   opacity: 0.86;
+}
+
+.contact-submit-dialog[data-state="error"] .contact-submit-dialog__panel::before {
+  background: var(--utility-gold);
+}
+
+.contact-submit-dialog[data-state="error"] .contact-submit-dialog__panel h2 {
+  color: var(--utility-ink);
 }
 
 .contact-submit-dialog__button {
@@ -904,14 +915,17 @@ body.utility-body {
 
   .contact-submit-dialog__panel {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 20px;
     width: min(100%, calc(100vw - 32px));
     min-height: 0;
-    padding: 32px 24px;
+    padding: 28px 24px 32px;
   }
 
   .contact-submit-dialog__panel::before {
-    inset: 12px;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 4px;
   }
 
   .contact-submit-dialog__panel::after {
@@ -919,27 +933,29 @@ body.utility-body {
   }
 
   .contact-submit-dialog__visual {
-    min-height: 96px;
+    min-height: 0;
+    gap: 12px;
   }
 
   .contact-submit-dialog__roman {
-    display: none;
+    display: block;
+    font-size: 12px;
   }
 
   .contact-submit-dialog__crest {
-    width: 72px;
-    height: 72px;
+    width: 44px;
+    height: 44px;
     margin: 0;
-    justify-self: center;
   }
 
   .contact-submit-dialog__crest img {
-    width: 72px;
-    height: 72px;
+    width: 44px;
+    height: 44px;
   }
 
   .contact-submit-dialog__rule {
-    display: none;
+    display: block;
+    width: 36px;
   }
 
   .contact-submit-dialog__content {
