@@ -1981,6 +1981,10 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
     top: 1280px !important;
   }
 
+  .kogei-page .copy-right {
+    top: 720px !important;
+  }
+
   .kogei-page .artifact--bowl {
     top: 1160px !important;
   }
@@ -1990,7 +1994,7 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
   }
 
   .kogei-page .copy-bottom {
-    top: 1772px !important;
+    top: 1914px !important;
   }
 }
 
