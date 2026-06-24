@@ -355,15 +355,15 @@ body.utility-body {
 .contact-submit-dialog__panel {
   position: relative;
   display: grid;
-  grid-template-columns: 176px minmax(0, 1fr);
-  gap: 48px;
-  width: min(720px, calc(100vw - 64px));
-  min-height: 320px;
+  grid-template-columns: 168px minmax(0, 1fr);
+  gap: 32px;
+  width: min(640px, calc(100vw - 64px));
+  min-height: 288px;
   border: 1px solid var(--utility-line);
   background:
-    linear-gradient(rgba(255, 253, 247, 0.94), rgba(255, 253, 247, 0.94)),
-    url("/about/assets/figma/paper.webp") center / 720px auto repeat;
-  padding: 48px;
+    linear-gradient(rgba(255, 253, 247, 0.96), rgba(255, 253, 247, 0.96)),
+    url("/about/assets/figma/paper.webp") center / 640px auto repeat;
+  padding: 40px;
   color: var(--utility-ink);
 }
 
@@ -375,35 +375,28 @@ body.utility-body {
 }
 
 .contact-submit-dialog__panel::before {
-  inset: 16px;
-  border: 1px solid rgba(206, 189, 157, 0.54);
+  display: none;
 }
 
 .contact-submit-dialog__panel::after {
-  top: 0;
-  right: 40px;
-  bottom: 0;
-  width: 1px;
-  background: rgba(206, 189, 157, 0.46);
+  display: none;
 }
 
 .contact-submit-dialog__visual {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-rows: auto minmax(96px, 1fr) auto;
-  min-height: 224px;
-  align-items: center;
+  align-self: center;
+  min-height: 208px;
+  place-items: center;
+  border: 1px solid rgba(206, 189, 157, 0.4);
+  background:
+    linear-gradient(rgba(248, 244, 236, 0.6), rgba(248, 244, 236, 0.6)),
+    url("/about/assets/figma/paper.webp") center / 420px auto repeat;
 }
 
 .contact-submit-dialog__roman {
-  color: rgba(107, 79, 58, 0.54);
-  font-family: "Times New Roman", serif;
-  font-size: 14px;
-  line-height: 1;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  writing-mode: vertical-rl;
+  display: none;
 }
 
 .contact-submit-dialog__crest {
@@ -413,32 +406,25 @@ body.utility-body {
   height: 112px;
   place-items: center;
   margin: 0 auto;
-  border: 1px solid rgba(107, 79, 58, 0.24);
-  background: rgba(255, 255, 255, 0.42);
+  border: 0;
+  background: transparent;
 }
 
 .contact-submit-dialog__crest::before {
-  position: absolute;
-  inset: 12px;
-  border: 1px solid rgba(149, 124, 76, 0.28);
-  content: "";
+  display: none;
 }
 
 .contact-submit-dialog__crest img {
   position: relative;
   display: block;
-  width: 58px;
-  height: 58px;
+  width: 104px;
+  height: 104px;
   object-fit: contain;
-  opacity: 0.82;
+  opacity: 0.9;
 }
 
 .contact-submit-dialog__rule {
-  display: block;
-  width: 1px;
-  height: 64px;
-  margin: 0 auto;
-  background: rgba(107, 79, 58, 0.28);
+  display: none;
 }
 
 .contact-submit-dialog__content {
@@ -459,10 +445,11 @@ body.utility-body {
 .contact-submit-dialog__panel h2 {
   margin: 0;
   color: var(--utility-green);
-  font-size: clamp(30px, 4.4vw, 42px);
+  font-size: clamp(30px, 3.6vw, 36px);
   font-weight: 500;
   line-height: 1.35;
   letter-spacing: 0.08em;
+  word-break: keep-all;
 }
 
 .contact-submit-dialog__panel p {
@@ -481,9 +468,10 @@ body.utility-body {
 
 .contact-submit-dialog__progress span {
   display: block;
-  width: 40px;
-  height: 1px;
-  background: rgba(107, 79, 58, 0.34);
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(107, 79, 58, 0.42);
   animation: contact-dialog-progress 1200ms var(--utility-ease) infinite;
 }
 
@@ -500,7 +488,7 @@ body.utility-body {
 }
 
 .contact-submit-dialog[data-state="success"] .contact-submit-dialog__crest {
-  border-color: rgba(149, 124, 76, 0.46);
+  opacity: 0.86;
 }
 
 .contact-submit-dialog__button {
@@ -931,30 +919,23 @@ body.utility-body {
   }
 
   .contact-submit-dialog__visual {
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto;
-    min-height: 0;
-    gap: 16px;
+    min-height: 96px;
   }
 
   .contact-submit-dialog__roman {
-    writing-mode: horizontal-tb;
+    display: none;
   }
 
   .contact-submit-dialog__crest {
     width: 72px;
     height: 72px;
     margin: 0;
-    justify-self: end;
-  }
-
-  .contact-submit-dialog__crest::before {
-    inset: 8px;
+    justify-self: center;
   }
 
   .contact-submit-dialog__crest img {
-    width: 40px;
-    height: 40px;
+    width: 72px;
+    height: 72px;
   }
 
   .contact-submit-dialog__rule {
