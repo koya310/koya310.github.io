@@ -342,6 +342,44 @@ h1.section-title,
   margin-top: 24px !important;
 }
 
+#works .works-fit,
+.works .works-fit {
+  background-color: rgb(var(--kameya-blue)) !important;
+  background-image:
+    url("../03_我々が行っていること/assets/figma/profile-bg.webp"),
+    url("../03_我々が行っていること/assets/figma/profile-bg.webp") !important;
+  background-position:
+    center top,
+    center top !important;
+  background-repeat: no-repeat !important;
+  background-size:
+    cover,
+    auto calc(100% + 96px) !important;
+}
+
+#works .works-bg,
+.works .works-bg {
+  background-image: url("../03_我々が行っていること/assets/figma/profile-bg.webp") !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+#works .works-mobile,
+.works .works-mobile {
+  background-color: rgb(var(--kameya-blue)) !important;
+  background-image:
+    url("../03_我々が行っていること/assets/figma/profile-bg.webp"),
+    url("../03_我々が行っていること/assets/figma/profile-bg.webp") !important;
+  background-position:
+    center -48px,
+    center top !important;
+  background-repeat: no-repeat !important;
+  background-size:
+    auto calc(100% + 96px),
+    cover !important;
+}
+
 #works .works-mobile__artists .works-artists-cta,
 .works .works-mobile__artists .works-artists-cta {
   margin-top: 24px !important;
