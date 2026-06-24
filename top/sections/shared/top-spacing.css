@@ -1287,7 +1287,7 @@ h1.section-title,
 @media (min-width: 1209px) {
   #initiatives .frame-shell,
   #initiatives .works {
-    height: calc(var(--frame-height) + 8px) !important;
+    height: calc(var(--frame-height) - 2px) !important;
   }
 
   #initiatives .section-cta {
@@ -1298,7 +1298,7 @@ h1.section-title,
 
 @media (min-width: 1101px) and (max-width: 1208px) {
   #initiatives .content {
-    padding-bottom: 56px !important;
+    padding-bottom: 48px !important;
   }
 
   #initiatives .section-cta {
