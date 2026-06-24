@@ -3,6 +3,11 @@
   if (!form) return;
 
   const status = document.querySelector("[data-contact-status]");
+  const dialog = document.querySelector("[data-contact-dialog]");
+  const dialogKicker = document.querySelector("[data-contact-dialog-kicker]");
+  const dialogTitle = document.querySelector("[data-contact-dialog-title]");
+  const dialogMessage = document.querySelector("[data-contact-dialog-message]");
+  const dialogClose = document.querySelector("[data-contact-dialog-close]");
   const startedAt = form.querySelector("[data-contact-started-at]");
   const submit = form.querySelector("button[type='submit']");
   const submitDefaultText = submit ? submit.textContent : "";
@@ -24,8 +29,14 @@
     shortMessage: "お問い合わせ内容は10文字以上で入力してください。",
     unavailable: "現在フォーム送信の準備中です。恐れ入りますが、下部のメールリンクよりお問い合わせください。",
     startError: "送信を開始できませんでした。下部のメールリンクよりお問い合わせください。",
-    success: "送信完了しました。お問い合わせ内容を受け付けました。確認のうえ、担当者よりご連絡いたします。",
+    pendingKicker: "送信中",
+    pendingTitle: "送信しています",
+    pendingMessage: "この画面のままお待ちください。",
+    successKicker: "送信完了",
+    successTitle: "送信完了しました",
+    successMessage: "お問い合わせ内容を受け付けました。確認のうえ、担当者よりご連絡いたします。",
   };
+  let previousFocus = null;
 
   if (startedAt) {
     startedAt.value = String(Date.now());
@@ -49,6 +60,48 @@
 
   const refreshStartedAt = () => {
     if (startedAt) startedAt.value = String(Date.now());
+  };
+
+  const isDialogOpen = () => dialog && !dialog.hidden;
+
+  const setDialogCopy = (state) => {
+    const isSuccess = state === "success";
+    if (dialogKicker) dialogKicker.textContent = isSuccess ? copy.successKicker : copy.pendingKicker;
+    if (dialogTitle) dialogTitle.textContent = isSuccess ? copy.successTitle : copy.pendingTitle;
+    if (dialogMessage) dialogMessage.textContent = isSuccess ? copy.successMessage : copy.pendingMessage;
+    if (dialogClose) dialogClose.hidden = !isSuccess;
+  };
+
+  const showDialog = (state) => {
+    if (!dialog) return false;
+
+    if (!isDialogOpen()) {
+      previousFocus = document.activeElement instanceof HTMLElement ? document.activeElement : submit;
+    }
+
+    setDialogCopy(state);
+    dialog.dataset.state = state;
+    dialog.hidden = false;
+    document.body.classList.add("contact-dialog-open");
+
+    if (state === "success" && dialogClose) {
+      window.setTimeout(() => dialogClose.focus(), 0);
+    }
+    return true;
+  };
+
+  const closeDialog = (force = false) => {
+    if (!dialog || dialog.hidden) return;
+    if (!force && dialog.dataset.state === "pending") return;
+
+    dialog.hidden = true;
+    delete dialog.dataset.state;
+    document.body.classList.remove("contact-dialog-open");
+
+    if (previousFocus && typeof previousFocus.focus === "function") {
+      previousFocus.focus();
+    }
+    previousFocus = null;
   };
 
   const getValue = (formData, key) => String(formData.get(key) || "").trim();
@@ -107,7 +160,10 @@
     setSubmitting(false);
     form.reset();
     refreshStartedAt();
-    setStatus(copy.success, "success");
+    setStatus("");
+    if (!showDialog("success")) {
+      setStatus(`${copy.successTitle}。${copy.successMessage}`, "success");
+    }
 
     if (!pending.cleanupTimer) {
       pending.cleanupTimer = window.setTimeout(cleanupTransport, transportCleanupMs);
@@ -149,6 +205,7 @@
       cleanupTransport();
       setSubmitting(false);
       setStatus(copy.startError, "error");
+      closeDialog(true);
     } finally {
       restoreAttribute("action", previous.action);
       restoreAttribute("method", previous.method);
@@ -166,6 +223,20 @@
     cleanupTransport();
   });
 
+  if (dialogClose) {
+    dialogClose.addEventListener("click", closeDialog);
+  }
+
+  if (dialog) {
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) closeDialog();
+    });
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeDialog();
+  });
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -179,7 +250,10 @@
     if (getValue(formData, "website")) {
       form.reset();
       refreshStartedAt();
-      setStatus(copy.success, "success");
+      setStatus("");
+      if (!showDialog("success")) {
+        setStatus(`${copy.successTitle}。${copy.successMessage}`, "success");
+      }
       return;
     }
 
@@ -190,9 +264,11 @@
 
     setSubmitting(true);
     setStatus("");
+    showDialog("pending");
 
     if (missingEndpoint) {
       setSubmitting(false);
+      closeDialog(true);
       setStatus(copy.unavailable, "error");
       return;
     }

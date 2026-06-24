@@ -29,7 +29,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
     <link rel="stylesheet" href="/shared/css/reveal.css" />
-    <link rel="stylesheet" href="/shared/css/utility-pages.css?v=20260624-contact-postmessage" />
+    <link rel="stylesheet" href="/shared/css/utility-pages.css?v=20260624-contact-complete-dialog" />
     <link rel="stylesheet" href="/shared/css/kameya-design-system.css?v=20260624-contact-mail-link" />
   </head>
   <body class="utility-body contact-page">
@@ -106,6 +106,27 @@
           </form>
         </section>
 
+        <div
+          class="contact-submit-dialog"
+          data-contact-dialog
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="contact-dialog-title"
+          aria-describedby="contact-dialog-message"
+          hidden
+        >
+          <div class="contact-submit-dialog__panel" data-contact-dialog-panel>
+            <p class="contact-submit-dialog__kicker" data-contact-dialog-kicker>送信中</p>
+            <h2 id="contact-dialog-title" data-contact-dialog-title>送信しています</h2>
+            <p id="contact-dialog-message" data-contact-dialog-message>
+              この画面のままお待ちください。
+            </p>
+            <button class="contact-submit-dialog__button" type="button" data-contact-dialog-close>
+              閉じる
+            </button>
+          </div>
+        </div>
+
         <footer class="site-footer">
           <span>© 2026 亀屋日本伝統株式会社</span>
           <nav class="footer-links" aria-label="フッターリンク">
@@ -116,7 +137,7 @@
       </main>
     </div>
     <script src="/shared/js/reveal.js" defer></script>
-    <script src="/shared/js/contact-form.js?v=20260624-contact-accept-3s" defer></script>
+    <script src="/shared/js/contact-form.js?v=20260624-contact-complete-dialog" defer></script>
     <script src="/shared/js/page-transition.js?v=20260619-menu-numbering-20" defer></script>
   </body>
 </html>
