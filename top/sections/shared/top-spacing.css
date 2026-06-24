@@ -1299,7 +1299,9 @@ h1.section-title,
   }
 }
 
-/* KMY-04: works should be sized by its visible artwork, not by the old iframe height token. */
+/* KMY-04: content sections should size from visible artwork, not old iframe height tokens. */
+.page > .home-section:not(.home-section--fv)[style*="--desktop-height"],
+#philosophy.home-section,
 #works.home-section[style*="--desktop-height"] {
   min-height: 0 !important;
   height: auto !important;

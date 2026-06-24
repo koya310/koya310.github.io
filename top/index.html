@@ -6106,13 +6106,13 @@
         }
       }
 
-      /* セクション間の「間」（元iframe固定高さ）を min-height で復元（コンテンツが大きければコンテンツ優先） */
-      .page > .home-section[style*="--desktop-height"] { min-height: var(--desktop-height); }
+      /* FV keeps the viewport-height contract; content sections size from their own layouts. */
+      .page > .home-section--fv[style*="--desktop-height"] { min-height: var(--desktop-height); }
 
     </style>
     <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
     <link rel="stylesheet" href="/shared/css/kameya-design-system.css?v=20260619-menu-numbering-fix" />
-    <link rel="stylesheet" href="sections/shared/top-spacing.css?v=20260624-works-height-auto" />
+    <link rel="stylesheet" href="sections/shared/top-spacing.css?v=20260624-content-height-auto" />
     <link rel="stylesheet" href="sections/shared/top-spacing-integrated.css" />
   </head>
   <body class="is-opening">
