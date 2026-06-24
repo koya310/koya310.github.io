@@ -2325,31 +2325,6 @@
   width: 100%;
 }
 
-#works .works-artists-link {
-  display: block;
-  margin-left: -16px;
-  padding: 16px;
-  border: 1px solid transparent;
-  color: inherit;
-  text-decoration: none;
-  transition:
-    background 320ms var(--ease),
-    border-color 320ms var(--ease),
-    transform 420ms var(--ease-out);
-}
-
-#works .works-artists-link:hover,
-#works .works-artists-link:focus-visible {
-  border-color: rgb(var(--kameya-gold) / 0.44);
-  background: rgb(var(--kameya-white) / 0.055);
-  transform: translate3d(0, -2px, 0);
-}
-
-#works .works-artists-link:focus-visible {
-  outline: 2px solid var(--focus);
-  outline-offset: 4px;
-}
-
 #works .works-artists h2 {
   margin: 0 0 12px;
   color: rgb(var(--kameya-white));
@@ -2376,34 +2351,6 @@
   line-height: 1.5;
   list-style: none;
   white-space: nowrap;
-}
-
-#works .works-artists__cue {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 16px;
-  color: rgb(var(--kameya-gold));
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-}
-
-#works .works-artists__cue::after {
-  width: 32px;
-  height: 1px;
-  content: "";
-  background: currentColor;
-  transform-origin: left center;
-  transition:
-    width 360ms var(--ease-out),
-    transform 360ms var(--ease-out);
-}
-
-#works .works-artists-link:hover .works-artists__cue::after,
-#works .works-artists-link:focus-visible .works-artists__cue::after {
-  width: 48px;
-  transform: translate3d(4px, 0, 0);
 }
 
 #works .works-motto {
@@ -5861,6 +5808,136 @@
         }
       }
 
+      /* Final alignment pass: keep the plate right-aligned until the copy/media gap becomes too tight. */
+      #co-create {
+        --co-edge: clamp(64px, 8.333vw, 120px);
+        --co-copy-column: clamp(420px, 32vw, 500px);
+        --co-column-gap: clamp(32px, 4.8vw, 56px);
+        --co-artifact-width: min(
+          760px,
+          calc(100vw - var(--co-edge) - var(--co-edge) - var(--co-copy-column) - var(--co-column-gap))
+        );
+      }
+
+      #co-create .co-invite-stage {
+        min-height: auto;
+      }
+
+      #co-create .co-invite-layout {
+        display: grid;
+        grid-template-columns: var(--co-copy-column) minmax(0, 1fr);
+        grid-template-areas:
+          "copy heading"
+          "copy artifact";
+        min-height: var(--desktop-height, 1012px);
+        column-gap: var(--co-column-gap);
+        row-gap: 0;
+        padding: 160px var(--co-edge) 120px;
+      }
+
+      #co-create .co-invite-copy {
+        grid-area: copy;
+        width: 100%;
+      }
+
+      #co-create .co-invite-heading {
+        position: relative;
+        top: auto;
+        right: auto;
+        grid-area: heading;
+        justify-self: end;
+      }
+
+      #co-create .co-invite-artifact {
+        position: relative;
+        top: auto;
+        right: auto;
+        left: auto;
+        grid-area: artifact;
+        justify-self: end;
+        align-self: start;
+        width: var(--co-artifact-width);
+        height: auto;
+        aspect-ratio: 539 / 291;
+        margin-top: 32px;
+      }
+
+      #co-create .co-invite-artifact-shadow {
+        position: relative;
+        top: auto;
+        right: auto;
+        left: auto;
+        grid-area: artifact;
+        justify-self: end;
+        align-self: start;
+        width: clamp(320px, 28vw, 520px);
+        height: 112px;
+        margin-top: clamp(276px, 23vw, 360px);
+        margin-right: clamp(48px, 5vw, 96px);
+      }
+
+      @media (max-width: 1200px) {
+        #co-create {
+          --co-edge: clamp(40px, 7vw, 80px);
+          --co-artifact-width: min(720px, calc(100vw - var(--co-edge) - var(--co-edge)));
+        }
+
+        #co-create .co-invite-layout {
+          grid-template-columns: minmax(0, 1fr);
+          grid-template-areas:
+            "heading"
+            "copy"
+            "artifact";
+          min-height: 0;
+          row-gap: 64px;
+          padding: 96px var(--co-edge) 120px;
+        }
+
+        #co-create .co-invite-heading {
+          justify-self: end;
+          margin-right: 0;
+        }
+
+        #co-create .co-invite-copy {
+          width: min(100%, 560px);
+          gap: 56px;
+        }
+
+        #co-create .co-invite-artifact {
+          justify-self: end;
+          margin-top: 0;
+        }
+
+        #co-create .co-invite-artifact-shadow {
+          display: none;
+        }
+      }
+
+      @media (max-width: 720px) {
+        #co-create {
+          --co-edge: 24px;
+          --co-artifact-width: min(100vw, 520px);
+        }
+
+        #co-create .co-invite-layout {
+          row-gap: 48px;
+          padding: 80px var(--co-edge) 96px;
+        }
+
+        #co-create .co-invite-heading {
+          gap: 16px;
+        }
+
+        #co-create .co-invite-artifact {
+          margin-right: calc(var(--co-edge) * -1);
+        }
+
+        #co-create .co-invite-copy {
+          width: 100%;
+          gap: 40px;
+        }
+      }
+
       @media (prefers-reduced-motion: reduce) {
         #co-create .co-invite-artifact-shadow {
           filter: blur(22px) !important;
@@ -5874,7 +5951,7 @@
     </style>
     <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
     <link rel="stylesheet" href="/shared/css/kameya-design-system.css?v=20260619-menu-numbering-fix" />
-    <link rel="stylesheet" href="sections/shared/top-spacing.css?v=20260624-sp-initiative-bottom-48-tight" />
+    <link rel="stylesheet" href="sections/shared/top-spacing.css?v=20260624-artists-cta-button" />
     <link rel="stylesheet" href="sections/shared/top-spacing-integrated.css" />
   </head>
   <body class="is-opening">
@@ -6017,14 +6094,19 @@
                     </div>
                   </div>
 
-                  <a class="works-artists works-artists-link" href="/artists/" aria-label="作家・作品ページを見る">
+                  <div class="works-artists">
                     <h2>ご協力いただく作家例</h2>
                     <div class="artist-rule" aria-hidden="true"><img src="sections/04_主な取り組み/assets/figma-replay/rule-short.svg" alt="" /></div>
                     <ul class="artist-list" aria-label="ご協力いただく作家例">
                       <li>五代 伊藤赤水（陶芸・人間国宝）</li><li>川北良造（木工芸・人間国宝）</li><li>松原伸生（染織・人間国宝）</li><li>ほか</li>
                     </ul>
-                    <span class="works-artists__cue" aria-hidden="true">作家・作品を見る</span>
-                  </a>
+                    <div class="works-artists-cta">
+                      <a class="section-cta__link works-artists__link" href="/artists/" aria-label="作家・作品ページを見る">
+                        <span>作家・作品を見る</span>
+                        <span class="section-cta__arrow" aria-hidden="true"></span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="works-motto" aria-label="工芸と社会に、新しい接点を。" data-reveal>
@@ -6083,12 +6165,17 @@
                 <p>工芸を「面白い」「また触れたい」と自然に感じられる文化として届けていくこと。そして、工芸を知らなかった人が、人生の中で工芸と出会い、文化との関わり方そのものが変わっていくきっかけをつくること。それが、私たちの役割だと考えています。</p>
               </div>
 
-              <a class="works-mobile__artists works-artists-link" href="/artists/" aria-label="作家・作品ページを見る" data-reveal>
+              <div class="works-mobile__artists" data-reveal>
                 <h2>ご協力いただく作家例</h2>
                 <div class="artist-rule" aria-hidden="true"><img src="sections/04_主な取り組み/assets/figma-replay/rule-short.svg" alt="" /></div>
                 <ul class="artist-list"><li>五代 伊藤赤水（陶芸・人間国宝）</li><li>川北良造（木工芸・人間国宝）</li><li>松原伸生（染織・人間国宝）</li><li>ほか</li></ul>
-                <span class="works-artists__cue" aria-hidden="true">作家・作品を見る</span>
-              </a>
+                <div class="works-artists-cta">
+                  <a class="section-cta__link works-artists__link" href="/artists/" aria-label="作家・作品ページを見る">
+                    <span>作家・作品を見る</span>
+                    <span class="section-cta__arrow" aria-hidden="true"></span>
+                  </a>
+                </div>
+              </div>
 
               <figure class="works-mobile__figure" data-reveal>
                 <div class="works-mobile__object">

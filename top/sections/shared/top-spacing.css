@@ -334,6 +334,153 @@ h1.section-title,
     opacity: 0.96 !important;
   }
 
+#works .works-artists-cta,
+.works .works-artists-cta {
+  display: flex !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  margin-top: 24px !important;
+}
+
+#works .works-mobile__artists .works-artists-cta,
+.works .works-mobile__artists .works-artists-cta {
+  margin-top: 24px !important;
+}
+
+#works .works-artists__link,
+.works .works-artists__link {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  width: min(320px, 100%) !important;
+  min-width: 0 !important;
+  min-height: 56px !important;
+  padding: 8px 48px !important;
+  border: 1px solid rgb(var(--kameya-gold) / 0.54) !important;
+  border-radius: 2px !important;
+  color: rgb(var(--kameya-white)) !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.12em !important;
+  text-decoration: none !important;
+  background: rgb(var(--kameya-white) / 0) !important;
+  overflow: hidden !important;
+  transition:
+    background-color 420ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 420ms cubic-bezier(0.16, 1, 0.3, 1),
+    color 420ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#works .works-artists__link::before,
+.works .works-artists__link::before {
+  position: absolute !important;
+  right: auto !important;
+  bottom: 10px !important;
+  left: 50% !important;
+  display: block !important;
+  width: 104px !important;
+  height: 1px !important;
+  background: rgb(var(--kameya-gold) / 0.62) !important;
+  content: "" !important;
+  opacity: 0.72 !important;
+  pointer-events: none !important;
+  transform: translateX(-50%) !important;
+  transition:
+    width 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 420ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#works .works-artists__link .section-cta__arrow,
+.works .works-artists__link .section-cta__arrow {
+  position: relative !important;
+  display: inline-block !important;
+  width: 40px !important;
+  height: 12px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  color: inherit !important;
+  font-size: 0 !important;
+  line-height: 1 !important;
+  transform: none !important;
+}
+
+#works .works-artists__link .section-cta__arrow::before,
+.works .works-artists__link .section-cta__arrow::before {
+  position: absolute !important;
+  top: 50% !important;
+  left: 0 !important;
+  display: block !important;
+  width: 26px !important;
+  height: 1px !important;
+  background: currentColor !important;
+  content: "" !important;
+  opacity: 0.78 !important;
+  transform: translateY(-50%) !important;
+  transition:
+    width 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 420ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#works .works-artists__link .section-cta__arrow::after,
+.works .works-artists__link .section-cta__arrow::after {
+  position: absolute !important;
+  top: 50% !important;
+  left: 21px !important;
+  display: block !important;
+  width: 7px !important;
+  height: 7px !important;
+  border-top: 1px solid currentColor !important;
+  border-right: 1px solid currentColor !important;
+  content: "" !important;
+  opacity: 0.78 !important;
+  transform: translateY(-50%) rotate(45deg) !important;
+  transition:
+    left 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 420ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#works .works-artists__link:hover,
+#works .works-artists__link:focus-visible,
+.works .works-artists__link:hover,
+.works .works-artists__link:focus-visible {
+  border-color: rgb(var(--kameya-gold) / 0.88) !important;
+  background: rgb(var(--kameya-white) / 0.1) !important;
+  color: rgb(var(--kameya-white)) !important;
+  outline: none !important;
+}
+
+#works .works-artists__link:focus-visible,
+.works .works-artists__link:focus-visible {
+  box-shadow: 0 0 0 2px var(--focus, rgb(var(--kameya-gold) / 0.88)) !important;
+}
+
+#works .works-artists__link:hover::before,
+#works .works-artists__link:focus-visible::before,
+.works .works-artists__link:hover::before,
+.works .works-artists__link:focus-visible::before {
+  width: 152px !important;
+  opacity: 0.92 !important;
+}
+
+#works .works-artists__link:hover .section-cta__arrow::before,
+#works .works-artists__link:focus-visible .section-cta__arrow::before,
+.works .works-artists__link:hover .section-cta__arrow::before,
+.works .works-artists__link:focus-visible .section-cta__arrow::before {
+  width: 38px !important;
+  opacity: 0.96 !important;
+}
+
+#works .works-artists__link:hover .section-cta__arrow::after,
+#works .works-artists__link:focus-visible .section-cta__arrow::after,
+.works .works-artists__link:hover .section-cta__arrow::after,
+.works .works-artists__link:focus-visible .section-cta__arrow::after {
+  left: 33px !important;
+  opacity: 0.96 !important;
+}
+
 .section-heading__title {
   font-size: var(--ktop-title-ja) !important;
   font-weight: 500 !important;
