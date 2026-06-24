@@ -599,8 +599,8 @@ body.utility-body {
 
 .contact-page .contact-form {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 28px;
-  row-gap: 26px;
+  column-gap: 24px;
+  row-gap: 24px;
   padding-top: 0;
 }
 
@@ -612,7 +612,7 @@ body.utility-body {
 }
 
 .contact-page .form-field {
-  gap: 8px;
+  gap: 10px;
 }
 
 .contact-page .form-field label {
@@ -620,16 +620,25 @@ body.utility-body {
   align-items: baseline;
   justify-content: space-between;
   gap: 12px;
-  color: rgba(107, 79, 58, 0.78);
-  font-size: 13px;
-  letter-spacing: 0.14em;
+  color: rgba(29, 28, 24, 0.84);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
 }
 
 .contact-page .required {
+  display: inline-flex;
   flex: 0 0 auto;
-  color: rgba(149, 124, 76, 0.78);
-  font-size: 12px;
-  letter-spacing: 0.12em;
+  align-items: center;
+  min-height: 20px;
+  border: 1px solid rgba(149, 124, 76, 0.24);
+  border-radius: 2px;
+  background: rgba(149, 124, 76, 0.06);
+  color: rgba(107, 79, 58, 0.86);
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.1em;
+  padding: 0 7px;
 }
 
 .contact-page .contact-support {
@@ -659,29 +668,35 @@ body.utility-body {
   outline: none;
 }
 
-.contact-page .form-field input,
-.contact-page .form-field textarea {
-  border: 0;
-  border-bottom: 1px solid rgba(107, 79, 58, 0.2);
-  background: transparent;
-  padding: 12px 2px;
+body.contact-page .contact-form .form-field input,
+body.contact-page .contact-form .form-field textarea {
+  min-height: 54px;
+  border: 1px solid rgba(107, 79, 58, 0.18) !important;
+  background: rgba(255, 253, 247, 0.54) !important;
+  padding: 14px 16px !important;
   transition:
     background-color 260ms var(--utility-ease),
     border-color 260ms var(--utility-ease),
-    box-shadow 260ms var(--utility-ease);
+    outline-color 260ms var(--utility-ease);
 }
 
-.contact-page .form-field textarea {
-  min-height: 152px;
-  border-top: 1px solid rgba(107, 79, 58, 0.1);
-  padding: 16px 2px 12px;
+body.contact-page .contact-form .form-field textarea {
+  min-height: 184px;
+  padding-top: 16px !important;
 }
 
-.contact-page .form-field input:focus,
-.contact-page .form-field textarea:focus {
-  border-color: rgba(107, 79, 58, 0.58);
-  background: rgba(255, 253, 247, 0.24);
-  box-shadow: inset 0 -1px 0 rgba(107, 79, 58, 0.34);
+body.contact-page .contact-form .form-field input::placeholder,
+body.contact-page .contact-form .form-field textarea::placeholder {
+  color: rgba(29, 28, 24, 0.34);
+}
+
+body.contact-page .contact-form .form-field input:focus,
+body.contact-page .contact-form .form-field textarea:focus {
+  border-color: rgba(107, 79, 58, 0.46) !important;
+  background: rgba(255, 255, 255, 0.74) !important;
+  box-shadow: none !important;
+  outline: 1px solid rgba(149, 124, 76, 0.28);
+  outline-offset: 2px;
 }
 
 .mail-link {

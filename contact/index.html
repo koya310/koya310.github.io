@@ -29,7 +29,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="/shared/css/navigation.css?v=20260619-menu-numbering-20" />
     <link rel="stylesheet" href="/shared/css/reveal.css" />
-    <link rel="stylesheet" href="/shared/css/utility-pages.css?v=20260624-contact-form-polish" />
+    <link rel="stylesheet" href="/shared/css/utility-pages.css?v=20260625-contact-readable-form" />
     <link rel="stylesheet" href="/shared/css/kameya-design-system.css?v=20260624-contact-form-polish" />
   </head>
   <body class="utility-body contact-page">
@@ -75,23 +75,23 @@
             <input class="contact-honeypot" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <div class="form-field">
               <label for="name">お名前 <span class="required">必須</span></label>
-              <input id="name" name="name" type="text" autocomplete="name" maxlength="80" required />
+              <input id="name" name="name" type="text" autocomplete="name" maxlength="80" placeholder="例）亀屋 太郎" required />
             </div>
             <div class="form-field">
               <label for="company">会社名・所属 <span class="required">必須</span></label>
-              <input id="company" name="company" type="text" autocomplete="organization" maxlength="120" required />
+              <input id="company" name="company" type="text" autocomplete="organization" maxlength="120" placeholder="例）亀屋日本伝統株式会社" required />
             </div>
             <div class="form-field">
               <label for="email">メールアドレス <span class="required">必須</span></label>
-              <input id="email" name="email" type="email" autocomplete="email" maxlength="120" required />
+              <input id="email" name="email" type="email" autocomplete="email" maxlength="120" placeholder="例）desk@example.com" required />
             </div>
             <div class="form-field">
               <label for="phone">電話番号</label>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40" />
+              <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40" placeholder="例）03-0000-0000" />
             </div>
             <div class="form-field">
               <label for="message">お問い合わせ内容 <span class="required">必須</span></label>
-              <textarea id="message" name="message" minlength="10" maxlength="2000" required></textarea>
+              <textarea id="message" name="message" minlength="10" maxlength="2000" placeholder="ご相談内容をできるだけ具体的にご記入ください。" required></textarea>
             </div>
             <div class="form-actions">
               <button class="submit-button" type="submit">送信する</button>
