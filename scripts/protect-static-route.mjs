@@ -58,7 +58,7 @@ function decryptProtectedHtml(html, target) {
 function buildGate({ title, saltBase64, iv, ciphertext }) {
   const payload = JSON.stringify({ salt: saltBase64, iv, ciphertext, iterations });
   return `<!DOCTYPE html>
-<html lang="ja" data-protected-route="kameya-site">
+<html lang="ja" class="is-auth-checking" data-protected-route="kameya-site">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -67,6 +67,7 @@ function buildGate({ title, saltBase64, iv, ciphertext }) {
     <style>
       :root {
         --paper: #f8f5ec;
+        --paper-deep: #f1eadc;
         --ink: #1a1a1a;
         --muted: rgba(26, 26, 26, 0.64);
         --line: rgba(26, 26, 26, 0.16);
@@ -75,22 +76,34 @@ function buildGate({ title, saltBase64, iv, ciphertext }) {
       }
       * { box-sizing: border-box; }
       html, body { margin: 0; min-height: 100%; }
+      html.is-auth-checking body,
+      html.is-embedded-waiting body {
+        background: transparent;
+      }
+      html.is-auth-checking main,
+      html.is-embedded-waiting main {
+        opacity: 0;
+        pointer-events: none;
+      }
       body {
-        display: grid;
-        min-height: 100vh;
+        display: flex;
+        min-height: 100dvh;
+        align-items: center;
+        justify-content: center;
         place-items: center;
-        padding: 32px;
+        padding: clamp(24px, 6vw, 64px);
         background:
-          linear-gradient(135deg, rgba(248, 245, 236, 0.98), rgba(244, 238, 223, 0.92)),
-          radial-gradient(circle at 80% 12%, rgba(107, 79, 58, 0.08), transparent 32%);
+          radial-gradient(circle at 78% 14%, rgba(107, 79, 58, 0.08), transparent 32%),
+          linear-gradient(135deg, var(--paper), var(--paper-deep));
         color: var(--ink);
         font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
       }
       main {
-        width: min(440px, 100%);
-        padding: 40px;
+        width: min(520px, 100%);
+        padding: clamp(32px, 5vw, 56px);
         border: 1px solid var(--line);
-        background: rgba(248, 245, 236, 0.86);
+        background: rgba(248, 245, 236, 0.9);
+        transition: opacity 180ms ease;
       }
       .kicker {
         margin: 0 0 16px;
@@ -101,7 +114,7 @@ function buildGate({ title, saltBase64, iv, ciphertext }) {
       }
       h1 {
         margin: 0 0 12px;
-        font-size: 28px;
+        font-size: clamp(28px, 4vw, 40px);
         font-weight: 500;
         letter-spacing: 0.06em;
         line-height: 1.5;
@@ -158,7 +171,7 @@ function buildGate({ title, saltBase64, iv, ciphertext }) {
       }
       @media (max-width: 520px) {
         body { padding: 20px; }
-        main { padding: 28px 24px; }
+        main { padding: 32px 24px; }
         h1 { font-size: 24px; }
       }
     </style>
@@ -180,6 +193,7 @@ function buildGate({ title, saltBase64, iv, ciphertext }) {
       (() => {
         const payload = JSON.parse(document.getElementById("protected-payload").textContent);
         const storageKey = "kameyaSitePreviewKey";
+        const isEmbedded = window.self !== window.top;
         const form = document.getElementById("access-form");
         const idInput = document.getElementById("access-id");
         const passInput = document.getElementById("access-pass");
@@ -231,19 +245,26 @@ function buildGate({ title, saltBase64, iv, ciphertext }) {
         }
 
         async function reveal(html) {
-          document.open();
-          document.write(html);
-          document.close();
+          return new Promise((resolve) => {
+            window.setTimeout(() => {
+              document.open("text/html", "replace");
+              document.write(html);
+              document.close();
+              resolve();
+            }, 0);
+          });
         }
 
         async function tryStoredKey() {
           const stored = sessionStorage.getItem(storageKey);
-          if (!stored) return;
+          if (!stored) return false;
           try {
             const key = await crypto.subtle.importKey("raw", fromBase64(stored), "AES-GCM", true, ["decrypt"]);
             await reveal(await decryptWithKey(key));
+            return true;
           } catch {
             sessionStorage.removeItem(storageKey);
+            return false;
           }
         }
 
@@ -266,7 +287,17 @@ function buildGate({ title, saltBase64, iv, ciphertext }) {
           }
         });
 
-        tryStoredKey();
+        (async () => {
+          const unlocked = await tryStoredKey();
+          if (unlocked) return;
+          if (isEmbedded) {
+            document.documentElement.classList.remove("is-auth-checking");
+            document.documentElement.classList.add("is-embedded-waiting");
+            return;
+          }
+          document.documentElement.classList.remove("is-auth-checking");
+          idInput.focus();
+        })();
       })();
     </script>
   </body>

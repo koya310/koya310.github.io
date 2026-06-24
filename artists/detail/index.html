@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" data-protected-route="kameya-site">
+<html lang="ja" class="is-auth-checking" data-protected-route="kameya-site">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +8,7 @@
     <style>
       :root {
         --paper: #f8f5ec;
+        --paper-deep: #f1eadc;
         --ink: #1a1a1a;
         --muted: rgba(26, 26, 26, 0.64);
         --line: rgba(26, 26, 26, 0.16);
@@ -16,22 +17,34 @@
       }
       * { box-sizing: border-box; }
       html, body { margin: 0; min-height: 100%; }
+      html.is-auth-checking body,
+      html.is-embedded-waiting body {
+        background: transparent;
+      }
+      html.is-auth-checking main,
+      html.is-embedded-waiting main {
+        opacity: 0;
+        pointer-events: none;
+      }
       body {
-        display: grid;
-        min-height: 100vh;
+        display: flex;
+        min-height: 100dvh;
+        align-items: center;
+        justify-content: center;
         place-items: center;
-        padding: 32px;
+        padding: clamp(24px, 6vw, 64px);
         background:
-          linear-gradient(135deg, rgba(248, 245, 236, 0.98), rgba(244, 238, 223, 0.92)),
-          radial-gradient(circle at 80% 12%, rgba(107, 79, 58, 0.08), transparent 32%);
+          radial-gradient(circle at 78% 14%, rgba(107, 79, 58, 0.08), transparent 32%),
+          linear-gradient(135deg, var(--paper), var(--paper-deep));
         color: var(--ink);
         font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
       }
       main {
-        width: min(440px, 100%);
-        padding: 40px;
+        width: min(520px, 100%);
+        padding: clamp(32px, 5vw, 56px);
         border: 1px solid var(--line);
-        background: rgba(248, 245, 236, 0.86);
+        background: rgba(248, 245, 236, 0.9);
+        transition: opacity 180ms ease;
       }
       .kicker {
         margin: 0 0 16px;
@@ -42,7 +55,7 @@
       }
       h1 {
         margin: 0 0 12px;
-        font-size: 28px;
+        font-size: clamp(28px, 4vw, 40px);
         font-weight: 500;
         letter-spacing: 0.06em;
         line-height: 1.5;
@@ -99,7 +112,7 @@
       }
       @media (max-width: 520px) {
         body { padding: 20px; }
-        main { padding: 28px 24px; }
+        main { padding: 32px 24px; }
         h1 { font-size: 24px; }
       }
     </style>
@@ -116,11 +129,12 @@
         <div class="error" id="access-error" role="status" aria-live="polite"></div>
       </form>
     </main>
-    <script type="application/json" id="protected-payload">{"salt":"lXKhP4aONU8ye8cx4BbpHg==","iv":"2PIp8SQA0mhelGd/","ciphertext":"qgnIl+tvMyKbdViiQcxpQof9KVr+esDz26pXx0OzxhHNZwpyzd+kli+6aI27QvZejnxReJVchTPG6BoFzqqgGfO0NYAsoOAFoT3yUSJQ/sHsATQ0WSnz3JvSQjOSV6/I9pG2X7c6W1jYklmDY7QgPUbYUR40UQ4iqQzws2cIIKNGQJYRaUug21vkqaxR9uWCcqsdwa7vzY0FOq98qsn6pHweSQPN6R+O+HvYK//YxVMOE933rzNvFZXlrQGYwaHNUpP2ApXnys9dzxz3WiNU7gmp0sZgvCOSV7L+eQRlbmraxE/KxAP+A+OkiNLiBSGxb7bJsTp1rN/+mBXGktSJxQdH/VZnxZun94bSsF5Ka+kjNGaxQYrBVve+P8/lAcIHCSyEiXJv5K3lzhrv2lG+XLVOdkmN5rtITB9G2Vx+9wD/a9bFDgpoI85A5+ukTPaV5ErUcZxKRSS5Vdl/gvhnw1hoSDQ0rjDb7Sp/JzqAoSu6XcGIU2VLL2DJFYj9dfKhB9KLFap84OTIgyjIhO/H/Vds6mJlBPUoxErBlCaGSE2lt+5lDwjN0pSriwlG9IQGbuSK4HVdMcJDgjzNRCdxFap/S2z4zTEgbYd/yioQ40cQu92WChus0iJ6+eXMMNMvEZc404RhbJmdzQbPW2G/4zkzUe3hwllVy2bx4G9fv8mB7Kloryre0aUFi1+ugac1PWuJE5LkJ8f6mdE/RzHaa/NBl9vxBuSQ4XDXX2wsZ7mSvJbFFoaxfNAPcXfVB8pMbZhrGvn/9RSjKd91Ta3L33CX3Rd7YfWoZxXIvAmnlxh4iz+4ZAV5G3JyC4L0hQG9f39eEE693syUHcVPWgif4Ak9v10aFYcrav3XaqHLls/pUj7VFJIcvuBE+Uk+zgqqK/25aCddHQe+IVfcWPLSlnjsiKfrATjBm1rCImKlDrURJEK+GO0FO6FRpSoXvAJM3M+Ht3O8DxDLfvRkDSHHWR8t1DbRHK/e1MT2ZJtIgWwd40BGxHQ6x9HZm+vknL0uyelnQQcE","iterations":240000}</script>
+    <script type="application/json" id="protected-payload">{"salt":"20yo095DYGIpyls4BKyTvg==","iv":"dqUPBBuM9TBOzN4C","ciphertext":"pa9ePTwH1AtUJXRcw5wz/ksekIXCmLWuoXnmFFwMOt0IM0I9a668uj29n8N77HHFnOlyduaITJSwxQJqFlqAEojDTkKjzykGTuwncoZvWe+cvsTHWvBFVBrpMhzftEhacCI8jSfAhAkUgjG1p/sv19pdYkUYqjz1tuFnBf196+29Vwd3KTyoNpXJ3Ewsgw5mvU4gFRrDv0uKWJzFwjeFmD/SDMRr6mvCSuXhak9kvGRhvC1TB2nsBRWB75Zt9BFHiMj9x+XlnsUbLc59MKaR5e3Ur7WRCLTELHJfRtnt6+dS8lO3g72aoR5Y1EvaTFq8HEWm9KVGkVzI1dGOqaDPD97HC0wW3xImwpOHt1DFmelchTGyyIaDedFu6CErNFaI5dnNeKZdIx1LCr4Y80Uf6Nf9l5PC2PugtQlbELAuO7ffWNUs4qn6GGGUL3Ao9cnxQJk/RbPd/uaT0oclS1umM2HbauyYiXpj9KFzzIUbb7Ix1GII2fTHfaEoMZ/Ux6f53Cj8BHHdRdgoLOYIZJc4XUSH8y84pNy23DOTOmh5uIWQ7OwWuARVU9KAeZOP26AGvzqYHUQ+O0k3wtKvFl5dpl7xQOUwcVsh+P1c5vVt5/eRFmRjKhmNJ1mRIWHWfF90bGx5hPrmV++xaFKlRN8bB9Gq7pQB+gFHA/Z8xhLvPqTQbwv2GmNYBxqHPDGSf6yw9gJWmtUbLf4G3X97J/uIw8V7Wm4RVQXAWQuONTXm0KzlDuqJHtuwzJHrtqoNHv9Qy/hGW9fj8NYjsFi2yzvDeAqL9THJDIU5bXjBxgcOio4V8VUW+nOPw1ecTO3l2qDfodgLwTJZop2GZITY8Uuzp0lQML1pDTAMDDc3u55E3wPhTe0rkVPBLnUEFw1t4I41P/w7woUifYL9ZoyMAatbyHYgY3KtRGJ6RbYHNdhMpILF/gWOIO4I1QpTuK5L9r+UAc2kDJtnXHYEHzLZ/GIvsvmoJcrtN9ckD4aDvWHQlnnYgXWG6umlfwGczWtwsT9vGWA5URzH","iterations":240000}</script>
     <script>
       (() => {
         const payload = JSON.parse(document.getElementById("protected-payload").textContent);
         const storageKey = "kameyaSitePreviewKey";
+        const isEmbedded = window.self !== window.top;
         const form = document.getElementById("access-form");
         const idInput = document.getElementById("access-id");
         const passInput = document.getElementById("access-pass");
@@ -172,19 +186,26 @@
         }
 
         async function reveal(html) {
-          document.open();
-          document.write(html);
-          document.close();
+          return new Promise((resolve) => {
+            window.setTimeout(() => {
+              document.open("text/html", "replace");
+              document.write(html);
+              document.close();
+              resolve();
+            }, 0);
+          });
         }
 
         async function tryStoredKey() {
           const stored = sessionStorage.getItem(storageKey);
-          if (!stored) return;
+          if (!stored) return false;
           try {
             const key = await crypto.subtle.importKey("raw", fromBase64(stored), "AES-GCM", true, ["decrypt"]);
             await reveal(await decryptWithKey(key));
+            return true;
           } catch {
             sessionStorage.removeItem(storageKey);
+            return false;
           }
         }
 
@@ -207,7 +228,17 @@
           }
         });
 
-        tryStoredKey();
+        (async () => {
+          const unlocked = await tryStoredKey();
+          if (unlocked) return;
+          if (isEmbedded) {
+            document.documentElement.classList.remove("is-auth-checking");
+            document.documentElement.classList.add("is-embedded-waiting");
+            return;
+          }
+          document.documentElement.classList.remove("is-auth-checking");
+          idInput.focus();
+        })();
       })();
     </script>
   </body>

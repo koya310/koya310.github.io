@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" data-protected-route="kameya-site">
+<html lang="ja" class="is-auth-checking" data-protected-route="kameya-site">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +8,7 @@
     <style>
       :root {
         --paper: #f8f5ec;
+        --paper-deep: #f1eadc;
         --ink: #1a1a1a;
         --muted: rgba(26, 26, 26, 0.64);
         --line: rgba(26, 26, 26, 0.16);
@@ -16,22 +17,34 @@
       }
       * { box-sizing: border-box; }
       html, body { margin: 0; min-height: 100%; }
+      html.is-auth-checking body,
+      html.is-embedded-waiting body {
+        background: transparent;
+      }
+      html.is-auth-checking main,
+      html.is-embedded-waiting main {
+        opacity: 0;
+        pointer-events: none;
+      }
       body {
-        display: grid;
-        min-height: 100vh;
+        display: flex;
+        min-height: 100dvh;
+        align-items: center;
+        justify-content: center;
         place-items: center;
-        padding: 32px;
+        padding: clamp(24px, 6vw, 64px);
         background:
-          linear-gradient(135deg, rgba(248, 245, 236, 0.98), rgba(244, 238, 223, 0.92)),
-          radial-gradient(circle at 80% 12%, rgba(107, 79, 58, 0.08), transparent 32%);
+          radial-gradient(circle at 78% 14%, rgba(107, 79, 58, 0.08), transparent 32%),
+          linear-gradient(135deg, var(--paper), var(--paper-deep));
         color: var(--ink);
         font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
       }
       main {
-        width: min(440px, 100%);
-        padding: 40px;
+        width: min(520px, 100%);
+        padding: clamp(32px, 5vw, 56px);
         border: 1px solid var(--line);
-        background: rgba(248, 245, 236, 0.86);
+        background: rgba(248, 245, 236, 0.9);
+        transition: opacity 180ms ease;
       }
       .kicker {
         margin: 0 0 16px;
@@ -42,7 +55,7 @@
       }
       h1 {
         margin: 0 0 12px;
-        font-size: 28px;
+        font-size: clamp(28px, 4vw, 40px);
         font-weight: 500;
         letter-spacing: 0.06em;
         line-height: 1.5;
@@ -99,7 +112,7 @@
       }
       @media (max-width: 520px) {
         body { padding: 20px; }
-        main { padding: 28px 24px; }
+        main { padding: 32px 24px; }
         h1 { font-size: 24px; }
       }
     </style>
@@ -116,11 +129,12 @@
         <div class="error" id="access-error" role="status" aria-live="polite"></div>
       </form>
     </main>
-    <script type="application/json" id="protected-payload">{"salt":"lXKhP4aONU8ye8cx4BbpHg==","iv":"0rYrBvT1VSpgnrhD","ciphertext":"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","iterations":240000}</script>
+    <script type="application/json" id="protected-payload">{"salt":"20yo095DYGIpyls4BKyTvg==","iv":"HsyOUNq65bvMc/o4","ciphertext":"zx2zL0nkTS1A9g+FMHrVEFXwpVgVKmybtzPpvN4reRwxVU7Yzce2oPd3QuEhSn4hpiSKphAa4jIpaYW8AigdnH5i6ZbrE4+eZMxUElUVLH7DlIMVhS3iE8SVfw+ZKV1D92pmM5jaqn5UWW4W0m2uLuBaRChJogw3QCuQbCTmCKRd+hg1cySUyOmxuZTuRQ47w3o6rC/CbMxoqrSf8TX9scBWwxDz1VhRoBHHVEE++22/lHk+xeS+0Tq1sd1PA/o4j74BEw5hBHUxsGYzB9PQvc64eerjqSrHJ4Ex9+b0ArOsmw4CQ3AKk9mL9EeFKA4wNSsmr3W88ITwobN617gBy+1JOZfAWBZrmAvbAU7H2Ra54JBN0ehGtMUxlhA3nLrIZB0ylKKuDgLLlGzAMCdcr0qbtdcEnck3m5LcHGAcrgfPzIe1xEZC9CiapqxXEua5zMvQThs8S6CveaZY36ke9nvG84nzmdWkiCyKiAG51HgerZ24hUr0h3GSbeI/eskwlXQD08AxwuZxiiP3c/L9brJcefyC2dr/upOyflqAD/UmFkvok95XZ5yZ6tcM73KDBrXRoPvaQVg7mCOCPTcpCSyYsCEwLlux/tMdNyNEFSuHJ8Gw6E/19quJXK5CyNBy8t9T+hB/USxBQcj6cn5ZllYPbUJmJuMydeeSUjvH2b7NQ+oXkgYXQSSlyiY0scacYnRfNt0vIJRdA/5/K+hfZsaRU/lctzvzUyhq1im8ybCFjE9RMr0zs/ejiec25K9/zlHlL06WFlha1VnwGggBgRoX5Wg3m/EVZ6aUeaLUppsvIZPZGfxVfY2JblCjgSvgpTshCIwirP91ONU54PZ54P5ndRGjzz9z3ar0i+0xyu5ojIlfDrsAUCnQmJT9VBERjYFmWx3hT7KaKeBki7CTC1WUV9Ee0waMsIsZQANs/8Jewg9VMCMOMlSWWd7WXs6akFQvcVat4Ow3bA23v4QkOdSvQxxAeJ5VdSW8sx/2QZn3q/SIlciIXiobD/KlqT44sxE2Zl3DoJ6sIhBr0veDL16mNL5KsETV4vu/fP2OlSD0ZMJj8VxLKzNx/8vDKo1x7V53LtOEEyFR6eOoDhNV+2ih8q24AVik3FahyC3ChvJQ02YVJ9WEyNvTA3gOzkT7dzWjJkoh8IOc/cmwDPJdzj9M1mvPgzN0MJL/YyJGz8YE47trVFRlBKbca33tP5HMVyBXmhwh+5ExbhKnMgHiFaOW7+TTpIKXzyR4NttAWN8P6yH/Qf0aKYMKP8wPt6ackaWd9bI4V/u97t5Bkp/PUR/onC+7WARWay6u7txlxDpD7oZLhbs8FiXcp3fAgoh+0h4eig2E/KhgKfKkcOZ9IgLsGS9eNQGycUqYDkKvWeIUUTUSVAAdXCqBGS6OeJ4gtKRKBIHQms2qEOhQsPwCVToKycLFkoxdugWFMBcWMtkQM4Mv+zdWC68xQnozx6oC8HHQYbCCtuh9y6x9akdpJU8MYJoCJ6gd7G3sgXHlR34DiXEUco1gYb+NMzwvfiuaxJvvBrf5JWVf8jFgvSiB2+Del+t9eGo1Yzs5nPwSWCZ/5NA6YmVqqtYsXCML0VDfBAiFKXcsjocNWg2S6vtu62x3Mue8ltPWlRNHVXscz8QVZYKMG5BAB/ka0WIBfuBUpLD81cqdTTtTKvXjouqx8+7EcG2kD8fTF6mFFZEE5Rsn3dx/fS3cImy3GgldqkorcGJnCukSgeC+V41W1eJc9uip/RRxTpf65GPUq2Lbm8ZWLEMYUUTOrrb6zxuh09armzZiv3ZusurKRP8R/waMlGZ33/4HWCzrGQaQv9hLiH68V4YXYzEzlGUV7CEuR03wHVdxbPxyFa2QpJGqCR28aMtjp7hk380rJsVZMrxAxw9POBl63j9vHVvWMJnYbFpUu7e09B2budEUPQJtuBZ2AIw2imdSZKLd2SQDHycKYdB24tIgHyYGNBDfSOmrBSq8ddWwX93h0DylMMnlSuOKdEn+W98yQ+I9bZtojQXRaOZ36t5bAJuteBRi6/NdE7g12G/93hvmaTrR+RqDxuFY3+f3TXyq5+JqEu0JXuQBrpHkVRO/p6FKlzut4JxzpHkwrGru6d/HnPRsCeka3IcHHL2kI4nzfKjHX4gTBydfI0XHy7emnjYjtV0iDXvDeb3tlIqD2ghLGKQADDllrruB9rOSZI34ESuuyXiAWs1/1VNnh8Xi4yOMjfGpx+CAmxftLdOKJ0KAwAZXLKTu9V3OcJBRSHv0pSGtxlI2MSj2j3BYOKynthniAPops9Pl1dkEUuAKP3Objb7qbOKbplu2YIS32Shrmis00UI65iNALVJXwOLI1IV424Il2AxsQ+oF3Wu3H+YeiKbYITTanaA49lJONOOnwB265jWEFhHjjbNS59pCzHmdk5xaWAddsz3t5JB8DlVj32i3YonHksFwrGyRvSnJBtLuK6eP6cIOXpioy83wY7ERhHcISNu9NXOttl4Rdn/FfO4K4cJwbX+YgBDV2IChN+wd1cbrXiqFe85twCtHHS8dOEm6mHDhBM5aZcdoyA/CdIcpsML3WAY/xWCPNaFwOOcFCOKdy/uvZ5Q1+g6bSuafnUzf6/O9ZxKU9UPo","iterations":240000}</script>
     <script>
       (() => {
         const payload = JSON.parse(document.getElementById("protected-payload").textContent);
         const storageKey = "kameyaSitePreviewKey";
+        const isEmbedded = window.self !== window.top;
         const form = document.getElementById("access-form");
         const idInput = document.getElementById("access-id");
         const passInput = document.getElementById("access-pass");
@@ -172,19 +186,26 @@
         }
 
         async function reveal(html) {
-          document.open();
-          document.write(html);
-          document.close();
+          return new Promise((resolve) => {
+            window.setTimeout(() => {
+              document.open("text/html", "replace");
+              document.write(html);
+              document.close();
+              resolve();
+            }, 0);
+          });
         }
 
         async function tryStoredKey() {
           const stored = sessionStorage.getItem(storageKey);
-          if (!stored) return;
+          if (!stored) return false;
           try {
             const key = await crypto.subtle.importKey("raw", fromBase64(stored), "AES-GCM", true, ["decrypt"]);
             await reveal(await decryptWithKey(key));
+            return true;
           } catch {
             sessionStorage.removeItem(storageKey);
+            return false;
           }
         }
 
@@ -207,7 +228,17 @@
           }
         });
 
-        tryStoredKey();
+        (async () => {
+          const unlocked = await tryStoredKey();
+          if (unlocked) return;
+          if (isEmbedded) {
+            document.documentElement.classList.remove("is-auth-checking");
+            document.documentElement.classList.add("is-embedded-waiting");
+            return;
+          }
+          document.documentElement.classList.remove("is-auth-checking");
+          idInput.focus();
+        })();
       })();
     </script>
   </body>
