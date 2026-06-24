@@ -5840,6 +5840,12 @@
         width: 100%;
       }
 
+      #co-create .co-invite-heading__en {
+        white-space: nowrap;
+        writing-mode: horizontal-tb;
+        text-orientation: mixed;
+      }
+
       #co-create .co-invite-heading {
         position: relative;
         top: auto;
@@ -5878,7 +5884,7 @@
 
       @media (max-width: 1200px) {
         #co-create {
-          --co-edge: clamp(80px, 10vw, 120px);
+          --co-edge: 80px;
           --co-artifact-width: clamp(539px, 56vw, 680px);
         }
 
@@ -5983,7 +5989,7 @@
 
       @media (max-width: 799px) {
         #co-create {
-          --co-edge: 24px;
+          --co-edge: 80px;
           --co-artifact-width: 100%;
         }
 
@@ -6000,7 +6006,7 @@
             "artifact";
           min-height: 0;
           row-gap: 40px;
-          padding: 40px var(--co-edge) 0;
+          padding: 80px var(--co-edge) 0;
         }
 
         #co-create .co-invite-heading {
@@ -6076,6 +6082,18 @@
         #co-create .co-invite-copy__line {
           font-size: 16px;
           line-height: 1.5;
+        }
+      }
+
+      @media (min-width: 480px) and (max-width: 640px) {
+        #co-create {
+          --co-edge: clamp(40px, 8vw, 56px);
+        }
+      }
+
+      @media (max-width: 479px) {
+        #co-create {
+          --co-edge: 24px;
         }
       }
 
