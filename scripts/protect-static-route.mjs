@@ -92,14 +92,12 @@ function buildGate({ title, saltBase64, iv, ciphertext }) {
         justify-content: center;
         place-items: center;
         padding: clamp(24px, 6vw, 64px);
-        background:
-          radial-gradient(circle at 78% 14%, rgba(107, 79, 58, 0.08), transparent 32%),
-          linear-gradient(135deg, var(--paper), var(--paper-deep));
+        background: var(--paper-deep);
         color: var(--ink);
         font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
       }
       main {
-        width: min(520px, 100%);
+        width: min(640px, 100%);
         padding: clamp(32px, 5vw, 56px);
         border: 1px solid var(--line);
         background: rgba(248, 245, 236, 0.9);
@@ -114,10 +112,10 @@ function buildGate({ title, saltBase64, iv, ciphertext }) {
       }
       h1 {
         margin: 0 0 12px;
-        font-size: clamp(28px, 4vw, 40px);
+        font-size: clamp(28px, 3vw, 40px);
         font-weight: 500;
-        letter-spacing: 0.06em;
-        line-height: 1.5;
+        letter-spacing: 0;
+        line-height: 1.4;
       }
       p {
         margin: 0 0 28px;
