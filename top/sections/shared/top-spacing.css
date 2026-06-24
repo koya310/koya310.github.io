@@ -17,6 +17,9 @@
   --ktop-heading-rule: var(--ktop-rule-short) center / 100% 100% no-repeat;
   --ktop-heading-gap: 16px;
   --ktop-block-gap: 64px;
+  --ktop-responsive-bottom: 96px;
+  --ktop-responsive-cta-gap: 24px;
+  --ktop-works-bg-fill: max(1200px, 100%);
 }
 
 @media (min-width: 721px) and (max-width: 1100px) {
@@ -345,39 +348,32 @@ h1.section-title,
 #works .works-fit,
 .works .works-fit {
   background-color: rgb(var(--kameya-blue)) !important;
-  background-image:
-    url("../03_我々が行っていること/assets/figma/profile-bg.webp"),
-    url("../03_我々が行っていること/assets/figma/profile-bg.webp") !important;
-  background-position:
-    center top,
-    center top !important;
-  background-repeat: no-repeat !important;
-  background-size:
-    cover,
-    auto calc(100% + 96px) !important;
+  background-image: url("../03_我々が行っていること/assets/figma/profile-bg.webp") !important;
+  background-position: center top !important;
+  background-repeat: repeat-y !important;
+  background-size: 100% var(--ktop-works-bg-fill) !important;
 }
 
 #works .works-bg,
 .works .works-bg {
   background-image: url("../03_我々が行っていること/assets/figma/profile-bg.webp") !important;
   background-position: center top !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
+  background-repeat: repeat-y !important;
+  background-size: 100% var(--ktop-works-bg-fill) !important;
+}
+
+#works .works-bg img,
+.works .works-bg img {
+  display: none !important;
 }
 
 #works .works-mobile,
 .works .works-mobile {
   background-color: rgb(var(--kameya-blue)) !important;
-  background-image:
-    url("../03_我々が行っていること/assets/figma/profile-bg.webp"),
-    url("../03_我々が行っていること/assets/figma/profile-bg.webp") !important;
-  background-position:
-    center -48px,
-    center top !important;
-  background-repeat: no-repeat !important;
-  background-size:
-    auto calc(100% + 96px),
-    cover !important;
+  background-image: url("../03_我々が行っていること/assets/figma/profile-bg.webp") !important;
+  background-position: center top !important;
+  background-repeat: repeat-y !important;
+  background-size: 100% var(--ktop-works-bg-fill) !important;
 }
 
 #works .works-mobile__artists .works-artists-cta,
@@ -1221,6 +1217,7 @@ h1.section-title,
   :root {
     --ktop-space-top: 96px;
     --ktop-space-bottom: 80px;
+    --ktop-responsive-bottom: 80px;
     --ktop-block-gap: 72px;
   }
 
@@ -1244,6 +1241,10 @@ h1.section-title,
 }
 
 @media (max-width: 640px) {
+  :root {
+    --ktop-responsive-bottom: 64px;
+  }
+
   #initiatives.home-section {
     min-height: auto !important;
   }
@@ -1268,6 +1269,32 @@ h1.section-title,
   }
 
   #initiatives .section-cta {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* KMY-03: responsive bottom rhythm is shared by Top sections.
+   Section-specific CTA margins should not create additional lower whitespace. */
+#works .works-artists-cta,
+.works .works-artists-cta,
+#initiatives .section-cta {
+  margin-top: var(--ktop-responsive-cta-gap) !important;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 1100px) {
+  .philosophy .copy-field,
+  #philosophy .philosophy .copy-field,
+  #works .works-mobile,
+  #initiatives .content,
+  #achievements .achievements,
+  #co-create .co-invite-layout {
+    padding-bottom: var(--ktop-responsive-bottom) !important;
+  }
+
+  #initiatives .section-cta,
+  #works .works-mobile__artists,
+  #co-create .co-invite-copy {
     margin-bottom: 0 !important;
   }
 }
