@@ -1282,6 +1282,19 @@ h1.section-title,
   margin-bottom: 0 !important;
 }
 
+@media (min-width: 641px) and (max-width: 1100px) {
+  #initiatives .section-cta {
+    margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #initiatives .section-cta__link {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
 /* KMY-05: on desktop, the initiatives CTA keeps card-like spacing above and below. */
 @media (min-width: 1209px) {
   #initiatives .frame-shell,
