@@ -1640,7 +1640,7 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
   display: contents;
 }
 
-@media (min-width: 641px) and (max-width: 1207px) {
+@media (min-width: 641px) and (max-width: 1023px) {
   body.kameya-common-header-ready .kogei-page .stage-wrap {
     height: auto !important;
     margin-top: clamp(40px, 6vw, 72px) !important;
@@ -1822,6 +1822,141 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
     left: -15.8% !important;
     width: 131.39% !important;
     height: 200% !important;
+  }
+
+  .kogei-page .artifact--tablet-blue,
+  .kogei-page .artifact--tablet-silver,
+  .kogei-page .artifact--tablet-wood {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1207px) {
+  :root {
+    --stage-width: 1208px !important;
+    --stage-height: 2438px !important;
+  }
+
+  body.kameya-common-header-ready .kogei-page .stage-wrap {
+    height: var(--stage-height) !important;
+    margin-top: clamp(96px, 10vw, 120px) !important;
+  }
+
+  .kogei-page .stage-wrap {
+    height: var(--stage-height) !important;
+    overflow: hidden !important;
+  }
+
+  .kogei-page .stage-wrap::before,
+  .kogei-page .stage-wrap::after {
+    display: block !important;
+  }
+
+  .kogei-page .kogei-stage {
+    position: relative !important;
+    left: 50% !important;
+    display: block !important;
+    width: var(--stage-width) !important;
+    height: var(--stage-height) !important;
+    margin: 0 !important;
+    padding-top: clamp(112px, 10vw, 144px) !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .kogei-page .heading-block,
+  .kogei-page .copy-block {
+    position: absolute !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin: 0 !important;
+  }
+
+  .kogei-page .heading-block {
+    top: 40px !important;
+    left: 120px !important;
+    display: flex !important;
+    width: 470px !important;
+  }
+
+  .kogei-page .section-label {
+    font-size: 24px !important;
+  }
+
+  .kogei-page .section-title {
+    font-size: 40px !important;
+  }
+
+  .kogei-page .lead-copy {
+    font-size: 32px !important;
+  }
+
+  .kogei-page .copy-block {
+    width: 444px !important;
+    gap: 32px !important;
+  }
+
+  .kogei-page .copy-intro {
+    top: 356px !important;
+    left: 120px !important;
+    gap: 0 !important;
+  }
+
+  .kogei-page .copy-right {
+    top: 678px !important;
+    left: 644px !important;
+  }
+
+  .kogei-page .copy-left-long {
+    top: 1352px !important;
+    left: 120px !important;
+    font-size: 18px !important;
+  }
+
+  .kogei-page .copy-bottom {
+    top: 1972px !important;
+    left: 644px !important;
+    font-size: 18px !important;
+  }
+
+  .kogei-page .artifact-frame {
+    display: contents !important;
+  }
+
+  .kogei-page .artifact {
+    position: absolute !important;
+    display: block !important;
+    max-width: none !important;
+    clip-path: none !important;
+    object-fit: cover !important;
+  }
+
+  .kogei-page .artifact--hero {
+    top: 40px !important;
+    left: 624px !important;
+    width: 574px !important;
+    height: 582px !important;
+    z-index: 4 !important;
+  }
+
+  .kogei-page .artifact--bamboo {
+    top: 660px !important;
+    left: -474px !important;
+    width: 1038px !important;
+    height: 612px !important;
+  }
+
+  .kogei-page .artifact--bowl {
+    top: 1352px !important;
+    left: 644px !important;
+    width: 796px !important;
+    height: 468px !important;
+  }
+
+  .kogei-page .artifact--red {
+    top: 1835px !important;
+    left: -232px !important;
+    width: 796px !important;
+    height: 523px !important;
   }
 
   .kogei-page .artifact--tablet-blue,
