@@ -1636,6 +1636,32 @@ body[data-kameya-lang="en"] .kameya-common-header .brand-name,
   }
 }
 
+@media (min-width: 641px) and (max-width: 768px) {
+  body.kameya-common-header-ready .kogei-page .stage-wrap {
+    margin-top: 0 !important;
+  }
+
+  .kogei-page .artifact--hero {
+    margin-top: calc(-9.57vw - 4.6px) !important;
+    margin-bottom: calc(-9.57vw - 4.6px) !important;
+  }
+
+  .kogei-page .artifact--bamboo {
+    margin-top: calc(-26.38vw - 23.2px) !important;
+    margin-bottom: calc(-26.38vw - 23.2px) !important;
+  }
+
+  .kogei-page .artifact--bowl {
+    margin-top: calc(-26.46vw - 23.3px) !important;
+    margin-bottom: calc(-26.29vw - 23.1px) !important;
+  }
+
+  .kogei-page .artifact--red {
+    margin-top: calc(-34.72vw - 52.8px) !important;
+    margin-bottom: calc(-19.88vw - 30.2px) !important;
+  }
+}
+
 @media (max-width: 640px) {
   .essay-main {
     width: calc(100vw - 48px) !important;
