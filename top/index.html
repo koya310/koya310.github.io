@@ -5591,10 +5591,12 @@
       #co-create .co-invite-heading__en {
         margin: 0;
         color: var(--co-gold-soft);
-        font-size: 24px;
-        font-weight: 700;
-        letter-spacing: 0;
+        font-family: "Cormorant Garamond", "Times New Roman", serif;
+        font-size: var(--ktop-title-en, 24px);
+        font-weight: var(--ktop-title-en-weight, 500);
+        letter-spacing: var(--ktop-title-en-tracking, 0);
         line-height: 1.5;
+        text-transform: none;
         writing-mode: vertical-rl;
         text-orientation: mixed;
       }
@@ -6577,7 +6579,7 @@
                 <span aria-hidden="true">作りませんか</span>
                 <span aria-hidden="true">文化を共に</span>
               </h2>
-              <p class="co-invite-heading__en" aria-hidden="true">Invitation</p>
+              <p class="co-invite-heading__en section-kicker section-heading__eyebrow" lang="en" aria-hidden="true">Invitation</p>
             </header>
 
             <div class="co-invite-artifact-shadow reveal-target" aria-hidden="true" data-reveal>
