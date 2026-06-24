@@ -322,6 +322,18 @@ body.utility-body {
   line-height: 1.8;
 }
 
+.form-status[data-state="pending"] {
+  color: var(--utility-gold);
+}
+
+.form-status[data-state="success"] {
+  color: var(--utility-green);
+}
+
+.form-status[data-state="error"] {
+  color: var(--utility-gold);
+}
+
 .contact-card {
   align-self: start;
   padding: 8px 0 0;
