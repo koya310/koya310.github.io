@@ -223,9 +223,50 @@
     <link rel="stylesheet" href="/shared/css/kameya-design-system.css?v=20260619-menu-numbering-fix" />
     <style>
       body.utility-body {
+        position: relative;
+        overflow-x: clip;
+        background-color: #f8f4ea;
+        background-image:
+          radial-gradient(ellipse at 78% 12%, rgba(255, 250, 232, 0.72), rgba(255, 250, 232, 0.2) 28%, rgba(255, 250, 232, 0) 54%),
+          radial-gradient(ellipse at 92% 42%, rgba(149, 124, 76, 0.16), rgba(149, 124, 76, 0.06) 32%, rgba(149, 124, 76, 0) 58%),
+          linear-gradient(90deg, rgba(255, 250, 240, 0.95) 0 62%, rgba(245, 240, 232, 0.9) 62% 100%),
+          linear-gradient(rgba(248, 244, 234, 0.88), rgba(248, 244, 234, 0.92)),
+          url("/about/assets/figma/paper.webp");
+        background-position: center, center, center, center, center;
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+        background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 760px auto;
+        background-attachment: fixed, fixed, scroll, scroll, scroll;
+      }
+
+      body.utility-body::before,
+      body.utility-body::after {
+        content: "";
+        position: fixed;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      body.utility-body::before {
+        top: 50%;
+        right: clamp(24px, 8vw, 120px);
+        width: min(460px, 42vw);
+        aspect-ratio: 1;
+        transform: translateY(-50%);
+        background: url("/top/sections/02_我々の想い/assets/logo-watermark.webp") center / contain no-repeat;
+        opacity: 0.075;
+        mix-blend-mode: multiply;
+      }
+
+      body.utility-body::after {
+        inset: 0;
         background:
-          linear-gradient(rgba(248, 244, 234, 0.88), rgba(248, 244, 234, 0.91)),
-          url("/about/assets/figma/paper.webp") center / 760px auto repeat;
+          linear-gradient(108deg, rgba(255, 250, 232, 0) 0 47%, rgba(255, 250, 232, 0.34) 49%, rgba(149, 124, 76, 0.08) 50%, rgba(255, 250, 232, 0) 54%),
+          radial-gradient(ellipse at 74% 18%, rgba(255, 248, 222, 0.42), rgba(255, 248, 222, 0.14) 30%, rgba(255, 248, 222, 0) 56%);
+      }
+
+      .utility-body .utility-shell {
+        position: relative;
+        z-index: 1;
       }
 
       .utility-body .essay-main {
