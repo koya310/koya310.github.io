@@ -19,8 +19,8 @@
   --ktop-block-gap: 64px;
   --ktop-responsive-bottom: 96px;
   --ktop-responsive-cta-gap: 24px;
-  --ktop-works-bg-fill: max(1200px, 100%);
-  --ktop-works-bg-y: -48px;
+  --ktop-works-bg-color: 28 61 96;
+  --ktop-works-bg-position: center center;
 }
 
 @media (min-width: 721px) and (max-width: 1100px) {
@@ -348,19 +348,18 @@ h1.section-title,
 
 #works .works-fit,
 .works .works-fit {
-  background-color: rgb(var(--kameya-blue)) !important;
-  background-image: url("../03_我々が行っていること/assets/figma/profile-bg.webp") !important;
-  background-position: center var(--ktop-works-bg-y) !important;
-  background-repeat: repeat-y !important;
-  background-size: 100% var(--ktop-works-bg-fill) !important;
+  background-color: rgb(var(--ktop-works-bg-color)) !important;
+  background-image: none !important;
 }
 
 #works .works-bg,
 .works .works-bg {
+  inset: 0 !important;
+  background-color: rgb(var(--ktop-works-bg-color)) !important;
   background-image: url("../03_我々が行っていること/assets/figma/profile-bg.webp") !important;
-  background-position: center var(--ktop-works-bg-y) !important;
-  background-repeat: repeat-y !important;
-  background-size: 100% var(--ktop-works-bg-fill) !important;
+  background-position: var(--ktop-works-bg-position) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
 #works .works-bg img,
@@ -370,11 +369,11 @@ h1.section-title,
 
 #works .works-mobile,
 .works .works-mobile {
-  background-color: rgb(var(--kameya-blue)) !important;
+  background-color: rgb(var(--ktop-works-bg-color)) !important;
   background-image: url("../03_我々が行っていること/assets/figma/profile-bg.webp") !important;
-  background-position: center var(--ktop-works-bg-y) !important;
-  background-repeat: repeat-y !important;
-  background-size: 100% var(--ktop-works-bg-fill) !important;
+  background-position: var(--ktop-works-bg-position) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
 #works .works-mobile__artists .works-artists-cta,
